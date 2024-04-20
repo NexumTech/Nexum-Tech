@@ -5,4 +5,14 @@
     <RootNamespace>Nexum_Tech</RootNamespace>
   </PropertyGroup>
 
+  <ItemGroup>
+    <Folder Include="Domain\" />
+    <Folder Include="DAO\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="AutoMapper" Version="12.0.0" />
+    <PackageReference Include="System.Data.SqlClient" Version="4.8.6" />
+  </ItemGroup>
+
 </Project>
