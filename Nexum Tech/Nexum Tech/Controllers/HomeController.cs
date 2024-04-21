@@ -1,5 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Logging;
+using Nexum_Tech.Domain.Interfaces;
 using Nexum_Tech.Models;
 using System;
 using System.Collections.Generic;
@@ -12,10 +13,12 @@ namespace Nexum_Tech.Controllers
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
+        private readonly ITest _test;
 
-        public HomeController(ILogger<HomeController> logger)
+        public HomeController(ILogger<HomeController> logger, ITest test)
         {
             _logger = logger;
+            _test = test;
         }
 
         public IActionResult Index()
@@ -25,6 +28,7 @@ namespace Nexum_Tech.Controllers
 
         public IActionResult Privacy()
         {
+            ViewBag.Teste = _test.Teste();
             return View();
         }
 
