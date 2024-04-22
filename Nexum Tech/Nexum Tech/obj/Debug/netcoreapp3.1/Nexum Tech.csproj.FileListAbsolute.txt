@@ -47,3 +47,4 @@ C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\De
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\Debug\netcoreapp3.1\Nexum Tech.pdb
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\Debug\netcoreapp3.1\Nexum Tech.genruntimeconfig.cache
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\bin\Debug\netcoreapp3.1\Dapper.dll
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\bin\Debug\netcoreapp3.1\libman.json

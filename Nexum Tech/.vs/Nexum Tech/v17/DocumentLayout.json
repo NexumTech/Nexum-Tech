@@ -3,24 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{E69BA57C-B92D-4B2F-A531-CDD105452276}|Nexum Tech\\Nexum Tech.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexum tech\\domain\\testdomain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E69BA57C-B92D-4B2F-A531-CDD105452276}|Nexum Tech\\Nexum Tech.csproj|solutionrelative:nexum tech\\domain\\testdomain.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E69BA57C-B92D-4B2F-A531-CDD105452276}|Nexum Tech\\Nexum Tech.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexum tech\\dao\\testdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E69BA57C-B92D-4B2F-A531-CDD105452276}|Nexum Tech\\Nexum Tech.csproj|solutionrelative:nexum tech\\dao\\testdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E69BA57C-B92D-4B2F-A531-CDD105452276}|Nexum Tech\\Nexum Tech.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexum tech\\domain\\interfaces\\itest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E69BA57C-B92D-4B2F-A531-CDD105452276}|Nexum Tech\\Nexum Tech.csproj|solutionrelative:nexum tech\\domain\\interfaces\\itest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E69BA57C-B92D-4B2F-A531-CDD105452276}|Nexum Tech\\Nexum Tech.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexum tech\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E69BA57C-B92D-4B2F-A531-CDD105452276}|Nexum Tech\\Nexum Tech.csproj|solutionrelative:nexum tech\\startup.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{E69BA57C-B92D-4B2F-A531-CDD105452276}|Nexum Tech\\Nexum Tech.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexum tech\\dao\\basedatabaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{E69BA57C-B92D-4B2F-A531-CDD105452276}|Nexum Tech\\Nexum Tech.csproj|solutionrelative:nexum tech\\dao\\basedatabaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{E69BA57C-B92D-4B2F-A531-CDD105452276}|Nexum Tech\\Nexum Tech.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexum tech\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{E69BA57C-B92D-4B2F-A531-CDD105452276}|Nexum Tech\\Nexum Tech.csproj|solutionrelative:nexum tech\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,71 +14,19 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 0,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "BaseDatabaseService.cs",
-              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Nexum Tech\\DAO\\BaseDatabaseService.cs",
-              "RelativeDocumentMoniker": "Nexum Tech\\DAO\\BaseDatabaseService.cs",
-              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Nexum Tech\\DAO\\BaseDatabaseService.cs",
-              "RelativeToolTip": "Nexum Tech\\DAO\\BaseDatabaseService.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA0AAAAJAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T00:28:26.383Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "TestDAO.cs",
-              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Nexum Tech\\DAO\\TestDAO.cs",
-              "RelativeDocumentMoniker": "Nexum Tech\\DAO\\TestDAO.cs",
-              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Nexum Tech\\DAO\\TestDAO.cs",
-              "RelativeToolTip": "Nexum Tech\\DAO\\TestDAO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABcAAAAdAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-22T00:26:15.069Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "TestDomain.cs",
-              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Nexum Tech\\Domain\\TestDomain.cs",
-              "RelativeDocumentMoniker": "Nexum Tech\\Domain\\TestDomain.cs",
-              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Nexum Tech\\Domain\\TestDomain.cs",
-              "RelativeToolTip": "Nexum Tech\\Domain\\TestDomain.cs",
-              "ViewState": "AQIAAAIAAAAAAAAAAAAAwBAAAAAjAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T07:05:57.091Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ITest.cs",
-              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Nexum Tech\\Domain\\Interfaces\\ITest.cs",
-              "RelativeDocumentMoniker": "Nexum Tech\\Domain\\Interfaces\\ITest.cs",
-              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Nexum Tech\\Domain\\Interfaces\\ITest.cs",
-              "RelativeToolTip": "Nexum Tech\\Domain\\Interfaces\\ITest.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAMAAAAFAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T06:56:00.105Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Startup.cs",
-              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Nexum Tech\\Startup.cs",
-              "RelativeDocumentMoniker": "Nexum Tech\\Startup.cs",
-              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Nexum Tech\\Startup.cs",
-              "RelativeToolTip": "Nexum Tech\\Startup.cs",
-              "ViewState": "AQIAABIAAAAAAAAAAAAAwB8AAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-21T06:55:34.483Z",
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Nexum Tech\\Views\\Home\\Index.cshtml",
+              "RelativeDocumentMoniker": "Nexum Tech\\Views\\Home\\Index.cshtml",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Nexum Tech\\Views\\Home\\Index.cshtml*",
+              "RelativeToolTip": "Nexum Tech\\Views\\Home\\Index.cshtml*",
+              "ViewState": "AQIAAAQAAAAAAAAAAAAswBUAAAA9AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-22T02:19:06.444Z",
               "EditorCaption": ""
             }
           ]
