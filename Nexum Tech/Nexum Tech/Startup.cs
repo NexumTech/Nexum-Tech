@@ -10,6 +10,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Nexum_Tech.Domain.Interfaces;
+using Nexum_Tech.DAO;
+using Nexum_Tech.DAO.Interfaces;
 
 namespace Nexum_Tech
 {
@@ -25,8 +27,25 @@ namespace Nexum_Tech
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddScoped<ITest, TestDomain>();
             services.AddControllersWithViews();
+
+            #region Domain Dependency Injection
+
+            services.AddScoped<ITest, TestDomain>();
+
+            #endregion
+
+            #region DAO Dependency Injection
+
+            services.AddScoped<ITestDAO, TestDAO>();
+
+            #endregion
+
+            #region Base Database Service Dependency Injection
+
+            services.AddScoped<BaseDatabaseService>();
+
+            #endregion
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
