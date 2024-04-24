@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NexumTech.Domain")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ac9694a28c2391b1a0a6faa6b510008a9e21e04d")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+95d8d3e67555ce3175fce6025082c89185d1ba5c")]
 [assembly: System.Reflection.AssemblyProductAttribute("NexumTech.Domain")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NexumTech.Domain")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

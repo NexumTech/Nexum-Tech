@@ -3,6 +3,10 @@
   "WorkspaceRootPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{911CCA2F-2A55-4997-84C8-04A7800DB610}|Domain\\NexumTech.Domain.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\domain\\nexumtech.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{911CCA2F-2A55-4997-84C8-04A7800DB610}|Domain\\NexumTech.Domain.csproj|solutionrelative:domain\\nexumtech.domain.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|solutionrelative:nexumtech.web\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
@@ -23,8 +27,8 @@
       "RelativeMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|solutionrelative:nexumtech.web\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{911CCA2F-2A55-4997-84C8-04A7800DB610}|Domain\\Domain.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\domain\\domain\\interfaces\\itest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{911CCA2F-2A55-4997-84C8-04A7800DB610}|Domain\\Domain.csproj|solutionrelative:domain\\domain\\interfaces\\itest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{911CCA2F-2A55-4997-84C8-04A7800DB610}|Domain\\NexumTech.Domain.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\domain\\interfaces\\itest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{911CCA2F-2A55-4997-84C8-04A7800DB610}|Domain\\NexumTech.Domain.csproj|solutionrelative:domain\\interfaces\\itest.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{6490E4AA-DE12-49ED-8996-E32B62C4C993}|NexumTech.Infra\\NexumTech.Infra.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.infra\\dao\\basedatabaseservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -55,6 +59,19 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
+              "Title": "NexumTech.Domain.csproj",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Domain\\NexumTech.Domain.csproj",
+              "RelativeDocumentMoniker": "Domain\\NexumTech.Domain.csproj",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Domain\\NexumTech.Domain.csproj*",
+              "RelativeToolTip": "Domain\\NexumTech.Domain.csproj*",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2024-04-24T19:38:54.44Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
               "Title": "HomeController.cs",
               "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Controllers\\HomeController.cs",
               "RelativeDocumentMoniker": "NexumTech.Web\\Controllers\\HomeController.cs",
@@ -67,7 +84,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "Privacy.cshtml",
               "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Views\\Home\\Privacy.cshtml",
               "RelativeDocumentMoniker": "NexumTech.Web\\Views\\Home\\Privacy.cshtml",
@@ -80,12 +97,12 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "ITest.cs",
-              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Domain\\Domain\\Interfaces\\ITest.cs",
-              "RelativeDocumentMoniker": "Domain\\Domain\\Interfaces\\ITest.cs",
-              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Domain\\Domain\\Interfaces\\ITest.cs",
-              "RelativeToolTip": "Domain\\Domain\\Interfaces\\ITest.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Domain\\Interfaces\\ITest.cs",
+              "RelativeDocumentMoniker": "Domain\\Interfaces\\ITest.cs",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Domain\\Interfaces\\ITest.cs",
+              "RelativeToolTip": "Domain\\Interfaces\\ITest.cs",
               "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAmAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-24T19:06:08.398Z",
@@ -93,7 +110,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ITestDAO.cs",
               "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\DAO\\Interfaces\\ITestDAO.cs",
               "RelativeDocumentMoniker": "NexumTech.Infra\\DAO\\Interfaces\\ITestDAO.cs",
@@ -106,7 +123,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
               "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\appsettings.json",
               "RelativeDocumentMoniker": "NexumTech.Web\\appsettings.json",
@@ -119,7 +136,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 3,
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Views\\Home\\Index.cshtml",
               "RelativeDocumentMoniker": "NexumTech.Web\\Views\\Home\\Index.cshtml",
@@ -132,7 +149,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Startup.cs",
               "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Startup.cs",
               "RelativeDocumentMoniker": "NexumTech.Web\\Startup.cs",
@@ -145,7 +162,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 10,
               "Title": "NexumTech.Web.csproj",
               "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\NexumTech.Web.csproj",
               "RelativeDocumentMoniker": "NexumTech.Web\\NexumTech.Web.csproj",
@@ -158,7 +175,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Program.cs",
               "RelativeDocumentMoniker": "NexumTech.Web\\Program.cs",
@@ -171,7 +188,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "BaseDatabaseService.cs",
               "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\DAO\\BaseDatabaseService.cs",
               "RelativeDocumentMoniker": "NexumTech.Infra\\DAO\\BaseDatabaseService.cs",
