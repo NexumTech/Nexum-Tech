@@ -666,8 +666,8 @@
     },
     "NexumTech.Domain/1.0.0": {
       "type": "project",
-      "path": "../Domain/NexumTech.Domain.csproj",
-      "msbuildProject": "../Domain/NexumTech.Domain.csproj"
+      "path": "../NexumTech.Domain/NexumTech.Domain.csproj",
+      "msbuildProject": "../NexumTech.Domain/NexumTech.Domain.csproj"
     },
     "NexumTech.Infra/1.0.0": {
       "type": "project",
@@ -714,8 +714,8 @@
         "net6.0": {
           "targetAlias": "net6.0",
           "projectReferences": {
-            "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Domain\\NexumTech.Domain.csproj": {
-              "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\Domain\\NexumTech.Domain.csproj"
+            "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\NexumTech.Domain.csproj": {
+              "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\NexumTech.Domain.csproj"
             },
             "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj": {
               "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj"

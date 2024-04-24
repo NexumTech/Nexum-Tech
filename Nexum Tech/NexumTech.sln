@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NexumTech.Infra", "NexumTec
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NexumTech.Web", "NexumTech.Web\NexumTech.Web.csproj", "{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexumTech.Domain", "Domain\NexumTech.Domain.csproj", "{911CCA2F-2A55-4997-84C8-04A7800DB610}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NexumTech.Domain", "NexumTech.Domain\NexumTech.Domain.csproj", "{FD64A08C-82A1-4378-80A5-0E111C02954F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -29,10 +29,10 @@ Global
 		{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}.Release|Any CPU.Build.0 = Release|Any CPU
-		{911CCA2F-2A55-4997-84C8-04A7800DB610}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{911CCA2F-2A55-4997-84C8-04A7800DB610}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{911CCA2F-2A55-4997-84C8-04A7800DB610}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{911CCA2F-2A55-4997-84C8-04A7800DB610}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FD64A08C-82A1-4378-80A5-0E111C02954F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FD64A08C-82A1-4378-80A5-0E111C02954F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FD64A08C-82A1-4378-80A5-0E111C02954F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FD64A08C-82A1-4378-80A5-0E111C02954F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
