@@ -1,7 +1,7 @@
-﻿using Nexum_Tech.Domain;
-using Nexum_Tech.Domain.Interfaces;
+﻿using Nexum_Tech.Domain.Interfaces;
 using Nexum_Tech.Infra.DAO;
 using Nexum_Tech.Infra.DAO.Interfaces;
+using NexumTech.Domain.Services;
 
 namespace NexumTech.Web
 {
@@ -21,7 +21,7 @@ namespace NexumTech.Web
 
             #region Domain Dependency Injection
 
-            services.AddScoped<ITest, TestDomain>();
+            services.AddScoped<ITest, TestService>();
 
             #endregion
 

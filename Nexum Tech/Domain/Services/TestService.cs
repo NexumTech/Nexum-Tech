@@ -1,20 +1,20 @@
 ﻿using Nexum_Tech.Domain.Interfaces;
 using Nexum_Tech.Infra.DAO.Interfaces;
 
-namespace Nexum_Tech.Domain
+namespace NexumTech.Domain.Services
 {
-    public class TestDomain : ITest
+    public class TestService : ITest
     {
         private readonly ITestDAO _testDAO;
 
-        public TestDomain(ITestDAO testDAO)
+        public TestService(ITestDAO testDAO)
         {
             _testDAO = testDAO;
         }
 
-        public int Teste() 
+        public int Teste()
         {
-           return _testDAO.Teste();
+            return _testDAO.Teste();
         }
     }
 }
