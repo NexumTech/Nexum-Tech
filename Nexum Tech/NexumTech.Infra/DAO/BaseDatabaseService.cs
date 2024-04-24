@@ -6,7 +6,7 @@ namespace Nexum_Tech.Infra.DAO
 {
     public class BaseDatabaseService
     {
-        private readonly string _connectionString;
+        private readonly string? _connectionString;
 
         public BaseDatabaseService(IConfiguration configuration)
         {
