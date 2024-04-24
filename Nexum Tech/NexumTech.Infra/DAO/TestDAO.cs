@@ -1,8 +1,6 @@
-﻿using Dapper;
-using Nexum_Tech.DAO.Interfaces;
-using System;
+﻿using Nexum_Tech.Infra.DAO.Interfaces;
 
-namespace Nexum_Tech.DAO
+namespace Nexum_Tech.Infra.DAO
 {
     public class TestDAO : ITestDAO
     {

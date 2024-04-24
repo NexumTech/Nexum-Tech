@@ -1,7 +1,7 @@
-﻿using Nexum_Tech.DAO.Interfaces;
-using Nexum_Tech.DAO;
+﻿using Nexum_Tech.Domain;
 using Nexum_Tech.Domain.Interfaces;
-using Nexum_Tech.Domain;
+using Nexum_Tech.Infra.DAO;
+using Nexum_Tech.Infra.DAO.Interfaces;
 
 namespace NexumTech.Web
 {

@@ -8,6 +8,7 @@
     ".NETCoreApp,Version=v6.0": {
       "NexumTech.Web/1.0.0": {
         "dependencies": {
+          "NexumTech.Domain": "1.0.0",
           "NexumTech.Infra": "1.0.0"
         },
         "runtime": {
@@ -120,6 +121,14 @@
         }
       },
       "System.Security.Principal.Windows/4.7.0": {},
+      "NexumTech.Domain/1.0.0": {
+        "dependencies": {
+          "NexumTech.Infra": "1.0.0"
+        },
+        "runtime": {
+          "NexumTech.Domain.dll": {}
+        }
+      },
       "NexumTech.Infra/1.0.0": {
         "dependencies": {
           "Dapper": "2.1.35",
@@ -228,6 +237,11 @@
       "sha512": "sha512-ojD0PX0XhneCsUbAZVKdb7h/70vyYMDYs85lwEI+LngEONe/17A0cFaRFqZU+sOEidcVswYWikYOQ9PPfjlbtQ==",
       "path": "system.security.principal.windows/4.7.0",
       "hashPath": "system.security.principal.windows.4.7.0.nupkg.sha512"
+    },
+    "NexumTech.Domain/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
     },
     "NexumTech.Infra/1.0.0": {
       "type": "project",

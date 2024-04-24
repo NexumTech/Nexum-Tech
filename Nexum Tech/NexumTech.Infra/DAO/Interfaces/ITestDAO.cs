@@ -1,4 +1,4 @@
-﻿namespace Nexum_Tech.DAO.Interfaces
+﻿namespace Nexum_Tech.Infra.DAO.Interfaces
 {
     public interface ITestDAO
     {

@@ -1,5 +1,5 @@
-﻿using Nexum_Tech.DAO.Interfaces;
-using Nexum_Tech.Domain.Interfaces;
+﻿using Nexum_Tech.Domain.Interfaces;
+using Nexum_Tech.Infra.DAO.Interfaces;
 
 namespace Nexum_Tech.Domain
 {

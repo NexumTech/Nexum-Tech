@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Data;
 
-namespace Nexum_Tech.DAO
+namespace Nexum_Tech.Infra.DAO
 {
     public class BaseDatabaseService
     {
