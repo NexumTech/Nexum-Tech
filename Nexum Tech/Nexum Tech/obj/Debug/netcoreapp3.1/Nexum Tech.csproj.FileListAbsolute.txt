@@ -48,3 +48,13 @@ C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\De
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\Debug\netcoreapp3.1\Nexum Tech.genruntimeconfig.cache
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\bin\Debug\netcoreapp3.1\Dapper.dll
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\bin\Debug\netcoreapp3.1\libman.json
+C:\Users\Braz\Desktop\Braz\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\Debug\netcoreapp3.1\Nexum Tech.csproj.AssemblyReference.cache
+C:\Users\Braz\Desktop\Braz\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\Debug\netcoreapp3.1\Nexum Tech.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Braz\Desktop\Braz\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\Debug\netcoreapp3.1\Nexum Tech.AssemblyInfoInputs.cache
+C:\Users\Braz\Desktop\Braz\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\Debug\netcoreapp3.1\Nexum Tech.AssemblyInfo.cs
+C:\Users\Braz\Desktop\Braz\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\Debug\netcoreapp3.1\Nexum Tech.csproj.CoreCompileInputs.cache
+C:\Users\Braz\Desktop\Braz\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\Debug\netcoreapp3.1\Nexum Tech.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Braz\Desktop\Braz\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\Debug\netcoreapp3.1\Nexum Tech.RazorAssemblyInfo.cache
+C:\Users\Braz\Desktop\Braz\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\Debug\netcoreapp3.1\Nexum Tech.RazorAssemblyInfo.cs
+C:\Users\Braz\Desktop\Braz\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\Debug\netcoreapp3.1\Nexum Tech.dll
+C:\Users\Braz\Desktop\Braz\Projetos\Nexum-Tech\Nexum Tech\Nexum Tech\obj\Debug\netcoreapp3.1\Nexum Tech.pdb

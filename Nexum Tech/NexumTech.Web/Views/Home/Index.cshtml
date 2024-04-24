@@ -1,0 +1,89 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+<link href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
+<link href="~/lib/datatables/datatables.css" rel="stylesheet" />
+
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/sweetalert2/sweetalert2.all.js"></script>
+<script type="module" src="~/lib/chart.js/chart.umd.js"></script>
+<script src="~/lib/datatables/datatables.js"></script>
+
+<div class="container">
+    <div class="container">
+        <canvas id="myChart" height="100px"></canvas>
+    </div>  
+    <div class="container mt-5">
+        <table id="example" class="display" width="100%" height="100px"></table>
+    </div>
+    <button type="button" class="btn btn-outline-primary mt-4" id="btnTeste">
+        Click here
+        <i class="far fa-plus-square"></i>
+    </button>
+</div>
+
+<script>
+    $(document).ready(function () {
+        const ctx = document.getElementById('myChart');
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+                datasets: [{
+                    label: '# of Votes',
+                    data: [12, 19, 3, 5, 2, 3],
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const dataSet = [
+            ['Tiger Nixon', 'System Architect', 'Edinburgh', '5421', '2011/04/25', '$320,800'],
+            ['Garrett Winters', 'Accountant', 'Tokyo', '8422', '2011/07/25', '$170,750'],
+            ['Ashton Cox', 'Junior Technical Author', 'San Francisco', '1562', '2009/01/12', '$86,000'],
+            ['Cedric Kelly', 'Senior Javascript Developer', 'Edinburgh', '6224', '2012/03/29', '$433,060'],
+            ['Airi Satou', 'Accountant', 'Tokyo', '5407', '2008/11/28', '$162,700'],
+        ];
+
+        dataSet.forEach(r => {
+            var div1 = document.createElement('div');
+            div1.innerHTML = r[1];
+            r[1] = div1;
+
+            var div3 = document.createElement('div');
+            div3.innerHTML = r[3];
+            r[3] = div3;
+        })
+
+        new DataTable('#example', {
+            columns: [
+                { title: 'Name' },
+                { title: 'Position' },
+                { title: 'Office' },
+                { title: 'Extn.' },
+                { title: 'Start date' },
+                { title: 'Salary' }
+            ],
+            data: dataSet
+        });
+
+        $("#btnTeste").click(function () {
+            Swal.fire({
+                title: "Testing...",
+                text: "Click!",
+                icon: "success"
+            });
+        })
+    });
+</script>
