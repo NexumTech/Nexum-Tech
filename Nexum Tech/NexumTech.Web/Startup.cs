@@ -1,7 +1,5 @@
-﻿using Nexum_Tech.Domain.Interfaces;
-using Nexum_Tech.Infra.DAO;
-using Nexum_Tech.Infra.DAO.Interfaces;
-using NexumTech.Domain.Services;
+﻿using NexumTech.Infra.API;
+using NexumTech.Infra.WEB;
 
 namespace NexumTech.Web
 {
@@ -19,21 +17,19 @@ namespace NexumTech.Web
         {
             services.AddControllersWithViews();
 
-            #region Domain Dependency Injection
+            services.AddHttpClient();
 
-            services.AddScoped<ITest, TestService>();
+            #region WEB appsettings.json Dependency Injection
 
-            #endregion
+            services.Configure<AppSettingsUI>(Configuration);
 
-            #region DAO Dependency Injection
-
-            services.AddScoped<ITestDAO, TestDAO>();
+            services.AddScoped<AppSettingsUI>();
 
             #endregion
 
-            #region Base Database Service Dependency Injection
+            #region Base Http Service Dependency Injection
 
-            services.AddScoped<BaseDatabaseService>();
+            services.AddScoped<BaseHttpService>();
 
             #endregion
         }
@@ -51,6 +47,7 @@ namespace NexumTech.Web
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 

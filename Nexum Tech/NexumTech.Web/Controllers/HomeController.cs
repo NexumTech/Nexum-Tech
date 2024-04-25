@@ -1,19 +1,21 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Nexum_Tech.Domain.Interfaces;
-using NexumTech.Web.Models;
+using Microsoft.Extensions.Options;
+using NexumTech.Infra.API;
+using NexumTech.Infra.Models;
+using NexumTech.Infra.WEB;
 using System.Diagnostics;
 
 namespace NexumTech.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly ILogger<HomeController> _logger;
-        private readonly ITest _test;
+        private readonly AppSettingsUI _appSettingsUI;
+        private readonly BaseHttpService _httpService;
 
-        public HomeController(ILogger<HomeController> logger, ITest test)
+        public HomeController(BaseHttpService httpService, IOptions<AppSettingsUI> appSettingsUI)
         {
-            _logger = logger;
-            _test = test;
+            _appSettingsUI = appSettingsUI.Value;
+            _httpService = httpService;
         }
 
         public IActionResult Index()
@@ -21,16 +23,12 @@ namespace NexumTech.Web.Controllers
             return View();
         }
 
-        public IActionResult Privacy()
+        public async Task<IActionResult> Privacy()
         {
-            ViewBag.Teste = _test.Teste();
+            var parameters = new TestViewModel { Name = "Testing" };
+            var data = await _httpService.CallMethod<Object>(_appSettingsUI.EndpointTeste, HttpMethod.Get, parameters);
+            ViewBag.Teste = data;
             return View();
-        }
-
-        [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-        public IActionResult Error()
-        {
-            return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
         }
     }
 }

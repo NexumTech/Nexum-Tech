@@ -7,10 +7,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="13.0.3" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.5.0" />
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\NexumTech.Domain\NexumTech.Domain.csproj" />
     <ProjectReference Include="..\NexumTech.Infra\NexumTech.Infra.csproj" />
   </ItemGroup>
 
