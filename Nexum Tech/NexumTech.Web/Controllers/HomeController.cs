@@ -9,10 +9,10 @@ namespace NexumTech.Web.Controllers
 {
     public class HomeController : Controller
     {
-        private readonly AppSettingsUI _appSettingsUI;
+        private readonly AppSettingsWEB _appSettingsUI;
         private readonly BaseHttpService _httpService;
 
-        public HomeController(BaseHttpService httpService, IOptions<AppSettingsUI> appSettingsUI)
+        public HomeController(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI)
         {
             _appSettingsUI = appSettingsUI.Value;
             _httpService = httpService;

@@ -21,9 +21,9 @@ namespace NexumTech.Web
 
             #region WEB appsettings.json Dependency Injection
 
-            services.Configure<AppSettingsUI>(Configuration);
+            services.Configure<AppSettingsWEB>(Configuration);
 
-            services.AddScoped<AppSettingsUI>();
+            services.AddScoped<AppSettingsWEB>();
 
             #endregion
 

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NexumTech.Infra.WEB
 {
-    public class AppSettingsUI
+    public class AppSettingsWEB
     {
         public string ApiBaseURL { get; set; }
         public string EndpointTeste { get; set; }

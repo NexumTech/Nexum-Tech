@@ -10,9 +10,9 @@ namespace NexumTech.Infra.API
     public class BaseHttpService
     {
         private readonly HttpClient _httpClient;
-        private readonly AppSettingsUI _appSettingsUI;
+        private readonly AppSettingsWEB _appSettingsUI;
         
-        public BaseHttpService(HttpClient httpClient, IOptions<AppSettingsUI> appSettingsUI)
+        public BaseHttpService(HttpClient httpClient, IOptions<AppSettingsWEB> appSettingsUI)
         {
             _httpClient = httpClient;
             _appSettingsUI = appSettingsUI.Value;
