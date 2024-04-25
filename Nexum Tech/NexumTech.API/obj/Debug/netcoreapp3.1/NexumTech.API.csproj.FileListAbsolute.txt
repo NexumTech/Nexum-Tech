@@ -1,0 +1,7 @@
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.API\obj\Debug\netcoreapp3.1\NexumTech.API.csproj.AssemblyReference.cache
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.API\obj\Debug\netcoreapp3.1\NexumTech.API.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.API\obj\Debug\netcoreapp3.1\NexumTech.API.AssemblyInfoInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.API\obj\Debug\netcoreapp3.1\NexumTech.API.AssemblyInfo.cs
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.API\obj\Debug\netcoreapp3.1\NexumTech.API.csproj.CoreCompileInputs.cache
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.API\obj\Debug\netcoreapp3.1\NexumTech.API.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.API\obj\Debug\netcoreapp3.1\NexumTech.API.sourcelink.json
