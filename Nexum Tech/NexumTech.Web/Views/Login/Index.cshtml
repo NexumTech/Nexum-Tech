@@ -1,0 +1,85 @@
+﻿<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+<link href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
+<link href="~/lib/datatables/datatables.css" rel="stylesheet" />
+
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/sweetalert2/sweetalert2.all.js"></script>
+<script type="module" src="~/lib/chart.js/chart.umd.js"></script>
+<script src="~/lib/datatables/datatables.js"></script>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="@Url.Content("~/images/n_shortcut_icon.png")" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+    <title>NexumTech | Login </title>
+</head>
+<body data-bs-theme="light">
+    <!----------------------- Main Container -------------------------->
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <!----------------------- Login Container -------------------------->
+        <div class="row border rounded-5 p-3 shadow box-area">
+            <!--------------------------- Left Box ----------------------------->
+            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #103cbe;">
+                <div class="featured-image mb-3">
+                    <img src="@Url.Content("~/images/n_white.png")" class="img-fluid" style="width: 250px;">
+                </div>
+            </div>
+            <!------------------------ Right Box ------------------------------>
+
+            <div class="col-md-6 right-box">
+                <div class="row align-items-center">
+                    <div class="header-text mt-3">
+                        <h2>Login</h2>
+                        <p>We are happy to have you back.</p>
+                    </div>
+
+                    <form novalidate id="meuFormulario" action="Login/Login" method="post">
+                        <div class="form-floating mb-3">
+                            <input type="email" id="email" name="email" class="form-control form-control-lg bg-light fs-6 p-12" placeholder="Email" required>
+                            <label for="email" class="form-label">Email</label>
+                            <div class="invalid-feedback">Invalid email</div>
+                            <div class="valid-feedback">Correct email</div>
+                        </div>
+
+                        <div class="form-floating mb-3">
+                            <input type="password" id="password" name="password" class="form-control bg-light" placeholder="Place password here">
+                            <label for="password" class="form-label">Password</label>
+                        </div>
+
+                        <div class="input-group mb-3">
+                            <button class="btn btn-lg btn-primary w-100 fs-6" id="btnLogin" type="submit">Login</button>
+                        </div>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-lg btn-outline-secondary w-100 fs-6" id="btnSignUp" type="button" onclick="location.href='/Signup/Index';">Sign Up</button>
+                        </div>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-lg btn-light w-100 fs-6"><img src="@Url.Content("~/images/google.png")" style="width:20px" class="me-2"><small>Sign In with Google</small></button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+
+<script>
+    var form = "#meuFormulario";
+    var btnSignUp = "#btnSignUp";
+
+    $(document).ready(function () {
+        var form = $(form);
+
+        form.submit(function (event) {
+            if (!form[0].checkValidity()) // Ou form.get(0).checkValidity()
+                event.preventDefault();
+
+            form.addClass("was-validated");
+        });
+    });
+</script>
