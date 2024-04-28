@@ -3,7 +3,6 @@ using Microsoft.Extensions.Options;
 using NexumTech.Infra.API;
 using NexumTech.Infra.Models;
 using NexumTech.Infra.WEB;
-using System.Diagnostics;
 
 namespace NexumTech.Web.Controllers
 {
