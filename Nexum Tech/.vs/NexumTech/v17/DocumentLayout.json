@@ -1,12 +1,37 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|solutionrelative:nexumtech.web\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
       "VerticalTabListWidth": 256,
-      "DocumentGroups": []
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 0,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "NexumTech.Web\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Views\\Shared\\_Layout.cshtml*",
+              "RelativeToolTip": "NexumTech.Web\\Views\\Shared\\_Layout.cshtml*",
+              "ViewState": "AQIAACsAAAAAAAAAAAAYwEQAAABAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-04-29T03:40:56.646Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
     }
   ]
 }

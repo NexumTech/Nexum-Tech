@@ -1,9 +1,15 @@
-﻿<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+﻿@{
+    Layout = null;
+}
+
+<link href="~/css/LoginRegister.css" rel="stylesheet" />
+<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
 <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
 <link href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
 <link href="~/lib/datatables/datatables.css" rel="stylesheet" />
 
 <script src="~/lib/jquery/jquery.js"></script>
+<script src="~/js/ThemeSwitcher.js"></script>
 <script src="~/lib/sweetalert2/sweetalert2.all.js"></script>
 <script type="module" src="~/lib/chart.js/chart.umd.js"></script>
 <script src="~/lib/datatables/datatables.js"></script>
@@ -25,7 +31,7 @@
             <!--------------------------- Left Box ----------------------------->
             <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #103cbe;">
                 <div class="featured-image mb-3">
-                    <img src="@Url.Content("~/images/n_white.png")" class="img-fluid" style="width: 250px;">
+                    <img src="@Url.Content("~/images/n_white.png")" class="img-fluid">
                 </div>
             </div>
             <!------------------------ Right Box ------------------------------>
@@ -33,41 +39,34 @@
             <div class="col-md-6 right-box">
                 <div class="row align-items-center">
                     <div class="header-text mt-3">
-                        <h2>SignUp</h2>
-                        <p>Welcome to NexumTech</p>
+                        <h2>Sign up</h2>
+                        <p>Just fill in the following fields to register</p>
                     </div>
 
                     <form novalidate id="meuFormulario" action="SignUp/SignUp" method="post">
                         <div class="form-floating mb-3">
-                            <input type="text" id="name" name="name" class="form-control form-control-lg bg-light fs-6 p-12" placeholder="Full name" required>
-                            <label for="name" class="form-label">Full name</label>
-                            <div class="invalid-feedback">Invalid name</div>
-                            <div class="valid-feedback">Correct name</div>
-                        </div>
-
-                        <div class="form-floating mb-3">
-                            <input type="text" id="username" name="username" class="form-control form-control-lg bg-light fs-6 p-12" placeholder="Username" required>
+                            <input type="text" id="username" name="username" class="form-control form-control-lg fs-6 p-12" placeholder="Username" required>
                             <label for="name" class="form-label">Username</label>
                             <div class="invalid-feedback">Invalid username</div>
                             <div class="valid-feedback">Correct username</div>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="email" id="email" name="email" class="form-control form-control-lg bg-light fs-6 p-12" placeholder="Email" required>
+                            <input type="email" id="email" name="email" class="form-control form-control-lg fs-6 p-12" placeholder="Email" required>
                             <label for="email" class="form-label">Email</label>
                             <div class="invalid-feedback">Invalid email</div>
                             <div class="valid-feedback">Correct email</div>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="password" id="password" name="password" class="form-control bg-light" placeholder="Place password here">
+                            <input type="password" id="password" name="password" class="form-control" placeholder="Place password here">
                             <label for="password" class="form-label">Password</label>
                             <div class="invalid-feedback">Invalid password</div>
                             <div class="valid-feedback">Correct password</div>
                         </div>
 
-                        <div class="input-group mb-0 mt-4" style="text-align: end;">
-                            <button class="btn btn-lg btn-primary w-100 fs-4" id="btnSignUp" type="submit">SignUp</button>
+                        <div class="input-group mb-3">
+                            <button class="btn btn-lg btn-primary w-100 fs-6" id="btnSignUp" type="submit">Sign up</button>
                         </div>
                     </form>
                 </div>

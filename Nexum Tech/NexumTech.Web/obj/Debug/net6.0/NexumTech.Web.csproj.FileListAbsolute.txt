@@ -98,7 +98,6 @@ C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.RazorAssemblyInfo.cache
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.RazorAssemblyInfo.cs
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.sourcelink.json
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\bin\Debug\net6.0\appsettings.Development.json
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\bin\Debug\net6.0\appsettings.json
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\bin\Debug\net6.0\NexumTech.Web.staticwebassets.runtime.json
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\bin\Debug\net6.0\NexumTech.Web.exe
@@ -127,9 +126,7 @@ C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildMultiTargeting.NexumTech.Web.props
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\staticwebassets\msbuild.buildTransitive.NexumTech.Web.props
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\staticwebassets.pack.json
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\scopedcss\bundle\NexumTech.Web.styles.css
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\scopedcss\projectbundle\NexumTech.Web.bundle.scp.css
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTec.2EE21746.Up2Date
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.dll
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\refint\NexumTech.Web.dll
@@ -138,3 +135,4 @@ C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\ref\NexumTech.Web.dll
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\bin\Debug\net6.0\Microsoft.Extensions.DependencyInjection.Abstractions.dll
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\bin\Debug\net6.0\Microsoft.Extensions.Options.dll
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\bin\Debug\net6.0\libman.json
