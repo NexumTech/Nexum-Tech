@@ -10,5 +10,6 @@ namespace NexumTech.Infra.WEB
     {
         public string ApiBaseURL { get; set; }
         public string EndpointTeste { get; set; }
+        public string LoginURL { get; set; }
     }
 }

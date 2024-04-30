@@ -30,12 +30,14 @@ namespace NexumTech.API
             #region Domain Dependency Injection
 
             services.AddScoped<ITest, TestService>();
+            services.AddScoped<ILogin, LoginService>();
 
             #endregion
 
             #region DAO Dependency Injection
 
             services.AddScoped<ITestDAO, TestDAO>();
+            services.AddScoped<ILoginDAO, LoginDAO>();
 
             #endregion
 
