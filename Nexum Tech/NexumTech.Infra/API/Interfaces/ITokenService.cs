@@ -1,6 +1,9 @@
-﻿namespace NexumTech.Infra.API.Interfaces
+﻿using NexumTech.Infra.Models;
+
+namespace NexumTech.Infra.API.Interfaces
 {
-    internal interface ITokenService
+    public interface ITokenService
     {
+        public string GenerateToken(UserViewModel user);
     }
 }

@@ -4,6 +4,7 @@ using System.Text;
 using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Security.Claims;
+using NexumTech.Infra.Models;
 
 namespace NexumTech.Infra.API
 {
@@ -15,7 +16,7 @@ namespace NexumTech.Infra.API
             _appSettingsAPI = appSettingsAPI.Value;
         }
 
-        public string GenerateToken(dynamic user)
+        public string GenerateToken(UserViewModel user)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettingsAPI.JWT.Key);
@@ -24,10 +25,10 @@ namespace NexumTech.Infra.API
             {
                 Subject = new ClaimsIdentity(new Claim[]
                 {
-                    new Claim(ClaimTypes.Name, user.Username.ToString()),
+                    new Claim(ClaimTypes.Email, user.Email.ToString()),
                     new Claim(ClaimTypes.Role, user.Role.ToString())
                 }),
-                Expires = DateTime.UtcNow.AddHours(1),
+                Expires = DateTime.UtcNow.AddSeconds(10),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
             };
 

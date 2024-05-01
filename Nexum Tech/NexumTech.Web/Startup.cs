@@ -1,5 +1,6 @@
 ﻿using NexumTech.Infra.API;
 using NexumTech.Infra.WEB;
+using NexumTech.Web.Controllers.Filters;
 
 namespace NexumTech.Web
 {

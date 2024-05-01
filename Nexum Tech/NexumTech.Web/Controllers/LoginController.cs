@@ -17,33 +17,37 @@ namespace NexumTech.Web.Controllers
             _appSettingsUI = appSettingsUI.Value;
         }
 
-        public IActionResult Index()
+        public IActionResult Index(int requestType = 0)
         {
+            if (requestType == 1) TempData["AuthenticationMessage"] = true;
+
+            var currentTheme = Request.Cookies["CurrentTheme"];
+            ViewBag.CurrentTheme = currentTheme;
+
             return View();
         }
 
         [HttpPost]
-        public async Task<IActionResult> Login(string email, string password)
+        public async Task<ActionResult> Login(LoginViewModel loginViewModel)
         {
             try
             {
-                string userValidated = await _httpService.CallMethod<string>(_appSettingsUI.LoginURL, HttpMethod.Get, new LoginViewModel { Email = email, Password = password });
-                if (int.TryParse(userValidated, out int validated) && validated >= 1)
+                var token =  await _httpService.CallMethod<string>(_appSettingsUI.AuthenticateURL, HttpMethod.Get, null, loginViewModel);
+
+                var cookieOptions = new CookieOptions
                 {
-                    ViewBag.userValidated = true;
-                    return RedirectToAction("Index", "Home");
-                }
-                else
-                {
-                    ViewBag.userValidated = false;
-                    return RedirectToAction("Index", "Login");
-                }
+                    HttpOnly = true,
+                    SameSite = SameSiteMode.Strict,
+                    Expires = DateTimeOffset.UtcNow.AddMinutes(30)
+                };
+
+                Response.Cookies.Append("jwt", token, cookieOptions);
+
+                return Ok();
             }
             catch (Exception ex)
             {
-                ViewBag.userValidated = false;
-                ViewBag.TestResponse = "Erro ao fazer a solicitação para o endpoint de teste da API: " + ex.Message;
-                return RedirectToAction("Index", "Login");
+                return BadRequest(ex.Message);
             }
         }
     }

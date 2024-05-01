@@ -1,5 +1,7 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Nexum_Tech.Domain.Interfaces;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
+using NexumTech.Domain.Interfaces;
+using NexumTech.Infra.API.Interfaces;
 using NexumTech.Infra.Models;
 
 namespace NexumTech.API.Controllers
@@ -8,17 +10,31 @@ namespace NexumTech.API.Controllers
     [Route("[controller]/[action]")]
     public class LoginController : ControllerBase
     {
-        private readonly ILogin _loginService;
+        private readonly ITokenService _tokenService;
+        private readonly IUserService _userService;
 
-        public LoginController(ILogin loginService)
+        public LoginController(IUserService userService, ITokenService tokenService)
         {
-            _loginService = loginService;
+            _userService = userService;
+            _tokenService = tokenService;
         }
 
         [HttpGet]
-        public async Task<Object> Authentication(LoginViewModel loginViewModel)
+        [AllowAnonymous]
+        public async Task<ActionResult<string>> Authenticate(LoginViewModel loginViewModel)
         {
-            return _loginService.Authentication(loginViewModel);
+            try
+            {
+                var user = await _userService.GetUserInfo(loginViewModel);
+
+                var token = _tokenService.GenerateToken(user);
+
+                return token;
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

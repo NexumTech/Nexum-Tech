@@ -2,26 +2,32 @@
 <html lang="en">
 <head>
     <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Nexum</title>
-
-    <link href="~/css/Layout.css" rel="stylesheet" />
+    <link href="~/css/_Layout.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
-    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+    <title>Nexum</title>
 </head>
 
 <script src="~/lib/popper.js/umd/popper.js"></script>
 <script src="~/lib/bootstrap/js/bootstrap.js"></script>
 <script src="~/lib/jquery/jquery.js"></script>
 <script src="~/js/ThemeSwitcher.js"></script>
+<script src="~/js/_Layout.js"></script>
 
 <body>
+    <div class="spinner-wrapper" id="loadingSpinner" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
     <header>
         <nav class="navbar navbar-light">
             <div class="container-fluid justify-content-start">
                 <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
-                    <i class="fa-solid fa-bars"></i>
+                    <i class="fa-solid fa-bars fa-lg"></i>
                 </button>
             </div>
         </nav>
@@ -33,27 +39,45 @@
             <span class="fs-4">Nexum</span>
         </button>
         <hr>
-        <ul class="nav nav-pills flex-column mb-auto">
-            <li class="nav-item mb-2">
-                <button class="btn w-100 rounded text-start" type="button">
+        <ul class="nav nav-pills flex-column mb-auto mt-3">
+            <li class="nav-item mb-4">
+                <a href="/Home" class="btn w-100 rounded text-start fs-5">
                     <i class="fa-solid fa-house-chimney"></i>
                     Home
-                </button>
+                </a>
             </li>
-            <li class="nav-item mb-2">
-                <button class="btn w-100 rounded text-start" type="button">
+            <li class="nav-item mb-4">
+                <a href="/Home" class="btn w-100 rounded text-start fs-5">
                     <i class="fa-solid fa-chart-line"></i>
-                    Dashboard
-                </button>
+                    Real Time Monitoring 
+                </a>
+            </li>
+            <li class="nav-item mb-4">
+                <a href="/Home" class="btn w-100 rounded text-start fs-5">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    History
+                </a>
+            </li>
+            <li class="nav-item mb-4">
+                <a href="/Home" class="btn w-100 rounded text-start fs-5">
+                    <i class="fa-solid fa-building"></i>
+                    Companies
+                </a>
+            </li>
+            <li class="nav-item mb-4">
+                <a href="/Home" class="btn w-100 rounded text-start fs-5">
+                    <i class="fa-solid fa-people-group"></i>
+                    Users
+                </a>
             </li>
         </ul>
         <hr>
         <div class="dropdown">
-            <button class="btn d-flex align-items-center text-decoration-none dropdown-toggle" type="button" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://via.placeholder.com/150x150/3b2d50/bdbac1?text=DAVIDSONBPE" alt="" width="32" height="32" class="rounded-circle me-2">
-                <strong>mdo</strong>
+            <button class="btn d-flex align-items-center text-decoration-none fs-6 dropdown-toggle" type="button" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="https://via.placeholder.com/150x150/3b2d50/bdbac1?text=DAVIDSONBPE" width="32" height="32" class="rounded-circle me-2">
+                <strong>User</strong>
             </button>
-            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2">
+            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser">
                 <li>
                     <div class="form-check form-switch mx-3">
                         <input class="form-check-input"

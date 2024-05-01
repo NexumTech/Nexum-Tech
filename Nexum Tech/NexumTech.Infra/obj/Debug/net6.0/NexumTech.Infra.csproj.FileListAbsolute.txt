@@ -22,9 +22,16 @@ C:\Users\081220041\Downloads\Nexum-Tech-develop\Nexum-Tech-develop\Nexum Tech\Ne
 C:\Users\081220041\Downloads\Nexum-Tech-develop\Nexum-Tech-develop\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\refint\NexumTech.Infra.dll
 C:\Users\081220041\Downloads\Nexum-Tech-develop\Nexum-Tech-develop\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.pdb
 C:\Users\081220041\Downloads\Nexum-Tech-develop\Nexum-Tech-develop\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\ref\NexumTech.Infra.dll
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\bin\Debug\net6.0\NexumTech.Infra.deps.json
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\bin\Debug\net6.0\NexumTech.Infra.dll
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\bin\Debug\net6.0\NexumTech.Infra.pdb
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.csproj.AssemblyReference.cache
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.GeneratedMSBuildEditorConfig.editorconfig
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.AssemblyInfoInputs.cache
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.AssemblyInfo.cs
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.csproj.CoreCompileInputs.cache
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.sourcelink.json
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.dll
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\refint\NexumTech.Infra.dll
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.pdb
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\ref\NexumTech.Infra.dll

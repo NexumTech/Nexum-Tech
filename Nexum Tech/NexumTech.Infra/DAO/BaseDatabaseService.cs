@@ -2,7 +2,7 @@
 using System.Data.SqlClient;
 using System.Data;
 
-namespace Nexum_Tech.Infra.DAO
+namespace NexumTech.Infra.DAO
 {
     public class BaseDatabaseService
     {
@@ -10,7 +10,7 @@ namespace Nexum_Tech.Infra.DAO
 
         public BaseDatabaseService(IConfiguration configuration)
         {
-            _connectionString = configuration.GetConnectionString("BrazConnection");
+            _connectionString = configuration.GetConnectionString("DefaultConnection");
         }
 
         public IDbConnection GetConnection()
