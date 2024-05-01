@@ -1,5 +1,6 @@
 ﻿using NexumTech.Infra.API;
 using NexumTech.Infra.WEB;
+using NexumTech.Web.Controllers.Filters;
 
 namespace NexumTech.Web
 {
@@ -59,7 +60,7 @@ namespace NexumTech.Web
             {
                 endpoints.MapControllerRoute(
                     name: "default",
-                    pattern: "{controller=Home}/{action=Index}/{id?}");
+                    pattern: "{controller=Login}/{action=Index}/{id?}");
             });
         }
     }

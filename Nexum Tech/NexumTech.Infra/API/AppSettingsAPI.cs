@@ -1,13 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NexumTech.Infra.API
+﻿namespace NexumTech.Infra.API
 {
     public class AppSettingsAPI
     {
-        
+        public JWT JWT { get; set; }
+    }
+
+    public class JWT
+    {
+        public string Key { get; set; }
     }
 }

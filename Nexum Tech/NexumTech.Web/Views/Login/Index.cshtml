@@ -1,0 +1,102 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="@Url.Content("~/images/n_shortcut_icon.png")" crossorigin="anonymous">
+    <link href="~/css/LoginRegister.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    @*  <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/lib/datatables/datatables.css" rel="stylesheet" /> *@
+
+    @if (ViewBag.CurrentTheme == "dark")
+    {
+        <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2-dark.css" rel="stylesheet" />
+    }
+    else
+    {
+        <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
+    }
+
+    <title>Nexum</title>
+</head>
+
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/bootstrap/js/bootstrap.js"></script>
+<script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
+<script src="~/js/ThemeSwitcher.js"></script>
+<script src="~/js/Login.js"></script>
+@* <script type="module" src="~/lib/chart.js/chart.umd.js"></script>
+<script src="~/lib/datatables/datatables.js"></script> *@
+<script src="~/lib/sweetalert2/sweetalert2.js"></script>
+
+<body data-bs-theme="light">
+    <div class="spinner-wrapper" id="loadingSpinner" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        <div class="row border rounded-5 p-3 shadow box-area">
+            <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #103cbe;">
+                <div class="featured-image">
+                    <img src="@Url.Content("~/images/n_white.png")" class="img-fluid">
+                </div>
+            </div>
+
+            <div class="col-md-6 right-box">
+                <div class="row align-items-center">
+                    <div class="header-text">
+                        @if (TempData["AuthenticationMessage"] != null)
+                        {
+                            <div id="sessionAlert" class="alert alert-danger fade show" role="alert">
+                                <strong>You must be authenticated again!</strong>
+                            </div>
+                        }
+                        <h2>Login</h2>
+                        <p>We are happy to have you back.</p>
+                    </div>
+
+                    <form novalidate id="loginForm">
+                        <div class="form-floating mb-3">
+                            <input type="email" id="txtEmail" class="form-control fs-6 p-12" placeholder="Email" required>
+                            <label for="email" class="form-label">Email</label>
+                            <div class="invalid-feedback">Invalid e-mail</div>
+                        </div>
+
+                        <div class="form-floating mb-1">
+                            <input type="password" id="txtPassword" class="form-control fs-6 p-12" placeholder="Password" required>
+                            <label for="password" class="form-label">Password</label>
+                            <div class="invalid-feedback">Invalid password</div>
+                        </div>
+
+                        <div class="input-group mb-4 d-flex justify-content-between">
+                            <div class="forgot ms-auto">
+                                <small><a href="#">Forgot Password?</a></small>
+                            </div>
+                        </div>
+                    </form>
+                    <div class="input-group mb-3">
+                        <button class="btn btn-lg btn-primary w-100 fs-6" id="btnLogin">Sign in</button>
+                    </div>
+
+                    <div class="input-group mb-2">
+                        <button class="btn btn-lg btn-light w-100 fs-6">
+                            <img src="@Url.Content("~/images/google.png")" style="width:20px" class="me-2">
+                            <small>Sign in with Google</small>
+                        </button>
+                    </div>
+                    <div class="row">
+                        <small>Don't have account? <a href="/Signup/Index">Sign up</a></small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

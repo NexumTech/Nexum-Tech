@@ -1,13 +1,14 @@
 ﻿
+using System.Net.Http.Headers;
 using System.Text;
-using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
 using Newtonsoft.Json;
+using NexumTech.Infra.API.Interfaces;
 using NexumTech.Infra.WEB;
 
 namespace NexumTech.Infra.API
 {
-    public class BaseHttpService
+    public class BaseHttpService : IBaseHttpService
     {
         private readonly HttpClient _httpClient;
         private readonly AppSettingsWEB _appSettingsUI;
@@ -18,13 +19,16 @@ namespace NexumTech.Infra.API
             _appSettingsUI = appSettingsUI.Value;
         }
 
-        public async Task<T> CallMethod<T>(string url, HttpMethod method, object data = null)
+        public async Task<T> CallMethod<T>(string url, HttpMethod method, string token = null, object data = null)
         {
             try
             {
                 string completeURL = String.Concat(_appSettingsUI.ApiBaseURL, url.Trim());
 
                 HttpRequestMessage request = new HttpRequestMessage(method, completeURL);
+
+                if (token != null) 
+                    request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);
 
                 if (data != null)
                 {
@@ -37,11 +41,17 @@ namespace NexumTech.Infra.API
                 if (response.IsSuccessStatusCode)
                 {
                     string responseBody = await response.Content.ReadAsStringAsync();
+
+                    if (typeof(T) == typeof(string))
+                    {
+                        return (T)(object)responseBody;
+                    }
+
                     return JsonConvert.DeserializeObject<T>(responseBody);
                 }
                 else
                 {
-                    throw new Exception($"API Error: {response.StatusCode}");
+                    throw new Exception(response.Content.ReadAsStringAsync().Result);
                 }
             }
             catch (HttpRequestException ex)

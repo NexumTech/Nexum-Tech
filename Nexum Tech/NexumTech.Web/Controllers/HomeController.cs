@@ -1,12 +1,19 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using NexumTech.Infra.API;
 using NexumTech.Infra.Models;
 using NexumTech.Infra.WEB;
-using System.Diagnostics;
+using Microsoft.AspNetCore.Mvc.Filters;
+using Microsoft.AspNetCore.Http;
+using Microsoft.AspNetCore.Routing;
+using NexumTech.Web.Controllers.Filters;
 
 namespace NexumTech.Web.Controllers
 {
+    [JwtAuthentication]
     public class HomeController : Controller
     {
         private readonly AppSettingsWEB _appSettingsUI;
@@ -20,14 +27,8 @@ namespace NexumTech.Web.Controllers
 
         public IActionResult Index()
         {
-            return View();
-        }
+            var token = Request.Cookies["jwt"];
 
-        public async Task<IActionResult> Privacy()
-        {
-            var parameters = new TestViewModel { Name = "Testing" };
-            var data = await _httpService.CallMethod<Object>(_appSettingsUI.EndpointTeste, HttpMethod.Get, parameters);
-            ViewBag.Teste = data;
             return View();
         }
     }

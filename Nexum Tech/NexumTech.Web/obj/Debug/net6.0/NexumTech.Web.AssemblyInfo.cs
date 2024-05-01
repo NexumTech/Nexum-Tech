@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NexumTech.Web")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+bf0cbccddfbf9e273efde17237fdf2972eecd6bb")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+680984bb161d07993198facdfcc3984efb3843f6")]
 [assembly: System.Reflection.AssemblyProductAttribute("NexumTech.Web")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NexumTech.Web")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

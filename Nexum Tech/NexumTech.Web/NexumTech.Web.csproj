@@ -7,8 +7,20 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="wwwroot\css\ToggleSwitch.css" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\NexumTech.Domain\NexumTech.Domain.csproj" />
     <ProjectReference Include="..\NexumTech.Infra\NexumTech.Infra.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\images\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.JwtBearer" Version="6.0.29" />
   </ItemGroup>
 
 </Project>
