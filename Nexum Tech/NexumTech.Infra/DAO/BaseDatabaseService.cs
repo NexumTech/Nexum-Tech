@@ -10,7 +10,7 @@ namespace Nexum_Tech.Infra.DAO
 
         public BaseDatabaseService(IConfiguration configuration)
         {
-            _connectionString = configuration.GetConnectionString("DefaultConnection");
+            _connectionString = configuration.GetConnectionString("BrazConnection");
         }
 
         public IDbConnection GetConnection()
