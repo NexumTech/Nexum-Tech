@@ -1,7 +1,14 @@
-﻿using Nexum_Tech.Domain.Interfaces;
-using Nexum_Tech.Infra.DAO.Interfaces;
-using Nexum_Tech.Infra.DAO;
+﻿using NexumTech.Domain.Interfaces;
+using NexumTech.Infra.DAO.Interfaces;
+using NexumTech.Infra.DAO;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
 using NexumTech.Domain.Services;
+using NexumTech.Infra.API;
+using NexumTech.Infra.API.Interfaces;
+using NexumTech.Infra.WEB;
+using Microsoft.AspNetCore.Identity;
 
 namespace NexumTech.API
 {
@@ -27,15 +34,20 @@ namespace NexumTech.API
 
             services.AddHttpClient();
 
+            services.Configure<AppSettingsAPI>(Configuration);
+
+            services.AddScoped<AppSettingsAPI>();
+
             #region Domain Dependency Injection
 
-            services.AddScoped<ITest, TestService>();
+            services.AddScoped<IUserService, UserService>();
 
             #endregion
 
             #region DAO Dependency Injection
 
-            services.AddScoped<ITestDAO, TestDAO>();
+            services.AddScoped<IUserDAO, UserDAO>();
+            services.AddScoped<ITokenService, TokenService>();
 
             #endregion
 
@@ -46,6 +58,23 @@ namespace NexumTech.API
             #endregion
 
             services.AddControllers();
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+            {
+                x.RequireHttpsMetadata = false;
+                x.SaveToken = true;
+                x.TokenValidationParameters = new TokenValidationParameters
+                {
+                    ValidateIssuerSigningKey = true,
+                    IssuerSigningKey = new SymmetricSecurityKey(Encoding.ASCII.GetBytes(Configuration["JWT:Key"])),
+                    ValidateIssuer = false,
+                    ValidateAudience = false,
+
+                };
+            });
             services.AddEndpointsApiExplorer();
             services.AddSwaggerGen();
         }
@@ -61,6 +90,8 @@ namespace NexumTech.API
             app.UseCors("AllowSpecificOrigins");
 
             app.UseHttpsRedirection();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

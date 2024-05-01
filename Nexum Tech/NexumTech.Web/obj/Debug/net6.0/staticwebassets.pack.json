@@ -5,12 +5,12 @@
       "PackagePath": "staticwebassets\\css\\Home.css"
     },
     {
-      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\css\\Layout.css",
-      "PackagePath": "staticwebassets\\css\\Layout.css"
-    },
-    {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\css\\LoginRegister.css",
       "PackagePath": "staticwebassets\\css\\LoginRegister.css"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\css\\_Layout.css",
+      "PackagePath": "staticwebassets\\css\\_Layout.css"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\favicon.ico",
@@ -49,8 +49,20 @@
       "PackagePath": "staticwebassets\\images\\nexum_white.png"
     },
     {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\Login.js",
+      "PackagePath": "staticwebassets\\js\\Login.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\Signup.js",
+      "PackagePath": "staticwebassets\\js\\Signup.js"
+    },
+    {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\ThemeSwitcher.js",
       "PackagePath": "staticwebassets\\js\\ThemeSwitcher.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\_Layout.js",
+      "PackagePath": "staticwebassets\\js\\_Layout.js"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\bootstrap\\LICENSE",
@@ -1691,6 +1703,10 @@
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\popper.js\\umd\\popper.min.js.map",
       "PackagePath": "staticwebassets\\lib\\popper.js\\umd\\popper.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\sweetalert2\\sweetalert2-dark.css",
+      "PackagePath": "staticwebassets\\lib\\sweetalert2\\sweetalert2-dark.css"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\sweetalert2\\sweetalert2.all.js",

@@ -1,14 +1,9 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace NexumTech.Infra.WEB
+﻿namespace NexumTech.Infra.WEB
 {
     public class AppSettingsWEB
     {
         public string ApiBaseURL { get; set; }
-        public string EndpointTeste { get; set; }
+        public string AuthenticateURL { get; set; }
+        public string SignupURL { get; set; }
     }
 }

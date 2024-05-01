@@ -1,26 +1,42 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using NexumTech.Infra.API;
+using NexumTech.Infra.Models;
+using NexumTech.Infra.WEB;
 
 namespace NexumTech.Web.Controllers
 {
-    public class SignUpController : Controller
+    public class SignupController : Controller
     {
+        private readonly BaseHttpService _httpService;
+        private readonly AppSettingsWEB _appSettingsUI;
+
+        public SignupController(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI)
+        {
+            _httpService = httpService;
+            _appSettingsUI = appSettingsUI.Value;
+        }
+
         public IActionResult Index()
         {
+            var currentTheme = Request.Cookies["CurrentTheme"];
+            ViewBag.CurrentTheme = currentTheme;
+
             return View();
         }
 
-        public IActionResult SignUp(string name, string username, string email, string password)
+        [HttpPost]
+        public async Task<ActionResult> Signup(SignupViewModel signupViewModel)
         {
-            //próximo passo: BD
-            if (name != null && username != null && email != null && password != null)
+            try
             {
-                //HttpContext.Session.SetString("Logado", "true");
-                return RedirectToAction("Index", "Login");
+                await _httpService.CallMethod<ActionResult>(_appSettingsUI.SignupURL, HttpMethod.Post, null, signupViewModel);
+
+                return Ok($"Welcome to the team, {signupViewModel.Username}");
             }
-            else
+            catch (Exception ex)
             {
-                ViewBag.ErrorMessage = "Usuário não encontrado";
-                return RedirectToAction("Index", "SignUp");
+                return BadRequest(ex.Message);
             }
         }
     }
