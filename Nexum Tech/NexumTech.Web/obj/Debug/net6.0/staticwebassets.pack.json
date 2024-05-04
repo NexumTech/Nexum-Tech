@@ -25,8 +25,8 @@
       "PackagePath": "staticwebassets\\images\\ShortLogo.png"
     },
     {
-      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\fundo.jpg",
-      "PackagePath": "staticwebassets\\images\\fundo.jpg"
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\brazil.png",
+      "PackagePath": "staticwebassets\\images\\brazil.png"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\google.png",
@@ -47,6 +47,14 @@
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\nexum_white.png",
       "PackagePath": "staticwebassets\\images\\nexum_white.png"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\spain.png",
+      "PackagePath": "staticwebassets\\images\\spain.png"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\unitedstates.png",
+      "PackagePath": "staticwebassets\\images\\unitedstates.png"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\Login.js",
@@ -1103,6 +1111,38 @@
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jquery\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\jquery.slim.min.map"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jwt-decode\\LICENSE",
+      "PackagePath": "staticwebassets\\lib\\jwt-decode"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jwt-decode\\README.md",
+      "PackagePath": "staticwebassets\\lib\\jwt-decode\\README.md"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jwt-decode\\build\\cjs\\index.d.ts",
+      "PackagePath": "staticwebassets\\lib\\jwt-decode\\build\\cjs\\index.d.ts"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jwt-decode\\build\\cjs\\index.js",
+      "PackagePath": "staticwebassets\\lib\\jwt-decode\\build\\cjs\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jwt-decode\\build\\cjs\\package.json",
+      "PackagePath": "staticwebassets\\lib\\jwt-decode\\build\\cjs\\package.json"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jwt-decode\\build\\esm\\index.d.ts",
+      "PackagePath": "staticwebassets\\lib\\jwt-decode\\build\\esm\\index.d.ts"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jwt-decode\\build\\esm\\index.js",
+      "PackagePath": "staticwebassets\\lib\\jwt-decode\\build\\esm\\index.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jwt-decode\\package.json",
+      "PackagePath": "staticwebassets\\lib\\jwt-decode\\package.json"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\popper.js\\cjs\\enums.js",

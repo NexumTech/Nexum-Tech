@@ -22,6 +22,15 @@ namespace NexumTech.Domain.Services
             return user;
         }
 
+        public async Task<UserViewModel> GetUserInfo(string email)
+        {
+            var user = await _userDAO.GetUserInfo(email);
+
+            if (user == null) throw new Exception("User not found!");
+
+            return user;
+        }
+
         public async Task<bool> CreateUser(SignupViewModel signupViewModel)
         {
 

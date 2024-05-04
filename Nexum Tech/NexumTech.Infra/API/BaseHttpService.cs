@@ -19,13 +19,21 @@ namespace NexumTech.Infra.API
             _appSettingsUI = appSettingsUI.Value;
         }
 
-        public async Task<T> CallMethod<T>(string url, HttpMethod method, string token = null, object data = null)
+        public async Task<T> CallMethod<T>(string url, HttpMethod method, string token = null, object data = null, Dictionary<string, string> headers = null)
         {
             try
             {
                 string completeURL = String.Concat(_appSettingsUI.ApiBaseURL, url.Trim());
 
                 HttpRequestMessage request = new HttpRequestMessage(method, completeURL);
+
+                if (headers != null)
+                {
+                    foreach (var header in headers)
+                    {
+                        request.Headers.Add(header.Key, header.Value);
+                    }
+                }
 
                 if (token != null) 
                     request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);

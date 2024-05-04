@@ -38,6 +38,37 @@ namespace NexumTech.Infra.DAO
             }
         }
 
+        public async Task<UserViewModel> GetUserInfo(string email)
+        {
+            try
+            {
+                using (var connection = _baseDatabaseService.GetConnection())
+                {
+                    connection.Open();
+
+                    string sql = @"SELECT 
+                                        Id,
+                                        Email,
+                                        Username,
+                                        Photo,
+                                        Role
+                                   FROM tb_user 
+                                   WHERE Email = @Email";
+
+                    var user = await connection.QueryFirstOrDefaultAsync<UserViewModel>(sql, new
+                    {
+                        @Email = email,
+                    });
+
+                    return user;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public async Task<bool> CreateUser(SignupViewModel signupViewModel)
         {
             try

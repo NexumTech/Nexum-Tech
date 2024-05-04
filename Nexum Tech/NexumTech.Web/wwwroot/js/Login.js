@@ -1,3 +1,36 @@
+window.onload = function () {
+    google.accounts.id.initialize({
+        client_id: "95046561902-b8j207ue9o4g58fpvqdmr9ergd4a24mo.apps.googleusercontent.com",
+        ux_mode: "popup",
+        callback: AuthenticateUserWithGoogle,
+    });
+
+    const createFakeGoogleWrapper = () => {
+        const $googleLoginWrapper = $("<div>").addClass("custom-google-button").hide();
+        $("body").append($googleLoginWrapper);
+
+        google.accounts.id.renderButton($googleLoginWrapper[0], {
+            type: "icon",
+            width: "200",
+        });
+
+        const $googleLoginWrapperButton =
+            $googleLoginWrapper.find("div[role=button]");
+
+        return {
+            click: () => {
+                $googleLoginWrapperButton.click();
+            },
+        };
+    };
+
+    const googleButtonWrapper = createFakeGoogleWrapper();
+
+    window.handleGoogleLogin = () => {
+        googleButtonWrapper.click();
+    };
+};
+
 $(document).ready(function () {
     setTimeout(function () {
         $("#sessionAlert").alert('close');
@@ -12,6 +45,10 @@ $(document).ready(function () {
         }
     });
 
+    $('#btnGoogleLogin').click(function (event) {
+        handleGoogleLogin();
+    });
+
     $(document).ajaxStart(function () {
         $('#loadingSpinner').show();
     });
@@ -20,6 +57,12 @@ $(document).ready(function () {
         $('#loadingSpinner').hide();
     });
 });
+
+function AuthenticateUserWithGoogle(response) {
+    const data = jwtDecode(response.credential);
+
+    console.log(data);
+}
 
 function AuthenticateUser() {
     var email = $('#txtEmail').val();
@@ -32,7 +75,7 @@ function AuthenticateUser() {
             email: email,
             password: password,
         },
-        success: function(response) {
+        success: function (response) {
             window.location.href = '/Home';
         },
         error: function (xhr, status, error) {

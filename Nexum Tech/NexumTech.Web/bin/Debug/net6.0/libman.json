@@ -5,6 +5,11 @@
     {
       "library": "popper.js@2.11.8",
       "destination": "wwwroot/lib/popper.js/"
+    },
+    {
+      "provider": "unpkg",
+      "library": "jwt-decode@4.0.0",
+      "destination": "wwwroot/lib/jwt-decode/"
     }
   ]
 }

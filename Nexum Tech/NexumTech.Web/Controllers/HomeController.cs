@@ -1,14 +1,8 @@
-﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
-using Microsoft.AspNetCore.Authorization;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using NexumTech.Infra.API;
 using NexumTech.Infra.Models;
 using NexumTech.Infra.WEB;
-using Microsoft.AspNetCore.Mvc.Filters;
-using Microsoft.AspNetCore.Http;
-using Microsoft.AspNetCore.Routing;
 using NexumTech.Web.Controllers.Filters;
 
 namespace NexumTech.Web.Controllers
@@ -25,11 +19,20 @@ namespace NexumTech.Web.Controllers
             _httpService = httpService;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index()
         {
-            var token = Request.Cookies["jwt"];
+            try
+            {
+                var token = Request.Cookies["jwt"];
 
-            return View();
+                UserViewModel user = await _httpService.CallMethod<UserViewModel>(_appSettingsUI.GetUserInfoURL, HttpMethod.Get, token);
+
+                return View();
+            } 
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
         }
     }
 }

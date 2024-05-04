@@ -2,6 +2,6 @@
 {
     public interface IBaseHttpService
     {
-        public Task<T> CallMethod<T>(string url, HttpMethod method, string token, object data = null);
+        public Task<T> CallMethod<T>(string url, HttpMethod method, string token, object data = null, Dictionary<string, string> headers = null);
     }
 }

@@ -5,5 +5,6 @@
         public string ApiBaseURL { get; set; }
         public string AuthenticateURL { get; set; }
         public string SignupURL { get; set; }
+        public string GetUserInfoURL { get; set; }
     }
 }
