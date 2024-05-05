@@ -29,3 +29,18 @@ C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\obj\Debug\net6.0\refint\NexumTech.Domain.dll
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\obj\Debug\net6.0\NexumTech.Domain.pdb
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\obj\Debug\net6.0\ref\NexumTech.Domain.dll
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\bin\Debug\net6.0\NexumTech.Domain.deps.json
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\bin\Debug\net6.0\NexumTech.Domain.dll
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\bin\Debug\net6.0\NexumTech.Domain.pdb
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\bin\Debug\net6.0\NexumTech.Infra.dll
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\bin\Debug\net6.0\NexumTech.Infra.pdb
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\obj\Debug\net6.0\NexumTech.Domain.csproj.AssemblyReference.cache
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\obj\Debug\net6.0\NexumTech.Domain.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\obj\Debug\net6.0\NexumTech.Domain.AssemblyInfoInputs.cache
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\obj\Debug\net6.0\NexumTech.Domain.AssemblyInfo.cs
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\obj\Debug\net6.0\NexumTech.Domain.csproj.CoreCompileInputs.cache
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\obj\Debug\net6.0\NexumTech.Domain.csproj.CopyComplete
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\obj\Debug\net6.0\NexumTech.Domain.dll
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\obj\Debug\net6.0\refint\NexumTech.Domain.dll
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\obj\Debug\net6.0\NexumTech.Domain.pdb
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Domain\obj\Debug\net6.0\ref\NexumTech.Domain.dll
