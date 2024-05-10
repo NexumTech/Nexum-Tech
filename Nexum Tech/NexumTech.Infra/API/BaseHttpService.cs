@@ -1,4 +1,5 @@
 ﻿
+using System.Globalization;
 using System.Net.Http.Headers;
 using System.Text;
 using Microsoft.Extensions.Options;
@@ -34,6 +35,8 @@ namespace NexumTech.Infra.API
                         request.Headers.Add(header.Key, header.Value);
                     }
                 }
+
+                request.Headers.Add("X-Culture", CultureInfo.CurrentCulture.ToString());
 
                 if (token != null) 
                     request.Headers.Authorization = new AuthenticationHeaderValue("Bearer", token);

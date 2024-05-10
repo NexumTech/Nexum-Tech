@@ -117,7 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AuthenticateAgain" xml:space="preserve">
+    <value>Necesitas autentificarte nuevamente</value>
+  </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>¿No tienes una cuenta?</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EmailSent" xml:space="preserve">
+    <value>¡E-mail enviado!</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Olvidaste tu contraseña?</value>
+  </data>
+  <data name="GoogleSignin" xml:space="preserve">
+    <value>Sigue adelante con Google</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Introduzca un e-mail válido</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Ingrese una contraseña</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Acceso</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Contraseña</value>
+  </data>
+  <data name="SendPasswordResetLink" xml:space="preserve">
+    <value>Enviar link para restablecer contraseña</value>
+  </data>
   <data name="Signin" xml:space="preserve">
     <value>Acceso</value>
+  </data>
+  <data name="Signup" xml:space="preserve">
+    <value>Registro</value>
+  </data>
+  <data name="WelcomeBack" xml:space="preserve">
+    <value>Bienvenido de nuevo!</value>
   </data>
 </root>

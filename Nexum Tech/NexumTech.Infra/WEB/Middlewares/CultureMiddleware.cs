@@ -1,6 +1,7 @@
 ﻿using Microsoft.AspNetCore.Http;
 using System.Globalization;
 
+namespace NexumTech.Infra.WEB.Middlewares;
 public class CultureMiddleware
 {
     private readonly RequestDelegate _next;

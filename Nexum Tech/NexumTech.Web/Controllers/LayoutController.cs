@@ -1,5 +1,4 @@
-﻿using Microsoft.AspNetCore.Localization;
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using NexumTech.Infra.API;
 using NexumTech.Infra.Models;
@@ -29,7 +28,13 @@ namespace NexumTech.Web.Controllers
 
                 UserViewModel user = await _httpService.CallMethod<UserViewModel>(_appSettingsUI.GetUserInfoURL, HttpMethod.Get, token);
 
-                return Ok(user);
+                LayoutViewModel layoutViewModel = new LayoutViewModel
+                {
+                    User = user,
+                    Base64Photo = ConvertToDataUrl(user.Photo, "image/jpeg"),
+                };
+
+                return Ok(layoutViewModel);
             }
             catch (Exception ex)
             {
@@ -43,6 +48,19 @@ namespace NexumTech.Web.Controllers
             Response.Cookies.Append("Culture", culture, new CookieOptions { Expires = DateTimeOffset.UtcNow.AddYears(1) });
 
             return Ok();
+        }
+
+        public IActionResult Logout()
+        {
+            Response.Cookies.Delete("jwt");
+            return RedirectToAction("Index", "Login");
+        }
+
+        private static string ConvertToDataUrl(byte[] bytes, string mimeType)
+        {
+            string base64String = Convert.ToBase64String(bytes);
+
+            return $"data:{mimeType};base64,{base64String}";
         }
     }
 }

@@ -1,0 +1,68 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+
+@inject IViewLocalizer Localizer
+
+@model NexumTech.Infra.Models.ProfileViewModel
+
+@if (ViewBag.CurrentTheme == "dark")
+{
+    <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2-dark.css" rel="stylesheet" />
+}
+else
+{
+    <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
+}
+
+<script src="~/js/PartialProfileSettings.js"></script>
+<script src="~/lib/sweetalert2/sweetalert2.js"></script>
+
+<div class="modal-content">
+    <input type="hidden" id="txtId"  value="@Model.User.Id"/>
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn-close mt-3 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+    </div>
+    <div class="modal-body">
+        <div class="container h-100">
+            <div class="row d-flex justify-content-center align-items-center h-100">
+                <div class="col col-lg-6 mb-lg-0 w-100">
+                    <div>
+                        <div class="row g-0">
+                            <div class="col-md-5 py-5 text-center rounded-2 d-flex flex-column justify-content-center align-items-center" style="background-image: -webkit-linear-gradient(to right bottom, #103cbe, #fc8b00); background-image: linear-gradient(to right bottom, #103cbe, #fc8b00);">
+                                <input class="d-none" id="file-upload" type="file" accept="image/jpeg, image/png">
+                                <div class="position-relative rounded-circle" style="cursor: pointer;" id="image-container">
+                                    <img src="@Model.Base64Photo" class="img-fluid rounded-circle" id="profile-image" style="width: 80px;" title="Editar" />
+                                    <span class="position-absolute bottom-0 end-0 m-0">
+                                        <i class="fa-solid fa-camera fa-lg"></i>
+                                    </span>
+                                </div>                             
+                                <h4 class="mt-4">
+                                    @Model.User.Username
+                                    <i class="fa-solid fa-pencil fa-xs" style="cursor: pointer" title="Edit username" id="btnEditUsername"></i>
+                                </h4>
+                            </div>
+                            <div class="col-md-7 mt-3">
+                                <div class="card-body p-4">
+                                    <h6>Profile</h6>
+                                    <hr class="mt-0 mb-4">
+                                    <div class="row pt-1">
+                                        <div class="col-lg-6 mb-3">
+                                            <h6>E-mail</h6>
+                                            <p class="text-muted">@Model.User.Email</p>
+                                        </div>
+                                        <div class="col-lg-6 mb-3">
+                                            <h6>Role</h6>
+                                            <p class="text-muted">@Model.User.Role</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="d-flex justify-content-end">
+        <button type="button" class="btn btn-outline-success mb-3 me-3" id="btnSaveProfile">Save</button>
+    </div>
+</div>

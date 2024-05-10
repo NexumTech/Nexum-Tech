@@ -117,7 +117,46 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <data name="AuthenticateAgain" xml:space="preserve">
+    <value>Você precisa se autenticar novamente</value>
+  </data>
+  <data name="DontHaveAccount" xml:space="preserve">
+    <value>Não tem uma conta?</value>
+  </data>
+  <data name="Email" xml:space="preserve">
+    <value>E-mail</value>
+  </data>
+  <data name="EmailSent" xml:space="preserve">
+    <value>E-mail enviado!</value>
+  </data>
+  <data name="ForgotPassword" xml:space="preserve">
+    <value>Esqueceu sua senha?</value>
+  </data>
+  <data name="GoogleSignin" xml:space="preserve">
+    <value>Continue com o Google</value>
+  </data>
+  <data name="InvalidEmail" xml:space="preserve">
+    <value>Insira um e-mail válido</value>
+  </data>
+  <data name="InvalidPassword" xml:space="preserve">
+    <value>Digite uma senha</value>
+  </data>
+  <data name="Login" xml:space="preserve">
+    <value>Login</value>
+  </data>
+  <data name="Password" xml:space="preserve">
+    <value>Senha</value>
+  </data>
+  <data name="SendPasswordResetLink" xml:space="preserve">
+    <value>Enviar link de redefinição de senha</value>
+  </data>
   <data name="Signin" xml:space="preserve">
     <value>Login</value>
+  </data>
+  <data name="Signup" xml:space="preserve">
+    <value>Cadastre-se</value>
+  </data>
+  <data name="WelcomeBack" xml:space="preserve">
+    <value>Seja bem vindo de volta!</value>
   </data>
 </root>

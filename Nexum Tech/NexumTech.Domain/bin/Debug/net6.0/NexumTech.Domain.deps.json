@@ -15,6 +15,17 @@
         },
         "runtime": {
           "NexumTech.Domain.dll": {}
+        },
+        "resources": {
+          "en-US/NexumTech.Domain.resources.dll": {
+            "locale": "en-US"
+          },
+          "es-ES/NexumTech.Domain.resources.dll": {
+            "locale": "es-ES"
+          },
+          "pt-BR/NexumTech.Domain.resources.dll": {
+            "locale": "pt-BR"
+          }
         }
       },
       "Dapper/2.1.35": {

@@ -1,5 +1,4 @@
 ﻿using Dapper;
-using NexumTech.Infra.DAO;
 using NexumTech.Infra.DAO.Interfaces;
 using NexumTech.Infra.Models;
 
@@ -81,11 +80,13 @@ namespace NexumTech.Infra.DAO
                                         ([Username]
                                         ,[Email]
                                         ,[Password]
+                                        ,[Photo]
                                         ,[Role])
                                     VALUES
                                         (@Username
                                         ,@Email
                                         ,@Password
+                                        ,@Photo
                                         ,'User')";
 
                     await connection.QueryAsync(sql, new
@@ -93,6 +94,7 @@ namespace NexumTech.Infra.DAO
                         @Username = signupViewModel.Username,
                         @Email = signupViewModel.Email,
                         @Password = signupViewModel.Password,
+                        @Photo = signupViewModel.Photo,
                     });
 
                     return true;
@@ -112,7 +114,7 @@ namespace NexumTech.Infra.DAO
                 {
                     connection.Open();
 
-                    string sql = "SELECT COUNT(*) FROM tb_user WHERE Email = @Email";
+                    string sql = "SELECT COUNT(*) FROM tb_user WHERE Email = @Email and Password IS NOT NULL";
 
                     var userExists = await connection.QueryFirstOrDefaultAsync<int>(sql, new
                     {
@@ -128,5 +130,55 @@ namespace NexumTech.Infra.DAO
             }
         }
 
+        public async Task<bool> UpdateUser(int id, string username, byte[] photo)
+        {
+            try
+            {
+                using (var connection = _baseDatabaseService.GetConnection())
+                {
+                    connection.Open();
+
+                    string sql = "UPDATE tb_user SET Photo = @Photo, Username = @Username WHERE Id = @Id";
+
+                    await connection.QueryFirstOrDefaultAsync<int>(sql, new
+                    {
+                        @Id = id,
+                        @Username = username,
+                        @Photo = photo
+                    });
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+        public async Task<bool> UpdatePassword(string password, string email)
+        {
+            try
+            {
+                using (var connection = _baseDatabaseService.GetConnection())
+                {
+                    connection.Open();
+
+                    string sql = "UPDATE tb_user SET Password = @Password WHERE Email = @Email";
+
+                    var userExists = await connection.QueryFirstOrDefaultAsync<int>(sql, new
+                    {
+                        @Password = password,
+                        @Email = email
+                    });
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

@@ -2,6 +2,7 @@
 using Microsoft.AspNetCore.Mvc.Razor;
 using NexumTech.Infra.API;
 using NexumTech.Infra.WEB;
+using NexumTech.Infra.WEB.Middlewares;
 using System.Globalization;
 
 namespace NexumTech.Web
@@ -30,12 +31,12 @@ namespace NexumTech.Web
             {
                 var supportedCultures = new[]
                 {
+                    new CultureInfo("pt-BR"),
                     new CultureInfo("en-US"),
-                    new CultureInfo("es-ES"),
-                    new CultureInfo("pt-BR")
+                    new CultureInfo("es-ES"),                   
                 };
 
-                options.DefaultRequestCulture = new RequestCulture("en-US");
+                options.DefaultRequestCulture = new RequestCulture("pt-BR");
                 options.SupportedUICultures = supportedCultures;
             });
 

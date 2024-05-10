@@ -1,4 +1,8 @@
-﻿@{
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+
+@inject IViewLocalizer Localizer
+
+@{
     Layout = null;
 }
 
@@ -12,6 +16,7 @@
     <link href="~/css/LoginRegister.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+    <link href="~/lib/animate.css/animate.css" rel="stylesheet" />
 
     @if (ViewBag.CurrentTheme == "dark")
     {
@@ -49,31 +54,31 @@
             <div class="col-md-6 right-box">
                 <div class="row align-items-center">
                     <div class="header-text">
-                        <h2>Sign up</h2>
-                        <p>Just fill in the following fields to register</p>
+                        <h2>@Localizer["Signup"]</h2>
+                        <p>@Localizer["JustFillFieldsBelow"]</p>
                     </div>
 
                     <form novalidate id="signupForm">
                         <div class="form-floating mb-3">
-                            <input type="text" id="txtUsername" name="username" class="form-control form-control-lg fs-6 p-12" placeholder="Username" required>
-                            <label for="name" class="form-label">Username</label>
-                            <div class="invalid-feedback">Invalid username</div>
+                            <input type="text" id="txtUsername" name="username" class="form-control form-control-lg fs-6 p-12" placeholder="@Localizer["Username"]" required>
+                            <label for="name" class="form-label">@Localizer["Username"]</label>
+                            <div class="invalid-feedback">@Localizer["InvalidUsername"]</div>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="email" id="txtEmail" name="email" class="form-control form-control-lg fs-6 p-12" placeholder="Email" required>
-                            <label for="email" class="form-label">Email</label>
-                            <div class="invalid-feedback">Invalid email</div>
+                            <input type="email" id="txtEmail" name="email" class="form-control form-control-lg fs-6 p-12" placeholder="@Localizer["Email"]" required>
+                            <label for="email" class="form-label">@Localizer["Email"]</label>
+                            <div class="invalid-feedback">@Localizer["InvalidEmail"]</div>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="password" id="txtPassword" name="password" class="form-control" placeholder="Password" required>
-                            <label for="password" class="form-label">Password</label>
-                            <div class="invalid-feedback">Invalid password</div>
+                            <input type="password" id="txtPassword" name="password" class="form-control" placeholder="@Localizer["Password"]" required>
+                            <label for="password" class="form-label">@Localizer["Password"]</label>
+                            <div class="invalid-feedback">@Localizer["InvalidPassword"]</div>
                         </div>
                     </form>
                     <div class="input-group mb-3">
-                        <button class="btn btn-lg btn-primary w-100 fs-6 mt-4" id="btnSignup">Sign up</button>
+                        <button class="btn btn-lg btn-primary w-100 fs-6 mt-4" id="btnSignup">@Localizer["Signup"]</button>
                     </div>
                 </div>
             </div>

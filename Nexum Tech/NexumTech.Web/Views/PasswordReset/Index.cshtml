@@ -1,0 +1,84 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+
+@inject IViewLocalizer Localizer
+
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="Chrome">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="@Url.Content("~/images/n_shortcut_icon.png")" crossorigin="anonymous">
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+    <link href="~/css/LoginRegister.css" rel="stylesheet" />
+    <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+
+    @if (ViewBag.CurrentTheme == "dark")
+    {
+        <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2-dark.css" rel="stylesheet" />
+    }
+    else
+    {
+        <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
+    }
+
+    <title>Nexum</title>
+</head>
+
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/bootstrap/js/bootstrap.js"></script>
+<script src="~/js/PasswordReset.js"></script>
+<script src="~/js/ThemeSwitcher.js"></script>
+<script src="~/lib/sweetalert2/sweetalert2.js"></script>
+
+<body data-bs-theme="light">
+    <div class="spinner-wrapper" id="loadingSpinner" style="display: none;">
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
+    </div>
+    <div class="container d-flex justify-content-center align-items-center min-vh-100">
+        @if (ViewBag.TokenExpired)
+        {
+            <div class="justify-content-center align-items-center text-center">
+                <h1>@Localizer["ExpiredLink"] <i class="fa-solid fa-triangle-exclamation"></i></h1>
+                <p>@Localizer["RequestAgain"]</p>
+                <a href="/Login" class="btn btn-outline-primary mt-3">@Localizer["Return"]</a>
+            </div>
+        }
+        else
+        {
+            <div class="row border rounded-5 p-3 shadow box-area">
+                <div class="col-md-6 rounded-4 d-flex justify-content-center align-items-center flex-column left-box" style="background: #103cbe;">
+                    <div class="featured-image">
+                        <img src="@Url.Content("~/images/n_white.png")" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-md-6 right-box">
+                    <div class="row align-items-center">
+                        <div class="header-text">
+                            <h2>@Localizer["PasswordRecovery"]</h2>
+                            <p>@Localizer["ChangePassword"]</p>
+                        </div>
+                        <form novalidate id="passwordResetForm">
+                            <div class="form-floating mt-3">
+                                <input type="password" id="txtPassword" class="form-control fs-6 p-12" placeholder="@Localizer["Password"]" required>
+                                <label for="Password" class="form-label">@Localizer["Password"]</label>
+                                <div class="invalid-feedback">@Localizer["InvalidPassword"]</div>
+                            </div>
+                        </form>
+                        <div class="input-group mb-3 mt-4">
+                            <button class="btn btn-lg btn-primary w-100 fs-6" id="btnChangePassword">@Localizer["Save"]</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+</body>
+</html>

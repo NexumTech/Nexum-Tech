@@ -9,6 +9,10 @@ using NexumTech.Infra.API;
 using NexumTech.Infra.API.Interfaces;
 using NexumTech.Infra.WEB;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
+using System.Globalization;
+using NexumTech.Infra.API.Middlewares;
 
 namespace NexumTech.API
 {
@@ -16,7 +20,7 @@ namespace NexumTech.API
     {
         public IConfiguration Configuration { get; }
 
-        public Startup(IConfiguration configuration) 
+        public Startup(IConfiguration configuration)
         {
             Configuration = configuration;
         }
@@ -32,6 +36,8 @@ namespace NexumTech.API
                     });
             });
 
+            services.AddLocalization(options => options.ResourcesPath = "Resources");
+
             services.AddHttpClient();
 
             services.Configure<AppSettingsAPI>(Configuration);
@@ -41,12 +47,14 @@ namespace NexumTech.API
             #region Domain Dependency Injection
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<IMailMessageService, MailMessageService>();
 
             #endregion
 
-            #region DAO Dependency Injection
+            #region Infra Dependency Injection
 
             services.AddScoped<IUserDAO, UserDAO>();
+            services.AddScoped<IMailService, MailService>();
             services.AddScoped<ITokenService, TokenService>();
 
             #endregion
@@ -79,13 +87,22 @@ namespace NexumTech.API
             services.AddSwaggerGen();
         }
 
-        public void Configure (WebApplication app, IWebHostEnvironment enviroment)
+        public void Configure(WebApplication app, IWebHostEnvironment enviroment)
         {
+            app.UseMiddleware<CultureMiddleware>();
+
             if (app.Environment.IsDevelopment())
             {
                 app.UseSwagger();
                 app.UseSwaggerUI();
             }
+
+            var supportedCultures = new[]
+            {
+                 new CultureInfo("en-US"),
+                 new CultureInfo("pt-BR"),
+                 new CultureInfo("es-ES")
+            };
 
             app.UseCors("AllowSpecificOrigins");
 
@@ -102,11 +119,11 @@ namespace NexumTech.API
     public interface IStartup
     {
         IConfiguration Configuration { get; }
-        void ConfigureServices (IServiceCollection services);
-        void Configure (WebApplication app, IWebHostEnvironment enviroment);
+        void ConfigureServices(IServiceCollection services);
+        void Configure(WebApplication app, IWebHostEnvironment enviroment);
     }
 
-    public static class StartupExtensions 
+    public static class StartupExtensions
     {
         public static WebApplicationBuilder UseStartup<TStartup>(this WebApplicationBuilder WebAppBuilder) where TStartup : IStartup
         {

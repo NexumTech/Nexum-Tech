@@ -1,4 +1,8 @@
-﻿<!DOCTYPE html>
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+
+@inject IViewLocalizer Localizer
+
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="utf-8" />
@@ -26,52 +30,54 @@
     <header>
         <nav class="navbar navbar-light">
             <div class="container-fluid justify-content-start">
-                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasExample" aria-controls="offcanvasExample">
+                <button class="btn" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvas" aria-controls="offcanvas">
                     <i class="fa-solid fa-bars fa-lg"></i>
                 </button>
 
                 <div class="dropdown ms-auto">
                     <button class="btn d-flex align-items-center text-decoration-none fs-6 dropdown-toggle" type="button" id="dropdownUser" data-bs-toggle="dropdown" aria-expanded="false">
-                        <img src="https://via.placeholder.com/150x150/3b2d50/bdbac1?text=DAVIDSONBPE" width="32" height="32" class="rounded-circle me-2 img-fluid">
+                        <img id="profilePicture" src="" width="40" height="40" class="rounded-circle me-2 img-fluid">
                     </button>
                     <ul class="dropdown-menu text-small shadow dropdown-menu-end" aria-labelledby="dropdownUser">
                         <li>
+                            <div class="d-flex justify-content-end">
+                                <div class="form-check form-switch mx-3">
+                                    <input class="form-check-input"
+                                           type="checkbox"
+                                           id="SwitchTheme" />
+                                    <label class="form-check-label" for="SwitchTheme">
+                                        <i class="fa-regular fa-sun"></i>
+                                    </label>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
                             <div class="text-center mt-2">
-                                <strong id="lblUsername">User</strong>
+                                <strong>@Localizer["Language"]</strong>
 
                                 <div class="d-flex flex-row justify-content-between mx-4 mt-2">
-                                    <img src="~/images/brazil.png" class="language-icon border border-2 border-dark rounded-circle img-fluid" width="32px" height="32px" style="cursor: pointer" data-culture="pt-BR">
-                                    <img src="~/images/unitedstates.png" class="language-icon border border-2 border-dark rounded-circle img-fluid" width="32px" height="32px" style="cursor: pointer" data-culture="en-US">
-                                    <img src="~/images/spain.png" class="language-icon border border-2 border-dark rounded-circle img-fluid" width="32px" height="32px" style="cursor: pointer" data-culture="es-ES">
+                                    <img src="~/images/brazil.png" class="language-icon border border-2 border-dark rounded-circle img-fluid" width="32px" height="32px" style="cursor: pointer" data-culture="pt-BR" title="@Localizer["Portuguese"]">
+                                    <img src="~/images/unitedstates.png" class="language-icon border border-2 border-dark rounded-circle img-fluid" width="32px" height="32px" style="cursor: pointer" data-culture="en-US" title="@Localizer["English"]">
+                                    <img src="~/images/spain.png" class="language-icon border border-2 border-dark rounded-circle img-fluid" width="32px" height="32px" style="cursor: pointer" data-culture="es-ES" title="@Localizer["Spanish"]">
                                 </div>
-                            </div>                               
+                            </div>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <div class="form-check form-switch mx-3 mb-2">
-                                <input class="form-check-input"
-                                       type="checkbox"
-                                       id="SwitchTheme" />
-                                <label class="form-check-label" for="SwitchTheme">
-                                    <i class="fa-regular fa-sun"></i>
-                                </label>
-                            </div>
-                        </li>
-                        <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#profileModal">
                                 <i class="fa-solid fa-user"></i>
-                                Profile
+                                @Localizer["Profile"]
                             </a>
                         </li>
                         <li>
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item" href="#">
+                            <a class="dropdown-item" asp-controller="Layout" asp-action="Logout">
                                 <i class="fa-solid fa-arrow-right-from-bracket"></i>
-                                Sign out
+                                @Localizer["Signout"]
                             </a>
                         </li>
                     </ul>
@@ -80,7 +86,7 @@
         </nav>
     </header>
 
-    <div class="offcanvas offcanvas-start d-flex flex-column flex-shrink-0 p-3" tabindex="-1" id="offcanvasExample" aria-labelledby="offcanvasExampleLabel" style="width: 280px;">
+    <div class="offcanvas offcanvas-start d-flex flex-column flex-shrink-0 p-3" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel" style="width: 280px;">
         <button class="btn w-100 d-flex align-items-center mb-3 mb-md-0 me-md-auto" type="button">
             <img src="~/images/n_shortcut_icon.png" alt="" width="50" height="50" class="rounded-circle me-4">
             <span class="fs-4">Nexum</span>
@@ -90,32 +96,32 @@
             <li class="nav-item mb-4">
                 <a href="/Home" class="btn w-100 rounded text-start fs-5">
                     <i class="fa-solid fa-chart-line"></i>
-                    Real Time Monitoring
+                    @Localizer["RealTimeMonitoring"]
                 </a>
             </li>
             <li class="nav-item mb-4">
                 <a href="/Home" class="btn w-100 rounded text-start fs-5">
                     <i class="fa-solid fa-chart-pie"></i>
-                    History
+                    @Localizer["History"]
                 </a>
             </li>
             <li class="nav-item mb-4">
                 <a href="/Home" class="btn w-100 rounded text-start fs-5">
                     <i class="fa-solid fa-building"></i>
-                    Companies
+                    @Localizer["Company"]
                 </a>
             </li>
             <li class="nav-item mb-4">
                 <a href="/Home" class="btn w-100 rounded text-start fs-5">
                     <i class="fa-solid fa-circle-info"></i>
-                    About us
+                    @Localizer["AboutUs"]
                 </a>
             </li>
         </ul>
         <hr>
         <div class="dropdown">
             <button class="btn d-flex align-items-center text-decoration-none fs-6 dropdown-toggle" type="button" id="dropdownCompanies" data-bs-toggle="dropdown" aria-expanded="false">
-                <img src="https://via.placeholder.com/150x150/3b2d50/bdbac1?text=DAVIDSONBPE" width="32" height="32" class="rounded-circle me-2">
+                @* <img src="https://via.placeholder.com/150x150/3b2d50/bdbac1?text=DAVIDSONBPE" width="32" height="32" class="rounded-circle me-2"> *@
                 <strong>Company</strong>
             </button>
             <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownCompanies">
@@ -134,7 +140,11 @@
                 </li>
             </ul>
         </div>
+    </div>
 
+    <div class="modal fade" id="profileModal" tabindex="-1" aria-labelledby="profileModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" id="profileModalContent">
+        </div>
     </div>
 
     <div class="container">

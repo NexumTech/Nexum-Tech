@@ -1,7 +1,7 @@
 $(document).ready(function () {
     $('#btnSignup').click(function (event) {
         if ($('#signupForm')[0].checkValidity()) {
-            AuthenticateUser();
+            CreateUser();
         } else {
             event.preventDefault();
             $('#signupForm').addClass("was-validated");
@@ -17,7 +17,7 @@ $(document).ready(function () {
     });
 });
 
-function AuthenticateUser() {
+function CreateUser() {
     var username = $('#txtUsername').val();
     var email = $('#txtEmail').val();
     var password = $('#txtPassword').val();
@@ -47,6 +47,20 @@ function AuthenticateUser() {
                 html: xhr.responseText,
                 icon: 'error',
                 timer: 3000,
+                showClass: {
+                    popup: `
+                        animate__animated
+                        animate__fadeInUp
+                        animate__faster
+                    `
+                },
+                hideClass: {
+                    popup: `
+                        animate__animated
+                        animate__fadeOutDown
+                        animate__faster
+                    `
+                },
                 didOpen: () => {
                     const timer = Swal.getPopup().querySelector("b");
                     timerInterval = setInterval(() => {

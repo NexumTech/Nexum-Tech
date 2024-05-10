@@ -49,6 +49,35 @@ $(document).ready(function () {
         handleGoogleLogin();
     });
 
+    $('#btnForgotPassword').click(function (event) {
+        event.preventDefault();
+        var emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-outline-success",
+            },
+            buttonsStyling: false,
+        });
+        swalWithBootstrapButtons.fire({
+            title: $('#lblForgotPassword').text(),
+            input: "text",
+            inputAttributes: {
+                autocapitalize: "off",
+                title: "",
+                placeholder: "E-mail"
+            },
+            confirmButtonText: $('#lblSendPasswordResetLink').text(),
+            preConfirm: async (email) => {
+                if (email == "" || !emailRegex.test(email)) 
+                    Swal.showValidationMessage($('#lblInvalidEmail').text());      
+                else
+                    RequestChangePassword(email);
+            },
+            allowOutsideClick: () => !Swal.isLoading()
+        });
+    });
+
     $(document).ajaxStart(function () {
         $('#loadingSpinner').show();
     });
@@ -58,11 +87,84 @@ $(document).ready(function () {
     });
 });
 
+function RequestChangePassword(email) {
+     $.ajax({
+        type: 'POST',
+        url: '/Login/RequestToChangePassword',
+        data: {
+            email: email,
+        },
+         success: function (response) {
+             let timerInterval;
+             Swal.fire({
+                title: response.value,
+                icon: 'success',
+                timer: 3000,
+                didOpen: () => {
+                    const timer = Swal.getPopup().querySelector("b");
+                    timerInterval = setInterval(() => {
+                        timer.textContent = `${Swal.getTimerLeft()}`;
+                    }, 100);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            });
+        },
+        error: function (xhr, status, error) {
+            let timerInterval;
+            Swal.fire({
+                title: xhr.responseText, 
+                icon: 'error',
+                timer: 3000,
+                didOpen: () => {
+                    const timer = Swal.getPopup().querySelector("b");
+                    timerInterval = setInterval(() => {
+                        timer.textContent = `${Swal.getTimerLeft()}`;
+                    }, 100);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            });
+        }
+    });
+};
+
 function AuthenticateUserWithGoogle(response) {
     const data = jwtDecode(response.credential);
 
-    console.log(data);
-}
+    $.ajax({
+        type: 'POST',
+        url: '/Login/LoginWithGoogle',
+        data: {
+            email: data.email,
+            password: '',
+            username: data.name,
+            photo: data.picture
+        },
+        success: function (response) {
+            window.location.href = '/Home';
+        },
+        error: function (xhr, status, error) {
+            let timerInterval;
+            Swal.fire({
+                title: xhr.responseText,
+                icon: 'error',
+                timer: 3000,
+                didOpen: () => {
+                    const timer = Swal.getPopup().querySelector("b");
+                    timerInterval = setInterval(() => {
+                        timer.textContent = `${Swal.getTimerLeft()}`;
+                    }, 100);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            });
+        }
+    });
+};
 
 function AuthenticateUser() {
     var email = $('#txtEmail').val();
@@ -81,8 +183,7 @@ function AuthenticateUser() {
         error: function (xhr, status, error) {
             let timerInterval;
             Swal.fire({
-                title: 'Error',
-                html: xhr.responseText,
+                title: xhr.responseText, 
                 icon: 'error',
                 timer: 3000,
                 didOpen: () => {
