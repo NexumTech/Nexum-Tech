@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
 using NexumTech.Infra.API;
 using NexumTech.Infra.Models;
@@ -10,11 +11,13 @@ namespace NexumTech.Web.Controllers
     {
         private readonly BaseHttpService _httpService;
         private readonly AppSettingsWEB _appSettingsUI;
+        private readonly IStringLocalizer<SignupController> _localizer;
 
-        public SignupController(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI)
+        public SignupController(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI, IStringLocalizer<SignupController> localizer)
         {
             _httpService = httpService;
             _appSettingsUI = appSettingsUI.Value;
+            _localizer = localizer;
         }
 
         public IActionResult Index()
@@ -32,7 +35,7 @@ namespace NexumTech.Web.Controllers
             {
                 await _httpService.CallMethod<ActionResult>(_appSettingsUI.SignupURL, HttpMethod.Post, null, signupViewModel);
 
-                return Ok($"Welcome to the team, {signupViewModel.Username}");
+                return Ok($"{_localizer["Welcome"]}, {signupViewModel.Username}");
             }
             catch (Exception ex)
             {

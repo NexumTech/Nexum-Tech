@@ -15,6 +15,7 @@
     <link rel="shortcut icon" href="@Url.Content("~/images/n_shortcut_icon.png")" crossorigin="anonymous">
     <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="~/css/LoginRegister.css" rel="stylesheet" />
+    <link href="~/css/PasswordStrengthMeter.css" rel="stylesheet" />
     <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
 
     @if (ViewBag.CurrentTheme == "dark")
@@ -66,14 +67,18 @@
                             <p>@Localizer["ChangePassword"]</p>
                         </div>
                         <form novalidate id="passwordResetForm">
-                            <div class="form-floating mt-3">
+                            <div class="form-floating mt-3 mb-2">
                                 <input type="password" id="txtPassword" class="form-control fs-6 p-12" placeholder="@Localizer["Password"]" required>
                                 <label for="Password" class="form-label">@Localizer["Password"]</label>
                                 <div class="invalid-feedback">@Localizer["InvalidPassword"]</div>
                             </div>
-                        </form>
-                        <div class="input-group mb-3 mt-4">
-                            <button class="btn btn-lg btn-primary w-100 fs-6" id="btnChangePassword">@Localizer["Save"]</button>
+                        </form>                  
+                        <div class="input-group">
+                            <div class="strength-bar-wrapper mx-1">
+                                <div id="strength-bar"></div>
+                                <span class="strength-text"></span>
+                            </div>
+                            <button class="btn btn-lg btn-primary w-100 fs-6 mt-5" id="btnChangePassword">@Localizer["Save"]</button>
                         </div>
                     </div>
                 </div>
