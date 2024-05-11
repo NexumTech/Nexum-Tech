@@ -1,0 +1,4 @@
+﻿.gradient-custom {
+    background-image: -webkit-linear-gradient(to right bottom, #103cbe, #fc8b00);
+    background-image: linear-gradient(to right bottom, #103cbe, #fc8b00);
+}

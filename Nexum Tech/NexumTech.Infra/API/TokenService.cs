@@ -16,7 +16,7 @@ namespace NexumTech.Infra.API
             _appSettingsAPI = appSettingsAPI.Value;
         }
 
-        public string GenerateToken(UserViewModel user)
+        public string GenerateToken(UserViewModel user, bool isPasswordReset = false)
         {
             var tokenHandler = new JwtSecurityTokenHandler();
             var key = Encoding.ASCII.GetBytes(_appSettingsAPI.JWT.Key);
@@ -28,7 +28,7 @@ namespace NexumTech.Infra.API
                     new Claim(ClaimTypes.Email, user.Email.ToString()),
                     new Claim(ClaimTypes.Role, user.Role.ToString())
                 }),
-                Expires = DateTime.UtcNow.AddSeconds(10),
+                Expires = DateTime.UtcNow.AddMinutes(isPasswordReset ? 15 : 30),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature),
             };
 

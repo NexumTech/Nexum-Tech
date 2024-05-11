@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.API\\NexumTech.API.csproj": {}
+    "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.API\\NexumTech.API.csproj": {}
   },
   "projects": {
-    "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.API\\NexumTech.API.csproj": {
+    "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.API\\NexumTech.API.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.API\\NexumTech.API.csproj",
+        "projectUniqueName": "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.API\\NexumTech.API.csproj",
         "projectName": "NexumTech.API",
-        "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.API\\NexumTech.API.csproj",
-        "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.API\\obj\\",
+        "projectPath": "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.API\\NexumTech.API.csproj",
+        "packagesPath": "C:\\Users\\Julia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.API\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,18 +26,17 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\NexumTech.Domain.csproj": {
-                "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\NexumTech.Domain.csproj"
+              "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\NexumTech.Domain.csproj": {
+                "projectPath": "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\NexumTech.Domain.csproj"
               },
-              "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj": {
-                "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj"
+              "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj": {
+                "projectPath": "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj"
               }
             }
           }
@@ -46,11 +45,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -60,6 +54,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.29, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Localization": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -89,24 +87,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\NexumTech.Domain.csproj": {
+    "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\NexumTech.Domain.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\NexumTech.Domain.csproj",
+        "projectUniqueName": "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\NexumTech.Domain.csproj",
         "projectName": "NexumTech.Domain",
-        "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\NexumTech.Domain.csproj",
-        "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\obj\\",
+        "projectPath": "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\NexumTech.Domain.csproj",
+        "packagesPath": "C:\\Users\\Julia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -115,15 +113,14 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
             "projectReferences": {
-              "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj": {
-                "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj"
+              "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj": {
+                "projectPath": "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj"
               }
             }
           }
@@ -132,11 +129,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -146,6 +138,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.29, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Localization": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Newtonsoft.Json": {
               "target": "Package",
@@ -168,24 +164,24 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     },
-    "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj": {
+    "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj",
+        "projectUniqueName": "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj",
         "projectName": "NexumTech.Infra",
-        "projectPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj",
-        "packagesPath": "C:\\Users\\gabri\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\obj\\",
+        "projectPath": "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\NexumTech.Infra.csproj",
+        "packagesPath": "C:\\Users\\Julia\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Julia\\OneDrive\\Área de Trabalho\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\gabri\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Julia\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -194,7 +190,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
@@ -207,11 +202,6 @@
           "warnAsError": [
             "NU1605"
           ]
-        },
-        "restoreAuditProperties": {
-          "enableAudit": "true",
-          "auditLevel": "low",
-          "auditMode": "direct"
         }
       },
       "frameworks": {
@@ -225,6 +215,10 @@
             "Microsoft.AspNetCore.Authentication.JwtBearer": {
               "target": "Package",
               "version": "[6.0.29, )"
+            },
+            "Microsoft.AspNetCore.Mvc.Localization": {
+              "target": "Package",
+              "version": "[2.2.0, )"
             },
             "Microsoft.Extensions.Configuration.Abstractions": {
               "target": "Package",
@@ -259,7 +253,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\8.0.202\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\7.0.400\\RuntimeIdentifierGraph.json"
         }
       }
     }

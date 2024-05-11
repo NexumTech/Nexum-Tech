@@ -1,6 +1,9 @@
-﻿using NexumTech.Infra.API;
+﻿using Microsoft.AspNetCore.Localization;
+using Microsoft.AspNetCore.Mvc.Razor;
+using NexumTech.Infra.API;
 using NexumTech.Infra.WEB;
-using NexumTech.Web.Controllers.Filters;
+using NexumTech.Infra.WEB.Middlewares;
+using System.Globalization;
 
 namespace NexumTech.Web
 {
@@ -16,7 +19,26 @@ namespace NexumTech.Web
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-            services.AddControllersWithViews();
+            services.AddControllersWithViews()
+                .AddViewLocalization(LanguageViewLocationExpanderFormat.Suffix);
+
+            services.AddLocalization(options =>
+            {
+                options.ResourcesPath = "Resources";
+            });
+
+            services.Configure<RequestLocalizationOptions>(options =>
+            {
+                var supportedCultures = new[]
+                {
+                    new CultureInfo("pt-BR"),
+                    new CultureInfo("en-US"),
+                    new CultureInfo("es-ES"),                   
+                };
+
+                options.DefaultRequestCulture = new RequestCulture("pt-BR");
+                options.SupportedUICultures = supportedCultures;
+            });
 
             services.AddHttpClient();
 
@@ -38,6 +60,10 @@ namespace NexumTech.Web
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
+            app.UseRequestLocalization();
+
+            app.UseMiddleware<CultureMiddleware>();
+
             if (env.IsDevelopment())
             {
                 app.UseDeveloperExceptionPage();

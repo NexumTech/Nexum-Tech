@@ -4,6 +4,6 @@ namespace NexumTech.Infra.API.Interfaces
 {
     public interface ITokenService
     {
-        public string GenerateToken(UserViewModel user);
+        public string GenerateToken(UserViewModel user, bool isPasswordReset = false);
     }
 }
