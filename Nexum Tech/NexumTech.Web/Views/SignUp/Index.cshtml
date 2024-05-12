@@ -39,6 +39,16 @@
 <script src="~/lib/sweetalert2/sweetalert2.js"></script>
 
 <body data-bs-theme="light">
+    <!-- SweetAlert resources -->
+    <span class="d-none" id="lblPasswordStrength">@Localizer["PasswordStrength"]</span>
+    <span class="d-none" id="lblWhiteSpace">@Localizer["WhiteSpace"]</span>
+    <span class="d-none" id="lblWeak">@Localizer["Weak"]</span>
+    <span class="d-none" id="lblMedium">@Localizer["Medium"]</span>
+    <span class="d-none" id="lblStrong">@Localizer["Strong"]</span>
+    <span class="d-none" id="lblVeryStrong">@Localizer["VeryStrong"]</span>
+    <span class="d-none" id="lblTooShort">@Localizer["TooShort"]</span>
+    <!-- SweetAlert resources -->
+
     <div class="spinner-wrapper" id="loadingSpinner" style="display: none;">
         <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Loading...</span>
@@ -61,19 +71,19 @@
 
                     <form novalidate id="signupForm">
                         <div class="form-floating mb-3">
-                            <input type="text" id="txtUsername" name="username" class="form-control form-control-lg fs-6 p-12" placeholder="@Localizer["Username"]" required>
+                            <input type="text" id="txtUsername" name="username" class="form-control form-control-lg fs-6 p-12" placeholder="@Localizer["Username"]" required maxlength="80">
                             <label for="name" class="form-label">@Localizer["Username"]</label>
                             <div class="invalid-feedback">@Localizer["InvalidUsername"]</div>
                         </div>
 
                         <div class="form-floating mb-3">
-                            <input type="email" id="txtEmail" name="email" class="form-control form-control-lg fs-6 p-12" placeholder="@Localizer["Email"]" required>
+                            <input type="email" id="txtEmail" name="email" class="form-control form-control-lg fs-6 p-12" placeholder="@Localizer["Email"]" required maxlength="80">
                             <label for="email" class="form-label">@Localizer["Email"]</label>
                             <div class="invalid-feedback">@Localizer["InvalidEmail"]</div>
                         </div>
 
                         <div class="form-floating mb-2">
-                            <input type="password" id="txtPassword" name="password" class="form-control" placeholder="@Localizer["Password"]" required>
+                            <input type="password" id="txtPassword" name="password" class="form-control" placeholder="@Localizer["Password"]" required maxlength="32">
                             <label for="password" class="form-label">@Localizer["Password"]</label>
                             <div class="invalid-feedback">@Localizer["InvalidPassword"]</div>
                         </div>

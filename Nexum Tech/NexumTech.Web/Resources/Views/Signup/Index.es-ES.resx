@@ -132,13 +132,34 @@
   <data name="JustFillFieldsBelow" xml:space="preserve">
     <value>Simplemente complete los campos a continuación para registrarse</value>
   </data>
+  <data name="Medium" xml:space="preserve">
+    <value>Promedio</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Contraseña</value>
+  </data>
+  <data name="PasswordStrength" xml:space="preserve">
+    <value>¡Ingrese una contraseña más segura!</value>
   </data>
   <data name="Signup" xml:space="preserve">
     <value>Registro</value>
   </data>
+  <data name="Strong" xml:space="preserve">
+    <value>Fuerte</value>
+  </data>
+  <data name="TooShort" xml:space="preserve">
+    <value>Demasiado corto</value>
+  </data>
   <data name="Username" xml:space="preserve">
     <value>Nombre</value>
+  </data>
+  <data name="VeryStrong" xml:space="preserve">
+    <value>Muy fuerte</value>
+  </data>
+  <data name="Weak" xml:space="preserve">
+    <value>Débil</value>
+  </data>
+  <data name="WhiteSpace" xml:space="preserve">
+    <value>No insertar espacios en blanco</value>
   </data>
 </root>

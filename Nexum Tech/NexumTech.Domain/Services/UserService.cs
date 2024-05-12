@@ -6,6 +6,8 @@ using NexumTech.Infra.DAO.Interfaces;
 using NexumTech.Infra.Models;
 using System.Globalization;
 using System.Runtime.Versioning;
+using System.Security.Cryptography;
+using System.Text;
 using System.Text.RegularExpressions;
 
 namespace NexumTech.Domain.Services
@@ -27,6 +29,8 @@ namespace NexumTech.Domain.Services
 
         public async Task<UserViewModel> GetUserInfo(LoginViewModel loginViewModel)
         {
+            loginViewModel.Password = CreateHash(loginViewModel.Password);
+
             var user = await _userDAO.GetUserInfo(loginViewModel);
 
             if (user == null) throw new Exception(_localizer["InvalidCredentials"]);
@@ -53,31 +57,41 @@ namespace NexumTech.Domain.Services
             if (!String.IsNullOrEmpty(signupViewModel.PhotoURL))
                 signupViewModel.Photo = await DownloadImage(signupViewModel.PhotoURL);
 
-            UserViewModel user = new UserViewModel { 
+            UserViewModel user = new UserViewModel
+            {
                 Email = signupViewModel.Email,
-                Username = signupViewModel.Username,     
+                Username = signupViewModel.Username,
                 Role = "User"
             };
 
-            await _userDAO.CreateUser(signupViewModel);         
+            if(!string.IsNullOrEmpty(signupViewModel.Password)) 
+                signupViewModel.Password = CreateHash(signupViewModel.Password);
+
+            await _userDAO.CreateUser(signupViewModel);
 
             return await SendMailAsync(user, $"{_localizer["Welcome"]}, {signupViewModel.Username}!", MailTypeEnum.Register);
         }
 
         public async Task<bool> UpdateProfile(ProfileViewModel profileViewModel)
         {
-            Regex regex = new Regex(@"^data:image/(jpeg|png);base64,", RegexOptions.IgnoreCase);
+            string base64 = String.Empty;
+            byte[] photo = new byte[0];
 
-            string base64 = regex.Replace(profileViewModel.Base64Photo, "");
-
-            byte[] photo = Convert.FromBase64String(base64);
+            if (!string.IsNullOrEmpty(profileViewModel.Base64Photo))
+            {
+                Regex regex = new Regex(@"^data:image/(jpeg|png);base64,", RegexOptions.IgnoreCase);
+                base64 = regex.Replace(profileViewModel.Base64Photo, "");
+                photo = Convert.FromBase64String(base64);
+            }
 
             return await _userDAO.UpdateUser(profileViewModel.User.Id, profileViewModel.User.Username, photo);
         }
 
         public async Task<bool> UpdatePassword(string password, string email)
         {
-            return await _userDAO.UpdatePassword(password, email);
+            string passwordHash = CreateHash(password);
+
+            return await _userDAO.UpdatePassword(passwordHash, email);
         }
 
         public async Task<bool> RequestToChangePassword(string email)
@@ -90,17 +104,31 @@ namespace NexumTech.Domain.Services
             return await SendMailAsync(user, _localizer["PasswordRecovery"], MailTypeEnum.PasswordReset);
         }
 
+        private static string CreateHash(string password)
+        {
+            using (SHA256 sha256 = SHA256.Create())
+            {
+                byte[] bytes = sha256.ComputeHash(Encoding.UTF8.GetBytes(password));
+                StringBuilder builder = new StringBuilder();
+                foreach (byte b in bytes)
+                {
+                    builder.Append(b.ToString("x2"));
+                }
+                return builder.ToString();
+            }
+        }
+
         private async Task<bool> SendMailAsync(UserViewModel user, string subject, MailTypeEnum mailType)
         {
             try
             {
                 #region Send e-mail async thread
-                    #pragma warning disable CS4014
-                        Task.Run(async () =>
-                        {
-                            await _mailService.SendMail(user.Email, subject, _mailMessageService.GetMailMessage(mailType, user));
-                        });
-                    #pragma warning restore CS4014
+#pragma warning disable CS4014
+                Task.Run(async () =>
+                {
+                    await _mailService.SendMail(user.Email, subject, _mailMessageService.GetMailMessage(mailType, user));
+                });
+#pragma warning restore CS4014
                 #endregion
 
                 return true;

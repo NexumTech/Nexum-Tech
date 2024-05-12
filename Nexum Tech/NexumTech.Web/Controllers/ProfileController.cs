@@ -52,7 +52,7 @@ namespace NexumTech.Web.Controllers
             try
             {
                 var token = Request.Cookies["jwt"];
-
+           
                 UserViewModel user = await _httpService.CallMethod<UserViewModel>(_appSettingsUI.GetUserInfoURL, HttpMethod.Get, token);
 
                 if (String.IsNullOrEmpty(profileViewModel.User.Username))

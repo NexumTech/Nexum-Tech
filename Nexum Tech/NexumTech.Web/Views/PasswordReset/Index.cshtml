@@ -37,6 +37,16 @@
 <script src="~/lib/sweetalert2/sweetalert2.js"></script>
 
 <body data-bs-theme="light">
+    <!-- SweetAlert resources -->
+    <span class="d-none" id="lblPasswordStrength">@Localizer["PasswordStrength"]</span>
+    <span class="d-none" id="lblWhiteSpace">@Localizer["WhiteSpace"]</span>
+    <span class="d-none" id="lblWeak">@Localizer["Weak"]</span>
+    <span class="d-none" id="lblMedium">@Localizer["Medium"]</span>
+    <span class="d-none" id="lblStrong">@Localizer["Strong"]</span>
+    <span class="d-none" id="lblVeryStrong">@Localizer["VeryStrong"]</span>
+    <span class="d-none" id="lblTooShort">@Localizer["TooShort"]</span>
+    <!-- SweetAlert resources -->
+
     <div class="spinner-wrapper" id="loadingSpinner" style="display: none;">
         <div class="spinner-border text-primary" role="status">
             <span class="visually-hidden">Loading...</span>
@@ -68,7 +78,7 @@
                         </div>
                         <form novalidate id="passwordResetForm">
                             <div class="form-floating mt-3 mb-2">
-                                <input type="password" id="txtPassword" class="form-control fs-6 p-12" placeholder="@Localizer["Password"]" required>
+                                <input type="password" id="txtPassword" class="form-control fs-6 p-12" placeholder="@Localizer["Password"]" required maxlength="32">
                                 <label for="Password" class="form-label">@Localizer["Password"]</label>
                                 <div class="invalid-feedback">@Localizer["InvalidPassword"]</div>
                             </div>

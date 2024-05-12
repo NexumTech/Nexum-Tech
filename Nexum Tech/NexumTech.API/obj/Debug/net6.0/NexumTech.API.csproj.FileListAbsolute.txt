@@ -225,3 +225,4 @@ C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTe
 C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.API\obj\Debug\net6.0\NexumTech.API.pdb
 C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.API\obj\Debug\net6.0\NexumTech.API.genruntimeconfig.cache
 C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.API\obj\Debug\net6.0\ref\NexumTech.API.dll
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.API\obj\Debug\net6.0\NexumTech.API.MvcApplicationPartsAssemblyInfo.cs
