@@ -126,11 +126,17 @@
   <data name="InvalidPassword" xml:space="preserve">
     <value>Digite uma senha</value>
   </data>
+  <data name="Medium" xml:space="preserve">
+    <value>Média</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Senha</value>
   </data>
   <data name="PasswordRecovery" xml:space="preserve">
     <value>Recuperação de senha</value>
+  </data>
+  <data name="PasswordStrength" xml:space="preserve">
+    <value>Insira uma senha mais forte!</value>
   </data>
   <data name="RequestAgain" xml:space="preserve">
     <value>Solicite novamente a troca de senha</value>
@@ -140,5 +146,20 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Salvar</value>
+  </data>
+  <data name="Strong" xml:space="preserve">
+    <value>Forte</value>
+  </data>
+  <data name="TooShort" xml:space="preserve">
+    <value>Muito curta</value>
+  </data>
+  <data name="VeryStrong" xml:space="preserve">
+    <value>Muito forte</value>
+  </data>
+  <data name="Weak" xml:space="preserve">
+    <value>Fraca</value>
+  </data>
+  <data name="WhiteSpace" xml:space="preserve">
+    <value>Não insira espaços em branco</value>
   </data>
 </root>

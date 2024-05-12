@@ -1,6 +1,7 @@
 ﻿using Dapper;
 using NexumTech.Infra.DAO.Interfaces;
 using NexumTech.Infra.Models;
+using System.Text;
 
 namespace NexumTech.Infra.DAO
 {
@@ -138,9 +139,18 @@ namespace NexumTech.Infra.DAO
                 {
                     connection.Open();
 
-                    string sql = "UPDATE tb_user SET Photo = @Photo, Username = @Username WHERE Id = @Id";
+                    StringBuilder sql = new StringBuilder();
 
-                    await connection.QueryFirstOrDefaultAsync<int>(sql, new
+                    sql.Append("UPDATE tb_user SET Username = @Username");
+
+                    if(photo.Length > 0)
+                    {
+                        sql.Append(", Photo = @Photo");
+                    }
+
+                    sql.Append(" WHERE Id = @Id");
+
+                    await connection.QueryFirstOrDefaultAsync<int>(sql.ToString(), new
                     {
                         @Id = id,
                         @Username = username,

@@ -126,11 +126,17 @@
   <data name="InvalidPassword" xml:space="preserve">
     <value>Enter a password</value>
   </data>
+  <data name="Medium" xml:space="preserve">
+    <value>Medium</value>
+  </data>
   <data name="Password" xml:space="preserve">
     <value>Password</value>
   </data>
   <data name="PasswordRecovery" xml:space="preserve">
     <value>Password recovery</value>
+  </data>
+  <data name="PasswordStrength" xml:space="preserve">
+    <value>Enter a stronger password!</value>
   </data>
   <data name="RequestAgain" xml:space="preserve">
     <value>Request password reset again</value>
@@ -140,5 +146,20 @@
   </data>
   <data name="Save" xml:space="preserve">
     <value>Save</value>
+  </data>
+  <data name="Strong" xml:space="preserve">
+    <value>Strong</value>
+  </data>
+  <data name="TooShort" xml:space="preserve">
+    <value>Too short</value>
+  </data>
+  <data name="VeryStrong" xml:space="preserve">
+    <value>Very strong</value>
+  </data>
+  <data name="Weak" xml:space="preserve">
+    <value>Weak</value>
+  </data>
+  <data name="WhiteSpace" xml:space="preserve">
+    <value>Do not insert blank spaces</value>
   </data>
 </root>

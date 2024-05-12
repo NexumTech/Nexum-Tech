@@ -277,3 +277,12 @@ C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTe
 C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.pdb
 C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.genruntimeconfig.cache
 C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\ref\NexumTech.Web.dll
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Controllers.PasswordResetController.en-US.resources
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Controllers.PasswordResetController.es-ES.resources
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Controllers.PasswordResetController.pt-BR.resources
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Controllers.SignupController.en-US.resources
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Controllers.SignupController.es-ES.resources
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Controllers.SignupController.pt-BR.resources
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.Profile.PartialProfileSettings.en-US.resources
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.Profile.PartialProfileSettings.es-ES.resources
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.Profile.PartialProfileSettings.pt-BR.resources

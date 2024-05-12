@@ -120,6 +120,9 @@
   <data name="Email" xml:space="preserve">
     <value>E-mail</value>
   </data>
+  <data name="ImageSize" xml:space="preserve">
+    <value>El tamaño de la imagen no puede exceder los 4 MB!</value>
+  </data>
   <data name="InvalidUsername" xml:space="preserve">
     <value>Ingresa un nombre</value>
   </data>

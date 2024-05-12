@@ -1,9 +1,11 @@
 ﻿$(document).ready(function () {
-    let password = $("#txtPassword");
+    let currentPasswordStrength;
+    let passwordInput = $("#txtPassword");
     let strengthBar = $("#strength-bar");
     let strengthText = $(".strength-text");
 
     function setStrength(value) {
+        currentPasswordStrength = value;
         strengthBar.width(value + "%");
     }
 
@@ -19,34 +21,35 @@
         strengthText.html("");
     }
 
-    password.keyup(checkPasswordStrength);
+    passwordInput.keyup(checkPasswordStrength);
 
     function checkPasswordStrength() {
         let strength = 0;
 
-        if (password.val() === "") {
+        if (passwordInput.val() === "") {
             clearStrength();
             return false;
         }
 
-        if (password.val().match(/\s/)) {
-            setColorAndText("red", "White space is not allowed");
+        if (passwordInput.val().match(/\s/)) {
+            strength = 10;
+            setColorAndText("red", $('#lblWhiteSpace').text());
             return false;
         }
 
-        if (password.val().length < 8) {
+        if (passwordInput.val().length < 8) {
             strength = 20;
-            setColorAndText("red", "Too short");
+            setColorAndText("red", $('#lblTooShort').text());
         } else {
 
-            let lowerCase = password.val().match(/[a-z]/);
-            let upperCase = password.val().match(/[A-Z]/);
-            let numbers = password.val().match(/[0-9]/);
-            let specialCharacters = password.val().match(/[\!\~\@\&\#\$\%\^\&\*\(\)\{\}\?\-\_\+\=]/);
+            let lowerCase = passwordInput.val().match(/[a-z]/);
+            let upperCase = passwordInput.val().match(/[A-Z]/);
+            let numbers = passwordInput.val().match(/[0-9]/);
+            let specialCharacters = passwordInput.val().match(/[\!\~\@\&\#\$\%\^\&\*\(\)\{\}\?\-\_\+\=]/);
 
             if (lowerCase || upperCase || numbers || specialCharacters) {
                 strength = 40;
-                setColorAndText("red", "Weak");
+                setColorAndText("red", $('#lblWeak').text());
             }
 
             if (
@@ -54,22 +57,94 @@
                 (upperCase && numbers) || (upperCase && specialCharacters) || (numbers && specialCharacters)
             ) {
                 strength = 60;
-                setColorAndText("orange", "Medium");
+                setColorAndText("orange", $('#lblMedium').text());
             }
 
             if ((lowerCase && upperCase && numbers) || (lowerCase && upperCase && specialCharacters) ||
                 (lowerCase && numbers && specialCharacters) || (upperCase && numbers && specialCharacters)
             ) {
                 strength = 80;
-                setColorAndText("#088f08", "Strong");
+                setColorAndText("#088f08", $('#lblStrong').text());
             }
 
             if (lowerCase && upperCase && numbers && specialCharacters) {
                 strength = 100;
-                setColorAndText("green", "Very Strong");
+                setColorAndText("green", $('#lblVeryStrong').text());
             }
         }
         setStrength(strength);
+    }
+
+    function ChangePassword() {
+        if (currentPasswordStrength < 60) {
+            let timerInterval;
+            Swal.fire({
+                title: $('#lblPasswordStrength').text(),
+                icon: 'error',
+                timer: 3000,
+                didOpen: () => {
+                    const timer = Swal.getPopup().querySelector("b");
+                    timerInterval = setInterval(() => {
+                        timer.textContent = `${Swal.getTimerLeft()}`;
+                    }, 100);
+                },
+                willClose: () => {
+                    clearInterval(timerInterval);
+                }
+            });
+
+            return;
+        }
+
+        var password = $('#txtPassword').val();
+
+        $.ajax({
+            type: 'PUT',
+            url: '/PasswordReset/UpdatePassword',
+            data: {
+                password: password,
+            },
+            success: function (response) {
+                Swal.fire({
+                    title: response.value,
+                    icon: 'success',
+                    didClose: () => {
+                        window.location.href = '/Login';
+                    },
+                });
+            },
+            error: function (xhr, status, error) {
+                let timerInterval;
+                Swal.fire({
+                    title: xhr.responseText,
+                    icon: 'error',
+                    timer: 3000,
+                    showClass: {
+                        popup: `
+                        animate__animated
+                        animate__fadeInUp
+                        animate__faster
+                    `
+                    },
+                    hideClass: {
+                        popup: `
+                        animate__animated
+                        animate__fadeOutDown
+                        animate__faster
+                    `
+                    },
+                    didOpen: () => {
+                        const timer = Swal.getPopup().querySelector("b");
+                        timerInterval = setInterval(() => {
+                            timer.textContent = `${Swal.getTimerLeft()}`;
+                        }, 100);
+                    },
+                    willClose: () => {
+                        clearInterval(timerInterval);
+                    }
+                });
+            },
+        });
     }
 
     $('#btnChangePassword').click(function (event) {
@@ -81,55 +156,3 @@
         }
     });
 });
-
-function ChangePassword() {
-    var password = $('#txtPassword').val();
-
-    $.ajax({
-        type: 'PUT',
-        url: '/PasswordReset/UpdatePassword',
-        data: {
-            password: password,
-        },
-        success: function (response) {
-            Swal.fire({
-                title: response.value,
-                icon: 'success',
-                didClose: () => {
-                    window.location.href = '/Login';
-                },
-            });
-        },
-        error: function (xhr, status, error) {
-            let timerInterval;
-            Swal.fire({
-                title: xhr.responseText,
-                icon: 'error',
-                timer: 3000,
-                showClass: {
-                    popup: `
-                        animate__animated
-                        animate__fadeInUp
-                        animate__faster
-                    `
-                },
-                hideClass: {
-                    popup: `
-                        animate__animated
-                        animate__fadeOutDown
-                        animate__faster
-                    `
-                },
-                didOpen: () => {
-                    const timer = Swal.getPopup().querySelector("b");
-                    timerInterval = setInterval(() => {
-                        timer.textContent = `${Swal.getTimerLeft()}`;
-                    }, 100);
-                },
-                willClose: () => {
-                    clearInterval(timerInterval);
-                }
-            });
-        },
-    });
-}

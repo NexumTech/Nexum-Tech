@@ -76,13 +76,13 @@
 
                     <form novalidate id="loginForm">
                         <div class="form-floating mb-3">
-                            <input type="email" id="txtEmail" class="form-control fs-6 p-12" placeholder="@Localizer["Email"]" required>
+                            <input type="email" id="txtEmail" class="form-control fs-6 p-12" placeholder="@Localizer["Email"]" required maxlength="80">
                             <label for="email" class="form-label">@Localizer["Email"]</label>
                             <div class="invalid-feedback">@Localizer["InvalidEmail"]</div>
                         </div>
 
                         <div class="form-floating mb-1">
-                            <input type="password" id="txtPassword" class="form-control fs-6 p-12" placeholder="@Localizer["Password"]" required>
+                            <input type="password" id="txtPassword" class="form-control fs-6 p-12" placeholder="@Localizer["Password"]" required maxlength="32">
                             <label for="password" class="form-label">@Localizer["Password"]</label>
                             <div class="invalid-feedback">@Localizer["InvalidPassword"]</div>
                         </div>

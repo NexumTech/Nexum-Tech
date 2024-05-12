@@ -21,6 +21,7 @@ else
     <span class="d-none" id="lblUserUpdated">@Localizer["UserUpdated"]</span>
     <span class="d-none" id="lblUsername">@Localizer["Username"]</span>
     <span class="d-none" id="lblInvalidUsername">@Localizer["InvalidUsername"]</span>
+    <span class="d-none" id="lblImageSize">@Localizer["ImageSize"]</span>
     <!-- SweetAlert resources -->
     <input type="hidden" id="txtId"  value="@Model.User.Id"/>
     <div class="d-flex justify-content-end">
@@ -32,7 +33,7 @@ else
                 <div class="col col-lg-6 mb-lg-0 w-100">
                     <div>
                         <div class="row g-0">
-                            <div class="col-md-5 py-5 text-center rounded-2 d-flex flex-column justify-content-center align-items-center" style="background-image: -webkit-linear-gradient(to right bottom, #103cbe, #fc8b00); background-image: linear-gradient(to right bottom, #103cbe, #fc8b00);">
+                            <div class="col-md-5 py-5 text-center rounded-2 d-flex flex-column justify-content-center align-items-center text-white" style="background-image: -webkit-linear-gradient(to right bottom, #103cbe, #fc8b00); background-image: linear-gradient(to right bottom, #103cbe, #fc8b00);">
                                 <input class="d-none" id="file-upload" type="file" accept="image/jpeg, image/png">
                                 <div class="position-relative rounded-circle" style="cursor: pointer;" id="image-container">
                                     @if(String.IsNullOrEmpty(Model.Base64Photo))
