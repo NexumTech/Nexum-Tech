@@ -114,7 +114,7 @@ namespace NexumTech.Infra.DAO
                 {
                     connection.Open();
 
-                    string sql = "SELECT COUNT(*) FROM tb_user WHERE Email = @Email and Password IS NOT NULL";
+                    string sql = "SELECT COUNT(*) FROM tb_user WHERE Email = @Email";
 
                     var userExists = await connection.QueryFirstOrDefaultAsync<int>(sql, new
                     {

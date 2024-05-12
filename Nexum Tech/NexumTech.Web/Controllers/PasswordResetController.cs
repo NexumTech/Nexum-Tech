@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Localization;
 using Microsoft.Extensions.Options;
 using NexumTech.Infra.API;
 using NexumTech.Infra.Models;
@@ -10,11 +11,13 @@ namespace NexumTech.Web.Controllers
     {
         private readonly BaseHttpService _httpService;
         private readonly AppSettingsWEB _appSettingsUI;
+        private readonly IStringLocalizer<PasswordResetController> _localizer;
 
-        public PasswordResetController(BaseHttpService baseHttpService, IOptions<AppSettingsWEB> appSettingsUI) 
+        public PasswordResetController(BaseHttpService baseHttpService, IOptions<AppSettingsWEB> appSettingsUI, IStringLocalizer<PasswordResetController> localizer) 
         {
             _httpService = baseHttpService;
             _appSettingsUI = appSettingsUI.Value;
+            _localizer = localizer;
         }
 
         public async Task<IActionResult> Index(string token)
@@ -56,7 +59,7 @@ namespace NexumTech.Web.Controllers
 
                 await _httpService.CallMethod<ActionResult>(_appSettingsUI.UpdatePasswordURL, HttpMethod.Put, token, passwordResetViewModel);
 
-                return Ok();
+                return Ok(_localizer["PasswordUpdated"]);
             }
             catch (Exception ex)
             {

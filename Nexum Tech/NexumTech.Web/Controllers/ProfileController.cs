@@ -35,7 +35,7 @@ namespace NexumTech.Web.Controllers
                 ProfileViewModel profileViewModel = new ProfileViewModel
                 {
                     User = user,
-                    Base64Photo = ConvertToDataUrl(user.Photo, "image/jpeg"),
+                    Base64Photo = user.Photo != null ? ConvertToDataUrl(user.Photo, "image/jpeg") : "",
                 };
 
                 return PartialView("PartialProfileSettings", profileViewModel);
@@ -60,7 +60,7 @@ namespace NexumTech.Web.Controllers
 
                 await _httpService.CallMethod<ActionResult>(_appSettingsUI.UpdateProfileURL, HttpMethod.Put, token, profileViewModel);
 
-                return Ok("User updated successfully!");
+                return Ok();
             }
             catch(Exception ex)
             {

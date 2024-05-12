@@ -14,6 +14,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="shortcut icon" href="@Url.Content("~/images/n_shortcut_icon.png")" crossorigin="anonymous">
     <link href="~/css/LoginRegister.css" rel="stylesheet" />
+    <link href="~/css/PasswordStrengthMeter.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
     <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
     <link href="~/lib/animate.css/animate.css" rel="stylesheet" />
@@ -71,14 +72,19 @@
                             <div class="invalid-feedback">@Localizer["InvalidEmail"]</div>
                         </div>
 
-                        <div class="form-floating mb-3">
+                        <div class="form-floating mb-2">
                             <input type="password" id="txtPassword" name="password" class="form-control" placeholder="@Localizer["Password"]" required>
                             <label for="password" class="form-label">@Localizer["Password"]</label>
                             <div class="invalid-feedback">@Localizer["InvalidPassword"]</div>
                         </div>
                     </form>
-                    <div class="input-group mb-3">
-                        <button class="btn btn-lg btn-primary w-100 fs-6 mt-4" id="btnSignup">@Localizer["Signup"]</button>
+                    <div class="input-group">
+                        <div class="strength-bar-wrapper mx-1">
+                            <div id="strength-bar"></div>
+                            <span class="strength-text"></span>
+                        </div>
+
+                        <button class="btn btn-lg btn-primary w-100 fs-6 mt-5" id="btnSignup">@Localizer["Signup"]</button>
                     </div>
                 </div>
             </div>

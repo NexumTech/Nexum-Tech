@@ -21,8 +21,8 @@
     $('#btnEditUsername').click(function () {
         var username = $(this).parent().text().trim(); 
         var input = $("<form class='mt-4' novalidate id='profileForm'>" +
-                        `<input type='text' id='txtUsername' class='form-control fs-6 p-12' placeholder='Username' value='${username}' required >` +
-                        "<div class='invalid-feedback'>Digite um nome</div>" +
+            `<input type='text' id='txtUsername' class='form-control fs-6 p-12' placeholder='${$('#lblUsername').text()}' value='${username}' required >` +
+            `<div class='invalid-feedback'>${$('#lblInvalidUsername').text() }</div>` +
                        "</form>").val(username); 
         $(this).parent().replaceWith(input);
     })
@@ -57,8 +57,7 @@
                 $("#profileModal").trigger('show.bs.modal');
                 let timerInterval;
                 Swal.fire({
-                    title: 'Success',
-                    html: response,
+                    title: $('#lblUserUpdated').text(),
                     icon: 'success',
                     timer: 3000,
                     didOpen: () => {

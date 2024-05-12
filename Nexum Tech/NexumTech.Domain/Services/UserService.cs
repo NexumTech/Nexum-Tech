@@ -1,5 +1,4 @@
-﻿
-using Microsoft.Extensions.Localization;
+﻿using Microsoft.Extensions.Localization;
 using NexumTech.Domain.Enums;
 using NexumTech.Domain.Interfaces;
 using NexumTech.Infra.API.Interfaces;
@@ -62,7 +61,7 @@ namespace NexumTech.Domain.Services
 
             await _userDAO.CreateUser(signupViewModel);         
 
-            return await SendMailAsync(user, $"{_localizer["InvalidCredentials"]}, {signupViewModel.Username}!", MailTypeEnum.Register);
+            return await SendMailAsync(user, $"{_localizer["Welcome"]}, {signupViewModel.Username}!", MailTypeEnum.Register);
         }
 
         public async Task<bool> UpdateProfile(ProfileViewModel profileViewModel)
