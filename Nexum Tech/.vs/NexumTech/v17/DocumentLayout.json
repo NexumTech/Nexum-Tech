@@ -3,12 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{FD64A08C-82A1-4378-80A5-0E111C02954F}|NexumTech.Domain\\NexumTech.Domain.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.domain\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{FD64A08C-82A1-4378-80A5-0E111C02954F}|NexumTech.Domain\\NexumTech.Domain.csproj|solutionrelative:nexumtech.domain\\services\\userservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{6490E4AA-DE12-49ED-8996-E32B62C4C993}|NexumTech.Infra\\NexumTech.Infra.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.infra\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6490E4AA-DE12-49ED-8996-E32B62C4C993}|NexumTech.Infra\\NexumTech.Infra.csproj|solutionrelative:nexumtech.infra\\dao\\userdao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{FD64A08C-82A1-4378-80A5-0E111C02954F}|NexumTech.Domain\\NexumTech.Domain.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.domain\\services\\mailmessageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD64A08C-82A1-4378-80A5-0E111C02954F}|NexumTech.Domain\\NexumTech.Domain.csproj|solutionrelative:nexumtech.domain\\services\\mailmessageservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +14,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 1,
           "Children": [
             {
               "$type": "Bookmark",
@@ -26,28 +22,15 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "UserDAO.cs",
-              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\DAO\\UserDAO.cs",
-              "RelativeDocumentMoniker": "NexumTech.Infra\\DAO\\UserDAO.cs",
-              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\DAO\\UserDAO.cs",
-              "RelativeToolTip": "NexumTech.Infra\\DAO\\UserDAO.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T08:05:23.778Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UserService.cs",
-              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\Services\\UserService.cs",
-              "RelativeDocumentMoniker": "NexumTech.Domain\\Services\\UserService.cs",
-              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\Services\\UserService.cs*",
-              "RelativeToolTip": "NexumTech.Domain\\Services\\UserService.cs*",
-              "ViewState": "AQIAAC4AAAAAAAAAAAAgwEMAAAAQAAAA",
+              "Title": "MailMessageService.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\Services\\MailMessageService.cs",
+              "RelativeDocumentMoniker": "NexumTech.Domain\\Services\\MailMessageService.cs",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\Services\\MailMessageService.cs",
+              "RelativeToolTip": "NexumTech.Domain\\Services\\MailMessageService.cs",
+              "ViewState": "AQIAAGkAAAAAAAAAAAAmwM8AAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-12T07:59:22.55Z",
+              "WhenOpened": "2024-05-13T01:06:14.726Z",
               "EditorCaption": ""
             }
           ]
