@@ -1,4 +1,5 @@
-﻿using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Localization;
+using Microsoft.Extensions.Options;
 using NexumTech.Domain.Enums;
 using NexumTech.Domain.Interfaces;
 using NexumTech.Infra.API;
@@ -12,11 +13,13 @@ namespace NexumTech.Domain.Services
     {
         private readonly ITokenService _tokenService;
         private readonly AppSettingsAPI _appSettingsAPI;
+        private readonly IStringLocalizer<MailMessageService> _localizer;
 
-        public MailMessageService(ITokenService tokenService, IOptions<AppSettingsAPI> appSettingsAPI)
+        public MailMessageService(ITokenService tokenService, IOptions<AppSettingsAPI> appSettingsAPI, IStringLocalizer<MailMessageService> localizer)
         {
             _tokenService = tokenService;
             _appSettingsAPI = appSettingsAPI.Value;
+            _localizer = localizer;
         }
 
         public string GetMailMessage(MailTypeEnum mailType, UserViewModel user)
@@ -97,8 +100,8 @@ namespace NexumTech.Domain.Services
             message.Append("<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"border-collapse:collapse;border-spacing:0px;\">");
             message.Append("<tbody>");
             message.Append("<tr>");
-            message.Append("<td style=\"width:64px;\">");
-            message.Append("<img height=\"auto\" src=\"https://i.imgur.com/KO1vcE9.png\" style=\"border:0;display:block;outline:none;text-decoration:none;width:100%;\" width=\"64\" />");
+            message.Append("<td style=\"width:128px;\">");
+            message.Append("<img height=\"auto\" src=\"https://github.com/NexumTech/Nexum-Tech/assets/78672277/c0a8faf4-f41f-4fcd-8702-6825f519d8f5\" style=\"border:0;display:block;outline:none;text-decoration:none;width:100%;\" width=\"128\" />");
             message.Append("</td>");
             message.Append("</tr>");
             message.Append("</tbody>");
@@ -106,9 +109,9 @@ namespace NexumTech.Domain.Services
             message.Append("</td>");
             message.Append("</tr>");
             message.Append("<tr>");
-            message.Append("<td align=\"center\" style=\"font-size:0px;padding:10px 25px;padding-bottom:40px;word-break:break-word;\">");
-            message.Append("<div style=\"font-family:'Helvetica Neue',Arial,sans-serif;font-size:38px;font-weight:bold;line-height:1;text-align:center;color:#555;\">");
-            message.Append("Oops!");
+            message.Append("<td align=\"center\" style=\"font-size:0px;padding:10px 25px;padding-bottom:20px;word-break:break-word;padding-top:28px;\">");
+            message.Append("<div style=\"font-family:'Helvetica Neue',Arial,sans-serif;font-size:28px;font-weight:bold;line-height:1;text-align:center;color:#555;\">");
+            message.Append("Password recovery");
             message.Append("</div>");
             message.Append("</td>");
             message.Append("</tr>");
@@ -120,26 +123,13 @@ namespace NexumTech.Domain.Services
             message.Append("</td>");
             message.Append("</tr>");
             message.Append("<tr>");
-            message.Append("<td align=\"center\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\">");
-            message.Append("<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"border-collapse:collapse;border-spacing:0px;\">");
-            message.Append("<tbody>");
-            message.Append("<tr>");
-            message.Append("<td style=\"width:128px;\">");
-            message.Append("<img height=\"auto\" src=\"https://i.imgur.com/247tYSw.png\" style=\"border:0;display:block;outline:none;text-decoration:none;width:100%;\" width=\"128\" />");
-            message.Append("</td>");
-            message.Append("</tr>");
-            message.Append("</tbody>");
-            message.Append("</table>");
-            message.Append("</td>");
-            message.Append("</tr>");
-            message.Append("<tr>");
-            message.Append("<td align=\"center\" style=\"font-size:0px;padding:10px 25px;padding-top:30px;padding-bottom:50px;word-break:break-word;\">");
+            message.Append("<td align=\"center\" style=\"font-size:0px;padding:10px 25px;padding-top:4px;padding-bottom:40px;word-break:break-word;\">");
             message.Append("<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"border-collapse:separate;line-height:100%;\">");
             message.Append("<tr>");
-            message.Append("<td align=\"center\" bgcolor=\"#2F67F6\" role=\"presentation\" style=\"border:none;border-radius:3px;color:#ffffff;cursor:auto;padding:15px 25px;\" valign=\"middle\">");
-            message.Append("<p style=\"background:#2F67F6;color:#ffffff;font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;font-weight:normal;line-height:120%;Margin:0;text-decoration:none;text-transform:none;\">");
+            message.Append("<td align=\"center\" bgcolor=\"#2F67F6\" role=\"presentation\" style=\"border:none;border-radius:3px;color:#ffffff;cursor:pointer;padding:15px 25px;\" valign=\"middle\">");
+            message.Append($"<a href=\"{passwordResetURL}\" style=\"cursor:pointer;background:#2F67F6;color:#ffffff;font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:normal;line-height:120%;Margin:0;text-decoration:none;text-transform:none;display:inline-block;border-radius:5px;\">");
             message.Append("Reset Password");
-            message.Append("</p>");
+            message.Append("</a>");
             message.Append("</td>");
             message.Append("</tr>");
             message.Append("</table>");
@@ -148,7 +138,7 @@ namespace NexumTech.Domain.Services
             message.Append("<tr>");
             message.Append("<td align=\"center\" style=\"font-size:0px;padding:10px 25px;padding-bottom:40px;word-break:break-word;\">");
             message.Append("<div style=\"font-family:'Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:20px;text-align:center;color:#7F8FA4;\">");
-            message.Append("If you did not make this request, just ignore this email. Otherwise please click the button above to reset your password.");
+            message.Append("If you did not make this request, just ignore this email.");
             message.Append("</div>");
             message.Append("</td>");
             message.Append("</tr>");
@@ -174,13 +164,6 @@ namespace NexumTech.Domain.Services
             message.Append("<td align=\"center\" style=\"font-size:0px;padding:0;word-break:break-word;\">");
             message.Append("<div style=\"font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:300;line-height:1;text-align:center;color:#575757;\">");
             message.Append("Some Firm Ltd, 35 Avenue. City 10115, USA");
-            message.Append("</div>");
-            message.Append("</td>");
-            message.Append("</tr>");
-            message.Append("<tr>");
-            message.Append("<td align=\"center\" style=\"font-size:0px;padding:10px;word-break:break-word;\">");
-            message.Append("<div style=\"font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:300;line-height:1;text-align:center;color:#575757;\">");
-            message.Append("<a href=\"\" style=\"color:#575757\">Unsubscribe</a> from our emails");
             message.Append("</div>");
             message.Append("</td>");
             message.Append("</tr>");
@@ -220,6 +203,7 @@ namespace NexumTech.Domain.Services
             message.Append("img { border: 0; height: auto; line-height: 100%; outline: none; text-decoration: none; -ms-interpolation-mode: bicubic; }");
             message.Append("p { display: block; margin: 13px 0; }");
             message.Append("</style>");
+            message.Append("<!--[if !mso]><!-->");
             message.Append("<style type=\"text/css\">");
             message.Append("@media only screen and (max-width:480px) {");
             message.Append("@-ms-viewport { width: 320px; }");
@@ -256,8 +240,8 @@ namespace NexumTech.Domain.Services
             message.Append("<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"border-collapse:collapse;border-spacing:0px;\">");
             message.Append("<tbody>");
             message.Append("<tr>");
-            message.Append("<td style=\"width:64px;\">");
-            message.Append("<img height=\"auto\" src=\"https://i.imgur.com/KO1vcE9.png\" style=\"border:0;display:block;outline:none;text-decoration:none;width:100%;\" width=\"64\" />");
+            message.Append("<td style=\"width:128px;\">");
+            message.Append("<img height=\"auto\" src=\"https://github.com/NexumTech/Nexum-Tech/assets/78672277/c0a8faf4-f41f-4fcd-8702-6825f519d8f5\" style=\"border:0;display:block;outline:none;text-decoration:none;width:100%;\" width=\"128\" />");
             message.Append("</td>");
             message.Append("</tr>");
             message.Append("</tbody>");
@@ -265,38 +249,16 @@ namespace NexumTech.Domain.Services
             message.Append("</td>");
             message.Append("</tr>");
             message.Append("<tr>");
-            message.Append("<td align=\"center\" style=\"font-size:0px;padding:10px 25px;padding-bottom:40px;word-break:break-word;\">");
+            message.Append("<td align=\"center\" style=\"font-size:0px;padding:10px 25px;padding-bottom:20px;word-break:break-word;padding-top:28px;\">");
             message.Append("<div style=\"font-family:'Helvetica Neue',Arial,sans-serif;font-size:28px;font-weight:bold;line-height:1;text-align:center;color:#555;\">");
-            message.Append("Welcome to {{Product}}");
+            message.Append("Welcome to Nexum");
             message.Append("</div>");
             message.Append("</td>");
             message.Append("</tr>");
             message.Append("<tr>");
-            message.Append("<td align=\"left\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\">");
-            message.Append("<div style=\"font-family:'Helvetica Neue',Arial,sans-serif;font-size:16px;line-height:22px;text-align:left;color:#555;\">");
-            message.Append("Hello {{ name }}!<br></br>");
-            message.Append("Thank you for signing up for {{ product }}. We're really happy to have you! Click the link below to login to your account:");
-            message.Append("</div>");
-            message.Append("</td>");
-            message.Append("</tr>");
-            message.Append("<tr>");
-            message.Append("<td align=\"center\" style=\"font-size:0px;padding:10px 25px;padding-top:30px;padding-bottom:50px;word-break:break-word;\">");
-            message.Append("<table align=\"center\" border=\"0\" cellpadding=\"0\" cellspacing=\"0\" role=\"presentation\" style=\"border-collapse:separate;line-height:100%;\">");
-            message.Append("<tr>");
-            message.Append("<td align=\"center\" bgcolor=\"#2F67F6\" role=\"presentation\" style=\"border:none;border-radius:3px;color:#ffffff;cursor:auto;padding:15px 25px;\" valign=\"middle\">");
-            message.Append("<p style=\"background:#2F67F6;color:#ffffff;font-family:'Helvetica Neue',Arial,sans-serif;font-size:15px;font-weight:normal;line-height:120%;Margin:0;text-decoration:none;text-transform:none;\">");
-            message.Append("Login to Your Account");
-            message.Append("</p>");
-            message.Append("</td>");
-            message.Append("</tr>");
-            message.Append("</table>");
-            message.Append("</td>");
-            message.Append("</tr>");
-            message.Append("<tr>");
-            message.Append("<td align=\"left\" style=\"font-size:0px;padding:10px 25px;word-break:break-word;\">");
-            message.Append("<div style=\"font-family:'Helvetica Neue',Arial,sans-serif;font-size:14px;line-height:20px;text-align:left;color:#525252;\">");
-            message.Append("Best regards,<br><br> Csaba Kissi<br>Elerion ltd., CEO and Founder<br>");
-            message.Append("<a href=\"https://www.htmlemailtemplates.net\" style=\"color:#2F67F6\">htmlemailtemplates.net</a>");
+            message.Append("<td align=\"center\" style=\"font-size:0px;padding:10px 25px;padding-bottom:20px;word-break:break-word;\">");
+            message.Append("<div style=\"font-family:'Helvetica Neue',Arial,sans-serif;font-size:18px;line-height:1;text-align:center;color:#555;\">");
+            message.Append("It seems that you’ve forgotten your password.");
             message.Append("</div>");
             message.Append("</td>");
             message.Append("</tr>");
@@ -325,13 +287,6 @@ namespace NexumTech.Domain.Services
             message.Append("</div>");
             message.Append("</td>");
             message.Append("</tr>");
-            message.Append("<tr>");
-            message.Append("<td align=\"center\" style=\"font-size:0px;padding:10px;word-break:break-word;\">");
-            message.Append("<div style=\"font-family:'Helvetica Neue',Arial,sans-serif;font-size:12px;font-weight:300;line-height:1;text-align:center;color:#575757;\">");
-            message.Append("<a href=\"\" style=\"color:#575757\">Unsubscribe</a> from our emails");
-            message.Append("</div>");
-            message.Append("</td>");
-            message.Append("</tr>");
             message.Append("</table>");
             message.Append("</td>");
             message.Append("</tr>");
@@ -344,8 +299,6 @@ namespace NexumTech.Domain.Services
             message.Append("</table>");
             message.Append("</div>");
             message.Append("</body></html>");
-
-
 
             return message.ToString();
         }

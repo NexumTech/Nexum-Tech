@@ -1,0 +1,48 @@
+﻿<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+<link href="~/lib/datatables/datatables.css" rel="stylesheet" />
+
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/datatables/datatables.js"></script>
+<script src="~/js/ThemeSwitcher.js"></script>
+<script src="~/js/Devices.js"></script>
+
+<body data-bs-theme="light">
+    <div class="container">
+        <div class="card">
+            <div class="card-header">
+                Devices
+            </div>
+            <div class="card-body py-4">
+                <table id="devicesTable" class="display w-100">
+                    <thead>
+                        <tr>
+                            <th>Id</th>
+                            <th>Name</th>
+                            <th>Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Row 1 Data 1</td>
+                            <td>Row 1 Data 2</td>
+                            <td>
+                                <a class="btn btn-outline-danger">
+                                    <i class="fa-solid fa-trash-can" id="btnDeleteDevice"></i>
+                                </a>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="modal fade" id="devicesModal" tabindex="-1" aria-labelledby="devicesModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" id="devicesModalContent">
+            </div>
+        </div>
+    </div>
+</body>
+
+
+
