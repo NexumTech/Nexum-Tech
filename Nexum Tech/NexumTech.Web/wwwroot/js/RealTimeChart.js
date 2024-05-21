@@ -61,6 +61,6 @@ $(document).ready(function () {
         }
     });
 
-    setInterval(fetchTemperatureData, 2500);
+    setInterval(fetchTemperatureData, 1000);
     fetchTemperatureData();
 });
