@@ -10,22 +10,38 @@
 <body data-bs-theme="light">
     <div class="container">
         <div class="card">
-            <div class="card-header">
-                Employees
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span>
+                    <i class="fa-solid fa-people-group"></i>
+                    Employees
+                </span>
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-wrench"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li>
+                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#employeesModal">
+                                <i class="fa-solid fa-plus"></i>
+                                New employee
+                            </a>
+                        </li>
+                    </ul>
+                </div>
             </div>
             <div class="card-body py-4">
-                <table id="employeesTable" class="display w-100">
+                <table id="employeesTable" class="table table-striped display w-100">
                     <thead>
                         <tr>
                             <th>Id</th>
                             <th>Name</th>
-                            <th>Delete</th>
+                            <th>Remove</th>
                         </tr>
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Row 1 Data 1</td>
-                            <td>Row 1 Data 2</td>
+                            <td>Row 1</td>
+                            <td>Row 1</td>
                             <td>
                                 <a class="btn btn-outline-danger">
                                     <i class="fa-solid fa-circle-xmark"></i>

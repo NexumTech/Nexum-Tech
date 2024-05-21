@@ -11,29 +11,33 @@ else
     <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
 }
 
-<script src="~/js/PartialCreateCompany.js"></script>
+<script src="~/js/PartialCreateDevice.js"></script>
 <script src="~/lib/sweetalert2/sweetalert2.js"></script>
 
 <div class="modal-content">
     <!-- SweetAlert resources -->
-    
     <!-- SweetAlert resources -->
 
     <div class="modal-header">
-        Create company
-        <button type="button" class="btn-close mt-3 me-3" data-bs-dismiss="modal" aria-label="Close"></button>
+        Create device
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body py-5">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center">
                 <form novalidate id="loginForm">
                     <div class="row">
-                        <div class="col-md-6">
+                        <div class="col-md-6 mb-4">
                             <div class="form-floating">
-                                <input type="email" id="txtEmail" class="form-control fs-6 p-12" placeholder="Company name" required maxlength="80">
-                                <label for="email" class="form-label">Company name</label>
-                                <div class="invalid-feedback">Invalid company name</div>
+                                <input type="text" id="txtName" class="form-control fs-6 p-12" placeholder="Name" required maxlength="80">
+                                <label for="name" class="form-label">Name</label>
+                                <div class="invalid-feedback">Invalid name</div>
                             </div>
+                        </div>
+                        <div class="col-md-12">
+                            <label for="description" class="form-label">Description</label>
+                            <textarea type="text" id="txtDescription" class="form-control fs-6 p-12" placeholder="Description" required maxlength="400"></textarea>
+                            <div class="invalid-feedback">Invalid description</div>
                         </div>
                     </div>
                 </form>
@@ -41,6 +45,6 @@ else
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-success mb-3 me-3" id="btnSaveProfile">Create</button>
+        <button type="button" class="btn btn-outline-success" id="btnSaveProfile">Create</button>
     </div>
 </div>
