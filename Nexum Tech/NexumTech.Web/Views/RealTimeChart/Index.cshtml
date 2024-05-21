@@ -1,0 +1,26 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IViewLocalizer Localizer
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Localizer["RealTimeTemperature"]</title>
+    
+    <script type="module" src="~/lib/chart.js/chart.umd.js"></script>
+    <script src="~/js/RealTimeChart.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="~/js/ThemeSwitcher.js"></script>
+    <script src="~/lib/sweetalert2/sweetalert2.js"></script>
+    <script src="~/lib/jquery/jquery.js"></script>
+</head>
+
+<body data-bs-theme="dark">
+    <div class="container mt-5">
+        <h1 class="text-center">@Localizer["RealTimeTemperatureChart"]</h1>
+        <canvas id="realTimeChart" width="800" height="300"></canvas>
+    </div>
+</body>
+</html>

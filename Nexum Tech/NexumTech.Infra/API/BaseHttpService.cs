@@ -20,11 +20,11 @@ namespace NexumTech.Infra.API
             _appSettingsUI = appSettingsUI.Value;
         }
 
-        public async Task<T> CallMethod<T>(string url, HttpMethod method, string token = null, object data = null, Dictionary<string, string> headers = null)
+        public async Task<T> CallMethod<T>(string url, HttpMethod method, string token = null, object data = null, Dictionary<string, string> headers = null, string urlFiware = null)
         {
             try
             {
-                string completeURL = String.Concat(_appSettingsUI.ApiBaseURL, url.Trim());
+                string completeURL = !string.IsNullOrEmpty(urlFiware) ? urlFiware : String.Concat(_appSettingsUI.ApiBaseURL, url.Trim());
 
                 HttpRequestMessage request = new HttpRequestMessage(method, completeURL);
 
