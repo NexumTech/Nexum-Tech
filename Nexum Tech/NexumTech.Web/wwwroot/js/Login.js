@@ -85,6 +85,13 @@ $(document).ready(function () {
     $(document).ajaxStop(function () {
         $('#loadingSpinner').hide();
     });
+
+    $('#txtPassword').keypress(function (event) {
+        if (event.keyCode === 13) { // 13 é o código da tecla Enter
+            event.preventDefault();
+            $('#btnLogin').click();
+        }
+    });
 });
 
 function RequestChangePassword(email) {
