@@ -1,14 +1,10 @@
 let temperatures = [];
 let timeStamps = [];
+
 $(document).ready(function () {
     function addTemperatureAndTime(temperature, timestamp) {
         temperatures.push(temperature);
         timeStamps.push(timestamp);
-
-        if (temperatures.length > 10) {
-            temperatures.shift();
-            timeStamps.shift();
-        }
 
         updateChart();
     }
@@ -49,7 +45,8 @@ $(document).ready(function () {
                 data: [],
                 backgroundColor: 'rgba(16, 60, 190, 0.2)',
                 borderColor: 'rgba(16, 60, 190, 1)',
-                borderWidth: 1
+                borderWidth: 1,
+                pointRadius: 0
             }]
         },
         options: {
@@ -57,10 +54,15 @@ $(document).ready(function () {
                 y: {
                     beginAtZero: false
                 }
+            },
+            plugins: {
+                legend: {
+                    onClick: null
+                }
             }
         }
     });
 
-    setInterval(fetchTemperatureData, 1000);
+    setInterval(fetchTemperatureData, 500);
     fetchTemperatureData();
 });
