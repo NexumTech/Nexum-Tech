@@ -5,12 +5,12 @@ using NexumTech.Infra.WEB;
 
 namespace NexumTech.Web.Controllers
 {
-    public class RealTimeChartController : Controller
+    public class HistoricalChartController : Controller
     {
         private readonly BaseHttpService _httpService;
         private readonly AppSettingsWEB _appSettingsUI;
 
-        public RealTimeChartController(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI)
+        public HistoricalChartController(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI)
         {
             _httpService = httpService;
             _appSettingsUI = appSettingsUI.Value;
@@ -22,8 +22,7 @@ namespace NexumTech.Web.Controllers
         }
 
         [HttpPost]
-        //[Authorize]
-        public async Task<ActionResult> GetRealTemperature()
+        public async Task<ActionResult> GetHistoricalTemperature()
         {
             try
             {
@@ -34,7 +33,7 @@ namespace NexumTech.Web.Controllers
                 headers.Add("fiware-servicepath", "/");
                 headers.Add("accept", "application/json");
 
-                RealTimeChartViewModel temperature = await _httpService.CallMethod<RealTimeChartViewModel>(_appSettingsUI.Fiware.ApiFiwareRealTimeChartURL, HttpMethod.Get, token, headers: headers, urlFiware:_appSettingsUI.Fiware.ApiFiwareRealTimeChartURL);
+                HistoricalChartViewModel temperature = await _httpService.CallMethod<HistoricalChartViewModel>(_appSettingsUI.Fiware.ApiFiwareHistoricalChartURL, HttpMethod.Get, token, headers: headers, urlFiware:_appSettingsUI.Fiware.ApiFiwareHistoricalChartURL);
 
                 return Ok(temperature);
             }
