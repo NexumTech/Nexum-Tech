@@ -33,14 +33,59 @@ namespace NexumTech.Web.Controllers
                 headers.Add("fiware-servicepath", "/");
                 headers.Add("accept", "application/json");
 
-                HistoricalChartViewModel temperature = await _httpService.CallMethod<HistoricalChartViewModel>(_appSettingsUI.Fiware.ApiFiwareHistoricalChartURL, HttpMethod.Get, token, headers: headers, urlFiware:_appSettingsUI.Fiware.ApiFiwareHistoricalChartURL);
+                var response = await _httpService.CallMethod<HistoricalApiResponse>(_appSettingsUI.Fiware.ApiFiwareHistoricalChartURL, HttpMethod.Get, token, headers: headers, urlFiware: _appSettingsUI.Fiware.ApiFiwareHistoricalChartURL);
 
-                return Ok(temperature);
+                var temperatureRecords = response.ContextResponses[0].ContextElement.Attributes[0].Values.Select(v => new TemperatureRecord
+                {
+                    Id = v.Id,
+                    RecvTime = v.RecvTime,
+                    AttrName = v.AttrName,
+                    AttrType = v.AttrType,
+                    AttrValue = v.AttrValue
+                }).ToList();
+
+                var viewModel = new HistoricalChartViewModel
+                {
+                    TemperatureRecords = temperatureRecords
+                };
+
+                return Ok(viewModel);
             }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
             }
         }
+
+        public class HistoricalApiResponse
+        {
+            public List<ContextResponse> ContextResponses { get; set; }
+        }
+
+        public class ContextResponse
+        {
+            public ContextElement ContextElement { get; set; }
+        }
+
+        public class ContextElement
+        {
+            public List<Attribute> Attributes { get; set; }
+        }
+
+        public class Attribute
+        {
+            public string Name { get; set; }
+            public List<Value> Values { get; set; }
+        }
+
+        public class Value
+        {
+            public string Id { get; set; }
+            public DateTime RecvTime { get; set; }
+            public string AttrName { get; set; }
+            public string AttrType { get; set; }
+            public double AttrValue { get; set; }
+        }
+
     }
 }

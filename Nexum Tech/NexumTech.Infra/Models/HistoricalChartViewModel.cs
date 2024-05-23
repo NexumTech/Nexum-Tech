@@ -1,15 +1,13 @@
 ﻿public class HistoricalChartViewModel
 {
-    public double Value { get; set; }
-    public Metadata Metadata { get; set; }
+    public List<TemperatureRecord> TemperatureRecords { get; set; }
 }
 
-//public class Metadata
-//{
-//    public TimeInstant TimeInstant { get; set; }
-//}
-
-//public class TimeInstant
-//{
-//    public DateTime Value { get; set; }
-//}
+public class TemperatureRecord
+{
+    public string Id { get; set; }
+    public DateTime RecvTime { get; set; }
+    public string AttrName { get; set; }
+    public string AttrType { get; set; }
+    public double AttrValue { get; set; }
+}
