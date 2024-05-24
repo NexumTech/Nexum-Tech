@@ -20,6 +20,7 @@
 
     public class Fiware
     {
-        public string ApiFiwareBaseURL { get; set; }
+        public string ApiFiwareRealTimeChartURL { get; set; }
+        public string ApiFiwareHistoricalChartURL { get; set; }
     }
 }

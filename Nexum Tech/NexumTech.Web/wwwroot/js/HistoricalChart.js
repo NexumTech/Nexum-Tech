@@ -25,7 +25,7 @@ $(document).ready(function () {
         $.ajax({
             type: 'POST',
             global: false,
-            url: '/RealTimeChart/GetRealTemperature',
+            url: '/historicalChart/GetHistoricalTemperature',
             success: function (response) {
                 addTemperatureAndTime(response.value, response.metadata.timeInstant.value);
             },
@@ -35,7 +35,7 @@ $(document).ready(function () {
         });
     }
 
-    const ctx = document.getElementById('realTimeChart').getContext('2d');
+    const ctx = document.getElementById('historicalChart').getContext('2d');
     const realTimeChart = new Chart(ctx, {
         type: 'line',
         data: {
@@ -63,6 +63,5 @@ $(document).ready(function () {
         }
     });
 
-    setInterval(fetchTemperatureData, 500);
     fetchTemperatureData();
 });
