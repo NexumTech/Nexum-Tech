@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@Localizer["RealTimeTemperature"]</title>
-    
+
     <script type="module" src="~/lib/chart.js/chart.umd.js"></script>
     <script src="~/js/RealTimeChart.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.js"></script>
@@ -16,11 +16,24 @@
     <script src="~/lib/sweetalert2/sweetalert2.js"></script>
     <script src="~/lib/jquery/jquery.js"></script>
 </head>
-
 <body data-bs-theme="dark">
     <div class="container mt-5">
-        <h1 class="text-center">@Localizer["RealTimeTemperatureChart"]</h1>
-        <canvas id="realTimeChart" width="800" height="300"></canvas>
+        <div class="d-flex justify-content-between align-items-center">
+            <h1 class="my-0">@Localizer["RealTimeTemperatureChart"]</h1>
+            <div class="card mb-4 rounded-3 shadow-sm" style="width: 170px; height: 100px;">
+                <div class="card-header bg-primary py-3">
+                    <h6 class="my-0 fw-normal text-center">Real temp (ºC)</h6>
+                </div>
+                <div class="card-body">
+                    <ul class="list-unstyled mb-0 text-center">
+                        <li id="realTemp"></li>
+                    </ul>
+                </div>
+                <button type="button" id="btnReload" class="btn btn-outline-primary">@Localizer["Reload"]</button>
+            </div>
+        </div>
+        <canvas id="realTimeChart" width="800" height="280"></canvas>
     </div>
 </body>
+
 </html>

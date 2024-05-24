@@ -123,4 +123,7 @@
   <data name="RealTimeTemperatureChart" xml:space="preserve">
     <value>Real-Time Temperature Chart</value>
   </data>
+  <data name="Reload" xml:space="preserve">
+    <value>Reload</value>
+  </data>
 </root>
