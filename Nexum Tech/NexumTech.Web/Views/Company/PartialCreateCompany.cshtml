@@ -2,17 +2,9 @@
 
 @inject IViewLocalizer Localizer
 
-@if (ViewBag.CurrentTheme == "dark")
-{
-    <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2-dark.css" rel="stylesheet" />
-}
-else
-{
-    <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
-}
+@model NexumTech.Infra.Models.CompanyViewModel
 
 <script src="~/js/PartialCreateCompany.js"></script>
-<script src="~/lib/sweetalert2/sweetalert2.js"></script>
 
 <div class="modal-content">
     <!-- SweetAlert resources -->
@@ -29,19 +21,20 @@ else
                     <div class="row">
                         <div class="col-md-4 mb-4">
                             <div class="form-floating">
-                                <input type="text" id="txtName" class="form-control fs-6 p-12" placeholder="Name" required maxlength="80">
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control fs-6 p-12", @id = "txtName", placeholder = "Name", required = "required", maxlength = "80" })
                                 <label for="name" class="form-label">Name</label>
                                 <div class="invalid-feedback">Invalid name</div>
                             </div>
                         </div>
                         <div class="col-md-12 mb-4">
                             <label for="description" class="form-label">Description</label>
-                            <textarea type="text" id="txtDescription" class="form-control fs-6 p-12" required maxlength="500"></textarea>
+                            @Html.TextAreaFor(m => m.Description, new { @class = "form-control fs-6 p-12", @id = "txtDescription", required = "required", maxlength = "400" })
                             <div class="invalid-feedback">Invalid description</div>
                         </div>
                         <div class="col-md-6">
                             <label for="logo" class="form-label">Logo</label>
-                            <input class="form-control" type="file" id="logo">
+                            <input class="form-control" type="file" id="logo" accept="image/jpeg, image/png">
+                            <div class="invalid-feedback">Invalid logo</div>
                         </div>
                     </div>
                 </form>
@@ -49,6 +42,6 @@ else
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-success" id="btnSaveProfile">Create</button>
+        <button type="button" class="btn btn-outline-success" id="btnCreateCompany">Create</button>
     </div>
 </div>

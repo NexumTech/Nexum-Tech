@@ -57,7 +57,7 @@ namespace NexumTech.Infra.DAO
 
                     var user = await connection.QueryFirstOrDefaultAsync<UserViewModel>(sql, new
                     {
-                        @Email = email,
+                        @Email = email.Trim(),
                     });
 
                     return user;
@@ -119,7 +119,7 @@ namespace NexumTech.Infra.DAO
 
                     var userExists = await connection.QueryFirstOrDefaultAsync<int>(sql, new
                     {
-                        @Email = email,
+                        @Email = email.Trim(),
                     });
 
                     return (userExists == 1);
@@ -150,7 +150,7 @@ namespace NexumTech.Infra.DAO
 
                     sql.Append(" WHERE Id = @Id");
 
-                    await connection.QueryFirstOrDefaultAsync<int>(sql.ToString(), new
+                    await connection.QueryAsync<int>(sql.ToString(), new
                     {
                         @Id = id,
                         @Username = username,
@@ -176,7 +176,7 @@ namespace NexumTech.Infra.DAO
 
                     string sql = "UPDATE tb_user SET Password = @Password WHERE Email = @Email";
 
-                    var userExists = await connection.QueryFirstOrDefaultAsync<int>(sql, new
+                    var userExists = await connection.QueryAsync<int>(sql, new
                     {
                         @Password = password,
                         @Email = email

@@ -387,3 +387,6 @@ C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumT
 C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.pdb
 C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.genruntimeconfig.cache
 C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\ref\NexumTech.Web.dll
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.RealTimeChart.Index.en-US.resources
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.RealTimeChart.Index.es-ES.resources
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.RealTimeChart.Index.pt-BR.resources

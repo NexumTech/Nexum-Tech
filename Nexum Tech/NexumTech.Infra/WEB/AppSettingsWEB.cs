@@ -12,6 +12,10 @@
         public string RequestToChangePasswordURL { get; set; }
         public string PasswordResetTokenValidationURL { get; set; }
         public string UpdatePasswordURL { get; set;}
+        public string CreateCompanyURL { get; set; }
+        public string GetCompanyURL { get; set; }
+        public string UpdateCompanyURL { get; set; }
+        public string DeleteCompanyURL { get; set; }
     }
 
     public class Fiware
