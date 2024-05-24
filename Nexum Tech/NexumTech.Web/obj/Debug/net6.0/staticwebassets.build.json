@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "8+dVCg+26EngDj9cr/iIlr2YD+/mB5lZoY4HojBwQ3c=",
+  "Hash": "mKZNGDMbjG40kMqAX0DMdw6ap+Z7Hk3AE0g7bo1fOpw=",
   "Source": "NexumTech.Web",
   "BasePath": "_content/NexumTech.Web",
   "Mode": "Default",
@@ -414,6 +414,25 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Employees.js"
+    },
+    {
+      "Identity": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\HistoricalChart.js",
+      "SourceId": "NexumTech.Web",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\",
+      "BasePath": "_content/NexumTech.Web",
+      "RelativePath": "js/HistoricalChart.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "PreferTarget",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\HistoricalChart.js"
     },
     {
       "Identity": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\Login.js",

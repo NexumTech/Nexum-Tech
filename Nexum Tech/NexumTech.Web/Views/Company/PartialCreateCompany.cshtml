@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-md-12 mb-4">
                             <label for="description" class="form-label">Description</label>
-                            @Html.TextAreaFor(m => m.Description, new { @class = "form-control fs-6 p-12", @id = "txtDescription", required = "required", maxlength = "400" })
+                            @Html.TextAreaFor(m => m.Description, new { @class = "form-control fs-6 p-12", @id = "txtDescription", required = "required", maxlength = "400", style = "height: 140px;" })
                             <div class="invalid-feedback">Invalid description</div>
                         </div>
                         <div class="col-md-6">
