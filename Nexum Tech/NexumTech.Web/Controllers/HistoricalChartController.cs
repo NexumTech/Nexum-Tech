@@ -22,18 +22,24 @@ namespace NexumTech.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> GetHistoricalTemperature()
+        public async Task<ActionResult> GetHistoricalTemperature(string dateFrom, string dateTo)
         {
             try
             {
                 var token = Request.Cookies["jwt"];
+                dateFrom += "T00:00:00.000Z";
+                dateTo += "T23:59:59.999Z";
 
-                Dictionary<string, string> headers = new Dictionary<string, string>();
-                headers.Add("fiware-service", "smart");
-                headers.Add("fiware-servicepath", "/");
-                headers.Add("accept", "application/json");
+                Dictionary<string, string> headers = new Dictionary<string, string>
+                {
+                    { "fiware-service", "smart" },
+                    { "fiware-servicepath", "/" },
+                    { "accept", "application/json" }
+                };
 
-                var response = await _httpService.CallMethod<HistoricalApiResponse>(_appSettingsUI.Fiware.ApiFiwareHistoricalChartURL, HttpMethod.Get, token, headers: headers, urlFiware: _appSettingsUI.Fiware.ApiFiwareHistoricalChartURL);
+                string url = $"{_appSettingsUI.Fiware.ApiFiwareHistoricalChartURL}&aggrMethod=occur&aggrPeriod=hour&dateFrom={dateFrom}&dateTo={dateTo}";
+
+                var response = await _httpService.CallMethod<HistoricalApiResponse>(url, HttpMethod.Get, token, headers: headers, urlFiware: url);
 
                 var temperatureRecords = response.ContextResponses[0].ContextElement.Attributes[0].Values.Select(v => new TemperatureRecord
                 {
@@ -56,6 +62,7 @@ namespace NexumTech.Web.Controllers
                 return BadRequest(ex.Message);
             }
         }
+
 
         public class HistoricalApiResponse
         {

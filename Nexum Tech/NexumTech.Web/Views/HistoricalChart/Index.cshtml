@@ -20,6 +20,20 @@
 <body data-bs-theme="dark">
     <div class="container mt-5">
         <h1 class="text-center">@Localizer["Historical Chart"]</h1>
+        <form id="filterForm">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" name="startDate" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label for="endDate">End Date:</label>
+                    <input type="date" id="endDate" name="endDate" class="form-control">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Apply Filters</button>
+        </form>
+
         <canvas id="historicalChart" width="800" height="300"></canvas>
     </div>
 </body>
