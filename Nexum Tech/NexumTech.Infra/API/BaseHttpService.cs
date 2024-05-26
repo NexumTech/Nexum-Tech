@@ -1,5 +1,6 @@
 ﻿
 using System.Globalization;
+using System.IO.Compression;
 using System.Net.Http.Headers;
 using System.Text;
 using Microsoft.Extensions.Options;
@@ -51,7 +52,11 @@ namespace NexumTech.Infra.API
 
                 if (response.IsSuccessStatusCode)
                 {
-                    string responseBody = await response.Content.ReadAsStringAsync();
+                    string responseBody = string.Empty;
+                    if (urlFiware != null)
+                        responseBody = await GetDecompressedResponse(response);
+                    else
+                        responseBody = await response.Content.ReadAsStringAsync();
 
                     if (typeof(T) == typeof(string))
                     {
@@ -68,6 +73,23 @@ namespace NexumTech.Infra.API
             catch (HttpRequestException ex)
             {
                 throw new Exception($"API Error: {ex.Message}");
+            }
+        }
+
+        public async Task<string> GetDecompressedResponse(HttpResponseMessage response)
+        {
+            if (response.Content.Headers.ContentEncoding.Contains("gzip"))
+            {
+                using (var responseStream = await response.Content.ReadAsStreamAsync())
+                using (var decompressionStream = new GZipStream(responseStream, CompressionMode.Decompress))
+                using (var streamReader = new StreamReader(decompressionStream))
+                {
+                    return await streamReader.ReadToEndAsync();
+                }
+            }
+            else
+            {
+                return await response.Content.ReadAsStringAsync();
             }
         }
     }
