@@ -11,4 +11,11 @@ $(document).ready(function () {
             },
         });
     });
+
+    var $tooltipTriggerList = $('[data-bs-toggle="tooltip"]');
+
+    $tooltipTriggerList.each(function () {
+        var $tooltipTriggerEl = $(this);
+        $tooltipTriggerEl.tooltip();
+    });
 });

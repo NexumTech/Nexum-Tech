@@ -14,9 +14,9 @@ namespace NexumTech.Web.Controllers
     {
         private readonly BaseHttpService _httpService;
         private readonly AppSettingsWEB _appSettingsUI;
-        private readonly IStringLocalizer<CompanyViewModel> _localizer;
+        private readonly IStringLocalizer<CompanyController> _localizer;
 
-        public CompanyController(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI, IStringLocalizer<CompanyViewModel> localizer)
+        public CompanyController(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI, IStringLocalizer<CompanyController> localizer)
         {
             _httpService = httpService;
             _appSettingsUI = appSettingsUI.Value;

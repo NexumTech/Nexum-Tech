@@ -157,5 +157,32 @@ namespace NexumTech.Infra.DAO
                 throw new Exception(ex.Message);
             }
         }
+
+        public async Task<bool> CheckCompanyOwner(int? companyId, int? userId)
+        {
+            try
+            {
+                using (var connection = _baseDatabaseService.GetConnection())
+                {
+                    connection.Open();
+
+                    string sql = "SELECT * FROM tb_company WHERE OwnerId = @OwnerId and Id = @Id";
+
+                    var company = await connection.QueryFirstOrDefaultAsync<CompanyViewModel>(sql, new
+                    {
+                        @OwnerId = userId,
+                        @Id = companyId
+                    });
+
+                    if (company == null) return false;
+
+                    return true;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }

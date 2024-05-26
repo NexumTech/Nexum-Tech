@@ -73,5 +73,10 @@ namespace NexumTech.Domain.Services
         {
             return await _companyDAO.DeleteCompany(ownerId);
         }
+
+        public async Task<bool> CheckCompanyOwner(int? companyId, int? userId)
+        {
+            return await _companyDAO.CheckCompanyOwner(companyId, userId);
+        }
     }
 }
