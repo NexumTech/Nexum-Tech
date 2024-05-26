@@ -1,67 +1,95 @@
-let temperatures = [];
-let timeStamps = [];
-
 $(document).ready(function () {
-    function addTemperatureAndTime(temperature, timestamp) {
-        temperatures.push(temperature);
-        timeStamps.push(timestamp);
-
-        updateChart();
-    }
-
-    function updateChart() {
-        realTimeChart.data.labels = [];
-
-        timeStamps.forEach(function (timestamp) {
-            let date = new Date(timestamp);
-            realTimeChart.data.labels.push(date.toLocaleTimeString());
-        });
-
-        realTimeChart.data.datasets[0].data = temperatures;
-        realTimeChart.update();
-    }
-
-    function fetchTemperatureData() {
-        $.ajax({
-            type: 'POST',
-            global: false,
-            url: '/historicalChart/GetHistoricalTemperature',
-            success: function (response) {
-                addTemperatureAndTime(response.value, response.metadata.timeInstant.value);
-            },
-            error: function (xhr, status, error) {
-                console.log('Erro:' + error);
-            }
-        });
-    }
-
     const ctx = document.getElementById('historicalChart').getContext('2d');
-    const realTimeChart = new Chart(ctx, {
-        type: 'line',
-        data: {
-            labels: [],
-            datasets: [{
-                label: 'Temperatura ( ' + String.fromCharCode(176) + 'C )',
-                data: [],
-                backgroundColor: 'rgba(16, 60, 190, 0.2)',
-                borderColor: 'rgba(16, 60, 190, 1)',
-                borderWidth: 1,
-                pointRadius: 0
-            }]
-        },
-        options: {
-            scales: {
-                y: {
-                    beginAtZero: false
-                }
-            },
-            plugins: {
-                legend: {
-                    onClick: null
-                }
-            }
-        }
+    let historicalChart;
+
+    initializeChart();
+
+    $('#filterForm').submit(function (event) {
+        event.preventDefault();
+
+        const startDate = $('#startDate').val();
+        const endDate = $('#endDate').val();
+
+        fetchAllHistoricalData(startDate, endDate);
     });
 
-    fetchTemperatureData();
+    function initializeChart() {
+        historicalChart = new Chart(ctx, {
+            type: 'line',
+            data: {
+                labels: [],
+                datasets: [{
+                    label: 'Temp ( ' + String.fromCharCode(176) + 'C )',
+                    data: [],
+                    backgroundColor: 'rgba(2, 104, 255, 0.2)',
+                    borderColor: 'rgba(2, 104, 255, 1)',
+                    borderWidth: 1,
+                    pointRadius: 0
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: false
+                    }
+                },
+                plugins: {
+                    legend: {
+                        onClick: null
+                    }
+                }
+            }
+        });
+    }
+
+    function updateChartWithFilters(temperatures, timestamps) {
+        historicalChart.data.labels = timestamps.map(timestamp => {
+            let date = new Date(timestamp);
+            return formatDate(date);
+        });
+
+        historicalChart.data.datasets[0].data = temperatures;
+        historicalChart.update();
+    }
+
+    function formatDate(date) {
+        const options = { day: 'numeric', month: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        return date.toLocaleString('pt-BR', options);
+    }
+
+    function fetchAllHistoricalData(dateFrom, dateTo) {
+        let allTemperatures = [];
+        let allTimeStamps = [];
+        let offset = 0;
+        const limit = 100;
+
+        function fetchPaginatedData() {
+            $.ajax({
+                type: 'POST',
+                url: '/HistoricalChart/GetHistoricalTemperature',
+                data: {
+                    dateFrom: dateFrom,
+                    dateTo: dateTo,
+                    hOffset: offset,
+                    limit: limit
+                },
+                success: function (response) {
+                    const records = response.temperatureRecords;
+                    if (records.length > 0) {
+                        allTemperatures = allTemperatures.concat(records.map(record => record.attrValue));
+                        allTimeStamps = allTimeStamps.concat(records.map(record => record.recvTime));
+                        offset += limit;
+                        fetchPaginatedData();
+                    } else {
+                        updateChartWithFilters(allTemperatures, allTimeStamps);
+                    }
+                },
+                error: function (xhr, status, error) {
+                    console.log('Error:', error);
+                }
+            });
+        }
+
+        fetchPaginatedData();
+    }
 });

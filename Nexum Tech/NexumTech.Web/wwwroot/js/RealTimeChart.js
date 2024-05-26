@@ -7,18 +7,21 @@ $(document).ready(function () {
         timeStamps.push(timestamp);
 
         updateChart();
+        updateRealTemp(temperature);
     }
 
     function updateChart() {
-        realTimeChart.data.labels = [];
-
-        timeStamps.forEach(function (timestamp) {
+        realTimeChart.data.labels = timeStamps.map(timestamp => {
             let date = new Date(timestamp);
-            realTimeChart.data.labels.push(date.toLocaleTimeString());
+            return date.toLocaleTimeString();
         });
 
         realTimeChart.data.datasets[0].data = temperatures;
         realTimeChart.update();
+    }
+
+    function updateRealTemp(temperature) {
+        $('#realTemp').text(temperature);
     }
 
     function fetchTemperatureData() {
@@ -30,9 +33,17 @@ $(document).ready(function () {
                 addTemperatureAndTime(response.value, response.metadata.timeInstant.value);
             },
             error: function (xhr, status, error) {
-                console.log('Erro:' + error);
+                console.log('Erro: ' + error);
             }
         });
+    }
+
+    function resetChart() {
+        temperatures = [];
+        timeStamps = [];
+        realTimeChart.data.labels = [];
+        realTimeChart.data.datasets[0].data = [];
+        realTimeChart.update();
     }
 
     const ctx = document.getElementById('realTimeChart').getContext('2d');
@@ -41,10 +52,10 @@ $(document).ready(function () {
         data: {
             labels: [],
             datasets: [{
-                label: 'Temperatura ( ' + String.fromCharCode(176) + 'C )',
+                label: 'Temp ( ' + String.fromCharCode(176) + 'C )',
                 data: [],
-                backgroundColor: 'rgba(16, 60, 190, 0.2)',
-                borderColor: 'rgba(16, 60, 190, 1)',
+                backgroundColor: 'rgba(2, 104, 255, 0.2)',
+                borderColor: 'rgba(2, 104, 255, 1)',
                 borderWidth: 1,
                 pointRadius: 0
             }]
@@ -63,6 +74,13 @@ $(document).ready(function () {
         }
     });
 
-    setInterval(fetchTemperatureData, 500);
-    fetchTemperatureData();
+    $('#btnReload').on('click', function () {
+        resetChart();
+    });
+
+    function loop() {
+        fetchTemperatureData();
+    }
+
+    setInterval(loop, 500);
 });
