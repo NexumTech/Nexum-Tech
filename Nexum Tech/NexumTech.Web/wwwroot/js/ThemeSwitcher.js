@@ -58,6 +58,10 @@ $(document).ready(function () {
             changeTheme('light');
             $(this).siblings('label').find('i').removeClass('fa-regular fa-moon').addClass('fa-regular fa-sun');
         }
+
+        setTimeout(function () {
+            window.location.reload();
+        }, 200);
     });
 
     $('[data-bs-theme]').each(function () {

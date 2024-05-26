@@ -1,7 +1,40 @@
 {
   "Version": 1,
   "WorkspaceRootPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\",
-  "Documents": [],
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.web\\views\\company\\partialcreatecompany.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|solutionrelative:nexumtech.web\\views\\company\\partialcreatecompany.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.web\\wwwroot\\js\\partialcreatecompany.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|solutionrelative:nexumtech.web\\wwwroot\\js\\partialcreatecompany.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.web\\wwwroot\\js\\company.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|solutionrelative:nexumtech.web\\wwwroot\\js\\company.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{FD64A08C-82A1-4378-80A5-0E111C02954F}|NexumTech.Domain\\NexumTech.Domain.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.domain\\services\\companyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{FD64A08C-82A1-4378-80A5-0E111C02954F}|NexumTech.Domain\\NexumTech.Domain.csproj|solutionrelative:nexumtech.domain\\services\\companyservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{98294435-184B-43C1-A762-4571936ECCE7}|NexumTech.API\\NexumTech.API.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.api\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{98294435-184B-43C1-A762-4571936ECCE7}|NexumTech.API\\NexumTech.API.csproj|solutionrelative:nexumtech.api\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{6490E4AA-DE12-49ED-8996-E32B62C4C993}|NexumTech.Infra\\NexumTech.Infra.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.infra\\dao\\companydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{6490E4AA-DE12-49ED-8996-E32B62C4C993}|NexumTech.Infra\\NexumTech.Infra.csproj|solutionrelative:nexumtech.infra\\dao\\companydao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.web\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|solutionrelative:nexumtech.web\\controllers\\companycontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.web\\views\\company\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|solutionrelative:nexumtech.web\\views\\company\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
   "DocumentGroupContainers": [
     {
       "Orientation": 0,
@@ -9,11 +42,115 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": -1,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Company.js",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\Company.js",
+              "RelativeDocumentMoniker": "NexumTech.Web\\wwwroot\\js\\Company.js",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\Company.js",
+              "RelativeToolTip": "NexumTech.Web\\wwwroot\\js\\Company.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAD8AAAAxAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-24T04:29:31.076Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "CompanyDAO.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\DAO\\CompanyDAO.cs",
+              "RelativeDocumentMoniker": "NexumTech.Infra\\DAO\\CompanyDAO.cs",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Infra\\DAO\\CompanyDAO.cs",
+              "RelativeToolTip": "NexumTech.Infra\\DAO\\CompanyDAO.cs",
+              "ViewState": "AQIAADIAAAAAAAAAAAAwwFMAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T23:57:08.298Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "CompanyService.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\Services\\CompanyService.cs",
+              "RelativeDocumentMoniker": "NexumTech.Domain\\Services\\CompanyService.cs",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Domain\\Services\\CompanyService.cs",
+              "RelativeToolTip": "NexumTech.Domain\\Services\\CompanyService.cs",
+              "ViewState": "AQIAACAAAAAAAAAAAAAgwDQAAAAMAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T23:20:49.031Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "CompanyController.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.API\\Controllers\\CompanyController.cs",
+              "RelativeDocumentMoniker": "NexumTech.API\\Controllers\\CompanyController.cs",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.API\\Controllers\\CompanyController.cs",
+              "RelativeToolTip": "NexumTech.API\\Controllers\\CompanyController.cs",
+              "ViewState": "AQIAABUAAAAAAAAAAAAowDYAAAAQAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T23:11:54.293Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Views\\Company\\Index.cshtml",
+              "RelativeDocumentMoniker": "NexumTech.Web\\Views\\Company\\Index.cshtml",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Views\\Company\\Index.cshtml",
+              "RelativeToolTip": "NexumTech.Web\\Views\\Company\\Index.cshtml",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAA8AAAA4AAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T23:03:03.17Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "PartialCreateCompany.js",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\PartialCreateCompany.js",
+              "RelativeDocumentMoniker": "NexumTech.Web\\wwwroot\\js\\PartialCreateCompany.js",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\PartialCreateCompany.js",
+              "RelativeToolTip": "NexumTech.Web\\wwwroot\\js\\PartialCreateCompany.js",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAYAAAArAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
+              "WhenOpened": "2024-05-23T23:03:28.992Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "PartialCreateCompany.cshtml",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Views\\Company\\PartialCreateCompany.cshtml",
+              "RelativeDocumentMoniker": "NexumTech.Web\\Views\\Company\\PartialCreateCompany.cshtml",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Views\\Company\\PartialCreateCompany.cshtml",
+              "RelativeToolTip": "NexumTech.Web\\Views\\Company\\PartialCreateCompany.cshtml",
+              "ViewState": "AQIAAAUAAAAAAAAAAAAowAkAAAAhAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2024-05-23T23:03:13.493Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CompanyController.cs",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Controllers\\CompanyController.cs",
+              "RelativeDocumentMoniker": "NexumTech.Web\\Controllers\\CompanyController.cs",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Controllers\\CompanyController.cs",
+              "RelativeToolTip": "NexumTech.Web\\Controllers\\CompanyController.cs",
+              "ViewState": "AQIAAEgAAAAAAAAAAAAmwG0AAABRAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-23T22:58:13.491Z",
+              "EditorCaption": ""
             }
           ]
         }

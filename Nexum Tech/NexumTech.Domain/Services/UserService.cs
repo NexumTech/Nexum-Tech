@@ -123,7 +123,7 @@ namespace NexumTech.Domain.Services
                 #region Send e-mail async thread
                 Task.Run(async () =>
                 {
-                    await _mailService.SendMail(user.Email, subject, _mailMessageService.GetMailMessage(mailType, user));
+                    await _mailService.SendMail(user.Email.Trim(), subject, _mailMessageService.GetMailMessage(mailType, user));
                 });
                 #endregion
 
