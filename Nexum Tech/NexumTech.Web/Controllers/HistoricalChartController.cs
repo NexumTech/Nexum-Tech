@@ -2,6 +2,7 @@
 using Microsoft.Extensions.Options;
 using NexumTech.Infra.API;
 using NexumTech.Infra.WEB;
+using System.Web;
 
 namespace NexumTech.Web.Controllers
 {
@@ -22,22 +23,39 @@ namespace NexumTech.Web.Controllers
         }
 
         [HttpPost]
-        public async Task<ActionResult> GetHistoricalTemperature(string dateFrom, string dateTo)
+        public async Task<ActionResult> GetHistoricalTemperature(string dateFrom, string dateTo, int hOffset = 0, int hLimit = 100)
         {
             try
             {
                 var token = Request.Cookies["jwt"];
-                dateFrom += "T00:00:00.000Z";
-                dateTo += "T23:59:59.999Z";
+
+                DateTime fromDate = DateTime.Parse(dateFrom);
+                DateTime toDate = DateTime.Parse(dateTo);
+
+                toDate = toDate.Date.AddDays(1).AddSeconds(-1);
+                dateFrom = fromDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
+                dateTo = toDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
 
                 Dictionary<string, string> headers = new Dictionary<string, string>
                 {
                     { "fiware-service", "smart" },
                     { "fiware-servicepath", "/" },
-                    { "accept", "application/json" }
+                    { "accept", "*/*" },
+                    { "Accept-Encoding", "gzip, deflate, br" },
+                    { "Connection", "keep-alive" }
                 };
 
-                string url = $"{_appSettingsUI.Fiware.ApiFiwareHistoricalChartURL}&aggrMethod=occur&aggrPeriod=hour&dateFrom={dateFrom}&dateTo={dateTo}";
+                var baseUrl = _appSettingsUI.Fiware.ApiFiwareHistoricalChartURL;
+                var uriBuilder = new UriBuilder(baseUrl);
+                var query = HttpUtility.ParseQueryString(uriBuilder.Query);
+                query["dateFrom"] = dateFrom;
+                query["dateTo"] = dateTo;
+                query["hOffset"] = hOffset.ToString();
+                query["hLimit"] = hLimit.ToString();
+
+                uriBuilder.Query = query.ToString();
+
+                string url = uriBuilder.ToString();
 
                 var response = await _httpService.CallMethod<HistoricalApiResponse>(url, HttpMethod.Get, token, headers: headers, urlFiware: url);
 
@@ -62,7 +80,6 @@ namespace NexumTech.Web.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
 
         public class HistoricalApiResponse
         {
