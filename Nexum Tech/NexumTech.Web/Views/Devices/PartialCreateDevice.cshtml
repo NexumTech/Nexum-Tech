@@ -27,17 +27,12 @@ else
             <div class="row d-flex justify-content-center align-items-center">
                 <form novalidate id="devicesForm">
                     <div class="row">
-                        <div class="col-md-6 mb-4">
+                        <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" id="txtName" class="form-control fs-6 p-12" placeholder="Name" required maxlength="80">
-                                <label for="name" class="form-label">Name</label>
+                                <input type="text" id="txtName" class="form-control fs-6 p-12" placeholder="Name (Do not enter special characters and whitespaces)" required maxlength="80">
+                                <label for="txtName" class="form-label">Name (Do not enter special characters and whitespaces)</label>
                                 <div class="invalid-feedback">Invalid name</div>
                             </div>
-                        </div>
-                        <div class="col-md-12">
-                            <label for="description" class="form-label">Description</label>
-                            <textarea type="text" id="txtDescription" class="form-control fs-6 p-12" placeholder="Description" required maxlength="400" style="height: 140px;"></textarea>
-                            <div class="invalid-feedback">Invalid description</div>
                         </div>
                     </div>
                 </form>

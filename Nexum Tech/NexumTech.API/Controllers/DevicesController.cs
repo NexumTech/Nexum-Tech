@@ -7,25 +7,23 @@ namespace NexumTech.API.Controllers
 {
     [ApiController]
     [Route("[controller]/[action]")]
-    public class EmployeesController : Controller
+    public class DevicesController : Controller
     {
-        private readonly IEmployeesService _employeesService;
-        private readonly ICompanyService _companyService;
+        private readonly IDevicesService _devicesService;
 
-        public EmployeesController(IEmployeesService employeesService, ICompanyService companyService)
+        public DevicesController(IDevicesService devicesService) 
         {
-            _employeesService = employeesService;
-            _companyService = companyService;
+            _devicesService = devicesService;
         }
 
         [HttpGet]
         [Authorize]
-        public async Task<ActionResult<IEnumerable<EmployeesViewModel>>> GetEmployees(EmployeesViewModel employeesViewModel)
+        public async Task<ActionResult<IEnumerable<DevicesViewModel>>> GetDevices(DevicesViewModel devicesViewModel)
         {
             try
             {
-                return Ok(await _employeesService.GetEmployees(employeesViewModel.CompanyId));
-            } 
+                return Ok(await _devicesService.GetDevices(devicesViewModel.CompanyId));
+            }
             catch (Exception ex)
             {
                 return BadRequest(ex.Message);
@@ -34,11 +32,11 @@ namespace NexumTech.API.Controllers
 
         [HttpPost]
         [Authorize]
-        public async Task<ActionResult> AddEmployee(EmployeesViewModel employeesViewModel)
+        public async Task<ActionResult> CreateDevice(DevicesViewModel devicesViewModel)
         {
             try
             {
-                await _employeesService.AddEmployee(employeesViewModel);
+                await _devicesService.CreateDevice(devicesViewModel);
 
                 return Ok();
             }
@@ -50,11 +48,11 @@ namespace NexumTech.API.Controllers
 
         [HttpDelete]
         [Authorize]
-        public async Task<ActionResult> RemoveEmployee(EmployeesViewModel employeesViewModel)
+        public async Task<ActionResult> RemoveDevice(DevicesViewModel devicesViewModel)
         {
             try
             {
-                await _employeesService.RemoveEmployee(employeesViewModel.Id);
+                await _devicesService.RemoveDevice(devicesViewModel);
 
                 return Ok();
             }

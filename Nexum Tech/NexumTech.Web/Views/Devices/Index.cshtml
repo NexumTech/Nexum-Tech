@@ -1,7 +1,19 @@
-﻿<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+﻿@model IEnumerable<NexumTech.Infra.Models.DevicesViewModel>;
+
+<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
 <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
 <link href="~/lib/datatables/datatables.css" rel="stylesheet" />
 
+@if (ViewBag.CurrentTheme == "dark")
+{
+    <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2-dark.css" rel="stylesheet" />
+}
+else
+{
+    <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
+}
+
+<script src="~/lib/sweetalert2/sweetalert2.js"></script>
 <script src="~/lib/jquery/jquery.js"></script>
 <script src="~/lib/datatables/datatables.js"></script>
 <script src="~/js/ThemeSwitcher.js"></script>
@@ -36,25 +48,22 @@
                         <tr>
                             <th class="text-center">Id</th>
                             <th class="text-center">Name</th>
-                            <th class="text-center">Description</th>
                             <th class="text-center">Delete</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td class="text-center">Row 1</td>
-                            <td class="text-center">Row 1</td>
-                            <td class="text-center">
-                                <button type="button" class="btn text-info" style="cursor: pointer;" data-bs-toggle="tooltip" data-bs-placement="bottom" title="TESTE">
-                                    <i class="fa-solid fa-circle-info fa-xl"></i>
-                                </button>
-                            </td>
-                            <td class="text-center">
-                                <a class="btn btn-outline-danger">
-                                    <i class="fa-solid fa-trash-can" id="btnDeleteDevice"></i>
-                                </a>
-                            </td>
-                        </tr>
+                        @foreach(var device in Model)
+                        {
+                            <tr>
+                                <td class="text-center">@device.Id</td>
+                                <td class="text-center">@device.Name</td>
+                                <td class="text-center">
+                                    <a class="btn btn-outline-danger btn-remove-device" data-device-id="@device.Id" data-device-name="@device.Name">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }                      
                     </tbody>
                 </table>
             </div>

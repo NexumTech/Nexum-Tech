@@ -74,6 +74,30 @@ namespace NexumTech.Infra.DAO
             }
         }
 
+        public async Task<IEnumerable<CompanyViewModel>> GetCompanies(int userId)
+        {
+            try
+            {
+                using (var connection = _baseDatabaseService.GetConnection())
+                {
+                    connection.Open();
+
+                    string sql = "SELECT comp.Id, comp.Name, comp.Logo FROM tb_employee emp INNER JOIN tb_company comp ON emp.CompanyId = comp.Id WHERE emp.UserId = @UserId";
+
+                    var companies = await connection.QueryAsync<CompanyViewModel>(sql, new
+                    {
+                        @UserId = userId,
+                    });
+
+                    return companies;
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public async Task<CompanyViewModel> GetCompany(string name)
         {
             try
@@ -142,7 +166,13 @@ namespace NexumTech.Infra.DAO
                 {
                     connection.Open();
 
-                    string sql = "DELETE FROM tb_company WHERE OwnerId = @OwnerId";
+                    string sql = @"
+                                    DECLARE @companyId INT;
+                                    SELECT @companyId = id FROM tb_company WHERE OwnerId = @OwnerId;
+                                    DELETE FROM tb_employee WHERE CompanyId = @companyId
+                                    DELETE FROM tb_device WHERE CompanyId = @companyId
+                                    DELETE FROM tb_company WHERE OwnerId = @OwnerId
+                                 ";
 
                     var company = await connection.QueryAsync<int>(sql, new
                     {

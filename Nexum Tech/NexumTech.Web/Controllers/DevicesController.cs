@@ -5,6 +5,7 @@ using NexumTech.Infra.API;
 using NexumTech.Infra.Models;
 using NexumTech.Infra.WEB;
 using NexumTech.Web.Controllers.Filters;
+using System.Reflection.PortableExecutable;
 
 namespace NexumTech.Web.Controllers
 {
@@ -22,9 +23,29 @@ namespace NexumTech.Web.Controllers
             _localizer = localizer;
         }
 
-        public IActionResult Index()
+        public async Task<IActionResult> Index(int companyId)
         {
-            return View();
+            var currentTheme = Request.Cookies["CurrentTheme"];
+            ViewBag.CurrentTheme = currentTheme;
+
+            var token = Request.Cookies["jwt"];
+
+            UserViewModel user = await _httpService.CallMethod<UserViewModel>(_appSettingsUI.GetUserInfoURL, HttpMethod.Get, token);
+
+            try
+            {
+                await _httpService.CallMethod<ActionResult>(_appSettingsUI.CheckCompanyOwnerURL, HttpMethod.Get, token, new EmployeesViewModel { CompanyId = companyId, Id = user.Id });
+            }
+            catch (Exception ex)
+            {
+                return RedirectToAction("Index", "Company");
+            }
+
+            IEnumerable<DevicesViewModel> devices = await _httpService.CallMethod<IEnumerable<DevicesViewModel>>(_appSettingsUI.GetDevicesURL, HttpMethod.Get, token, new DevicesViewModel { CompanyId = companyId });
+
+            ViewBag.CompanyId = companyId;
+
+            return View(devices);
         }
 
         [HttpGet]
@@ -67,20 +88,20 @@ namespace NexumTech.Web.Controllers
                 provisioningDeviceViewModel.devices = new List<Device>();
                 provisioningDeviceViewModel.devices.Add(new Device
                 {
-                    device_id = "TesteCRUD",
-                    entity_name = $"urn:ngsi-ld:TesteCRUD",
+                    device_id = devicesViewModel.Name.Trim(),
+                    entity_name = $"urn:ngsi-ld:{devicesViewModel.Name.Trim()}",
                 });
 
                 RegisteringDeviceViewModel registeringDeviceViewModel = new RegisteringDeviceViewModel();
                 DataProvided dataProvided = new DataProvided();
-                RegisteringEntity entity = new RegisteringEntity { id = $"urn:ngsi-ld:TesteCRUD" };
+                RegisteringEntity entity = new RegisteringEntity { id = $"urn:ngsi-ld:{devicesViewModel.Name.Trim()}" };
                 dataProvided.entities = new List<RegisteringEntity>();
                 dataProvided.entities.Add(entity);
                 registeringDeviceViewModel.dataProvided = dataProvided;
 
                 SubscribingDeviceViewModel subscribingDeviceViewModel = new SubscribingDeviceViewModel();
                 Subject subject = new Subject();
-                SubscribingEntity subscribingEntity = new SubscribingEntity { id = $"urn:ngsi-ld:TesteCRUD" };
+                SubscribingEntity subscribingEntity = new SubscribingEntity { id = $"urn:ngsi-ld:{devicesViewModel.Name.Trim()}" };
                 subject.entities = new List<SubscribingEntity>();
                 subject.entities.Add(subscribingEntity);
                 subscribingDeviceViewModel.subject = subject;
@@ -94,7 +115,7 @@ namespace NexumTech.Web.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(ex.Message);
+                    return BadRequest(_localizer["ProvisioningDeviceError"]);
                 }
                 #endregion
 
@@ -105,7 +126,7 @@ namespace NexumTech.Web.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(ex.Message);
+                    return BadRequest(_localizer["RegisteringDeviceError"]);
                 }
                 #endregion
 
@@ -116,11 +137,48 @@ namespace NexumTech.Web.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(ex.Message);
+                    return BadRequest(_localizer["SubscribingDeviceError"]);
                 }
                 #endregion
 
+                await _httpService.CallMethod<UserViewModel>(_appSettingsUI.CreateDeviceURL, HttpMethod.Post, token, devicesViewModel);
+
                 return Ok(_localizer["CreatedDevice"]);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpDelete]
+        public async Task<IActionResult> RemoveDevice(DevicesViewModel devicesViewModel)
+        {
+            try
+            {
+                var token = Request.Cookies["jwt"];
+
+                #region Building fiware parameters
+                Dictionary<string, string> headers = new Dictionary<string, string>();
+                headers.Add("fiware-service", "smart");
+                headers.Add("fiware-servicepath", "/");
+                headers.Add("accept", "application/json");
+                #endregion
+
+                #region Fiware - remove device
+                try
+                {
+                    await _httpService.CallMethod<dynamic>(String.Empty, HttpMethod.Delete, token, null, headers, $"{_appSettingsUI.Fiware.ApiFiwareRemoveDeviceURL}{devicesViewModel.Name.Trim()}");
+                }
+                catch (Exception ex)
+                {
+                    return BadRequest(_localizer["RemoveDeviceError"]);
+                }
+                #endregion
+
+                await _httpService.CallMethod<ActionResult>(_appSettingsUI.RemoveDeviceURL, HttpMethod.Delete, token, devicesViewModel);
+
+                return Ok(_localizer["RemovedDevice"]);
             }
             catch (Exception ex)
             {

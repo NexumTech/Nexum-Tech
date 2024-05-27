@@ -45,6 +45,21 @@ namespace NexumTech.Domain.Services
             return company;
         }
 
+        public async Task<IEnumerable<CompanyViewModel>> GetCompanies(int userId)
+        {
+            IEnumerable<CompanyViewModel> companies = await _companyDAO.GetCompanies(userId);
+
+            if (companies != null)
+            {
+                foreach (CompanyViewModel company in companies)
+                {
+                    company.Base64Logo = $"data:image/png;base64,{Convert.ToBase64String(company.Logo)}";
+                }
+            }
+
+            return companies;
+        }
+
         public async Task<bool> UpdateCompany(CompanyViewModel companyViewModel)
         {
             CompanyViewModel companyByOwnerId = await _companyDAO.GetCompany(companyViewModel.OwnerId);

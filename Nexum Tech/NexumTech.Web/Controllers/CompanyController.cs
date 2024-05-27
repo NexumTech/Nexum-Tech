@@ -6,6 +6,8 @@ using NexumTech.Infra.API;
 using NexumTech.Infra.Models;
 using NexumTech.Infra.WEB;
 using NexumTech.Web.Controllers.Filters;
+using System.ComponentModel.Design;
+using System.Reflection.PortableExecutable;
 
 namespace NexumTech.Web.Controllers
 {
@@ -106,6 +108,31 @@ namespace NexumTech.Web.Controllers
                 var token = Request.Cookies["jwt"];
 
                 UserViewModel user = await _httpService.CallMethod<UserViewModel>(_appSettingsUI.GetUserInfoURL, HttpMethod.Get, token);
+
+                CompanyViewModel company = await _httpService.CallMethod<CompanyViewModel>(_appSettingsUI.GetCompanyURL, HttpMethod.Get, token, new CompanyViewModel { OwnerId = user.Id });
+
+                IEnumerable<DevicesViewModel> devices = await _httpService.CallMethod<IEnumerable<DevicesViewModel>>(_appSettingsUI.GetDevicesURL, HttpMethod.Get, token, new DevicesViewModel { CompanyId = company.Id });
+
+                #region Building fiware parameters
+                Dictionary<string, string> headers = new Dictionary<string, string>();
+                headers.Add("fiware-service", "smart");
+                headers.Add("fiware-servicepath", "/");
+                headers.Add("accept", "application/json");
+                #endregion
+
+                #region Fiware - remove device
+                foreach(DevicesViewModel device in devices)
+                {
+                    try
+                    {
+                        await _httpService.CallMethod<dynamic>(String.Empty, HttpMethod.Delete, token, null, headers, $"{_appSettingsUI.Fiware.ApiFiwareRemoveDeviceURL}{device.Name}");
+                    }
+                    catch (Exception ex)
+                    {
+                        return BadRequest(_localizer["RemoveDeviceError"]);
+                    }
+                }
+                #endregion
 
                 await _httpService.CallMethod<ActionResult>(_appSettingsUI.DeleteCompanyURL, HttpMethod.Delete, token, new CompanyViewModel { OwnerId = user.Id });
 

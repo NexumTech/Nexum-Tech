@@ -1,4 +1,6 @@
-﻿namespace NexumTech.Infra.WEB
+﻿using System.Runtime.CompilerServices;
+
+namespace NexumTech.Infra.WEB
 {
     public class AppSettingsWEB
     {
@@ -20,6 +22,10 @@
         public string RemoveEmployeeURL { get; set; }
         public string AddEmployeeURL { get; set; }
         public string CheckCompanyOwnerURL { get; set; }
+        public string CreateDeviceURL { get; set; }
+        public string GetDevicesURL { get; set; }
+        public string RemoveDeviceURL {  get; set; }
+        public string GetCompaniesURL { get; set; }
     }
 
     public class Fiware
@@ -29,5 +35,6 @@
         public string ApiFiwareProvisioningDeviceURL { get; set; }
         public string ApiFiwareRegisteringDeviceURL { get; set; }
         public string ApiFiwareSubscribingDeviceURL { get; set; }
+        public string ApiFiwareRemoveDeviceURL { get; set; }
     }
 }
