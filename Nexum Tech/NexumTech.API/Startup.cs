@@ -47,6 +47,9 @@ namespace NexumTech.API
             #region Domain Dependency Injection
 
             services.AddScoped<IUserService, UserService>();
+            services.AddScoped<ICompanyService, CompanyService>();
+            services.AddScoped<IEmployeesService, EmployeesService>();
+            services.AddScoped<IDevicesService, DevicesService>();
             services.AddScoped<IMailMessageService, MailMessageService>();
 
             #endregion
@@ -54,6 +57,9 @@ namespace NexumTech.API
             #region Infra Dependency Injection
 
             services.AddScoped<IUserDAO, UserDAO>();
+            services.AddScoped<ICompanyDAO, CompanyDAO>();
+            services.AddScoped<IEmployeesDAO, EmployeesDAO>();
+            services.AddScoped<IDevicesDAO, DevicesDAO>();
             services.AddScoped<IMailService, MailService>();
             services.AddScoped<ITokenService, TokenService>();
 

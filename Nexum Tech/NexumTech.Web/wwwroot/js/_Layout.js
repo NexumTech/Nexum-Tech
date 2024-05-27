@@ -16,6 +16,53 @@ $(document).ready(function () {
         },
     });
 
+    $.ajax({
+        type: 'GET',
+        url: '/Layout/GetCompanies',
+        data: {},
+        success: function (data) {
+            var companiesList = $('#companiesList');
+            companiesList.empty();
+
+            data.forEach(function (company, index, array) {
+                var listItem = `
+                                <li>
+                                    <a class="dropdown-item" href="#" data-name="${company.name}" data-logo="${company.base64Logo}">
+                                        ${company.name}
+                                    </a>
+                                </li>
+                               `;
+
+                companiesList.append(listItem);
+
+                if (index < array.length - 1) {
+                    var divider = '<li><hr class="dropdown-divider"></li>';
+                    companiesList.append(divider);
+                }
+            });
+
+            $('#companiesList').on('click', 'a', function (event) {
+                event.preventDefault();
+                var companyName = $(this).data('name');
+                var companyLogo = $(this).data('logo');
+
+                $('#dropdownCompanies img').attr('src', companyLogo);
+                $('#dropdownCompanies strong').text(companyName);
+            });
+
+            if (data.length > 0) {
+                var firstCompany = data[0];
+
+                $('#dropdownCompanies img').attr('src', firstCompany.base64Logo);
+                $('#dropdownCompanies strong').text(firstCompany.name);
+            } else {
+                $('#dropdownCompanies img').addClass("d-none");
+                $('#dropdownCompanies strong').text("DontHaveCompanies");
+                $('#dropdownCompanies').attr('disabled', true);
+            }
+        },
+    });
+
     $('#profileModal').on('show.bs.modal', function () {
         $.ajax({
             type: 'GET',

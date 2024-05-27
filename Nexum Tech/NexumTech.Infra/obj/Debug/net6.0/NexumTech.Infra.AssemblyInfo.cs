@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("NexumTech.Infra")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+c54177813857e58d8076103c248875cd74dda350")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+4751fb60f9563b9a17a58e453e07f2f472c2ecf4")]
 [assembly: System.Reflection.AssemblyProductAttribute("NexumTech.Infra")]
 [assembly: System.Reflection.AssemblyTitleAttribute("NexumTech.Infra")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

@@ -47,3 +47,27 @@ C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTe
 C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\refint\NexumTech.Infra.dll
 C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.pdb
 C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\ref\NexumTech.Infra.dll
+C:\Users\Braz\Desktop\Braz\Projetos\GitHub\Nexum-Tech\Nexum Tech\NexumTech.Infra\bin\Debug\net6.0\NexumTech.Infra.deps.json
+C:\Users\Braz\Desktop\Braz\Projetos\GitHub\Nexum-Tech\Nexum Tech\NexumTech.Infra\bin\Debug\net6.0\NexumTech.Infra.dll
+C:\Users\Braz\Desktop\Braz\Projetos\GitHub\Nexum-Tech\Nexum Tech\NexumTech.Infra\bin\Debug\net6.0\NexumTech.Infra.pdb
+C:\Users\Braz\Desktop\Braz\Projetos\GitHub\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.csproj.AssemblyReference.cache
+C:\Users\Braz\Desktop\Braz\Projetos\GitHub\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Braz\Desktop\Braz\Projetos\GitHub\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.AssemblyInfoInputs.cache
+C:\Users\Braz\Desktop\Braz\Projetos\GitHub\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.AssemblyInfo.cs
+C:\Users\Braz\Desktop\Braz\Projetos\GitHub\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.csproj.CoreCompileInputs.cache
+C:\Users\Braz\Desktop\Braz\Projetos\GitHub\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.dll
+C:\Users\Braz\Desktop\Braz\Projetos\GitHub\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\refint\NexumTech.Infra.dll
+C:\Users\Braz\Desktop\Braz\Projetos\GitHub\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.pdb
+C:\Users\Braz\Desktop\Braz\Projetos\GitHub\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\ref\NexumTech.Infra.dll
+C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Infra\bin\Debug\net6.0\NexumTech.Infra.deps.json
+C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Infra\bin\Debug\net6.0\NexumTech.Infra.dll
+C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Infra\bin\Debug\net6.0\NexumTech.Infra.pdb
+C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.csproj.AssemblyReference.cache
+C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.AssemblyInfoInputs.cache
+C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.AssemblyInfo.cs
+C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.csproj.CoreCompileInputs.cache
+C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.dll
+C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\refint\NexumTech.Infra.dll
+C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\NexumTech.Infra.pdb
+C:\Users\Braz\Desktop\Braz\Projetos\Backup\2005\new\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\net6.0\ref\NexumTech.Infra.dll

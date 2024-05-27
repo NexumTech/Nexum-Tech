@@ -1,0 +1,80 @@
+﻿@model IEnumerable<NexumTech.Infra.Models.DevicesViewModel>;
+
+<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+<link href="~/lib/datatables/datatables.css" rel="stylesheet" />
+
+@if (ViewBag.CurrentTheme == "dark")
+{
+    <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2-dark.css" rel="stylesheet" />
+}
+else
+{
+    <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
+}
+
+<script src="~/lib/sweetalert2/sweetalert2.js"></script>
+<script src="~/lib/jquery/jquery.js"></script>
+<script src="~/lib/datatables/datatables.js"></script>
+<script src="~/js/ThemeSwitcher.js"></script>
+<script src="~/js/Devices.js"></script>
+
+<body data-bs-theme="light">
+    @Html.Hidden("companyId", ViewBag.CompanyId, new { @id = "companyId" })
+    <div class="container">
+        <div class="card">
+            <div class="card-header d-flex justify-content-between align-items-center">
+                <span>
+                    <i class="fa-solid fa-mobile-screen"></i>
+                    Devices
+                </span>
+                <div class="dropdown">
+                    <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-wrench"></i>
+                    </button>
+                    <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                        <li>
+                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#devicesModal">
+                                <i class="fa-solid fa-plus"></i>
+                                New device
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="card-body py-4">
+                <table id="devicesTable" class="table table-striped display w-100">
+                    <thead>
+                        <tr>
+                            <th class="text-center">Id</th>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">Delete</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach(var device in Model)
+                        {
+                            <tr>
+                                <td class="text-center">@device.Id</td>
+                                <td class="text-center">@device.Name</td>
+                                <td class="text-center">
+                                    <a class="btn btn-outline-danger btn-remove-device" data-device-id="@device.Id" data-device-name="@device.Name">
+                                        <i class="fa-solid fa-trash-can"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }                      
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <div class="modal fade" id="devicesModal" tabindex="-1" aria-labelledby="devicesModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable modal-xl" id="devicesModalContent">
+            </div>
+        </div>
+    </div>
+</body>
+
+
+

@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NexumTech.Web.bundle.scp.css",
+      "PackagePath": "staticwebassets\\NexumTech.Web.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\css\\Company.css",
+      "PackagePath": "staticwebassets\\css\\Company.css"
+    },
+    {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\css\\Home.css",
       "PackagePath": "staticwebassets\\css\\Home.css"
     },
@@ -17,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\_Layout.css"
     },
     {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -31,6 +43,10 @@
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\brazil.png",
       "PackagePath": "staticwebassets\\images\\brazil.png"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\fundo.jpg",
+      "PackagePath": "staticwebassets\\images\\fundo.jpg"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\google.png",
@@ -53,6 +69,10 @@
       "PackagePath": "staticwebassets\\images\\nexum_white.png"
     },
     {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\profile.png",
+      "PackagePath": "staticwebassets\\images\\profile.png"
+    },
+    {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\spain.png",
       "PackagePath": "staticwebassets\\images\\spain.png"
     },
@@ -65,8 +85,36 @@
       "PackagePath": "staticwebassets\\images\\user.png"
     },
     {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\Company.js",
+      "PackagePath": "staticwebassets\\js\\Company.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\Devices.js",
+      "PackagePath": "staticwebassets\\js\\Devices.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\Employees.js",
+      "PackagePath": "staticwebassets\\js\\Employees.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\HistoricalChart.js",
+      "PackagePath": "staticwebassets\\js\\HistoricalChart.js"
+    },
+    {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\Login.js",
       "PackagePath": "staticwebassets\\js\\Login.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\PartialAddEmployee.js",
+      "PackagePath": "staticwebassets\\js\\PartialAddEmployee.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\PartialCreateCompany.js",
+      "PackagePath": "staticwebassets\\js\\PartialCreateCompany.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\PartialCreateDevice.js",
+      "PackagePath": "staticwebassets\\js\\PartialCreateDevice.js"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\PartialProfileSettings.js",
@@ -75,6 +123,10 @@
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\PasswordReset.js",
       "PackagePath": "staticwebassets\\js\\PasswordReset.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\RealTimeChart.js",
+      "PackagePath": "staticwebassets\\js\\RealTimeChart.js"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\Signup.js",
@@ -87,6 +139,10 @@
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\_Layout.js",
       "PackagePath": "staticwebassets\\js\\_Layout.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\animate.css\\animate.compat.css",

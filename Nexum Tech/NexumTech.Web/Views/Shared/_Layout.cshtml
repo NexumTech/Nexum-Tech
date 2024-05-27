@@ -66,7 +66,7 @@
                             <hr class="dropdown-divider">
                         </li>
                         <li>
-                            <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#profileModal">
+                            <a class="dropdown-item" style="cursor: pointer;" data-bs-toggle="modal" data-bs-target="#profileModal">
                                 <i class="fa-solid fa-user"></i>
                                 @Localizer["Profile"]
                             </a>
@@ -87,32 +87,31 @@
     </header>
 
     <div class="offcanvas offcanvas-start d-flex flex-column flex-shrink-0 p-3" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel" style="width: 280px;">
-        <button class="btn w-100 d-flex align-items-center mb-3 mb-md-0 me-md-auto" type="button">
-            <img src="~/images/n_shortcut_icon.png" alt="" width="50" height="50" class="rounded-circle me-4">
-            <span class="fs-4">Nexum</span>
+        <button class="btn btn-sm w-100 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto" type="button" style="background-color: #103cbe;">
+            <img src="@Url.Content("~/images/nexum_white.png")" style="max-width: 90%; max-height: 70%;">
         </button>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto mt-3">
             <li class="nav-item mb-4">
-                <a href="/Home" class="btn w-100 rounded text-start fs-5">
+                <a href="/RealTimeChart" class="btn w-100 rounded text-start fs-5">
                     <i class="fa-solid fa-chart-line"></i>
                     @Localizer["RealTimeMonitoring"]
                 </a>
             </li>
             <li class="nav-item mb-4">
-                <a href="/Home" class="btn w-100 rounded text-start fs-5">
+                <a href="/HistoricalChart" class="btn w-100 rounded text-start fs-5">
                     <i class="fa-solid fa-chart-pie"></i>
-                    @Localizer["History"]
+                    @Localizer["Historical Chart"]
                 </a>
             </li>
             <li class="nav-item mb-4">
-                <a href="/Home" class="btn w-100 rounded text-start fs-5">
+                <a href="/Company" class="btn w-100 rounded text-start fs-5">
                     <i class="fa-solid fa-building"></i>
                     @Localizer["Company"]
                 </a>
             </li>
             <li class="nav-item mb-4">
-                <a href="/Home" class="btn w-100 rounded text-start fs-5">
+                <a href="/AboutUs" class="btn w-100 rounded text-start fs-5">
                     <i class="fa-solid fa-circle-info"></i>
                     @Localizer["AboutUs"]
                 </a>
@@ -120,24 +119,11 @@
         </ul>
         <hr>
         <div class="dropdown">
-            <button class="btn d-flex align-items-center text-decoration-none fs-6 dropdown-toggle" type="button" id="dropdownCompanies" data-bs-toggle="dropdown" aria-expanded="false">
-                @* <img src="https://via.placeholder.com/150x150/3b2d50/bdbac1?text=DAVIDSONBPE" width="32" height="32" class="rounded-circle me-2"> *@
-                <strong>Company</strong>
+            <button class="btn d-flex align-items-center text-decoration-none fs-6 dropdown-toggle overflow-hidden w-100" type="button" id="dropdownCompanies" data-bs-toggle="dropdown" aria-expanded="false">
+                <img src="" width="32" height="32" class="rounded-circle me-2">
+                <strong style="display: inline-block; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;"></strong>
             </button>
-            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownCompanies">
-                <li>
-                    <a class="dropdown-item" href="#">
-                        Company 1
-                    </a>
-                </li>
-                <li>
-                    <hr class="dropdown-divider">
-                </li>
-                <li>
-                    <a class="dropdown-item" href="#">
-                        Company 2
-                    </a>
-                </li>
+            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownCompanies" id="companiesList">
             </ul>
         </div>
     </div>

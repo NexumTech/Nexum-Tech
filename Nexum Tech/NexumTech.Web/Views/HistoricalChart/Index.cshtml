@@ -1,0 +1,40 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+@inject IViewLocalizer Localizer
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@Localizer["Historical Chart"]</title>
+    
+    <script type="module" src="~/lib/chart.js/chart.umd.js"></script>
+    <script src="~/js/HistoricalChart.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
+    <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="~/js/ThemeSwitcher.js"></script>
+    <script src="~/lib/sweetalert2/sweetalert2.js"></script>
+    <script src="~/lib/jquery/jquery.js"></script>
+</head>
+
+<body data-bs-theme="dark">
+    <div class="container mt-5">
+        <h1 class="text-center">@Localizer["Historical Chart"]</h1>
+        <form id="filterForm">
+            <div class="row">
+                <div class="col-md-4">
+                    <label for="startDate">Start Date:</label>
+                    <input type="date" id="startDate" name="startDate" class="form-control">
+                </div>
+                <div class="col-md-4">
+                    <label for="endDate">End Date:</label>
+                    <input type="date" id="endDate" name="endDate" class="form-control">
+                </div>
+            </div>
+            <button type="submit" class="btn btn-primary mt-3">Apply Filters</button>
+        </form>
+
+        <canvas id="historicalChart" width="800" height="300"></canvas>
+    </div>
+</body>
+</html>

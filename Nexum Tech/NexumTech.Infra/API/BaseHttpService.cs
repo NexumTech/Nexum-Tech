@@ -1,5 +1,6 @@
 ﻿
 using System.Globalization;
+using System.IO.Compression;
 using System.Net.Http.Headers;
 using System.Text;
 using Microsoft.Extensions.Options;
@@ -20,11 +21,11 @@ namespace NexumTech.Infra.API
             _appSettingsUI = appSettingsUI.Value;
         }
 
-        public async Task<T> CallMethod<T>(string url, HttpMethod method, string token = null, object data = null, Dictionary<string, string> headers = null)
+        public async Task<T> CallMethod<T>(string url, HttpMethod method, string token = null, object data = null, Dictionary<string, string> headers = null, string urlFiware = null)
         {
             try
             {
-                string completeURL = String.Concat(_appSettingsUI.ApiBaseURL, url.Trim());
+                string completeURL = !string.IsNullOrEmpty(urlFiware) ? urlFiware : String.Concat(_appSettingsUI.ApiBaseURL, url.Trim());
 
                 HttpRequestMessage request = new HttpRequestMessage(method, completeURL);
 
@@ -51,7 +52,11 @@ namespace NexumTech.Infra.API
 
                 if (response.IsSuccessStatusCode)
                 {
-                    string responseBody = await response.Content.ReadAsStringAsync();
+                    string responseBody = string.Empty;
+                    if (urlFiware != null)
+                        responseBody = await GetDecompressedResponse(response);
+                    else
+                        responseBody = await response.Content.ReadAsStringAsync();
 
                     if (typeof(T) == typeof(string))
                     {
@@ -68,6 +73,23 @@ namespace NexumTech.Infra.API
             catch (HttpRequestException ex)
             {
                 throw new Exception($"API Error: {ex.Message}");
+            }
+        }
+
+        public async Task<string> GetDecompressedResponse(HttpResponseMessage response)
+        {
+            if (response.Content.Headers.ContentEncoding.Contains("gzip"))
+            {
+                using (var responseStream = await response.Content.ReadAsStreamAsync())
+                using (var decompressionStream = new GZipStream(responseStream, CompressionMode.Decompress))
+                using (var streamReader = new StreamReader(decompressionStream))
+                {
+                    return await streamReader.ReadToEndAsync();
+                }
+            }
+            else
+            {
+                return await response.Content.ReadAsStringAsync();
             }
         }
     }

@@ -4,8 +4,6 @@ using NexumTech.Domain.Interfaces;
 using NexumTech.Infra.API.Interfaces;
 using NexumTech.Infra.DAO.Interfaces;
 using NexumTech.Infra.Models;
-using System.Globalization;
-using System.Runtime.Versioning;
 using System.Security.Cryptography;
 using System.Text;
 using System.Text.RegularExpressions;
@@ -123,12 +121,10 @@ namespace NexumTech.Domain.Services
             try
             {
                 #region Send e-mail async thread
-#pragma warning disable CS4014
                 Task.Run(async () =>
                 {
-                    await _mailService.SendMail(user.Email, subject, _mailMessageService.GetMailMessage(mailType, user));
+                    await _mailService.SendMail(user.Email.Trim(), subject, _mailMessageService.GetMailMessage(mailType, user));
                 });
-#pragma warning restore CS4014
                 #endregion
 
                 return true;
