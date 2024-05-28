@@ -28,6 +28,8 @@ $(document).ready(function () {
                 }]
             },
             options: {
+                responsive: true,
+                maintainAspectRatio: false,
                 scales: {
                     y: {
                         beginAtZero: false
@@ -39,6 +41,10 @@ $(document).ready(function () {
                     }
                 }
             }
+        });
+
+        $(window).resize(function () {
+            historicalChart.resize();
         });
     }
 
@@ -53,7 +59,7 @@ $(document).ready(function () {
     }
 
     function formatDate(date) {
-        const options = { day: 'numeric', month: 'numeric', year: 'numeric', hour: '2-digit', minute: '2-digit', second: '2-digit' };
+        const options = { day: 'numeric', month: 'numeric', /*year: 'numeric',*/ hour: '2-digit', minute: '2-digit'/*, second: '2-digit'*/ };
         return date.toLocaleString('pt-BR', options);
     }
 
