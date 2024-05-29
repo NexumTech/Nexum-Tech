@@ -7,10 +7,13 @@ $(document).ready(function () {
     $('#filterForm').submit(function (event) {
         event.preventDefault();
 
-        const startDate = $('#startDate').val();
-        const endDate = $('#endDate').val();
+        const userStartDate = new Date($('#startDate').val() + 'T00:00:00-03:00'); // Data de início selecionada pelo usuário em UTC-3
+        const userEndDate = new Date($('#endDate').val() + 'T23:59:59-03:00'); // Data de fim selecionada pelo usuário em UTC-3
 
-        fetchAllHistoricalData(startDate, endDate);
+        const apiStartDate = new Date(userStartDate.getTime() + userStartDate.getTimezoneOffset() * 60000).toISOString();
+        const apiEndDate = new Date(userEndDate.getTime() + userEndDate.getTimezoneOffset() * 60000).toISOString();
+
+        fetchAllHistoricalData(apiStartDate, apiEndDate);
     });
 
     function initializeChart() {
@@ -24,7 +27,8 @@ $(document).ready(function () {
                     backgroundColor: 'rgba(2, 104, 255, 0.2)',
                     borderColor: 'rgba(2, 104, 255, 1)',
                     borderWidth: 1,
-                    pointRadius: 0
+                    pointRadius: 0,
+                    fill: true
                 }]
             },
             options: {
@@ -59,7 +63,7 @@ $(document).ready(function () {
     }
 
     function formatDate(date) {
-        const options = { day: 'numeric', month: 'numeric', /*year: 'numeric',*/ hour: '2-digit', minute: '2-digit'/*, second: '2-digit'*/ };
+        const options = { day: 'numeric', month: 'numeric', hour: '2-digit', minute: '2-digit' };
         return date.toLocaleString('pt-BR', options);
     }
 
