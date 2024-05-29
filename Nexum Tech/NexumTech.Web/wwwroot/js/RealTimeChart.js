@@ -74,7 +74,7 @@ $(document).ready(function () {
         }
     });
 
-    $('#btnReload').on('click', function () {
+    $('#realTemp').click(function () {
         resetChart();
     });
 
