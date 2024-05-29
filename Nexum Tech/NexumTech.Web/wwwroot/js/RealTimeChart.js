@@ -1,13 +1,18 @@
 let temperatures = [];
 let timeStamps = [];
+let isLoopActive = true;
 
 $(document).ready(function () {
     function addTemperatureAndTime(temperature, timestamp) {
+        checkDifferentDates();
+
         temperatures.push(temperature);
         timeStamps.push(timestamp);
 
-        updateChart();
-        updateRealTemp(temperature);
+        if (isLoopActive) {
+            updateChart();
+            updateRealTemp(temperature);
+        }
     }
 
     function updateChart() {
@@ -74,13 +79,23 @@ $(document).ready(function () {
         }
     });
 
-    $('#realTemp').click(function () {
+    $('#realTemp').on('click', function () {
         resetChart();
     });
 
-    function loop() {
-        fetchTemperatureData();
+    function checkDifferentDates(response) {
+        if (timeStamps.length >= 3) {
+            const currentDate = new Date(timeStamps[timeStamps.length - 1]).toISOString().split('T')[1];
+            const lastDate = new Date(timeStamps[timeStamps.length - 2]).toISOString().split('T')[1];
+
+            if (currentDate !== lastDate) {
+                isLoopActive = true;
+            }
+            else {
+                isLoopActive = false;
+            }
+        }
     }
 
-    setInterval(loop, 500);
+    setInterval(fetchTemperatureData, 1000);
 });
