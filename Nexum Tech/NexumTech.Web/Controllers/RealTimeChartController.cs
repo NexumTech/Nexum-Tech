@@ -2,9 +2,11 @@
 using Microsoft.Extensions.Options;
 using NexumTech.Infra.API;
 using NexumTech.Infra.WEB;
+using NexumTech.Web.Controllers.Filters;
 
 namespace NexumTech.Web.Controllers
 {
+    [JwtAuthentication]
     public class RealTimeChartController : Controller
     {
         private readonly BaseHttpService _httpService;
@@ -22,7 +24,6 @@ namespace NexumTech.Web.Controllers
         }
 
         [HttpPost]
-        //[Authorize]
         public async Task<ActionResult> GetRealTemperature()
         {
             try

@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\obj\\Debug\\net6.0\\scopedcss\\projectbundle\\NexumTech.Web.bundle.scp.css",
+      "PackagePath": "staticwebassets\\NexumTech.Web.bundle.scp.css"
+    },
+    {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\css\\Company.css",
       "PackagePath": "staticwebassets\\css\\Company.css"
     },
@@ -21,6 +25,10 @@
       "PackagePath": "staticwebassets\\css\\_Layout.css"
     },
     {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\css\\site.css",
+      "PackagePath": "staticwebassets\\css\\site.css"
+    },
+    {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\favicon.ico",
       "PackagePath": "staticwebassets\\favicon.ico"
     },
@@ -35,6 +43,10 @@
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\brazil.png",
       "PackagePath": "staticwebassets\\images\\brazil.png"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\fundo.jpg",
+      "PackagePath": "staticwebassets\\images\\fundo.jpg"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\google.png",
@@ -55,6 +67,10 @@
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\nexum_white.png",
       "PackagePath": "staticwebassets\\images\\nexum_white.png"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\profile.png",
+      "PackagePath": "staticwebassets\\images\\profile.png"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\images\\spain.png",
@@ -123,6 +139,10 @@
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\_Layout.js",
       "PackagePath": "staticwebassets\\js\\_Layout.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\site.js",
+      "PackagePath": "staticwebassets\\js\\site.js"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\animate.css\\animate.compat.css",

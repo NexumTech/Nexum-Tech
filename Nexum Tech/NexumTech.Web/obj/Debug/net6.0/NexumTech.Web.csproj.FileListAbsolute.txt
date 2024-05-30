@@ -393,3 +393,13 @@ C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.HistoricalChart.Index.en-US.resources
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.HistoricalChart.Index.es-ES.resources
 C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.HistoricalChart.Index.pt-BR.resources
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.HistoricalChart.Index.en-US.resources
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.HistoricalChart.Index.es-ES.resources
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.HistoricalChart.Index.pt-BR.resources
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.RealTimeChart.Index.en-US.resources
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.RealTimeChart.Index.es-ES.resources
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\NexumTech.Web.Resources.Views.RealTimeChart.Index.pt-BR.resources
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\Julia\OneDrive\Área de Trabalho\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\scopedcss\projectbundle\NexumTech.Web.bundle.scp.css
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
+C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\net6.0\scopedcss\projectbundle\NexumTech.Web.bundle.scp.css

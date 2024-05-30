@@ -42,6 +42,25 @@ namespace NexumTech.Web.Controllers
             }
         }
 
+        [HttpGet]
+        public async Task<IActionResult> GetCompanies()
+        {
+            try
+            {
+                var token = Request.Cookies["jwt"];
+
+                UserViewModel user = await _httpService.CallMethod<UserViewModel>(_appSettingsUI.GetUserInfoURL, HttpMethod.Get, token);
+
+                IEnumerable<CompanyViewModel> companies = await _httpService.CallMethod<IEnumerable<CompanyViewModel>>(_appSettingsUI.GetCompaniesURL, HttpMethod.Get, token, user);
+
+                return Ok(companies);
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost]
         public IActionResult SetLanguage(string culture)
         {
