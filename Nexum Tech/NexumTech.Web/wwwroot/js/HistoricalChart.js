@@ -16,6 +16,18 @@ $(document).ready(function () {
         fetchAllHistoricalData(apiStartDate, apiEndDate);
     });
 
+    $('#exportImage').on('click', function () {
+        exportChartAsImage(historicalChart);
+    });
+
+    $('#exportPDF').on('click', function () {
+        exportChartAsPDF(historicalChart);
+    });
+
+    $('#exportCSV').on('click', function () {
+        exportChartAsCSV(historicalChart);
+    });
+
     function initializeChart() {
         historicalChart = new Chart(ctx, {
             type: 'line',
@@ -101,5 +113,50 @@ $(document).ready(function () {
         }
 
         fetchPaginatedData();
+    }
+
+    function exportChartAsImage(chart) {
+        const a = document.createElement('a');
+        a.href = chart.toBase64Image();
+        a.download = 'NexumChart.png';
+        a.click();
+    }
+
+    function exportChartAsPDF(chart) {
+        debugger;
+        const { jsPDF } = window.jspdf;
+        const doc = new jsPDF('landscape');
+        const imgData = chart.toBase64Image();
+
+        const pageWidth = doc.internal.pageSize.getWidth();
+        const pageHeight = doc.internal.pageSize.getHeight();
+        const imgProps = chart.canvas;
+        const imgWidth = imgProps.width;
+        const imgHeight = imgProps.height;
+        const aspectRatio = imgWidth / imgHeight;
+
+        const pdfWidth = pageWidth - 20;
+        const pdfHeight = pdfWidth / aspectRatio;
+
+        doc.addImage(imgData, 'PNG', 10, 10, pdfWidth, pdfHeight);
+
+        doc.save('NexumChart.pdf');
+    }
+
+    function exportChartAsCSV(chart) {
+        let csvContent = 'data:text/csv;charset=utf-8,';
+        const labels = chart.data.labels.join(',');
+        csvContent += labels + '\n';
+
+        chart.data.datasets.forEach((dataset) => {
+            const dataString = dataset.data.join(',');
+            csvContent += dataset.label + ',' + dataString + '\n';
+        });
+
+        const encodedUri = encodeURI(csvContent);
+        const a = document.createElement('a');
+        a.href = encodedUri;
+        a.download = 'NexumChart.csv';
+        a.click();
     }
 });
