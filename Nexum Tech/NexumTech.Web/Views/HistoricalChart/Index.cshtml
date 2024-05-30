@@ -11,6 +11,15 @@
     <link href="~/css/HistoricalChart.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
 
+    @if (ViewBag.CurrentTheme == "dark")
+    {
+        <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2-dark.css" rel="stylesheet" />
+    }
+    else
+    {
+        <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
+    }
+
     <script type="module" src="~/lib/chart.js/chart.umd.js"></script>
     <script src="~/js/HistoricalChart.js"></script>
     <script src="~/lib/bootstrap/js/bootstrap.js"></script>
@@ -19,8 +28,14 @@
     <script src="~/lib/sweetalert2/sweetalert2.js"></script>
     <script src="~/lib/jquery/jquery.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+
 </head>
 <body data-bs-theme="dark">
+    <!-- SweetAlert resources -->
+    <span class="d-none" id="lblWarning">@Localizer["lblWarning"]</span>
+    <span class="d-none" id="textWarning">@Localizer["textWarning"]</span>
+    <!-- SweetAlert resources -->
+
     <div class="container-fluid">
         <h1 class="text-center">@Localizer["HistoricalChart"]</h1>
         <form id="filterForm">
@@ -34,7 +49,7 @@
                     <input type="date" id="endDate" name="endDate" class="form-control">
                 </div>
                 <div class="col-12 col-sm-4 col-md-4 d-flex align-items-end justify-content-sm-end">
-                    <button type="submit" class="btn btn-primary w-100 w-sm-auto">@Localizer["ApplyFilters"]</button>
+                    <button type="submit" id="btnApply" class="btn btn-primary w-100 w-sm-auto">@Localizer["ApplyFilters"]</button>
                 </div>
             </div>
             <div class="row mt-3">

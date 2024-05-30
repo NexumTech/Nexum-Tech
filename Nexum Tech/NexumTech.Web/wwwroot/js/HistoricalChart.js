@@ -4,11 +4,26 @@ $(document).ready(function () {
 
     initializeChart();
 
-    $('#filterForm').submit(function (event) {
+    $('#btnApply').on('click', function (event) {
         event.preventDefault();
 
-        const userStartDate = new Date($('#startDate').val() + 'T00:00:00-03:00'); // Data de início selecionada pelo usuário em UTC-3
-        const userEndDate = new Date($('#endDate').val() + 'T23:59:59-03:00'); // Data de fim selecionada pelo usuário em UTC-3
+        const startDate = $('#startDate').val();
+        const endDate = $('#endDate').val();
+
+        if (!startDate || !endDate) {
+            var lblWarning = $('#lblWarning').text();
+            var textWarning = $('#textWarning').text();
+
+            Swal.fire({
+                title: lblWarning,
+                text: textWarning,
+                icon: 'warning'
+            });
+            return; // Não prossiga com o envio do formulário
+        }
+
+        const userStartDate = new Date(startDate + 'T00:00:00-03:00'); // Data de início selecionada pelo usuário em UTC-3
+        const userEndDate = new Date(endDate + 'T23:59:59-03:00'); // Data de fim selecionada pelo usuário em UTC-3
 
         const apiStartDate = new Date(userStartDate.getTime() + userStartDate.getTimezoneOffset() * 60000).toISOString();
         const apiEndDate = new Date(userEndDate.getTime() + userEndDate.getTimezoneOffset() * 60000).toISOString();
@@ -116,14 +131,11 @@ $(document).ready(function () {
     }
 
     function exportChartAsImage(chart) {
-        const a = document.createElement('a');
-        a.href = chart.toBase64Image();
-        a.download = 'NexumHistoricalChart.png';
-        a.click();
+        const imgData = chart.toBase64Image();
+        downloadFile(imgData, 'NexumHistoricalChart.png');
     }
 
     function exportChartAsPDF(chart) {
-        debugger;
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF('landscape');
         const imgData = chart.toBase64Image();
@@ -139,8 +151,8 @@ $(document).ready(function () {
         const pdfHeight = pdfWidth / aspectRatio;
 
         doc.addImage(imgData, 'PNG', 10, 10, pdfWidth, pdfHeight);
-
-        doc.save('NexumHistoricalChart.pdf');
+        const pdfBlob = doc.output('blob');
+        downloadFile(pdfBlob, 'NexumHistoricalChart.pdf');
     }
 
     function exportChartAsCSV(chart) {
@@ -154,9 +166,22 @@ $(document).ready(function () {
         });
 
         const encodedUri = encodeURI(csvContent);
-        const a = document.createElement('a');
-        a.href = encodedUri;
-        a.download = 'NexumHistoricalChart.csv';
-        a.click();
+        downloadFile(encodedUri, 'NexumHistoricalChart.csv');
+    }
+
+    function downloadFile(fileData, fileName) {
+        fetch(fileData)
+            .then(response => response.blob())
+            .then(blob => {
+                const url = window.URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = fileName;
+                document.body.appendChild(a);
+                a.click();
+                window.URL.revokeObjectURL(url);
+                document.body.removeChild(a);
+            })
+            .catch(error => console.error('Error downloading file:', error));
     }
 });

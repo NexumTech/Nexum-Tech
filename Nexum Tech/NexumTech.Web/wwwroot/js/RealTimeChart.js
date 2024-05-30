@@ -103,7 +103,6 @@ $(document).ready(function () {
     }
 
     function exportChartAsPDF(chart) {
-        debugger;
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF('landscape');
         const imgData = chart.toBase64Image();
