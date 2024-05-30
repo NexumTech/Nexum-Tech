@@ -2,17 +2,7 @@
 
 @inject IViewLocalizer Localizer
 
-@if (ViewBag.CurrentTheme == "dark")
-{
-    <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2-dark.css" rel="stylesheet" />
-}
-else
-{
-    <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
-}
-
 <script src="~/js/PartialAddEmployee.js"></script>
-<script src="~/lib/sweetalert2/sweetalert2.js"></script>
 
 <div class="modal-content">
     <!-- SweetAlert resources -->
@@ -26,7 +16,8 @@ else
     <div class="modal-body py-5">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center">
-                <form novalidate id="loginForm">
+                <p class="card-title mb-4"><b>Enter the email of the user you want to add to your company.</b></p>
+                <form novalidate id="employeesForm">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating">
@@ -41,6 +32,6 @@ else
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-success" id="btnSaveProfile">Add</button>
+        <button type="button" class="btn btn-outline-success" id="btnAddEmployee">Add</button>
     </div>
 </div>

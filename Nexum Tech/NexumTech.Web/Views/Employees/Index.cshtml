@@ -1,13 +1,26 @@
-﻿<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+﻿@model IEnumerable<NexumTech.Infra.Models.EmployeesViewModel>;
+
+<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
 <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
 <link href="~/lib/datatables/datatables.css" rel="stylesheet" />
 
+@if (ViewBag.CurrentTheme == "dark")
+{
+    <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2-dark.css" rel="stylesheet" />
+}
+else
+{
+    <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
+}
+
+<script src="~/lib/sweetalert2/sweetalert2.js"></script>
 <script src="~/lib/jquery/jquery.js"></script>
 <script src="~/lib/datatables/datatables.js"></script>
 <script src="~/js/ThemeSwitcher.js"></script>
 <script src="~/js/Employees.js"></script>
 
 <body data-bs-theme="light">
+    @Html.Hidden("companyId", ViewBag.CompanyId, new { @id = "companyId" })
     <div class="container">
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
@@ -33,21 +46,26 @@
                 <table id="employeesTable" class="table table-striped display w-100">
                     <thead>
                         <tr>
-                            <th>Id</th>
-                            <th>Name</th>
-                            <th>Remove</th>
+                            <th class="text-center">Id</th>
+                            <th class="text-center">Name</th>
+                            <th class="text-center">E-mail</th>
+                            <th class="text-center">Remove</th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>Row 1</td>
-                            <td>Row 1</td>
-                            <td>
-                                <a class="btn btn-outline-danger">
-                                    <i class="fa-solid fa-circle-xmark"></i>
-                                </a>
-                            </td>
-                        </tr>
+                        @foreach(var employee in Model)
+                        {
+                            <tr>
+                                <td class="text-center">@employee.Id</td>
+                                <td class="text-center">@employee.Username</td>
+                                <td class="text-center">@employee.Email</td>
+                                <td class="text-center">
+                                    <a class="btn btn-outline-danger btn-remove-employee" data-employee-id="@employee.Id">
+                                        <i class="fa-solid fa-circle-xmark"></i>
+                                    </a>
+                                </td>
+                            </tr>
+                        }
                     </tbody>
                 </table>
             </div>

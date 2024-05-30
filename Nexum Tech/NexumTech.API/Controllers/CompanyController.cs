@@ -30,6 +30,38 @@ namespace NexumTech.API.Controllers
             }
         }
 
+        [HttpGet]
+        [Authorize]
+        public async Task<ActionResult<IEnumerable<CompanyViewModel>>> GetCompanies(UserViewModel userViewModel)
+        {
+            try
+            {
+                return Ok(await _companyService.GetCompanies(userViewModel.Id));
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Authorize]
+        public async Task<ActionResult> CheckCompanyOwner(EmployeesViewModel employeesViewModel)
+        {
+            try
+            {
+                bool isOwner = await _companyService.CheckCompanyOwner(employeesViewModel.CompanyId, employeesViewModel.Id);
+
+                if (!isOwner) return BadRequest();
+
+                return Ok();
+            }
+            catch (Exception ex)
+            {
+                return BadRequest(ex.Message);
+            }
+        }
+
         [HttpPost]
         [Authorize]
         public async Task<ActionResult> CreateCompany(CompanyViewModel companyViewModel)

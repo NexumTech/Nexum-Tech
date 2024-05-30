@@ -32,9 +32,6 @@ namespace NexumTech.Domain.Services
                 case MailTypeEnum.PasswordReset:
                     return PasswordResetMessage(user);
 
-                case MailTypeEnum.Company:
-                    return CompanyMessage();
-
                 default:
                     return String.Empty;
             }
@@ -301,11 +298,6 @@ namespace NexumTech.Domain.Services
             message.Append("</body></html>");
 
             return message.ToString();
-        }
-
-        private string CompanyMessage()
-        {
-            return "";
         }
     }
 }
