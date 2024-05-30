@@ -5,7 +5,6 @@ using NexumTech.Infra.API;
 using NexumTech.Infra.Models;
 using NexumTech.Infra.WEB;
 using NexumTech.Web.Controllers.Filters;
-using System.Reflection.PortableExecutable;
 
 namespace NexumTech.Web.Controllers
 {
@@ -115,7 +114,7 @@ namespace NexumTech.Web.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(_localizer["ProvisioningDeviceError"]);
+                    return BadRequest(_localizer["ProvisioningDeviceError"].Value);
                 }
                 #endregion
 
@@ -126,7 +125,7 @@ namespace NexumTech.Web.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(_localizer["RegisteringDeviceError"]);
+                    return BadRequest(_localizer["RegisteringDeviceError"].Value);
                 }
                 #endregion
 
@@ -137,13 +136,13 @@ namespace NexumTech.Web.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(_localizer["SubscribingDeviceError"]);
+                    return BadRequest(_localizer["SubscribingDeviceError"].Value);
                 }
                 #endregion
 
                 await _httpService.CallMethod<UserViewModel>(_appSettingsUI.CreateDeviceURL, HttpMethod.Post, token, devicesViewModel);
 
-                return Ok(_localizer["CreatedDevice"]);
+                return Ok(_localizer["CreatedDevice"].Value);
             }
             catch (Exception ex)
             {
@@ -165,6 +164,8 @@ namespace NexumTech.Web.Controllers
                 headers.Add("accept", "application/json");
                 #endregion
 
+                var teste = _localizer["RemovedDevice"].Value;
+
                 #region Fiware - remove device
                 try
                 {
@@ -172,13 +173,13 @@ namespace NexumTech.Web.Controllers
                 }
                 catch (Exception ex)
                 {
-                    return BadRequest(_localizer["RemoveDeviceError"]);
+                    return BadRequest(_localizer["RemoveDeviceError"].Value);
                 }
                 #endregion
 
                 await _httpService.CallMethod<ActionResult>(_appSettingsUI.RemoveDeviceURL, HttpMethod.Delete, token, devicesViewModel);
 
-                return Ok(_localizer["RemovedDevice"]);
+                return Ok(_localizer["RemovedDevice"].Value);
             }
             catch (Exception ex)
             {

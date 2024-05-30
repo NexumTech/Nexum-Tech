@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\Company.css"
     },
     {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\css\\HistoricalChart.css",
+      "PackagePath": "staticwebassets\\css\\HistoricalChart.css"
+    },
+    {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\css\\Home.css",
       "PackagePath": "staticwebassets\\css\\Home.css"
     },
@@ -957,6 +961,18 @@
       "PackagePath": "staticwebassets\\lib\\datatables\\datatables.min.js"
     },
     {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\datatables\\i18n\\default-en-US.json",
+      "PackagePath": "staticwebassets\\lib\\datatables\\i18n\\default-en-US.json"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\datatables\\i18n\\default-es-ES.json",
+      "PackagePath": "staticwebassets\\lib\\datatables\\i18n\\default-es-ES.json"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\datatables\\i18n\\default-pt-BR.json",
+      "PackagePath": "staticwebassets\\lib\\datatables\\i18n\\default-pt-BR.json"
+    },
+    {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\font-awesome\\css\\all.css",
       "PackagePath": "staticwebassets\\lib\\font-awesome\\css\\all.css"
     },
@@ -1199,6 +1215,54 @@
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jquery\\jquery.slim.min.map",
       "PackagePath": "staticwebassets\\lib\\jquery\\jquery.slim.min.map"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jspdf\\jspdf.es.js",
+      "PackagePath": "staticwebassets\\lib\\jspdf\\jspdf.es.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jspdf\\jspdf.es.js.map",
+      "PackagePath": "staticwebassets\\lib\\jspdf\\jspdf.es.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jspdf\\jspdf.es.min.js",
+      "PackagePath": "staticwebassets\\lib\\jspdf\\jspdf.es.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jspdf\\jspdf.es.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\jspdf\\jspdf.es.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jspdf\\jspdf.umd.js",
+      "PackagePath": "staticwebassets\\lib\\jspdf\\jspdf.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jspdf\\jspdf.umd.js.map",
+      "PackagePath": "staticwebassets\\lib\\jspdf\\jspdf.umd.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jspdf\\jspdf.umd.min.js",
+      "PackagePath": "staticwebassets\\lib\\jspdf\\jspdf.umd.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jspdf\\jspdf.umd.min.js.map",
+      "PackagePath": "staticwebassets\\lib\\jspdf\\jspdf.umd.min.js.map"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jspdf\\polyfills.es.js",
+      "PackagePath": "staticwebassets\\lib\\jspdf\\polyfills.es.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jspdf\\polyfills.es.min.js",
+      "PackagePath": "staticwebassets\\lib\\jspdf\\polyfills.es.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jspdf\\polyfills.umd.js",
+      "PackagePath": "staticwebassets\\lib\\jspdf\\polyfills.umd.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jspdf\\polyfills.umd.min.js",
+      "PackagePath": "staticwebassets\\lib\\jspdf\\polyfills.umd.min.js"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\jwt-decode\\LICENSE",

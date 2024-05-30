@@ -10,30 +10,52 @@
 
     <script type="module" src="~/lib/chart.js/chart.umd.js"></script>
     <script src="~/js/RealTimeChart.js"></script>
-    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
-    <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="~/js/ThemeSwitcher.js"></script>
     <script src="~/lib/sweetalert2/sweetalert2.js"></script>
     <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jspdf/jspdf.umd.js"></script>
+
 </head>
-<body data-bs-theme="dark">
+<body data-bs-theme="light">
+    <span class="d-none" id="currentCompanyId">@ViewBag.CurrentCompanyId</span>
     <div class="container mt-5">
-        <div class="d-flex justify-content-between align-items-center">
-            <h1 class="my-0">@Localizer["RealTimeTemperatureChart"]</h1>
-            <div class="card mb-4 rounded-3 shadow-sm" style="width: 170px; height: 100px;">
-                <div class="card-header bg-primary py-3">
-                    <h6 class="my-0 fw-normal text-center">Real temp (ºC)</h6>
+        <div class="row align-items-center">
+            <div class="col">
+                <h1 class="mb-0">@Localizer["RealTimeTemperature"]</h1>
+            </div>
+            <div class="col-auto mt-3 mb-3">
+                <div class="card rounded-3 shadow-sm">
+                    <div class="card-header bg-primary py-3">
+                        <h6 class="my-0 fw-normal text-center">@Localizer["RealTemp"] (ºC)</h6>
+                    </div>
+                    <div class="card-body">
+                        <ul class="list-unstyled mb-0 text-center">
+                            <li id="realTemp"></li>
+                        </ul>
+                    </div>
                 </div>
-                <div class="card-body">
-                    <ul class="list-unstyled mb-0 text-center">
-                        <li id="realTemp"></li>
+            </div>
+            <div class="row-auto">
+                <div class="btn-group mx-2">
+                    <button type="button" class="btn btn-outline-light dropdown-toggle" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" data-bs-toggle="dropdown" aria-expanded="false" id="selectedDevice">
+                        <i class="fa-solid fa-mobile-screen mx-1"></i> Dispositivos
+                    </button>
+                    <ul class="dropdown-menu" id="devicesList">
                     </ul>
                 </div>
-                <button type="button" id="btnReload" class="btn btn-outline-primary">@Localizer["Reload"]</button>
+                <div class="btn-group">
+                    <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        <i class="fa-solid fa-file-export mx-1"></i> @Localizer["Export"]
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><button id="exportPDF" class="dropdown-item" type="button"><i class="fa-solid fa-file-pdf mx-1"></i> @Localizer["AsPDF"]</button></li>
+                        <li><button id="exportImage" class="dropdown-item" type="button"><i class="fa-solid fa-image mx-1"></i> @Localizer["AsImage"]</button></li>
+                        <li><button id="exportCSV" class="dropdown-item" type="button"><i class="fa-solid fa-file-excel mx-1"></i> @Localizer["AsCSV"]</button></li>
+                    </ul>
+                </div>
             </div>
         </div>
         <canvas id="realTimeChart" width="800" height="280"></canvas>
     </div>
 </body>
-
 </html>

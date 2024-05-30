@@ -15,11 +15,8 @@ else
 <script src="~/lib/sweetalert2/sweetalert2.js"></script>
 
 <div class="modal-content">
-    <!-- SweetAlert resources -->
-    <!-- SweetAlert resources -->
-
     <div class="modal-header">
-        Create device
+        @Localizer["CreateDevice"]
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body py-5">
@@ -29,9 +26,9 @@ else
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="text" id="txtName" class="form-control fs-6 p-12" placeholder="Name (Do not enter special characters and whitespaces)" required maxlength="80">
-                                <label for="txtName" class="form-label">Name (Do not enter special characters and whitespaces)</label>
-                                <div class="invalid-feedback">Invalid name</div>
+                                <input type="text" id="txtName" class="form-control fs-6 p-12" placeholder="@Localizer["Name"]" required maxlength="80">
+                                <label for="txtName" class="form-label">@Localizer["Name"]</label>
+                                <div class="invalid-feedback">@Localizer["InvalidName"]</div>
                             </div>
                         </div>
                     </div>
@@ -40,6 +37,6 @@ else
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-success" id="btnCreateDevice">Create</button>
+        <button type="button" class="btn btn-outline-success" id="btnCreateDevice">@Localizer["Create"]</button>
     </div>
 </div>

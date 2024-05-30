@@ -117,7 +117,28 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="Historical Chart" xml:space="preserve">
+  <data name="ApplyFilters" xml:space="preserve">
+    <value>Apply filters</value>
+  </data>
+  <data name="asCSV" xml:space="preserve">
+    <value>as CSV</value>
+  </data>
+  <data name="asImage" xml:space="preserve">
+    <value>as image</value>
+  </data>
+  <data name="asPDF" xml:space="preserve">
+    <value>as PDF</value>
+  </data>
+  <data name="EndDate" xml:space="preserve">
+    <value>End date</value>
+  </data>
+  <data name="Export" xml:space="preserve">
+    <value>Export</value>
+  </data>
+  <data name="HistoricalChart" xml:space="preserve">
     <value>Historical Chart</value>
+  </data>
+  <data name="StartDate" xml:space="preserve">
+    <value>Start date</value>
   </data>
 </root>

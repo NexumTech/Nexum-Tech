@@ -1,0 +1,28 @@
+﻿html, body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+.container-fluid {
+    height: 100%;
+}
+
+.row.align-items-end {
+    margin-top: auto;
+}
+
+.row.flex-grow-1 {
+    flex-grow: 1;
+}
+
+.canvas-container {
+    position: relative;
+    width: 100%;
+    height: 400px;
+}
+
+canvas {
+    width: 100% !important;
+    height: 100% !important;
+}

@@ -5,25 +5,21 @@
 <script src="~/js/PartialAddEmployee.js"></script>
 
 <div class="modal-content">
-    <!-- SweetAlert resources -->
-    
-    <!-- SweetAlert resources -->
-
     <div class="modal-header">
-        Add employee
+        @Localizer["AddEmployee"]
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body py-5">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center">
-                <p class="card-title mb-4"><b>Enter the email of the user you want to add to your company.</b></p>
+                <p class="card-title mb-4"><b>@Localizer["EnterUserEmail"]</b></p>
                 <form novalidate id="employeesForm">
                     <div class="row">
                         <div class="col-md-6">
                             <div class="form-floating">
-                                <input type="email" id="txtEmail" class="form-control fs-6 p-12" placeholder="Email" required maxlength="80">
-                                <label for="email" class="form-label">Email</label>
-                                <div class="invalid-feedback">Invalid email</div>
+                                <input type="email" id="txtEmail" class="form-control fs-6 p-12" placeholder="@Localizer["Email"]" required maxlength="80">
+                                <label for="email" class="form-label">@Localizer["Email"]</label>
+                                <div class="invalid-feedback">@Localizer["InvalidEmail"]</div>
                             </div>
                         </div>
                     </div>
@@ -32,6 +28,6 @@
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-success" id="btnAddEmployee">Add</button>
+        <button type="button" class="btn btn-outline-success" id="btnAddEmployee">@Localizer["Add"]</button>
     </div>
 </div>

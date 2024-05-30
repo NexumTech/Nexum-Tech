@@ -146,7 +146,7 @@ namespace NexumTech.Infra.DAO
                         @OwnerId = companyViewModel.OwnerId,
                         @Logo = companyViewModel.Logo,
                         @Name = companyViewModel.Name.Trim(),
-                        @Description = companyViewModel.Description.Trim(),
+                        @Description = companyViewModel.Description.Trim().Replace("\r", ""),
                     });
 
                     return true;

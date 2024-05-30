@@ -30,11 +30,11 @@ $(document).ready(function () {
             buttonsStyling: false,
         });
         swalWithBootstrapButtons.fire({
-            title: 'Are you sure?',
-            text: "You will not be able to undo this action",
+            title: $('#lblAreYouSure').text(),
+            text: $('#lblUndoAction').text(),
             showDenyButton: true,
-            confirmButtonText: 'Yes',
-            denyButtonText: 'Cancel',
+            confirmButtonText: $('#lblYes').text(),
+            denyButtonText: $('#lblCancel').text(),
         }).then((result) => {
             if (result.isConfirmed) {
                 CloseCompany();

@@ -7,34 +7,62 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@Localizer["Historical Chart"]</title>
-    
+
+    <link href="~/css/HistoricalChart.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+
     <script type="module" src="~/lib/chart.js/chart.umd.js"></script>
     <script src="~/js/HistoricalChart.js"></script>
-    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
-    <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="~/js/ThemeSwitcher.js"></script>
     <script src="~/lib/sweetalert2/sweetalert2.js"></script>
     <script src="~/lib/jquery/jquery.js"></script>
+    <script src="~/lib/jspdf/jspdf.umd.js"></script>
 </head>
-
-<body data-bs-theme="dark">
-    <div class="container mt-5">
-        <h1 class="text-center">@Localizer["Historical Chart"]</h1>
+<body data-bs-theme="light">
+    <span class="d-none" id="currentCompanyId">@ViewBag.CurrentCompanyId</span>
+    <div class="container-fluid mt-5">
+        <h1 class="text-center">@Localizer["HistoricalChart"]</h1>
         <form id="filterForm">
-            <div class="row">
-                <div class="col-md-4">
-                    <label for="startDate">Start Date:</label>
+            <div class="row align-items-end">
+                <div class="col-6 col-sm-4 col-md-4 mb-3 mb-sm-0">
+                    <label for="startDate">@Localizer["StartDate"]:</label>
                     <input type="date" id="startDate" name="startDate" class="form-control">
                 </div>
-                <div class="col-md-4">
-                    <label for="endDate">End Date:</label>
+                <div class="col-6 col-sm-4 col-md-4 mb-3 mb-sm-0">
+                    <label for="endDate">@Localizer["EndDate"]:</label>
                     <input type="date" id="endDate" name="endDate" class="form-control">
                 </div>
+                <div class="col-12 col-sm-4 col-md-4 d-flex align-items-end justify-content-sm-end">
+                    <button type="submit" class="btn btn-primary w-100 w-sm-auto">@Localizer["ApplyFilters"]</button>
+                </div>
             </div>
-            <button type="submit" class="btn btn-primary mt-3">Apply Filters</button>
+            <div class="row mt-3">
+                <div class="col-12 d-flex justify-content-end">
+                    <div class="btn-group mx-2">
+                        <button type="button" class="btn btn-outline-light dropdown-toggle" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" data-bs-toggle="dropdown" aria-expanded="false" id="selectedDevice">
+                            <i class="fa-solid fa-mobile-screen mx-1"></i> Dispositivos
+                        </button>
+                        <ul class="dropdown-menu" id="devicesList">
+                        </ul>
+                    </div>
+                    <div class="dropdown">
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="exportOptions" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-file-export mx-1"></i> @Localizer["Export"]
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="exportOptions">
+                            <li><button id="exportPDF" class="dropdown-item" type="button"><i class="fa-solid fa-file-pdf mx-1"></i> @Localizer["AsPDF"]</button></li>
+                            <li><button id="exportImage" class="dropdown-item" type="button"><i class="fa-solid fa-image mx-1"></i> @Localizer["AsImage"]</button></li>
+                            <li><button id="exportCSV" class="dropdown-item" type="button"><i class="fa-solid fa-file-excel mx-1"></i> @Localizer["AsCSV"]</button></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="row flex-grow-1">
+                <div class="col-12 canvas-container">
+                    <canvas id="historicalChart"></canvas>
+                </div>
+            </div>
         </form>
-
-        <canvas id="historicalChart" width="800" height="300"></canvas>
     </div>
 </body>
 </html>

@@ -8,10 +8,11 @@
 
 <div class="modal-content">
     <!-- SweetAlert resources -->
+    <span class="d-none" id="lblImageSize">@Localizer["ImageSize"]</span>
     <!-- SweetAlert resources -->
 
     <div class="modal-header">
-        Create company
+        @Localizer["CreateCompany"]
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
     </div>
     <div class="modal-body py-5">
@@ -21,20 +22,20 @@
                     <div class="row">
                         <div class="col-md-4 mb-4">
                             <div class="form-floating">
-                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control fs-6 p-12", @id = "txtName", placeholder = "Name", required = "required", maxlength = "80" })
-                                <label for="name" class="form-label">Name</label>
-                                <div class="invalid-feedback">Invalid name</div>
+                                @Html.TextBoxFor(m => m.Name, new { @class = "form-control fs-6 p-12", @id = "txtName", placeholder = @Localizer["Name"], required = "required", maxlength = "80" })
+                                <label for="name" class="form-label">@Localizer["Name"]</label>
+                                <div class="invalid-feedback">@Localizer["InvalidName"]</div>
                             </div>
                         </div>
                         <div class="col-md-12 mb-4">
-                            <label for="description" class="form-label">Description</label>
+                            <label for="description" class="form-label">@Localizer["Description"]</label>
                             @Html.TextAreaFor(m => m.Description, new { @class = "form-control fs-6 p-12", @id = "txtDescription", required = "required", maxlength = "400", style = "height: 140px;" })
-                            <div class="invalid-feedback">Invalid description</div>
+                            <div class="invalid-feedback">@Localizer["InvalidDescription"]</div>
                         </div>
                         <div class="col-md-6">
-                            <label for="logo" class="form-label">Logo</label>
-                            <input class="form-control" type="file" id="logo" accept="image/jpeg, image/png">
-                            <div class="invalid-feedback">Invalid logo</div>
+                            <label for="logo" class="form-label">@Localizer["Logo"]</label>
+                            <input class="form-control" type="file" id="logo" accept="image/jpeg, image/png" required>
+                            <div class="invalid-feedback">@Localizer["InvalidLogo"]</div>
                         </div>
                     </div>
                 </form>
@@ -42,6 +43,6 @@
         </div>
     </div>
     <div class="modal-footer">
-        <button type="button" class="btn btn-outline-success" id="btnCreateCompany">Create</button>
+        <button type="button" class="btn btn-outline-success" id="btnCreateCompany">@Localizer["Create"]</button>
     </div>
 </div>
