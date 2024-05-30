@@ -123,6 +123,9 @@
   <data name="Company" xml:space="preserve">
     <value>Empresa</value>
   </data>
+  <data name="DontHaveCompanies" xml:space="preserve">
+    <value>No hay empresas</value>
+  </data>
   <data name="English" xml:space="preserve">
     <value>Inglés</value>
   </data>
@@ -131,6 +134,9 @@
   </data>
   <data name="History" xml:space="preserve">
     <value>Histórico</value>
+  </data>
+  <data name="Home" xml:space="preserve">
+    <value>Home</value>
   </data>
   <data name="Language" xml:space="preserve">
     <value>Idioma</value>

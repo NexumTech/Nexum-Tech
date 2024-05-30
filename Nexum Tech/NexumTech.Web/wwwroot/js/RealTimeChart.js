@@ -1,8 +1,50 @@
 let temperatures = [];
 let timeStamps = [];
 let isLoopActive = true;
+let currentDevice;
 
 $(document).ready(function () {
+    let currentSelectedCompany = $('#currentCompanyId').text();
+
+    getDevices(currentSelectedCompany);
+
+    $('#companiesList').on('click', 'a', function (event) {
+        event.preventDefault();
+
+        var companyId = $(this).data('company-id');
+        getDevices(companyId);
+    });
+
+    function getDevices(companyId) {
+        $.ajax({
+            type: 'GET',
+            url: '/RealTimeChart/GetDevices',
+            data: {
+               companyId: companyId,
+            },
+            success: function (data) {
+                $('#devicesList').empty();
+
+                data.forEach(function (device) {
+                    var listItem = $('<li>').append($('<button>', {
+                        class: 'dropdown-item',
+                        type: 'button',
+                        text: device.name 
+                    }));
+
+                    $('#devicesList').append(listItem);
+                });
+
+                $('#devicesList').on('click', 'button.dropdown-item', function () {
+                    var deviceName = $(this).text();
+                    $('#selectedDevice').html('<i class="fa-solid fa-mobile-screen mx-1"></i> &nbsp' + deviceName);
+                    resetChart();
+                    currentDevice = deviceName;
+                });
+            },
+        });
+    }
+
     function addTemperatureAndTime(temperature, timestamp) {
         checkDifferentDates();
 
@@ -30,17 +72,22 @@ $(document).ready(function () {
     }
 
     function fetchTemperatureData() {
-        $.ajax({
-            type: 'POST',
-            global: false,
-            url: '/RealTimeChart/GetRealTemperature',
-            success: function (response) {
-                addTemperatureAndTime(response.value, response.metadata.timeInstant.value);
-            },
-            error: function (xhr, status, error) {
-                console.log('Erro: ' + error);
-            }
-        });
+        if (currentDevice != undefined) {
+            $.ajax({
+                type: 'POST',
+                global: false,
+                url: '/RealTimeChart/GetRealTemperature',
+                data: {
+                    deviceName: currentDevice,
+                },
+                success: function (response) {
+                    addTemperatureAndTime(response.value, response.metadata.timeInstant.value);
+                },
+                error: function (xhr, status, error) {
+                    console.log('Erro: ' + error);
+                }
+            });
+        }
     }
 
     function resetChart() {

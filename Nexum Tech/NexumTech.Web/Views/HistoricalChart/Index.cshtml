@@ -13,15 +13,14 @@
 
     <script type="module" src="~/lib/chart.js/chart.umd.js"></script>
     <script src="~/js/HistoricalChart.js"></script>
-    <script src="~/lib/bootstrap/js/bootstrap.js"></script>
-    <script src="~/lib/bootstrap/js/bootstrap.bundle.js"></script>
     <script src="~/js/ThemeSwitcher.js"></script>
     <script src="~/lib/sweetalert2/sweetalert2.js"></script>
     <script src="~/lib/jquery/jquery.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="~/lib/jspdf/jspdf.umd.js"></script>
 </head>
-<body data-bs-theme="dark">
-    <div class="container-fluid">
+<body data-bs-theme="light">
+    <span class="d-none" id="currentCompanyId">@ViewBag.CurrentCompanyId</span>
+    <div class="container-fluid mt-5">
         <h1 class="text-center">@Localizer["HistoricalChart"]</h1>
         <form id="filterForm">
             <div class="row align-items-end">
@@ -39,14 +38,21 @@
             </div>
             <div class="row mt-3">
                 <div class="col-12 d-flex justify-content-end">
+                    <div class="btn-group mx-2">
+                        <button type="button" class="btn btn-outline-light dropdown-toggle" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" data-bs-toggle="dropdown" aria-expanded="false" id="selectedDevice">
+                            <i class="fa-solid fa-mobile-screen mx-1"></i> Dispositivos
+                        </button>
+                        <ul class="dropdown-menu" id="devicesList">
+                        </ul>
+                    </div>
                     <div class="dropdown">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" id="exportOptions" data-bs-toggle="dropdown" aria-expanded="false">
-                            @Localizer["Export"]
+                        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="exportOptions" data-bs-toggle="dropdown" aria-expanded="false">
+                            <i class="fa-solid fa-file-export mx-1"></i> @Localizer["Export"]
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="exportOptions">
-                            <li><button class="dropdown-item" id="exportImage">@Localizer["asImage"]</button></li>
-                            <li><button class="dropdown-item" id="exportPDF">@Localizer["asPDF"]</button></li>
-                            <li><button class="dropdown-item" id="exportCSV">@Localizer["asCSV"]</button></li>
+                            <li><button id="exportPDF" class="dropdown-item" type="button"><i class="fa-solid fa-file-pdf mx-1"></i> @Localizer["AsPDF"]</button></li>
+                            <li><button id="exportImage" class="dropdown-item" type="button"><i class="fa-solid fa-image mx-1"></i> @Localizer["AsImage"]</button></li>
+                            <li><button id="exportCSV" class="dropdown-item" type="button"><i class="fa-solid fa-file-excel mx-1"></i> @Localizer["AsCSV"]</button></li>
                         </ul>
                     </div>
                 </div>

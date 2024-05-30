@@ -67,4 +67,14 @@ $(document).ready(function () {
     $('[data-bs-theme]').each(function () {
         $(this).attr('data-bs-theme', currentTheme);
     });
+
+    if (currentTheme == 'light') {
+        $('.btn-outline-light').each(function () {
+            $(this).removeClass('btn-outline-light').addClass('btn-outline-dark');
+        });
+    } else {
+        $('.btn-outline-dark').each(function () {
+            $(this).removeClass('btn-outline-dark').addClass('btn-outline-light');
+        });
+    }
 });

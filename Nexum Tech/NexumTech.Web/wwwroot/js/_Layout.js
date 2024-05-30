@@ -27,7 +27,7 @@ $(document).ready(function () {
             data.forEach(function (company, index, array) {
                 var listItem = `
                                 <li>
-                                    <a class="dropdown-item" href="#" data-name="${company.name}" data-logo="${company.base64Logo}">
+                                    <a class="dropdown-item" href="#" data-name="${company.name}" data-logo="${company.base64Logo}" data-company-id="${company.id}">
                                         ${company.name}
                                     </a>
                                 </li>
@@ -43,9 +43,12 @@ $(document).ready(function () {
 
             $('#companiesList').on('click', 'a', function (event) {
                 event.preventDefault();
+
+                var companyId = $(this).data('company-id');
                 var companyName = $(this).data('name');
                 var companyLogo = $(this).data('logo');
 
+                $('#dropdownCompanies').attr('data-company-id', companyId);
                 $('#dropdownCompanies img').attr('src', companyLogo);
                 $('#dropdownCompanies strong').text(companyName);
             });
@@ -53,11 +56,12 @@ $(document).ready(function () {
             if (data.length > 0) {
                 var firstCompany = data[0];
 
+                $('#dropdownCompanies').data('company-id', firstCompany.id);
                 $('#dropdownCompanies img').attr('src', firstCompany.base64Logo);
                 $('#dropdownCompanies strong').text(firstCompany.name);
             } else {
-                $('#dropdownCompanies img').addClass("d-none");
-                $('#dropdownCompanies strong').text("DontHaveCompanies");
+                $('#dropdownCompanies img').addClass('d-none');
+                $('#dropdownCompanies strong').text($('#lblDontHaveCompanies').text());
                 $('#dropdownCompanies').attr('disabled', true);
             }
         },

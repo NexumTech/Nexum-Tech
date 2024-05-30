@@ -1,14 +1,55 @@
 $(document).ready(function () {
+    let currentDevice;
     const ctx = document.getElementById('historicalChart').getContext('2d');
     let historicalChart;
+
+    let currentSelectedCompany = $('#currentCompanyId').text();
+
+    getDevices(currentSelectedCompany);
+
+    $('#companiesList').on('click', 'a', function (event) {
+        event.preventDefault();
+
+        var companyId = $(this).data('company-id');
+        getDevices(companyId);
+    });
+
+    function getDevices(companyId) {
+        $.ajax({
+            type: 'GET',
+            url: '/HistoricalChart/GetDevices',
+            data: {
+                companyId: companyId,
+            },
+            success: function (data) {
+                $('#devicesList').empty();
+
+                data.forEach(function (device) {
+                    var listItem = $('<li>').append($('<button>', {
+                        class: 'dropdown-item',
+                        type: 'button',
+                        text: device.name
+                    }));
+
+                    $('#devicesList').append(listItem);
+                });
+
+                $('#devicesList').on('click', 'button.dropdown-item', function () {
+                    var deviceName = $(this).text();
+                    $('#selectedDevice').html('<i class="fa-solid fa-mobile-screen mx-1"></i> &nbsp' + deviceName);
+                    currentDevice = deviceName;
+                });
+            },
+        });
+    }
 
     initializeChart();
 
     $('#filterForm').submit(function (event) {
         event.preventDefault();
 
-        const userStartDate = new Date($('#startDate').val() + 'T00:00:00-03:00'); // Data de início selecionada pelo usuário em UTC-3
-        const userEndDate = new Date($('#endDate').val() + 'T23:59:59-03:00'); // Data de fim selecionada pelo usuário em UTC-3
+        const userStartDate = new Date($('#startDate').val() + 'T00:00:00-03:00'); 
+        const userEndDate = new Date($('#endDate').val() + 'T23:59:59-03:00'); 
 
         const apiStartDate = new Date(userStartDate.getTime() + userStartDate.getTimezoneOffset() * 60000).toISOString();
         const apiEndDate = new Date(userEndDate.getTime() + userEndDate.getTimezoneOffset() * 60000).toISOString();
@@ -93,7 +134,8 @@ $(document).ready(function () {
                     dateFrom: dateFrom,
                     dateTo: dateTo,
                     hOffset: offset,
-                    limit: limit
+                    limit: limit,
+                    deviceName: currentDevice,
                 },
                 success: function (response) {
                     const records = response.temperatureRecords;
