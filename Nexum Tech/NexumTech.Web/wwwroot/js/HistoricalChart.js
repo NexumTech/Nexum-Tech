@@ -118,7 +118,7 @@ $(document).ready(function () {
     function exportChartAsImage(chart) {
         const a = document.createElement('a');
         a.href = chart.toBase64Image();
-        a.download = 'NexumChart.png';
+        a.download = 'NexumHistoricalChart.png';
         a.click();
     }
 
@@ -140,7 +140,7 @@ $(document).ready(function () {
 
         doc.addImage(imgData, 'PNG', 10, 10, pdfWidth, pdfHeight);
 
-        doc.save('NexumChart.pdf');
+        doc.save('NexumHistoricalChart.pdf');
     }
 
     function exportChartAsCSV(chart) {
@@ -156,7 +156,7 @@ $(document).ready(function () {
         const encodedUri = encodeURI(csvContent);
         const a = document.createElement('a');
         a.href = encodedUri;
-        a.download = 'NexumChart.csv';
+        a.download = 'NexumHistoricalChart.csv';
         a.click();
     }
 });
