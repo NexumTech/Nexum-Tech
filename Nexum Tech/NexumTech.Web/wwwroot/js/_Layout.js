@@ -51,6 +51,8 @@ $(document).ready(function () {
                 $('#dropdownCompanies').attr('data-company-id', companyId);
                 $('#dropdownCompanies img').attr('src', companyLogo);
                 $('#dropdownCompanies strong').text(companyName);
+
+                $('#selectedDevice').html('<i class="fa-solid fa-mobile-screen mx-1"></i> Dispositivos');
             });
 
             if (data.length > 0) {

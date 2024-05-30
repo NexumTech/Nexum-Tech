@@ -12,6 +12,8 @@ $(document).ready(function () {
 
         var companyId = $(this).data('company-id');
         getDevices(companyId);
+
+        currentDevice = undefined;
     });
 
     function getDevices(companyId) {
@@ -33,6 +35,18 @@ $(document).ready(function () {
 
                     $('#devicesList').append(listItem);
                 });
+
+                if (data.length == 0) {
+                    var listItem = $('<li>').append($('<button>', {
+                        class: 'dropdown-item',
+                        type: 'button',
+                        text: 'Nenhum dispositivo encontrado para essa empresa',
+                        disabled: true,
+                    }));
+
+                    $('#devicesList').append(listItem);
+                }
+
 
                 $('#devicesList').on('click', 'button.dropdown-item', function () {
                     var deviceName = $(this).text();

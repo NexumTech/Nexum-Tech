@@ -21,6 +21,9 @@ namespace NexumTech.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
+            var currentTheme = Request.Cookies["CurrentTheme"];
+            ViewBag.CurrentTheme = currentTheme;
+
             var token = Request.Cookies["jwt"];
 
             UserViewModel user = await _httpService.CallMethod<UserViewModel>(_appSettingsUI.GetUserInfoURL, HttpMethod.Get, token);
@@ -44,7 +47,7 @@ namespace NexumTech.Web.Controllers
                 headers.Add("fiware-servicepath", "/");
                 headers.Add("accept", "application/json");
 
-                RealTimeChartViewModel temperature = await _httpService.CallMethod<RealTimeChartViewModel>(_appSettingsUI.Fiware.ApiFiwareRealTimeChartURL.Replace("device", deviceName.Trim()), HttpMethod.Get, token, headers: headers, urlFiware:_appSettingsUI.Fiware.ApiFiwareRealTimeChartURL);
+                RealTimeChartViewModel temperature = await _httpService.CallMethod<RealTimeChartViewModel>(_appSettingsUI.Fiware.ApiFiwareRealTimeChartURL.Replace("device", deviceName.Trim()), HttpMethod.Get, token, headers: headers, urlFiware:_appSettingsUI.Fiware.ApiFiwareRealTimeChartURL.Replace("device", deviceName.Trim()));
 
                 return Ok(temperature);
             }
