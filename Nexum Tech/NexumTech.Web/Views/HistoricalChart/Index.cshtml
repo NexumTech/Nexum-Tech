@@ -22,31 +22,31 @@
 </head>
 <body data-bs-theme="dark">
     <div class="container-fluid">
-        <h1 class="text-center">@Localizer["Historical Chart"]</h1>
+        <h1 class="text-center">@Localizer["HistoricalChart"]</h1>
         <form id="filterForm">
             <div class="row align-items-end">
                 <div class="col-6 col-sm-4 col-md-4 mb-3 mb-sm-0">
-                    <label for="startDate">Start Date:</label>
+                    <label for="startDate">@Localizer["StartDate"]:</label>
                     <input type="date" id="startDate" name="startDate" class="form-control">
                 </div>
                 <div class="col-6 col-sm-4 col-md-4 mb-3 mb-sm-0">
-                    <label for="endDate">End Date:</label>
+                    <label for="endDate">@Localizer["EndDate"]:</label>
                     <input type="date" id="endDate" name="endDate" class="form-control">
                 </div>
                 <div class="col-12 col-sm-4 col-md-4 d-flex align-items-end justify-content-sm-end">
-                    <button type="submit" class="btn btn-primary w-100 w-sm-auto">Apply Filters</button>
+                    <button type="submit" class="btn btn-primary w-100 w-sm-auto">@Localizer["ApplyFilters"]</button>
                 </div>
             </div>
             <div class="row mt-3">
                 <div class="col-12 d-flex justify-content-end">
                     <div class="dropdown">
                         <button class="btn btn-secondary dropdown-toggle" type="button" id="exportOptions" data-bs-toggle="dropdown" aria-expanded="false">
-                            Export
+                            @Localizer["Export"]
                         </button>
                         <ul class="dropdown-menu" aria-labelledby="exportOptions">
-                            <li><button class="dropdown-item" id="exportImage">as Image</button></li>
-                            <li><button class="dropdown-item" id="exportPDF">as PDF</button></li>
-                            <li><button class="dropdown-item" id="exportCSV">as CSV</button></li>
+                            <li><button class="dropdown-item" id="exportImage">@Localizer["asImage"]</button></li>
+                            <li><button class="dropdown-item" id="exportPDF">@Localizer["asPDF"]</button></li>
+                            <li><button class="dropdown-item" id="exportCSV">@Localizer["asCSV"]</button></li>
                         </ul>
                     </div>
                 </div>
