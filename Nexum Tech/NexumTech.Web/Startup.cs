@@ -1,6 +1,9 @@
-﻿using Microsoft.AspNetCore.Localization;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
-using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using NexumTech.Infra.API;
 using NexumTech.Infra.WEB;
 using NexumTech.Infra.WEB.Middlewares;
@@ -44,30 +47,29 @@ namespace NexumTech.Web
 
             services.AddHttpClient();
 
-            #region WEB appsettings.json Dependency Injection
-
             services.Configure<AppSettingsWEB>(Configuration);
 
-            services.AddScoped<AppSettingsWEB>();
-
-            #endregion
-
-            #region Base Http Service Dependency Injection
+            services.AddScoped<IHistoricalChartService, HistoricalChartService>();
+            services.AddScoped<IRealTimeChartService, RealTimeChartService>();
 
             services.AddScoped<BaseHttpService>();
-
-            #endregion
-
-            #region Historical Chart Service Dependency Injection
-
-            services.AddScoped<IHistoricalChartService, HistoricalChartService>();
-
-            #endregion
         }
 
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseRequestLocalization(app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
+            var supportedCultures = new[]
+            {
+                new CultureInfo("pt-BR"),
+                new CultureInfo("en-US"),
+                new CultureInfo("es-ES"),
+            };
+
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("pt-BR"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
 
             app.UseMiddleware<CultureMiddleware>();
 
