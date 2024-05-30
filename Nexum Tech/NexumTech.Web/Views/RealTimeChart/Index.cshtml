@@ -15,24 +15,37 @@
     <script src="~/js/ThemeSwitcher.js"></script>
     <script src="~/lib/sweetalert2/sweetalert2.js"></script>
     <script src="~/lib/jquery/jquery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 
 </head>
 <body data-bs-theme="dark">
     <div class="container mt-5">
         <div class="row align-items-center">
             <div class="col">
-                <h1 class="mb-0">@Localizer["RealTimeTemperatureChart"]</h1>
+                <h1 class="mb-0">@Localizer["RealTimeTemperature"]</h1>
             </div>
             <div class="col-auto">
                 <div class="card rounded-3 shadow-sm">
                     <div class="card-header bg-primary py-3">
-                        <h6 class="my-0 fw-normal text-center">Real temp (ºC)</h6>
+                        <h6 class="my-0 fw-normal text-center">@Localizer["RealTemp"] (ºC)</h6>
                     </div>
                     <div class="card-body">
                         <ul class="list-unstyled mb-0 text-center">
                             <li id="realTemp"></li>
                         </ul>
                     </div>
+                </div>
+            </div>
+            <div class="col-auto">
+                <div class="btn-group">
+                    <button type="button" class="btn btn-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
+                        @Localizer["Export"]
+                    </button>
+                    <ul class="dropdown-menu">
+                        <li><button id="exportPDF" class="dropdown-item" type="button">@Localizer["AsPDF"]</button></li>
+                        <li><button id="exportImage" class="dropdown-item" type="button">@Localizer["AsImage"]</button></li>
+                        <li><button id="exportCSV" class="dropdown-item" type="button">@Localizer["AsCSV"]</button></li>
+                    </ul>
                 </div>
             </div>
         </div>
