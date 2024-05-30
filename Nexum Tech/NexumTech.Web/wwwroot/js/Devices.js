@@ -1,5 +1,26 @@
 $(document).ready(function () {
-    $('#devicesTable').DataTable();
+    var culture = GetCulture('Culture');
+
+    $('#devicesTable').DataTable({
+        language: {
+            url: `../lib/datatables/i18n/default-${culture}.json`
+        }
+    });
+
+    function GetCulture(name) {
+        let cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            const cookies = document.cookie.split(';');
+            for (let i = 0; i < cookies.length; i++) {
+                const cookie = cookies[i].trim();
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
 
     $('#devicesModal').on('show.bs.modal', function () {
         $.ajax({
@@ -27,7 +48,7 @@ $(document).ready(function () {
             success: function (response) {
                 let timerInterval;
                 Swal.fire({
-                    title: response.value,
+                    title: response,
                     icon: 'success',
                     timer: 3000,
                     didOpen: () => {
@@ -60,12 +81,5 @@ $(document).ready(function () {
                 });
             }
         });
-    });
-
-    var $tooltipTriggerList = $('[data-bs-toggle="tooltip"]');
-
-    $tooltipTriggerList.each(function () {
-        var $tooltipTriggerEl = $(this);
-        $tooltipTriggerEl.tooltip();
     });
 });

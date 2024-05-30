@@ -9,6 +9,10 @@
       "PackagePath": "staticwebassets\\css\\Company.css"
     },
     {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\css\\HistoricalChart.css",
+      "PackagePath": "staticwebassets\\css\\HistoricalChart.css"
+    },
+    {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\css\\Home.css",
       "PackagePath": "staticwebassets\\css\\Home.css"
     },
@@ -955,6 +959,18 @@
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\datatables\\datatables.min.js",
       "PackagePath": "staticwebassets\\lib\\datatables\\datatables.min.js"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\datatables\\i18n\\default-en-US.json",
+      "PackagePath": "staticwebassets\\lib\\datatables\\i18n\\default-en-US.json"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\datatables\\i18n\\default-es-ES.json",
+      "PackagePath": "staticwebassets\\lib\\datatables\\i18n\\default-es-ES.json"
+    },
+    {
+      "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\datatables\\i18n\\default-pt-BR.json",
+      "PackagePath": "staticwebassets\\lib\\datatables\\i18n\\default-pt-BR.json"
     },
     {
       "Id": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\lib\\font-awesome\\css\\all.css",

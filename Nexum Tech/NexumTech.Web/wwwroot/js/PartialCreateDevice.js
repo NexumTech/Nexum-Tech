@@ -20,7 +20,7 @@
         else {
             let timerInterval;
             Swal.fire({
-                title: 'InvalidDeviceName',
+                title: $('#lblInvalidDeviceName').text(),
                 icon: 'error',
                 timer: 3000,
                 didOpen: () => {
@@ -50,7 +50,7 @@
             success: function (response) {
                 let timerInterval;
                 Swal.fire({
-                    title: response.value,
+                    title: response,
                     icon: 'success',
                     timer: 3000,
                     didOpen: () => {

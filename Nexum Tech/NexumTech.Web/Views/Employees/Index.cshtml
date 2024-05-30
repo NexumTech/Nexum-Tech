@@ -1,5 +1,9 @@
 ﻿@model IEnumerable<NexumTech.Infra.Models.EmployeesViewModel>;
 
+@using Microsoft.AspNetCore.Mvc.Localization;
+
+@inject IViewLocalizer Localizer
+
 <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
 <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
 <link href="~/lib/datatables/datatables.css" rel="stylesheet" />
@@ -25,8 +29,11 @@ else
         <div class="card">
             <div class="card-header d-flex justify-content-between align-items-center">
                 <span>
+                    <a class="btn mx-1" href="/Company">
+                        <i class="fa-solid fa-arrow-left"></i>
+                    </a>
                     <i class="fa-solid fa-people-group"></i>
-                    Employees
+                    @Localizer["Employees"]
                 </span>
                 <div class="dropdown">
                     <button class="btn btn-sm btn-outline-primary dropdown-toggle" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
@@ -36,7 +43,7 @@ else
                         <li>
                             <a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#employeesModal">
                                 <i class="fa-solid fa-plus"></i>
-                                New employee
+                                @Localizer["NewEmployee"]
                             </a>
                         </li>
                     </ul>
@@ -46,10 +53,10 @@ else
                 <table id="employeesTable" class="table table-striped display w-100">
                     <thead>
                         <tr>
-                            <th class="text-center">Id</th>
-                            <th class="text-center">Name</th>
-                            <th class="text-center">E-mail</th>
-                            <th class="text-center">Remove</th>
+                            <th class="text-center">@Localizer["Id"]</th>
+                            <th class="text-center">@Localizer["Name"]</th>
+                            <th class="text-center">@Localizer["Email"]</th>
+                            <th class="text-center">@Localizer["Delete"]</th>
                         </tr>
                     </thead>
                     <tbody>
