@@ -126,6 +126,9 @@
   <data name="English" xml:space="preserve">
     <value>English</value>
   </data>
+  <data name="HistoricalChart" xml:space="preserve">
+    <value>Historical chart</value>
+  </data>
   <data name="History" xml:space="preserve">
     <value>History</value>
   </data>
