@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.Extensions.Options;
 using NexumTech.Infra.API;
 using NexumTech.Infra.WEB;
 using NexumTech.Infra.WEB.Middlewares;
+using NexumTech.Web.Services;
 using System.Globalization;
 
 namespace NexumTech.Web
@@ -16,7 +18,6 @@ namespace NexumTech.Web
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews()
@@ -33,10 +34,11 @@ namespace NexumTech.Web
                 {
                     new CultureInfo("pt-BR"),
                     new CultureInfo("en-US"),
-                    new CultureInfo("es-ES"),                   
+                    new CultureInfo("es-ES"),
                 };
 
                 options.DefaultRequestCulture = new RequestCulture("pt-BR");
+                options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
             });
 
@@ -55,12 +57,17 @@ namespace NexumTech.Web
             services.AddScoped<BaseHttpService>();
 
             #endregion
+
+            #region Historical Chart Service Dependency Injection
+
+            services.AddScoped<IHistoricalChartService, HistoricalChartService>();
+
+            #endregion
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseRequestLocalization();
+            app.UseRequestLocalization(app.ApplicationServices.GetRequiredService<IOptions<RequestLocalizationOptions>>().Value);
 
             app.UseMiddleware<CultureMiddleware>();
 
@@ -71,7 +78,6 @@ namespace NexumTech.Web
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 

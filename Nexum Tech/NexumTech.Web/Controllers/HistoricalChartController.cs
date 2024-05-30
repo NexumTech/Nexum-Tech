@@ -1,24 +1,23 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using NexumTech.Infra.API;
-using NexumTech.Infra.WEB;
-using System.Web;
+﻿// Web/Controllers/HistoricalChartController.cs
+using Microsoft.AspNetCore.Mvc;
+using NexumTech.Infra.ViewModels;
+using NexumTech.Web.Services;
 
 namespace NexumTech.Web.Controllers
 {
     public class HistoricalChartController : Controller
     {
-        private readonly BaseHttpService _httpService;
-        private readonly AppSettingsWEB _appSettingsUI;
+        private readonly IHistoricalChartService _historicalChartService;
 
-        public HistoricalChartController(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI)
+        public HistoricalChartController(IHistoricalChartService historicalChartService)
         {
-            _httpService = httpService;
-            _appSettingsUI = appSettingsUI.Value;
+            _historicalChartService = historicalChartService;
         }
 
         public IActionResult Index()
         {
+            var currentTheme = Request.Cookies["CurrentTheme"];
+            ViewBag.CurrentTheme = currentTheme;
             return View();
         }
 
@@ -27,46 +26,7 @@ namespace NexumTech.Web.Controllers
         {
             try
             {
-                var token = Request.Cookies["jwt"];
-
-                DateTime fromDate = DateTime.Parse(dateFrom);
-                DateTime toDate = DateTime.Parse(dateTo);
-
-                toDate = toDate.Date.AddDays(1).AddSeconds(-1);
-                dateFrom = fromDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
-                dateTo = toDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
-
-                Dictionary<string, string> headers = new Dictionary<string, string>
-                {
-                    { "fiware-service", "smart" },
-                    { "fiware-servicepath", "/" },
-                    { "accept", "*/*" },
-                    { "Accept-Encoding", "gzip, deflate, br" },
-                    { "Connection", "keep-alive" }
-                };
-
-                var baseUrl = _appSettingsUI.Fiware.ApiFiwareHistoricalChartURL;
-                var uriBuilder = new UriBuilder(baseUrl);
-                var query = HttpUtility.ParseQueryString(uriBuilder.Query);
-                query["dateFrom"] = dateFrom;
-                query["dateTo"] = dateTo;
-                query["hOffset"] = hOffset.ToString();
-                query["hLimit"] = hLimit.ToString();
-
-                uriBuilder.Query = query.ToString();
-
-                string url = uriBuilder.ToString();
-
-                var response = await _httpService.CallMethod<HistoricalApiResponse>(url, HttpMethod.Get, token, headers: headers, urlFiware: url);
-
-                var temperatureRecords = response.ContextResponses[0].ContextElement.Attributes[0].Values.Select(v => new TemperatureRecord
-                {
-                    Id = v.Id,
-                    RecvTime = v.RecvTime,
-                    AttrName = v.AttrName,
-                    AttrType = v.AttrType,
-                    AttrValue = v.AttrValue
-                }).ToList();
+                var temperatureRecords = await _historicalChartService.GetHistoricalTemperature(dateFrom, dateTo, hOffset, hLimit);
 
                 var viewModel = new HistoricalChartViewModel
                 {
@@ -80,36 +40,5 @@ namespace NexumTech.Web.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-        public class HistoricalApiResponse
-        {
-            public List<ContextResponse> ContextResponses { get; set; }
-        }
-
-        public class ContextResponse
-        {
-            public ContextElement ContextElement { get; set; }
-        }
-
-        public class ContextElement
-        {
-            public List<Attribute> Attributes { get; set; }
-        }
-
-        public class Attribute
-        {
-            public string Name { get; set; }
-            public List<Value> Values { get; set; }
-        }
-
-        public class Value
-        {
-            public string Id { get; set; }
-            public DateTime RecvTime { get; set; }
-            public string AttrName { get; set; }
-            public string AttrType { get; set; }
-            public double AttrValue { get; set; }
-        }
-
     }
 }
