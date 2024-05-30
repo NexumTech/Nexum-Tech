@@ -9,6 +9,7 @@
     <title>@Localizer["Historical Chart"]</title>
 
     <link href="~/css/HistoricalChart.css" rel="stylesheet" />
+    <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
 
     <script type="module" src="~/lib/chart.js/chart.umd.js"></script>
     <script src="~/js/HistoricalChart.js"></script>
@@ -17,7 +18,7 @@
     <script src="~/js/ThemeSwitcher.js"></script>
     <script src="~/lib/sweetalert2/sweetalert2.js"></script>
     <script src="~/lib/jquery/jquery.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
 </head>
 <body data-bs-theme="dark">
     <div class="container-fluid">
@@ -34,6 +35,20 @@
                 </div>
                 <div class="col-12 col-sm-4 col-md-4 d-flex align-items-end justify-content-sm-end">
                     <button type="submit" class="btn btn-primary w-100 w-sm-auto">Apply Filters</button>
+                </div>
+            </div>
+            <div class="row mt-3">
+                <div class="col-12 d-flex justify-content-end">
+                    <div class="dropdown">
+                        <button class="btn btn-secondary dropdown-toggle" type="button" id="exportOptions" data-bs-toggle="dropdown" aria-expanded="false">
+                            Export
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="exportOptions">
+                            <li><button class="dropdown-item" id="exportImage">as Image</button></li>
+                            <li><button class="dropdown-item" id="exportPDF">as PDF</button></li>
+                            <li><button class="dropdown-item" id="exportCSV">as CSV</button></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <div class="row flex-grow-1">
