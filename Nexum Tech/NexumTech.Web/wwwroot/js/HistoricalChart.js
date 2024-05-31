@@ -59,11 +59,26 @@ $(document).ready(function () {
 
     initializeChart();
 
-    $('#filterForm').submit(function (event) {
+    $('#btnApply').on('click', function (event) {
         event.preventDefault();
 
-        const userStartDate = new Date($('#startDate').val() + 'T00:00:00-03:00'); 
-        const userEndDate = new Date($('#endDate').val() + 'T23:59:59-03:00'); 
+        const startDate = $('#startDate').val();
+        const endDate = $('#endDate').val();
+
+        if (!startDate || !endDate) {
+            var lblWarning = $('#lblWarning').text();
+            var textWarning = $('#textWarning').text();
+
+            Swal.fire({
+                title: lblWarning,
+                text: textWarning,
+                icon: 'warning'
+            });
+            return; 
+        }
+
+        const userStartDate = new Date(startDate + 'T00:00:00-03:00'); // Data de início selecionada pelo usuário em UTC-3
+        const userEndDate = new Date(endDate + 'T23:59:59-03:00'); // Data de fim selecionada pelo usuário em UTC-3
 
         const apiStartDate = new Date(userStartDate.getTime() + userStartDate.getTimezoneOffset() * 60000).toISOString();
         const apiEndDate = new Date(userEndDate.getTime() + userEndDate.getTimezoneOffset() * 60000).toISOString();
@@ -179,7 +194,6 @@ $(document).ready(function () {
     }
 
     function exportChartAsPDF(chart) {
-        debugger;
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF('landscape');
         const imgData = chart.toBase64Image();

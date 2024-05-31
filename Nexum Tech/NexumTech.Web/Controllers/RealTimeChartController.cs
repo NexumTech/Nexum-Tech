@@ -1,22 +1,17 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using NexumTech.Infra.API;
-using NexumTech.Infra.Models;
-using NexumTech.Infra.WEB;
 using NexumTech.Web.Controllers.Filters;
+using NexumTech.Web.Services;
 
 namespace NexumTech.Web.Controllers
 {
     [JwtAuthentication]
     public class RealTimeChartController : Controller
     {
-        private readonly BaseHttpService _httpService;
-        private readonly AppSettingsWEB _appSettingsUI;
+        private readonly IRealTimeChartService _realTimeChartService;
 
-        public RealTimeChartController(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI)
+        public RealTimeChartController(IRealTimeChartService historicalChartService)
         {
-            _httpService = httpService;
-            _appSettingsUI = appSettingsUI.Value;
+            _realTimeChartService = historicalChartService;
         }
 
         public async Task<IActionResult> Index()
@@ -41,14 +36,7 @@ namespace NexumTech.Web.Controllers
             try
             {
                 var token = Request.Cookies["jwt"];
-
-                Dictionary<string, string> headers = new Dictionary<string, string>();
-                headers.Add("fiware-service", "smart");
-                headers.Add("fiware-servicepath", "/");
-                headers.Add("accept", "application/json");
-
-                RealTimeChartViewModel temperature = await _httpService.CallMethod<RealTimeChartViewModel>(_appSettingsUI.Fiware.ApiFiwareRealTimeChartURL.Replace("device", deviceName.Trim()), HttpMethod.Get, token, headers: headers, urlFiware:_appSettingsUI.Fiware.ApiFiwareRealTimeChartURL.Replace("device", deviceName.Trim()));
-
+                var temperature = await _realTimeChartService.GetRealTemperatureAsync(token);
                 return Ok(temperature);
             }
             catch (Exception ex)

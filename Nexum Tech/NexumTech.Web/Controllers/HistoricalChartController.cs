@@ -1,21 +1,17 @@
-﻿using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Options;
-using NexumTech.Infra.API;
-using NexumTech.Infra.Models;
-using NexumTech.Infra.WEB;
-using System.Web;
+﻿// Web/Controllers/HistoricalChartController.cs
+using Microsoft.AspNetCore.Mvc;
+using NexumTech.Infra.ViewModels;
+using NexumTech.Web.Services;
 
 namespace NexumTech.Web.Controllers
 {
     public class HistoricalChartController : Controller
     {
-        private readonly BaseHttpService _httpService;
-        private readonly AppSettingsWEB _appSettingsUI;
+        private readonly IHistoricalChartService _historicalChartService;
 
-        public HistoricalChartController(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI)
+        public HistoricalChartController(IHistoricalChartService historicalChartService)
         {
-            _httpService = httpService;
-            _appSettingsUI = appSettingsUI.Value;
+            _historicalChartService = historicalChartService;
         }
 
         public async Task<IActionResult> Index()
@@ -28,6 +24,9 @@ namespace NexumTech.Web.Controllers
 
             ViewBag.CurrentCompanyId = companies != null ? companies.FirstOrDefault().Id : 0;
 
+            var currentTheme = Request.Cookies["CurrentTheme"];
+            ViewBag.CurrentTheme = currentTheme;
+
             return View();
         }
 
@@ -36,46 +35,7 @@ namespace NexumTech.Web.Controllers
         {
             try
             {
-                var token = Request.Cookies["jwt"];
-
-                DateTime fromDate = DateTime.Parse(dateFrom);
-                DateTime toDate = DateTime.Parse(dateTo);
-
-                toDate = toDate.Date.AddDays(1).AddSeconds(-1);
-                dateFrom = fromDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
-                dateTo = toDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
-
-                Dictionary<string, string> headers = new Dictionary<string, string>
-                {
-                    { "fiware-service", "smart" },
-                    { "fiware-servicepath", "/" },
-                    { "accept", "*/*" },
-                    { "Accept-Encoding", "gzip, deflate, br" },
-                    { "Connection", "keep-alive" }
-                };
-
-                var baseUrl = _appSettingsUI.Fiware.ApiFiwareHistoricalChartURL.Replace("device", deviceName.Trim());
-                var uriBuilder = new UriBuilder(baseUrl);
-                var query = HttpUtility.ParseQueryString(uriBuilder.Query);
-                query["dateFrom"] = dateFrom;
-                query["dateTo"] = dateTo;
-                query["hOffset"] = hOffset.ToString();
-                query["hLimit"] = hLimit.ToString();
-
-                uriBuilder.Query = query.ToString();
-
-                string url = uriBuilder.ToString();
-
-                var response = await _httpService.CallMethod<HistoricalApiResponse>(url, HttpMethod.Get, token, headers: headers, urlFiware: url);
-
-                var temperatureRecords = response.ContextResponses[0].ContextElement.Attributes[0].Values.Select(v => new TemperatureRecord
-                {
-                    Id = v.Id,
-                    RecvTime = v.RecvTime,
-                    AttrName = v.AttrName,
-                    AttrType = v.AttrType,
-                    AttrValue = v.AttrValue
-                }).ToList();
+                var temperatureRecords = await _historicalChartService.GetHistoricalTemperature(dateFrom, dateTo, hOffset, hLimit);
 
                 var viewModel = new HistoricalChartViewModel
                 {
@@ -136,6 +96,5 @@ namespace NexumTech.Web.Controllers
             public string AttrType { get; set; }
             public double AttrValue { get; set; }
         }
-
     }
 }
