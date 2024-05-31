@@ -2,7 +2,7 @@
 {
     public class HistoricalChartViewModel
     {
-        public List<TemperatureRecord> TemperatureRecords { get; set; }
+        public List<TemperatureRecord>? TemperatureRecords { get; set; }
 
         public class HistoricalApiResponse
         {
@@ -42,5 +42,12 @@
             public string AttrType { get; set; }
             public double AttrValue { get; set; }
         }
+
+        public string DateFrom { get; set; }
+        public string DateTo { get; set; }
+        public string DeviceName { get; set; }
+        public int HOffset { get; set; }
+        public int HLimit { get; set; }
+
     }
 }

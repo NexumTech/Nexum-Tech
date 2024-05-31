@@ -1,17 +1,22 @@
-﻿// Web/Controllers/HistoricalChartController.cs
-using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Mvc;
+using Microsoft.Extensions.Options;
+using NexumTech.Infra.API;
+using NexumTech.Infra.Models;
 using NexumTech.Infra.ViewModels;
+using NexumTech.Infra.WEB;
 using NexumTech.Web.Services;
 
 namespace NexumTech.Web.Controllers
 {
     public class HistoricalChartController : Controller
     {
-        private readonly IHistoricalChartService _historicalChartService;
+        private readonly BaseHttpService _httpService;
+        private readonly AppSettingsWEB _appSettingsUI;
 
-        public HistoricalChartController(IHistoricalChartService historicalChartService)
+        public HistoricalChartController(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI)
         {
-            _historicalChartService = historicalChartService;
+            _httpService = httpService;
+            _appSettingsUI = appSettingsUI.Value;
         }
 
         public async Task<IActionResult> Index()
@@ -35,7 +40,9 @@ namespace NexumTech.Web.Controllers
         {
             try
             {
-                var temperatureRecords = await _historicalChartService.GetHistoricalTemperature(dateFrom, dateTo, hOffset, hLimit);
+                var token = Request.Cookies["jwt"];
+
+                List<HistoricalChartViewModel.TemperatureRecord> temperatureRecords = await _httpService.CallMethod<List<HistoricalChartViewModel.TemperatureRecord>>(_appSettingsUI.GetHistoricalTemperatureURL, HttpMethod.Get, token, new HistoricalChartViewModel { DateFrom = dateFrom, DateTo = dateTo, DeviceName = deviceName, HOffset = hOffset, HLimit = hLimit});
 
                 var viewModel = new HistoricalChartViewModel
                 {
@@ -65,36 +72,6 @@ namespace NexumTech.Web.Controllers
             {
                 return BadRequest(ex.Message);
             }
-        }
-
-        public class HistoricalApiResponse
-        {
-            public List<ContextResponse> ContextResponses { get; set; }
-        }
-
-        public class ContextResponse
-        {
-            public ContextElement ContextElement { get; set; }
-        }
-
-        public class ContextElement
-        {
-            public List<Attribute> Attributes { get; set; }
-        }
-
-        public class Attribute
-        {
-            public string Name { get; set; }
-            public List<Value> Values { get; set; }
-        }
-
-        public class Value
-        {
-            public string Id { get; set; }
-            public DateTime RecvTime { get; set; }
-            public string AttrName { get; set; }
-            public string AttrType { get; set; }
-            public double AttrValue { get; set; }
         }
     }
 }

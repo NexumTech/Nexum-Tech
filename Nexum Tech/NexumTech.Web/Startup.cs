@@ -49,9 +49,6 @@ namespace NexumTech.Web
 
             services.Configure<AppSettingsWEB>(Configuration);
 
-            services.AddScoped<IHistoricalChartService, HistoricalChartService>();
-            services.AddScoped<IRealTimeChartService, RealTimeChartService>();
-
             services.AddScoped<BaseHttpService>();
         }
 

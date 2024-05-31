@@ -1,5 +1,4 @@
-﻿
-using Microsoft.Extensions.Options;
+﻿using Microsoft.Extensions.Options;
 using NexumTech.Infra.API;
 using NexumTech.Infra.WEB.ViewModels;
 using NexumTech.Infra.WEB;
@@ -8,15 +7,15 @@ using NexumTech.Web.Services;
 public class RealTimeChartService : IRealTimeChartService
 {
     private readonly BaseHttpService _httpService;
-    private readonly AppSettingsWEB _appSettingsUI;
+    private readonly AppSettingsAPI _appSettingsAPI;
 
-    public RealTimeChartService(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI)
+    public RealTimeChartService(BaseHttpService httpService, IOptions<AppSettingsAPI> appSettingsAPI)
     {
         _httpService = httpService;
-        _appSettingsUI = appSettingsUI.Value;
+        _appSettingsAPI = appSettingsAPI.Value;
     }
 
-    public async Task<RealTimeChartViewModel> GetRealTemperatureAsync(string token)
+    public async Task<RealTimeChartViewModel> GetRealTemperatureAsync(string deviceName, string token)
     {
         Dictionary<string, string> headers = new Dictionary<string, string>
         {
@@ -25,6 +24,6 @@ public class RealTimeChartService : IRealTimeChartService
             { "accept", "application/json" }
         };
 
-        return await _httpService.CallMethod<RealTimeChartViewModel>(_appSettingsUI.Fiware.ApiFiwareRealTimeChartURL, HttpMethod.Get, token, headers: headers, urlFiware: _appSettingsUI.Fiware.ApiFiwareRealTimeChartURL);
+        return await _httpService.CallMethod<RealTimeChartViewModel>(_appSettingsAPI.Fiware.ApiFiwareRealTimeChartURL.Replace("device", deviceName.Trim()), HttpMethod.Get, token, headers: headers, urlFiware: _appSettingsAPI.Fiware.ApiFiwareRealTimeChartURL.Replace("device", deviceName.Trim()));
     }
 }

@@ -120,13 +120,13 @@
   <data name="ApplyFilters" xml:space="preserve">
     <value>Aplicar filtros</value>
   </data>
-  <data name="asCSV" xml:space="preserve">
+  <data name="AsCSV" xml:space="preserve">
     <value>a CSV</value>
   </data>
-  <data name="asImage" xml:space="preserve">
+  <data name="AsImage" xml:space="preserve">
     <value>a imagen</value>
   </data>
-  <data name="asPDF" xml:space="preserve">
+  <data name="AsPDF" xml:space="preserve">
     <value>a PDF</value>
   </data>
   <data name="EndDate" xml:space="preserve">
@@ -137,6 +137,9 @@
   </data>
   <data name="HistoricalChart" xml:space="preserve">
     <value>Gráfico Histórico</value>
+  </data>
+  <data name="lblExport" xml:space="preserve">
+    <value>¡Archivo exportado exitosamente!</value>
   </data>
   <data name="lblWarning" xml:space="preserve">
     <value>Advertencia</value>

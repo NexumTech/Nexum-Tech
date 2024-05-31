@@ -26,6 +26,8 @@ namespace NexumTech.Infra.WEB
         public string GetDevicesURL { get; set; }
         public string RemoveDeviceURL {  get; set; }
         public string GetCompaniesURL { get; set; }
+        public string GetHistoricalTemperatureURL { get; set; }
+        public string GetRealTemperatureURL { get; set; }
     }
 
     public class Fiware

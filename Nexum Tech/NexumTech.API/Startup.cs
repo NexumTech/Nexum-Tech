@@ -13,6 +13,7 @@ using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
 using System.Globalization;
 using NexumTech.Infra.API.Middlewares;
+using NexumTech.Web.Services;
 
 namespace NexumTech.API
 {
@@ -42,7 +43,7 @@ namespace NexumTech.API
 
             services.Configure<AppSettingsAPI>(Configuration);
 
-            services.AddScoped<AppSettingsAPI>();
+            services.Configure<AppSettingsWEB>(Configuration);
 
             #region Domain Dependency Injection
 
@@ -51,6 +52,8 @@ namespace NexumTech.API
             services.AddScoped<IEmployeesService, EmployeesService>();
             services.AddScoped<IDevicesService, DevicesService>();
             services.AddScoped<IMailMessageService, MailMessageService>();
+            services.AddScoped<IHistoricalChartService, HistoricalChartService>();
+            services.AddScoped<IRealTimeChartService, RealTimeChartService>();
 
             #endregion
 
@@ -68,6 +71,12 @@ namespace NexumTech.API
             #region Base Database Service Dependency Injection
 
             services.AddScoped<BaseDatabaseService>();
+
+            #endregion
+
+            #region Base Http Service Dependency Injection
+
+            services.AddScoped<BaseHttpService>();
 
             #endregion
 

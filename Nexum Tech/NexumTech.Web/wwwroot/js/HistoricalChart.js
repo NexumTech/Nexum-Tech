@@ -65,7 +65,7 @@ $(document).ready(function () {
         const startDate = $('#startDate').val();
         const endDate = $('#endDate').val();
 
-        if (!startDate || !endDate) {
+        if (!startDate || !endDate || !currentDevice) {
             var lblWarning = $('#lblWarning').text();
             var textWarning = $('#textWarning').text();
 
@@ -85,6 +85,14 @@ $(document).ready(function () {
 
         fetchAllHistoricalData(apiStartDate, apiEndDate);
     });
+
+    function sweetAlertExport()
+    {
+        Swal.fire({
+            title: $('#lblExport').text(),
+            icon: 'success'
+        });
+    }
 
     $('#exportImage').on('click', function () {
         exportChartAsImage(historicalChart);
@@ -191,6 +199,7 @@ $(document).ready(function () {
         a.href = chart.toBase64Image();
         a.download = 'NexumHistoricalChart.png';
         a.click();
+        sweetAlertExport()
     }
 
     function exportChartAsPDF(chart) {
@@ -211,6 +220,7 @@ $(document).ready(function () {
         doc.addImage(imgData, 'PNG', 10, 10, pdfWidth, pdfHeight);
 
         doc.save('NexumHistoricalChart.pdf');
+        sweetAlertExport()
     }
 
     function exportChartAsCSV(chart) {
@@ -228,5 +238,6 @@ $(document).ready(function () {
         a.href = encodedUri;
         a.download = 'NexumHistoricalChart.csv';
         a.click();
+        sweetAlertExport()
     }
 });

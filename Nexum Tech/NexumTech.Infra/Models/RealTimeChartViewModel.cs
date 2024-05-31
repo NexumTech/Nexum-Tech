@@ -2,8 +2,9 @@
 {
     public class RealTimeChartViewModel
     {
+        public string DeviceName { get; set; }
         public double Value { get; set; }
-        public Metadata Metadata { get; set; }
+        public Metadata? Metadata { get; set; }
     }
 
     public class Metadata

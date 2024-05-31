@@ -3,20 +3,8 @@
   "WorkspaceRootPath": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.web\\views\\realtimechart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|solutionrelative:nexumtech.web\\views\\realtimechart\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.web\\wwwroot\\js\\realtimechart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
-      "RelativeMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|solutionrelative:nexumtech.web\\wwwroot\\js\\realtimechart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.web\\controllers\\realtimechartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|solutionrelative:nexumtech.web\\controllers\\realtimechartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.web\\controllers\\historicalchartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|solutionrelative:nexumtech.web\\controllers\\historicalchartcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|c:\\users\\gabri\\onedrive\\desktop\\projetos\\nexum-tech\\nexum tech\\nexumtech.web\\wwwroot\\js\\historicalchart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}",
+      "RelativeMoniker": "D:0:0:{68F4D4F7-97E3-4628-9FC2-D9A455A2ACDE}|NexumTech.Web\\NexumTech.Web.csproj|solutionrelative:nexumtech.web\\wwwroot\\js\\historicalchart.js||{14D17961-FE51-464D-9111-C4AF11D7D99A}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,53 +23,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Views\\RealTimeChart\\Index.cshtml",
-              "RelativeDocumentMoniker": "NexumTech.Web\\Views\\RealTimeChart\\Index.cshtml",
-              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Views\\RealTimeChart\\Index.cshtml",
-              "RelativeToolTip": "NexumTech.Web\\Views\\RealTimeChart\\Index.cshtml",
-              "ViewState": "AQIAACcAAAAAAAAAAAAAAEUAAABzAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2024-05-30T20:13:15.672Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "RealTimeChart.js",
-              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\RealTimeChart.js",
-              "RelativeDocumentMoniker": "NexumTech.Web\\wwwroot\\js\\RealTimeChart.js",
-              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\RealTimeChart.js",
-              "RelativeToolTip": "NexumTech.Web\\wwwroot\\js\\RealTimeChart.js",
-              "ViewState": "AQIAAHoAAAAAAAAAAAAvwJoAAAAAAAAA",
+              "Title": "HistoricalChart.js",
+              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\HistoricalChart.js",
+              "RelativeDocumentMoniker": "NexumTech.Web\\wwwroot\\js\\HistoricalChart.js",
+              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\wwwroot\\js\\HistoricalChart.js*",
+              "RelativeToolTip": "NexumTech.Web\\wwwroot\\js\\HistoricalChart.js*",
+              "ViewState": "AQIAAGYAAAAAAAAAAAAiwG4AAAATAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001646|",
-              "WhenOpened": "2024-05-30T19:48:58.583Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "HistoricalChartController.cs",
-              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Controllers\\HistoricalChartController.cs",
-              "RelativeDocumentMoniker": "NexumTech.Web\\Controllers\\HistoricalChartController.cs",
-              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Controllers\\HistoricalChartController.cs",
-              "RelativeToolTip": "NexumTech.Web\\Controllers\\HistoricalChartController.cs",
-              "ViewState": "AQIAACEAAAAAAAAAAAAowDgAAAAQAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T19:31:10.618Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RealTimeChartController.cs",
-              "DocumentMoniker": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Controllers\\RealTimeChartController.cs",
-              "RelativeDocumentMoniker": "NexumTech.Web\\Controllers\\RealTimeChartController.cs",
-              "ToolTip": "C:\\Users\\gabri\\OneDrive\\Desktop\\Projetos\\Nexum-Tech\\Nexum Tech\\NexumTech.Web\\Controllers\\RealTimeChartController.cs",
-              "RelativeToolTip": "NexumTech.Web\\Controllers\\RealTimeChartController.cs",
-              "ViewState": "AQIAAAMAAAAAAAAAAAAAABkAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-05-30T19:29:38.313Z",
+              "WhenOpened": "2024-05-31T03:36:25.84Z",
               "EditorCaption": ""
             }
           ]

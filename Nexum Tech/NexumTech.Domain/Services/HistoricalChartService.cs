@@ -8,15 +8,15 @@ namespace NexumTech.Web.Services
     public class HistoricalChartService : IHistoricalChartService
     {
         private readonly BaseHttpService _httpService;
-        private readonly AppSettingsWEB _appSettingsUI;
+        private readonly AppSettingsAPI _appSettingsAPI;
 
-        public HistoricalChartService(BaseHttpService httpService, IOptions<AppSettingsWEB> appSettingsUI)
+        public HistoricalChartService(BaseHttpService httpService, IOptions<AppSettingsAPI> appSettingsAPI)
         {
             _httpService = httpService;
-            _appSettingsUI = appSettingsUI.Value;
+            _appSettingsAPI = appSettingsAPI.Value;
         }
 
-        public async Task<List<HistoricalChartViewModel.TemperatureRecord>> GetHistoricalTemperature(string dateFrom, string dateTo, int hOffset = 0, int hLimit = 100)
+        public async Task<List<HistoricalChartViewModel.TemperatureRecord>> GetHistoricalTemperature(string dateFrom, string dateTo, string deviceName, int hOffset = 0, int hLimit = 100)
         {
             var token = "";
 
@@ -36,7 +36,7 @@ namespace NexumTech.Web.Services
                 { "Connection", "keep-alive" }
             };
 
-            var baseUrl = _appSettingsUI.Fiware.ApiFiwareHistoricalChartURL;
+            var baseUrl = _appSettingsAPI.Fiware.ApiFiwareHistoricalChartURL.Replace("device", deviceName.Trim());
             var uriBuilder = new UriBuilder(baseUrl);
             var query = System.Web.HttpUtility.ParseQueryString(uriBuilder.Query);
             query["dateFrom"] = dateFrom;
