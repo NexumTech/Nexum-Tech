@@ -1,7 +1,7 @@
 $(document).ready(function () {
     const ctx = document.getElementById('historicalChart').getContext('2d');
     let historicalChart;
-
+    
     initializeChart();
 
     $('#btnApply').on('click', function (event) {
@@ -131,8 +131,10 @@ $(document).ready(function () {
     }
 
     function exportChartAsImage(chart) {
-        const imgData = chart.toBase64Image();
-        downloadFile(imgData, 'NexumHistoricalChart.png');
+        const a = document.createElement('a');
+        a.href = chart.toBase64Image();
+        a.download = 'NexumHistoricalChart.png';
+        a.click();
     }
 
     function exportChartAsPDF(chart) {
@@ -151,8 +153,8 @@ $(document).ready(function () {
         const pdfHeight = pdfWidth / aspectRatio;
 
         doc.addImage(imgData, 'PNG', 10, 10, pdfWidth, pdfHeight);
-        const pdfBlob = doc.output('blob');
-        downloadFile(pdfBlob, 'NexumHistoricalChart.pdf');
+
+        doc.save('NexumHistoricalChart.pdf');
     }
 
     function exportChartAsCSV(chart) {
@@ -166,22 +168,9 @@ $(document).ready(function () {
         });
 
         const encodedUri = encodeURI(csvContent);
-        downloadFile(encodedUri, 'NexumHistoricalChart.csv');
-    }
-
-    function downloadFile(fileData, fileName) {
-        fetch(fileData)
-            .then(response => response.blob())
-            .then(blob => {
-                const url = window.URL.createObjectURL(blob);
-                const a = document.createElement('a');
-                a.href = url;
-                a.download = fileName;
-                document.body.appendChild(a);
-                a.click();
-                window.URL.revokeObjectURL(url);
-                document.body.removeChild(a);
-            })
-            .catch(error => console.error('Error downloading file:', error));
+        const a = document.createElement('a');
+        a.href = encodedUri;
+        a.download = 'NexumHistoricalChart.csv';
+        a.click();
     }
 });
