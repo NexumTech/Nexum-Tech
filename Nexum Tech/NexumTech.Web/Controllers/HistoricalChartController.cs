@@ -2,8 +2,9 @@
 using Microsoft.Extensions.Options;
 using NexumTech.Infra.API;
 using NexumTech.Infra.Models;
+using NexumTech.Infra.ViewModels;
 using NexumTech.Infra.WEB;
-using System.Web;
+using NexumTech.Web.Services;
 
 namespace NexumTech.Web.Controllers
 {
@@ -28,6 +29,9 @@ namespace NexumTech.Web.Controllers
 
             ViewBag.CurrentCompanyId = companies != null ? companies.FirstOrDefault().Id : 0;
 
+            var currentTheme = Request.Cookies["CurrentTheme"];
+            ViewBag.CurrentTheme = currentTheme;
+
             return View();
         }
 
@@ -38,44 +42,7 @@ namespace NexumTech.Web.Controllers
             {
                 var token = Request.Cookies["jwt"];
 
-                DateTime fromDate = DateTime.Parse(dateFrom);
-                DateTime toDate = DateTime.Parse(dateTo);
-
-                toDate = toDate.Date.AddDays(1).AddSeconds(-1);
-                dateFrom = fromDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
-                dateTo = toDate.ToString("yyyy-MM-ddTHH:mm:ss.fffZ");
-
-                Dictionary<string, string> headers = new Dictionary<string, string>
-                {
-                    { "fiware-service", "smart" },
-                    { "fiware-servicepath", "/" },
-                    { "accept", "*/*" },
-                    { "Accept-Encoding", "gzip, deflate, br" },
-                    { "Connection", "keep-alive" }
-                };
-
-                var baseUrl = _appSettingsUI.Fiware.ApiFiwareHistoricalChartURL.Replace("device", deviceName.Trim());
-                var uriBuilder = new UriBuilder(baseUrl);
-                var query = HttpUtility.ParseQueryString(uriBuilder.Query);
-                query["dateFrom"] = dateFrom;
-                query["dateTo"] = dateTo;
-                query["hOffset"] = hOffset.ToString();
-                query["hLimit"] = hLimit.ToString();
-
-                uriBuilder.Query = query.ToString();
-
-                string url = uriBuilder.ToString();
-
-                var response = await _httpService.CallMethod<HistoricalApiResponse>(url, HttpMethod.Get, token, headers: headers, urlFiware: url);
-
-                var temperatureRecords = response.ContextResponses[0].ContextElement.Attributes[0].Values.Select(v => new TemperatureRecord
-                {
-                    Id = v.Id,
-                    RecvTime = v.RecvTime,
-                    AttrName = v.AttrName,
-                    AttrType = v.AttrType,
-                    AttrValue = v.AttrValue
-                }).ToList();
+                List<HistoricalChartViewModel.TemperatureRecord> temperatureRecords = await _httpService.CallMethod<List<HistoricalChartViewModel.TemperatureRecord>>(_appSettingsUI.GetHistoricalTemperatureURL, HttpMethod.Get, token, new HistoricalChartViewModel { DateFrom = dateFrom, DateTo = dateTo, DeviceName = deviceName, HOffset = hOffset, HLimit = hLimit});
 
                 var viewModel = new HistoricalChartViewModel
                 {
@@ -106,36 +73,5 @@ namespace NexumTech.Web.Controllers
                 return BadRequest(ex.Message);
             }
         }
-
-        public class HistoricalApiResponse
-        {
-            public List<ContextResponse> ContextResponses { get; set; }
-        }
-
-        public class ContextResponse
-        {
-            public ContextElement ContextElement { get; set; }
-        }
-
-        public class ContextElement
-        {
-            public List<Attribute> Attributes { get; set; }
-        }
-
-        public class Attribute
-        {
-            public string Name { get; set; }
-            public List<Value> Values { get; set; }
-        }
-
-        public class Value
-        {
-            public string Id { get; set; }
-            public DateTime RecvTime { get; set; }
-            public string AttrName { get; set; }
-            public string AttrType { get; set; }
-            public double AttrValue { get; set; }
-        }
-
     }
 }

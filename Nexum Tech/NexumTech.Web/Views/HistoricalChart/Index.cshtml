@@ -11,6 +11,15 @@
     <link href="~/css/HistoricalChart.css" rel="stylesheet" />
     <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
 
+    @if (ViewBag.CurrentTheme == "dark")
+    {
+        <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2-dark.css" rel="stylesheet" />
+    }
+    else
+    {
+        <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
+    }
+
     <script type="module" src="~/lib/chart.js/chart.umd.js"></script>
     <script src="~/js/HistoricalChart.js"></script>
     <script src="~/js/ThemeSwitcher.js"></script>
@@ -18,33 +27,37 @@
     <script src="~/lib/jquery/jquery.js"></script>
     <script src="~/lib/jspdf/jspdf.umd.js"></script>
 </head>
-<body data-bs-theme="light">
+<body data-bs-theme="dark">
+    <!-- resources -->
+    <span class="d-none" id="lblWarning">@Localizer["lblWarning"]</span>
+    <span class="d-none" id="textWarning">@Localizer["textWarning"]</span>
+    <span class="d-none" id="lblExport">@Localizer["lblExport"]</span>
     <span class="d-none" id="currentCompanyId">@ViewBag.CurrentCompanyId</span>
+    <!-- resources -->
+
     <div class="container-fluid mt-5">
         <h1 class="text-center">@Localizer["HistoricalChart"]</h1>
         <form id="filterForm">
             <div class="row align-items-end">
-                <div class="col-6 col-sm-4 col-md-4 mb-3 mb-sm-0">
+                <div class="col-12 col-sm-6 col-md-3 mb-3">
                     <label for="startDate">@Localizer["StartDate"]:</label>
                     <input type="date" id="startDate" name="startDate" class="form-control">
                 </div>
-                <div class="col-6 col-sm-4 col-md-4 mb-3 mb-sm-0">
+                <div class="col-12 col-sm-6 col-md-3 mb-3">
                     <label for="endDate">@Localizer["EndDate"]:</label>
                     <input type="date" id="endDate" name="endDate" class="form-control">
                 </div>
-                <div class="col-12 col-sm-4 col-md-4 d-flex align-items-end justify-content-sm-end">
-                    <button type="submit" class="btn btn-primary w-100 w-sm-auto">@Localizer["ApplyFilters"]</button>
+                <div class="col-12 col-sm-4 col-md-2 d-flex align-items-end justify-content-sm-end mb-3">
+                    <button type="submit" id="btnApply" class="btn btn-primary w-100 w-sm-auto" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">@Localizer["ApplyFilters"]</button>
                 </div>
-            </div>
-            <div class="row mt-3">
-                <div class="col-12 d-flex justify-content-end">
-                    <div class="btn-group mx-2">
-                        <button type="button" class="btn btn-outline-light dropdown-toggle" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" data-bs-toggle="dropdown" aria-expanded="false" id="selectedDevice">
-                            <i class="fa-solid fa-mobile-screen mx-1"></i> Dispositivos
-                        </button>
-                        <ul class="dropdown-menu" id="devicesList">
-                        </ul>
-                    </div>
+                <div class="col-6 col-sm-4 col-md-2 btn-group mb-3">
+                    <button type="button" class="btn btn-outline-light dropdown-toggle" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" data-bs-toggle="dropdown" aria-expanded="false" id="selectedDevice">
+                        <i class="fa-solid fa-mobile-screen mx-1"></i> Dispositivos
+                    </button>
+                    <ul class="dropdown-menu" id="devicesList">
+                    </ul>
+                </div>
+                <div class="col-6 col-sm-4 col-md-2 mb-3">
                     <div class="dropdown">
                         <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="exportOptions" data-bs-toggle="dropdown" aria-expanded="false">
                             <i class="fa-solid fa-file-export mx-1"></i> @Localizer["Export"]

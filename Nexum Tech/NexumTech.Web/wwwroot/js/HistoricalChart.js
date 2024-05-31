@@ -12,6 +12,8 @@ $(document).ready(function () {
 
         var companyId = $(this).data('company-id');
         getDevices(companyId);
+
+        currentDevice = undefined;
     });
 
     function getDevices(companyId) {
@@ -34,6 +36,18 @@ $(document).ready(function () {
                     $('#devicesList').append(listItem);
                 });
 
+                if (data.length == 0) {
+                    var listItem = $('<li>').append($('<button>', {
+                        class: 'dropdown-item',
+                        type: 'button',
+                        text: 'Nenhum dispositivo encontrado para essa empresa',
+                        disabled: true,
+                    }));
+
+                    $('#devicesList').append(listItem);
+                }
+
+
                 $('#devicesList').on('click', 'button.dropdown-item', function () {
                     var deviceName = $(this).text();
                     $('#selectedDevice').html('<i class="fa-solid fa-mobile-screen mx-1"></i> &nbsp' + deviceName);
@@ -45,17 +59,40 @@ $(document).ready(function () {
 
     initializeChart();
 
-    $('#filterForm').submit(function (event) {
+    $('#btnApply').on('click', function (event) {
         event.preventDefault();
 
-        const userStartDate = new Date($('#startDate').val() + 'T00:00:00-03:00'); 
-        const userEndDate = new Date($('#endDate').val() + 'T23:59:59-03:00'); 
+        const startDate = $('#startDate').val();
+        const endDate = $('#endDate').val();
+
+        if (!startDate || !endDate || !currentDevice) {
+            var lblWarning = $('#lblWarning').text();
+            var textWarning = $('#textWarning').text();
+
+            Swal.fire({
+                title: lblWarning,
+                text: textWarning,
+                icon: 'warning'
+            });
+            return; 
+        }
+
+        const userStartDate = new Date(startDate + 'T00:00:00-03:00'); // Data de início selecionada pelo usuário em UTC-3
+        const userEndDate = new Date(endDate + 'T23:59:59-03:00'); // Data de fim selecionada pelo usuário em UTC-3
 
         const apiStartDate = new Date(userStartDate.getTime() + userStartDate.getTimezoneOffset() * 60000).toISOString();
         const apiEndDate = new Date(userEndDate.getTime() + userEndDate.getTimezoneOffset() * 60000).toISOString();
 
         fetchAllHistoricalData(apiStartDate, apiEndDate);
     });
+
+    function sweetAlertExport()
+    {
+        Swal.fire({
+            title: $('#lblExport').text(),
+            icon: 'success'
+        });
+    }
 
     $('#exportImage').on('click', function () {
         exportChartAsImage(historicalChart);
@@ -162,10 +199,10 @@ $(document).ready(function () {
         a.href = chart.toBase64Image();
         a.download = 'NexumHistoricalChart.png';
         a.click();
+        sweetAlertExport()
     }
 
     function exportChartAsPDF(chart) {
-        debugger;
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF('landscape');
         const imgData = chart.toBase64Image();
@@ -183,6 +220,7 @@ $(document).ready(function () {
         doc.addImage(imgData, 'PNG', 10, 10, pdfWidth, pdfHeight);
 
         doc.save('NexumHistoricalChart.pdf');
+        sweetAlertExport()
     }
 
     function exportChartAsCSV(chart) {
@@ -200,5 +238,6 @@ $(document).ready(function () {
         a.href = encodedUri;
         a.download = 'NexumHistoricalChart.csv';
         a.click();
+        sweetAlertExport()
     }
 });

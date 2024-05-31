@@ -8,6 +8,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@Localizer["RealTimeTemperature"]</title>
 
+    <link href="~/lib/animate.css/animate.css" rel="stylesheet" />
+
+    @if (ViewBag.CurrentTheme == "dark")
+    {
+        <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2-dark.css" rel="stylesheet" />
+    }
+    else
+    {
+        <link id="sweetalert-css" href="~/lib/sweetalert2/sweetalert2.css" rel="stylesheet" />
+    }
+
     <script type="module" src="~/lib/chart.js/chart.umd.js"></script>
     <script src="~/js/RealTimeChart.js"></script>
     <script src="~/js/ThemeSwitcher.js"></script>
@@ -21,7 +32,9 @@
     <div class="container mt-5">
         <div class="row align-items-center">
             <div class="col">
-                <h1 class="mb-0">@Localizer["RealTimeTemperature"]</h1>
+                <h1 class="mb-0">@Localizer["RealTimeTemperature"] 
+                    <i id="temperatureAlertIcon" class="d-none fa-solid fa-triangle-exclamation text-danger animate__animated animate__flash animate__infinite animate__slow" style="cursor: pointer;" title="temperature out of parameters"></i>
+                </h1>
             </div>
             <div class="col-auto mt-3 mb-3">
                 <div class="card rounded-3 shadow-sm">
@@ -30,20 +43,20 @@
                     </div>
                     <div class="card-body">
                         <ul class="list-unstyled mb-0 text-center">
-                            <li id="realTemp"></li>
+                            <li id="realTemp">0</li>
                         </ul>
                     </div>
                 </div>
             </div>
             <div class="row-auto">
-                <div class="btn-group mx-2">
+                <div class="btn-group mb-3">
                     <button type="button" class="btn btn-outline-light dropdown-toggle" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" data-bs-toggle="dropdown" aria-expanded="false" id="selectedDevice">
                         <i class="fa-solid fa-mobile-screen mx-1"></i> Dispositivos
                     </button>
                     <ul class="dropdown-menu" id="devicesList">
                     </ul>
                 </div>
-                <div class="btn-group">
+                <div class="btn-group mx-2 mb-3">
                     <button type="button" class="btn btn-outline-secondary dropdown-toggle" data-bs-toggle="dropdown" aria-expanded="false">
                         <i class="fa-solid fa-file-export mx-1"></i> @Localizer["Export"]
                     </button>
@@ -53,6 +66,9 @@
                         <li><button id="exportCSV" class="dropdown-item" type="button"><i class="fa-solid fa-file-excel mx-1"></i> @Localizer["AsCSV"]</button></li>
                     </ul>
                 </div>
+                <button class="btn btn-outline-warning mb-3" id="btnTempNotification" data-bs-toggle="tooltip" data-bs-placement="right" data-bs-html="true">
+                    <i class="fa-solid fa-bell"></i>
+                </button>
             </div>
         </div>
         <canvas id="realTimeChart" width="800" height="280"></canvas>

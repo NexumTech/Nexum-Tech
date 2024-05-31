@@ -2,6 +2,8 @@ let temperatures = [];
 let timeStamps = [];
 let isLoopActive = true;
 let currentDevice;
+let currentMaxTemp;
+let currentMinTemp;
 
 $(document).ready(function () {
     let currentSelectedCompany = $('#currentCompanyId').text();
@@ -13,6 +15,9 @@ $(document).ready(function () {
 
         var companyId = $(this).data('company-id');
         getDevices(companyId);
+
+        currentDevice = undefined;
+        resetChart();
     });
 
     function getDevices(companyId) {
@@ -20,7 +25,7 @@ $(document).ready(function () {
             type: 'GET',
             url: '/RealTimeChart/GetDevices',
             data: {
-               companyId: companyId,
+                companyId: companyId,
             },
             success: function (data) {
                 $('#devicesList').empty();
@@ -29,11 +34,22 @@ $(document).ready(function () {
                     var listItem = $('<li>').append($('<button>', {
                         class: 'dropdown-item',
                         type: 'button',
-                        text: device.name 
+                        text: device.name
                     }));
 
                     $('#devicesList').append(listItem);
                 });
+
+                if (data.length == 0) {
+                    var listItem = $('<li>').append($('<button>', {
+                        class: 'dropdown-item',
+                        type: 'button',
+                        text: 'Nenhum dispositivo encontrado para essa empresa',
+                        disabled: true,
+                    }));
+
+                    $('#devicesList').append(listItem);
+                }
 
                 $('#devicesList').on('click', 'button.dropdown-item', function () {
                     var deviceName = $(this).text();
@@ -45,8 +61,68 @@ $(document).ready(function () {
         });
     }
 
+    $(document).on('input', '#txtMinTemp, #txtMaxTemp', function () {
+        var minValue = parseInt($(this).val());
+        var maxValue = parseInt($('#txtMaxTemp').val());
+
+        if (minValue > maxValue) {
+            $(this).val(maxValue);
+        } else if (this.value < 0) {
+            this.value = 0;
+        } else if (this.value > 80) {
+            this.value = 80;
+        }
+    });
+
+    $('#btnTempNotification').click(function () {
+        const swalWithBootstrapButtons = Swal.mixin({
+            customClass: {
+                confirmButton: "btn btn-outline-success mx-2",
+                denyButton: "btn btn-outline-danger mx-2"
+            },
+            buttonsStyling: false,
+        });
+
+        swalWithBootstrapButtons.fire({
+            title: 'Temperature limits notification',
+            html:
+                '<div class="row mt-4 mb-2">' +
+                '<div class="col-md-6 d-flex justify-content-center">' +
+                '<input type="number" id="txtMinTemp" min="0" max="80" class="swal2-input" placeholder="Min">' +
+                '</div>' +
+                '<div class="col-md-6 d-flex justify-content-center">' +
+                '<input type="number" id="txtMaxTemp" min="0" max="80" class="swal2-input" placeholder="Max">' +
+                '</div>' +
+                '</div>',
+            showDenyButton: true,
+            confirmButtonText: 'Notify',
+            denyButtonText: 'Cancel',
+            focusConfirm: false,
+            preConfirm: () => {
+                return [
+                    $('#txtMinTemp').val(),
+                    $('#txtMaxTemp').val()
+                ]
+            }
+        }).then((result) => {
+            if (result.isConfirmed) {
+                if (!isNaN(result.value[0]) && !isNaN(result.value[1]) && result.value[0] !== null && result.value[1] !== null && result.value[0] !== "" && result.value[1] !== "") {
+                    currentMinTemp = parseFloat(result.value[0]);
+                    currentMaxTemp = parseFloat(result.value[1]);
+
+                    $('#btnTempNotification').tooltip('dispose').tooltip({
+                        title: `<b id='lblMinTemp' class='text-success'>Min: ${currentMinTemp}\u2103 </b> <br> <b id='lblMaxTemp' class='text-danger'>Max: ${currentMaxTemp}\u2103 </b>`,
+                        html: true,
+                        trigger: 'hover'
+                    });
+                }
+            }
+        });
+    });
+
     function addTemperatureAndTime(temperature, timestamp) {
         checkDifferentDates();
+        checkTemperatureParameters();
 
         temperatures.push(temperature);
         timeStamps.push(timestamp);
@@ -69,6 +145,15 @@ $(document).ready(function () {
 
     function updateRealTemp(temperature) {
         $('#realTemp').text(temperature);
+    }
+
+    function checkTemperatureParameters() {
+        var currentTemp = parseFloat($('#realTemp').text());
+
+        if (currentTemp < currentMinTemp || currentTemp > currentMaxTemp)
+            $('#temperatureAlertIcon').removeClass('d-none');
+        else
+            $('#temperatureAlertIcon').addClass('d-none');
     }
 
     function fetchTemperatureData() {
@@ -140,7 +225,7 @@ $(document).ready(function () {
 
     $('#realTemp').on('click', function () {
         resetChart();
-    });
+    });   
 
     function exportChartAsImage(chart) {
         const a = document.createElement('a');
@@ -150,7 +235,6 @@ $(document).ready(function () {
     }
 
     function exportChartAsPDF(chart) {
-        debugger;
         const { jsPDF } = window.jspdf;
         const doc = new jsPDF('landscape');
         const imgData = chart.toBase64Image();

@@ -1,9 +1,0 @@
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\netcoreapp3.1\NexumTech.Web.csproj.AssemblyReference.cache
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\netcoreapp3.1\NexumTech.Web.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\netcoreapp3.1\NexumTech.Web.AssemblyInfoInputs.cache
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\netcoreapp3.1\NexumTech.Web.AssemblyInfo.cs
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\netcoreapp3.1\NexumTech.Web.csproj.CoreCompileInputs.cache
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\netcoreapp3.1\NexumTech.Web.MvcApplicationPartsAssemblyInfo.cache
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\netcoreapp3.1\NexumTech.Web.RazorAssemblyInfo.cache
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\netcoreapp3.1\NexumTech.Web.RazorAssemblyInfo.cs
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Web\obj\Debug\netcoreapp3.1\NexumTech.Web.sourcelink.json

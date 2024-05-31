@@ -4,6 +4,7 @@
     {
         public JWT JWT { get; set; }
         public SMTP SMTP { get; set; }
+        public Fiware Fiware { get; set; }
         public string PasswordResetURL { get; set; }
     }
 
@@ -19,5 +20,11 @@
     public class JWT
     {
         public string Key { get; set; }
+    }
+
+    public class Fiware
+    {
+        public string ApiFiwareRealTimeChartURL { get; set; }
+        public string ApiFiwareHistoricalChartURL { get; set; }
     }
 }

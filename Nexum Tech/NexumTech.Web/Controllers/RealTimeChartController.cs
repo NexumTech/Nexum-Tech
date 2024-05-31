@@ -3,7 +3,9 @@ using Microsoft.Extensions.Options;
 using NexumTech.Infra.API;
 using NexumTech.Infra.Models;
 using NexumTech.Infra.WEB;
+using NexumTech.Infra.WEB.ViewModels;
 using NexumTech.Web.Controllers.Filters;
+using NexumTech.Web.Services;
 
 namespace NexumTech.Web.Controllers
 {
@@ -21,6 +23,9 @@ namespace NexumTech.Web.Controllers
 
         public async Task<IActionResult> Index()
         {
+            var currentTheme = Request.Cookies["CurrentTheme"];
+            ViewBag.CurrentTheme = currentTheme;
+
             var token = Request.Cookies["jwt"];
 
             UserViewModel user = await _httpService.CallMethod<UserViewModel>(_appSettingsUI.GetUserInfoURL, HttpMethod.Get, token);
@@ -39,12 +44,7 @@ namespace NexumTech.Web.Controllers
             {
                 var token = Request.Cookies["jwt"];
 
-                Dictionary<string, string> headers = new Dictionary<string, string>();
-                headers.Add("fiware-service", "smart");
-                headers.Add("fiware-servicepath", "/");
-                headers.Add("accept", "application/json");
-
-                RealTimeChartViewModel temperature = await _httpService.CallMethod<RealTimeChartViewModel>(_appSettingsUI.Fiware.ApiFiwareRealTimeChartURL.Replace("device", deviceName.Trim()), HttpMethod.Get, token, headers: headers, urlFiware:_appSettingsUI.Fiware.ApiFiwareRealTimeChartURL);
+                RealTimeChartViewModel temperature = await _httpService.CallMethod<RealTimeChartViewModel>(_appSettingsUI.GetRealTemperatureURL, HttpMethod.Get, token, new RealTimeChartViewModel { DeviceName = deviceName });
 
                 return Ok(temperature);
             }

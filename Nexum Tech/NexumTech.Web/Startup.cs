@@ -1,8 +1,13 @@
-﻿using Microsoft.AspNetCore.Localization;
+﻿using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Localization;
 using Microsoft.AspNetCore.Mvc.Razor;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.DependencyInjection;
 using NexumTech.Infra.API;
 using NexumTech.Infra.WEB;
 using NexumTech.Infra.WEB.Middlewares;
+using NexumTech.Web.Services;
 using System.Globalization;
 
 namespace NexumTech.Web
@@ -16,7 +21,6 @@ namespace NexumTech.Web
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddControllersWithViews()
@@ -33,34 +37,36 @@ namespace NexumTech.Web
                 {
                     new CultureInfo("pt-BR"),
                     new CultureInfo("en-US"),
-                    new CultureInfo("es-ES"),                   
+                    new CultureInfo("es-ES"),
                 };
 
                 options.DefaultRequestCulture = new RequestCulture("pt-BR");
+                options.SupportedCultures = supportedCultures;
                 options.SupportedUICultures = supportedCultures;
             });
 
             services.AddHttpClient();
 
-            #region WEB appsettings.json Dependency Injection
-
             services.Configure<AppSettingsWEB>(Configuration);
 
-            services.AddScoped<AppSettingsWEB>();
-
-            #endregion
-
-            #region Base Http Service Dependency Injection
-
             services.AddScoped<BaseHttpService>();
-
-            #endregion
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IWebHostEnvironment env)
         {
-            app.UseRequestLocalization();
+            var supportedCultures = new[]
+            {
+                new CultureInfo("pt-BR"),
+                new CultureInfo("en-US"),
+                new CultureInfo("es-ES"),
+            };
+
+            app.UseRequestLocalization(new RequestLocalizationOptions
+            {
+                DefaultRequestCulture = new RequestCulture("pt-BR"),
+                SupportedCultures = supportedCultures,
+                SupportedUICultures = supportedCultures
+            });
 
             app.UseMiddleware<CultureMiddleware>();
 
@@ -71,7 +77,6 @@ namespace NexumTech.Web
             else
             {
                 app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
 
