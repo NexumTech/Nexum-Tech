@@ -14,8 +14,6 @@ packages/
 
 # Ignore arquivos de configuração do Visual Studio
 .vs/
-*.user
-*.suo
 
 # Ignore diretórios de publicação
 publish/

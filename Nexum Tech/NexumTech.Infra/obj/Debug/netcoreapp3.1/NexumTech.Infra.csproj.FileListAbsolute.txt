@@ -1,6 +1,0 @@
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\netcoreapp3.1\NexumTech.Infra.csproj.AssemblyReference.cache
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\netcoreapp3.1\NexumTech.Infra.GeneratedMSBuildEditorConfig.editorconfig
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\netcoreapp3.1\NexumTech.Infra.AssemblyInfoInputs.cache
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\netcoreapp3.1\NexumTech.Infra.AssemblyInfo.cs
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\netcoreapp3.1\NexumTech.Infra.csproj.CoreCompileInputs.cache
-C:\Users\gabri\OneDrive\Desktop\Projetos\Nexum-Tech\Nexum Tech\NexumTech.Infra\obj\Debug\netcoreapp3.1\NexumTech.Infra.sourcelink.json
