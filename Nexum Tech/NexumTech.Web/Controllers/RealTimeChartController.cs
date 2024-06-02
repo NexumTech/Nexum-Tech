@@ -32,7 +32,7 @@ namespace NexumTech.Web.Controllers
 
             IEnumerable<CompanyViewModel> companies = await _httpService.CallMethod<IEnumerable<CompanyViewModel>>(_appSettingsUI.GetCompaniesURL, HttpMethod.Get, token, user);
 
-            ViewBag.CurrentCompanyId = companies != null ? companies.FirstOrDefault().Id : 0;
+            ViewBag.CurrentCompanyId = companies.Count() > 0 ? companies.FirstOrDefault().Id : 0;
 
             return View();
         }

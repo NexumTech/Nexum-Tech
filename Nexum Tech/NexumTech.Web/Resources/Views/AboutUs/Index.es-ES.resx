@@ -117,46 +117,100 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutUs" xml:space="preserve">
-    <value>Sobre</value>
+  <data name="Alerts" xml:space="preserve">
+    <value>Alertas de invernadero</value>
   </data>
-  <data name="Company" xml:space="preserve">
-    <value>Empresa</value>
+  <data name="AutomateAlerts" xml:space="preserve">
+    <value>Automatice las alertas de temperatura para mantener eficientemente las condiciones ideales para su sistema.</value>
   </data>
-  <data name="Devices" xml:space="preserve">
-    <value>Dispositivos</value>
+  <data name="BehaviorAnalysis" xml:space="preserve">
+    <value>Análisis de comportamiento</value>
   </data>
-  <data name="DontHaveCompanies" xml:space="preserve">
-    <value>No hay empresas</value>
+  <data name="BestSolution" xml:space="preserve">
+    <value>La mejor solución para su invernadero</value>
   </data>
-  <data name="English" xml:space="preserve">
-    <value>Inglés</value>
+  <data name="ControlTemperature" xml:space="preserve">
+    <value>Monitoree las temperaturas de sus invernaderos en tiempo real para garantizar el ambiente ideal para sus dispositivos.</value>
   </data>
-  <data name="HistoricalChart" xml:space="preserve">
-    <value>Histórico</value>
+  <data name="DashboardAnalyse" xml:space="preserve">
+    <value>Análisis de gráficos</value>
   </data>
-  <data name="History" xml:space="preserve">
-    <value>Histórico</value>
+  <data name="Developer" xml:space="preserve">
+    <value>Desarrollador</value>
   </data>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
+  <data name="GenerateReports" xml:space="preserve">
+    <value>Genera informes detallados sobre el rendimiento de tus invernaderos y toma decisiones basadas en datos precisos.</value>
   </data>
-  <data name="Language" xml:space="preserve">
-    <value>Idioma</value>
+  <data name="GetData" xml:space="preserve">
+    <value>Obtenga datos precisos y en tiempo real sobre la temperatura y otros parámetros críticos de sus dispositivos.</value>
   </data>
-  <data name="Portuguese" xml:space="preserve">
-    <value>Portugués</value>
+  <data name="HistoricAnalyse" xml:space="preserve">
+    <value>Vea y analice datos históricos a través de gráficos detallados para comprender mejor el rendimiento y las necesidades de sus plantas.</value>
   </data>
-  <data name="Profile" xml:space="preserve">
-    <value>Perfil</value>
+  <data name="KnowMore" xml:space="preserve">
+    <value>Sepa mas</value>
+  </data>
+  <data name="KnowOurDevs" xml:space="preserve">
+    <value>Conozca a los desarrolladores</value>
+  </data>
+  <data name="KnowOurTeam" xml:space="preserve">
+    <value>Conozca a nuestro equipo</value>
+  </data>
+  <data name="ManageDevices" xml:space="preserve">
+    <value>Realice un seguimiento y administre sus dispositivos desde cualquier lugar con nuestro sistema intuitivo y fácil de usar.</value>
+  </data>
+  <data name="MonitorAndOptimize" xml:space="preserve">
+    <value>Supervise y optimice sus invernaderos con facilidad</value>
+  </data>
+  <data name="MonitoringTemperatures" xml:space="preserve">
+    <value>Monitoreo de temperatura</value>
+  </data>
+  <data name="MonitorTemperatures" xml:space="preserve">
+    <value>Realice un seguimiento de las temperaturas, analice el comportamiento y descubra diferentes funciones para maximizar la eficiencia de sus dispositivos. ¡Tu producción a un nuevo nivel!</value>
+  </data>
+  <data name="OurServices" xml:space="preserve">
+    <value>Nuestros servicios</value>
+  </data>
+  <data name="OurSoftware" xml:space="preserve">
+    <value>Nuestro software para invernaderos está desarrollado por un equipo dedicado de expertos. Conozca las mentes detrás de nuestras soluciones innovadoras.</value>
+  </data>
+  <data name="OurSystemOffer" xml:space="preserve">
+    <value>Nuestro sistema ofrece seguimiento en tiempo real, análisis de gráficos y alertas para optimizar la gestión de sus invernaderos.</value>
+  </data>
+  <data name="OurSystems" xml:space="preserve">
+    <value>Nuestros sistemas con una arquitectura enfocada a la protección y privacidad del usuario.</value>
+  </data>
+  <data name="OurTeam" xml:space="preserve">
+    <value>NUESTRO EQUIPO</value>
   </data>
   <data name="RealTimeMonitoring" xml:space="preserve">
-    <value>Supervisión</value>
+    <value>Monitoreo en tiempo real</value>
   </data>
-  <data name="Signout" xml:space="preserve">
-    <value>Salir</value>
+  <data name="ReceiveAlerts" xml:space="preserve">
+    <value>Reciba notificaciones instantáneas sobre cualquier variación crítica en los parámetros, lo que permitirá acciones rápidas para controlar sus dispositivos.</value>
   </data>
-  <data name="Spanish" xml:space="preserve">
-    <value>Español</value>
+  <data name="Reports" xml:space="preserve">
+    <value>Informes detallados</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Seguridad</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>SERVICIOS</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>Sistema</value>
+  </data>
+  <data name="SystemAutomation" xml:space="preserve">
+    <value>Automatización de sistemas</value>
+  </data>
+  <data name="UseAnalysis" xml:space="preserve">
+    <value>Utilice análisis avanzados para comprender mejor el comportamiento del dispositivo y optimizar su productividad.</value>
+  </data>
+  <data name="WeOfferServices" xml:space="preserve">
+    <value>Ofrecemos una variedad de servicios para optimizar la eficiencia de sus invernaderos, incluido el monitoreo de temperatura, análisis de comportamiento y muchas otras funciones avanzadas.</value>
+  </data>
+  <data name="WhyChooseUs" xml:space="preserve">
+    <value>POR QUÉ ELEGIRNOS</value>
   </data>
 </root>

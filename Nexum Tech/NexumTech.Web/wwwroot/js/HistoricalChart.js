@@ -40,7 +40,7 @@ $(document).ready(function () {
                     var listItem = $('<li>').append($('<button>', {
                         class: 'dropdown-item',
                         type: 'button',
-                        text: 'Nenhum dispositivo encontrado para essa empresa',
+                        text: $('#lblNotFoundAnyDevice').text(),
                         disabled: true,
                     }));
 
@@ -77,22 +77,14 @@ $(document).ready(function () {
             return; 
         }
 
-        const userStartDate = new Date(startDate + 'T00:00:00-03:00'); // Data de início selecionada pelo usuário em UTC-3
-        const userEndDate = new Date(endDate + 'T23:59:59-03:00'); // Data de fim selecionada pelo usuário em UTC-3
+        const userStartDate = new Date(startDate + 'T00:00:00-03:00'); 
+        const userEndDate = new Date(endDate + 'T23:59:59-03:00'); 
 
         const apiStartDate = new Date(userStartDate.getTime() + userStartDate.getTimezoneOffset() * 60000).toISOString();
         const apiEndDate = new Date(userEndDate.getTime() + userEndDate.getTimezoneOffset() * 60000).toISOString();
 
         fetchAllHistoricalData(apiStartDate, apiEndDate);
     });
-
-    function sweetAlertExport()
-    {
-        Swal.fire({
-            title: $('#lblExport').text(),
-            icon: 'success'
-        });
-    }
 
     $('#exportImage').on('click', function () {
         exportChartAsImage(historicalChart);
@@ -199,7 +191,6 @@ $(document).ready(function () {
         a.href = chart.toBase64Image();
         a.download = 'NexumHistoricalChart.png';
         a.click();
-        sweetAlertExport()
     }
 
     function exportChartAsPDF(chart) {
@@ -220,7 +211,6 @@ $(document).ready(function () {
         doc.addImage(imgData, 'PNG', 10, 10, pdfWidth, pdfHeight);
 
         doc.save('NexumHistoricalChart.pdf');
-        sweetAlertExport()
     }
 
     function exportChartAsCSV(chart) {
@@ -238,6 +228,5 @@ $(document).ready(function () {
         a.href = encodedUri;
         a.download = 'NexumHistoricalChart.csv';
         a.click();
-        sweetAlertExport()
     }
 });

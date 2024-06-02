@@ -52,7 +52,7 @@ $(document).ready(function () {
                 $('#dropdownCompanies img').attr('src', companyLogo);
                 $('#dropdownCompanies strong').text(companyName);
 
-                $('#selectedDevice').html('<i class="fa-solid fa-mobile-screen mx-1"></i> Dispositivos');
+                $('#selectedDevice').html(`<i class="fa-solid fa-mobile-screen mx-1"></i> ${$('#lblDevices').text()}`);
             });
 
             if (data.length > 0) {

@@ -1,0 +1,199 @@
+﻿@using Microsoft.AspNetCore.Mvc.Localization;
+
+@inject IViewLocalizer Localizer
+
+<link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
+<link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
+<link href="~/lib/animate.css/animate.css" rel="stylesheet" />
+<link rel="stylesheet" href="~/css/AboutUs.css">
+
+<script src="~/js/ThemeSwitcher.js"></script>
+
+<body data-bs-theme="light">
+    <div class="hero vh-100 d-flex align-items-center animate__animated animate__fadeInUp animate__slower" id="home">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-7 mx-auto text-center">
+                    <h1 class="display-5 text-white">@Localizer["MonitorAndOptimize"]</h1>
+                    <p class="text-white my-3">@Localizer["MonitorTemperatures"]</p>
+                    <br>
+                    <a href="#services" class="btn btn-hero me-2 btn-primary">@Localizer["KnowMore"]</a>
+                    <a href="#team" class="btn btn-hero btn-outline-light">@Localizer["KnowOurTeam"]</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section id="services">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-8 mx-auto text-center">
+                    <h6 class="text-primary">@Localizer["Services"]</h6>
+                    <h1>@Localizer["OurServices"]</h1>
+                    <p>@Localizer["WeOfferServices"]</p>
+                </div>
+            </div>
+            <div class="row g-4">
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service card-effect bounceInUp rounded">
+                        <div class="iconbox">
+                            <i class="fa-solid fa-temperature-three-quarters fa-xs"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">@Localizer["MonitoringTemperatures"]</h5>
+                        <p>@Localizer["ControlTemperature"]</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service card-effect rounded">
+                        <div class="iconbox">
+                            <i class="fa-solid fa-magnifying-glass-chart fa-xs"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">@Localizer["BehaviorAnalysis"]</h5>
+                        <p>@Localizer["UseAnalysis"]</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service card-effect rounded">
+                        <div class="iconbox">
+                            <i class="fa-solid fa-chart-simple fa-xs"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">@Localizer["Reports"]</h5>
+                        <p>@Localizer["GenerateReports"]</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service card-effect rounded">
+                        <div class="iconbox">
+                            <i class="fa-solid fa-gear fa-xs"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">@Localizer["SystemAutomation"]</h5>
+                        <p>@Localizer["AutomateAlerts"]</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service card-effect bounceInUp rounded">
+                        <div class="iconbox">
+                            <i class="fa-solid fa-user-shield fa-xs"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">@Localizer["Security"]</h5>
+                        <p>@Localizer["OurSystems"]</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-sm-6">
+                    <div class="service card-effect rounded">
+                        <div class="iconbox">
+                            <i class="fa-solid fa-mobile-screen fa-xs"></i>
+                        </div>
+                        <h5 class="mt-4 mb-2">@Localizer["System"]</h5>
+                        <p>@Localizer["ManageDevices"]</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <br>
+
+    <section class="row w-100 py-0" id="features">
+        <div class="col-lg-6 col-img"></div>
+        <div class="col-lg-6 py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-10 offset-md-1">
+                        <h6 class="text-primary">@Localizer["WhyChooseUs"]</h6>
+                        <h1>@Localizer["BestSolution"]</h1>
+                        <p>@Localizer["OurSystemOffer"]</p>
+
+                        <div class="feature d-flex mt-5">
+                            <div class="iconbox me-3">
+                                <i class="fa-solid fa-chart-line fa-xs"></i>
+                            </div>
+                            <div>
+                                <h5>@Localizer["RealTimeMonitoring"]</h5>
+                                <p>@Localizer["GetData"]</p>
+                            </div>
+                        </div>
+                        <div class="feature d-flex mt-4">
+                            <div class="iconbox me-3">
+                                <i class="fa-solid fa-chart-column fa-xs"></i>
+                            </div>
+                            <div>
+                                <h5>@Localizer["DashboardAnalyse"]</h5>
+                                <p>@Localizer["HistoricAnalyse"]</p>
+                            </div>
+                        </div>
+                        <div class="feature d-flex mt-4">
+                            <div class="iconbox me-3">
+                                <i class="fa-solid fa-bell fa-xs"></i>
+                            </div>
+                            <div>
+                                <h5>@Localizer["Alerts"]</h5>
+                                <p>@Localizer["ReceiveAlerts"]</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="team">
+        <div class="container">
+            <div class="row mb-5">
+                <div class="col-md-8 mx-auto text-center">
+                    <h6 class="text-primary">@Localizer["OurTeam"]</h6>
+                    <h1>@Localizer["KnowOurDevs"]</h1>
+                    <p>@Localizer["OurSoftware"]</p>
+                </div>
+            </div>
+            <div class="row text-center g-4">
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member card-effect rounded">
+                        <img class="img-about-us" src="~/images/team1.jpeg" alt="Gabriel Alves">
+                        <h5 class="mb-0 mt-4">Gabriel Alves</h5>
+                        <p>@Localizer["Developer"]</p>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/gabrielalvesbarbosa/"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/GabrielAB2411"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member card-effect rounded">
+                        <img class="img-about-us" src="~/images/team2.jpeg" alt="Gustavo Braz">
+                        <h5 class="mb-0 mt-4">Gustavo Braz</h5>
+                        <p>@Localizer["Developer"]</p>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/braz-gustavo/"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/BrazGu"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member card-effect rounded">
+                        <img class="img-about-us" src="~/images/team3.jpeg" alt="Ruan Faccin">
+                        <h5 class="mb-0 mt-4">Ruan Faccin</h5>
+                        <p>@Localizer["Developer"]</p>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/ruanfaccin/"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/ruanfaccin"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-sm-6">
+                    <div class="team-member card-effect rounded">
+                        <img class="img-about-us" src="~/images/team4.jpeg" alt="Victor Albano">
+                        <h5 class="mb-0 mt-4">Victor Albano</h5>
+                        <p>@Localizer["Developer"]</p>
+                        <div class="social-icons">
+                            <a href="https://www.linkedin.com/in/victor-albano-58a542246/"><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://github.com/theAlbano"><i class="fa-brands fa-github"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section
+</body>
+
+

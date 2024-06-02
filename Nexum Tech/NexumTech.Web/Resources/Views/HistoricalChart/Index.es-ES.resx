@@ -118,7 +118,7 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ApplyFilters" xml:space="preserve">
-    <value>Aplicar filtros</value>
+    <value>Buscar</value>
   </data>
   <data name="AsCSV" xml:space="preserve">
     <value>a CSV</value>
@@ -129,6 +129,9 @@
   <data name="AsPDF" xml:space="preserve">
     <value>a PDF</value>
   </data>
+  <data name="Devices" xml:space="preserve">
+    <value>Dispositivos</value>
+  </data>
   <data name="EndDate" xml:space="preserve">
     <value>Fecha de finalización</value>
   </data>
@@ -136,13 +139,13 @@
     <value>Exportar</value>
   </data>
   <data name="HistoricalChart" xml:space="preserve">
-    <value>Gráfico Histórico</value>
-  </data>
-  <data name="lblExport" xml:space="preserve">
-    <value>¡Archivo exportado exitosamente!</value>
+    <value>Histórico</value>
   </data>
   <data name="lblWarning" xml:space="preserve">
     <value>Advertencia</value>
+  </data>
+  <data name="NotFoundAnyDevice" xml:space="preserve">
+    <value>No se encontraron dispositivos</value>
   </data>
   <data name="StartDate" xml:space="preserve">
     <value>Fecha de inicio</value>

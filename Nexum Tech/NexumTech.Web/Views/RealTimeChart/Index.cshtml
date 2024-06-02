@@ -28,12 +28,19 @@
 
 </head>
 <body data-bs-theme="light">
+    <!-- SweetAlert resources -->
+    <span class="d-none" id="lblNotFoundAnyDevice">@Localizer["NotFoundAnyDevice"]</span>
+    <span class="d-none" id="lblTemperatureLimits">@Localizer["TemperatureLimits"]</span>
+    <span class="d-none" id="lblNotify">@Localizer["Notify"]</span>
+    <span class="d-none" id="lblCancel">@Localizer["Cancel"]</span>
+    <!-- SweetAlert resources -->
+
     <span class="d-none" id="currentCompanyId">@ViewBag.CurrentCompanyId</span>
-    <div class="container mt-5">
+    <div class="container">
         <div class="row align-items-center">
             <div class="col">
                 <h1 class="mb-0">@Localizer["RealTimeTemperature"] 
-                    <i id="temperatureAlertIcon" class="d-none fa-solid fa-triangle-exclamation text-danger animate__animated animate__flash animate__infinite animate__slow" style="cursor: pointer;" title="temperature out of parameters"></i>
+                    <i id="temperatureAlertIcon" class="d-none fa-solid fa-triangle-exclamation text-danger animate__animated animate__flash animate__infinite animate__slow" style="cursor: pointer;" title="@Localizer["TempOutOfParameters"]"></i>
                 </h1>
             </div>
             <div class="col-auto mt-3 mb-3">
@@ -51,7 +58,7 @@
             <div class="row-auto">
                 <div class="btn-group mb-3">
                     <button type="button" class="btn btn-outline-light dropdown-toggle" style="max-width: 200px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap;" data-bs-toggle="dropdown" aria-expanded="false" id="selectedDevice">
-                        <i class="fa-solid fa-mobile-screen mx-1"></i> Dispositivos
+                        <i class="fa-solid fa-mobile-screen mx-1"></i> @Localizer["Devices"]
                     </button>
                     <ul class="dropdown-menu" id="devicesList">
                     </ul>
