@@ -176,6 +176,3 @@ void handleThermalSensor() {
     Serial.println(mensagem.c_str());
     MQTT.publish(TOPICO_PUBLISH_2, mensagem.c_str());
 }
-```
-
-Cada parte do código agora tem comentários explicativos que detalham sua função e propósito. Isso ajuda a entender melhor como cada segmento do código opera.
