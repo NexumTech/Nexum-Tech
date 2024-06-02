@@ -69,9 +69,7 @@ O Sistema de Monitoramento de Estufas foi construído utilizando as seguintes fe
 
 | Link | Descrição |
 | --- | --- |
-| [`Especificação`]() | Documento que detalha os requisitos técnicos específicos do projeto|
-| [`Código`]() | Código fonte utilizado no projeto |
-| [`Video`]() | Video no Youtube da execução do projeto 
+| [`Código ESP32`](https://github.com/NexumTech/Nexum-Tech/blob/develop/Nexum%20Tech/esp32.ino) | Código fonte utilizado no projeto |
 
 
 
