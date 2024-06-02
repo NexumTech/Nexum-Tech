@@ -59,7 +59,6 @@ namespace NexumTech.Domain.Services
             {
                 Email = signupViewModel.Email,
                 Username = signupViewModel.Username,
-                Role = "User"
             };
 
             if(!string.IsNullOrEmpty(signupViewModel.Password)) 

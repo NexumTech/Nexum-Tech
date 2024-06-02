@@ -7,17 +7,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Content Remove="Views\Home\Privacy.cshtml" />
     <Content Remove="wwwroot\css\Profile.css" />
+    <Content Remove="wwwroot\css\site.css" />
     <Content Remove="wwwroot\css\ToggleSwitch.css" />
+    <Content Remove="wwwroot\js\site.js" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\NexumTech.Domain\NexumTech.Domain.csproj" />
     <ProjectReference Include="..\NexumTech.Infra\NexumTech.Infra.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="wwwroot\images\" />
   </ItemGroup>
 
   <ItemGroup>

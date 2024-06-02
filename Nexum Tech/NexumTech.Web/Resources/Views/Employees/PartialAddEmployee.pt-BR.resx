@@ -126,9 +126,6 @@
   <data name="Email" xml:space="preserve">
     <value>E-mail</value>
   </data>
-  <data name="EnterUserEmail" xml:space="preserve">
-    <value>Insira o e-mail do usuário</value>
-  </data>
   <data name="InvalidEmail" xml:space="preserve">
     <value>Insira um e-mail válido</value>
   </data>

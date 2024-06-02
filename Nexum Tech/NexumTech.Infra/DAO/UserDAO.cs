@@ -50,8 +50,7 @@ namespace NexumTech.Infra.DAO
                                         Id,
                                         Email,
                                         Username,
-                                        Photo,
-                                        Role
+                                        Photo
                                    FROM tb_user 
                                    WHERE Email = @Email";
 
@@ -81,14 +80,12 @@ namespace NexumTech.Infra.DAO
                                         ([Username]
                                         ,[Email]
                                         ,[Password]
-                                        ,[Photo]
-                                        ,[Role])
+                                        ,[Photo])
                                     VALUES
                                         (@Username
                                         ,@Email
                                         ,@Password
-                                        ,@Photo
-                                        ,'User')";
+                                        ,@Photo)";
 
                     await connection.QueryAsync(sql, new
                     {

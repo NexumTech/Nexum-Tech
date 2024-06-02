@@ -27,6 +27,10 @@ namespace NexumTech.Web.Controllers
 
                 UserViewModel user = await _httpService.CallMethod<UserViewModel>(_appSettingsUI.GetUserInfoURL, HttpMethod.Get, token);
 
+                string[] nameParts = user.Username.Split(' ');
+
+                ViewBag.Username = nameParts[0];
+
                 return View();
             } 
             catch (Exception ex)

@@ -126,11 +126,23 @@
   <data name="AsPDF" xml:space="preserve">
     <value>as PDF</value>
   </data>
+  <data name="Cancel" xml:space="preserve">
+    <value>Cancel</value>
+  </data>
+  <data name="Devices" xml:space="preserve">
+    <value>Devices</value>
+  </data>
   <data name="Export" xml:space="preserve">
     <value>Export</value>
   </data>
+  <data name="NotFoundAnyDevice" xml:space="preserve">
+    <value>No devices found</value>
+  </data>
+  <data name="Notify" xml:space="preserve">
+    <value>Notify</value>
+  </data>
   <data name="RealTemp" xml:space="preserve">
-    <value>Real Temp</value>
+    <value>Temperature</value>
   </data>
   <data name="RealTimeTemperature" xml:space="preserve">
     <value>Real-Time Temperature</value>
@@ -140,5 +152,11 @@
   </data>
   <data name="Reload" xml:space="preserve">
     <value>Reload</value>
+  </data>
+  <data name="TemperatureLimits" xml:space="preserve">
+    <value>Temperature limits</value>
+  </data>
+  <data name="TempOutOfParameters" xml:space="preserve">
+    <value>Temperature out of parameters!</value>
   </data>
 </root>

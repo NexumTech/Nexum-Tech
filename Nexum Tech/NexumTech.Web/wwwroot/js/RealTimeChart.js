@@ -44,7 +44,7 @@ $(document).ready(function () {
                     var listItem = $('<li>').append($('<button>', {
                         class: 'dropdown-item',
                         type: 'button',
-                        text: 'Nenhum dispositivo encontrado para essa empresa',
+                        text: $('#lblNotFoundAnyDevice').text(),
                         disabled: true,
                     }));
 
@@ -84,7 +84,7 @@ $(document).ready(function () {
         });
 
         swalWithBootstrapButtons.fire({
-            title: 'Temperature limits notification',
+            title: $('#lblTemperatureLimits').text(),
             html:
                 '<div class="row mt-4 mb-2">' +
                 '<div class="col-md-6 d-flex justify-content-center">' +
@@ -95,8 +95,8 @@ $(document).ready(function () {
                 '</div>' +
                 '</div>',
             showDenyButton: true,
-            confirmButtonText: 'Notify',
-            denyButtonText: 'Cancel',
+            confirmButtonText: $('#lblNotify').text(),
+            denyButtonText: $('#lblCancel').text(),
             focusConfirm: false,
             preConfirm: () => {
                 return [

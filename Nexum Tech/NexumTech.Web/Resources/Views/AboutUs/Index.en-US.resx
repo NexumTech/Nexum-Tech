@@ -117,46 +117,102 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AboutUs" xml:space="preserve">
-    <value>Sobre</value>
+  <data name="Alerts" xml:space="preserve">
+    <value>Greenhouse Alerts</value>
   </data>
-  <data name="Company" xml:space="preserve">
-    <value>Empresa</value>
+  <data name="AutomateAlerts" xml:space="preserve">
+    <value>
+Automate temperature alerts to efficiently maintain ideal conditions and reliability for your system.</value>
   </data>
-  <data name="Devices" xml:space="preserve">
-    <value>Dispositivos</value>
+  <data name="BehaviorAnalysis" xml:space="preserve">
+    <value>Behavior Analysis</value>
   </data>
-  <data name="DontHaveCompanies" xml:space="preserve">
-    <value>No hay empresas</value>
+  <data name="BestSolution" xml:space="preserve">
+    <value>The Best Solution for Your Greenhouse</value>
   </data>
-  <data name="English" xml:space="preserve">
-    <value>Inglés</value>
+  <data name="ControlTemperature" xml:space="preserve">
+    <value>Control and monitor the temperatures of your greenhouses in real time to ensure the ideal environment for your devices.</value>
   </data>
-  <data name="HistoricalChart" xml:space="preserve">
-    <value>Histórico</value>
+  <data name="DashboardAnalyse" xml:space="preserve">
+    <value>Chart Analysis</value>
   </data>
-  <data name="History" xml:space="preserve">
-    <value>Histórico</value>
+  <data name="Developer" xml:space="preserve">
+    <value>Developer</value>
   </data>
-  <data name="Home" xml:space="preserve">
-    <value>Home</value>
+  <data name="GenerateReports" xml:space="preserve">
+    <value>Generate detailed reports on the performance of your greenhouses and make decisions based on accurate data.</value>
   </data>
-  <data name="Language" xml:space="preserve">
-    <value>Idioma</value>
+  <data name="GetData" xml:space="preserve">
+    <value>Get accurate, real-time data on the temperature and other critical parameters of your devices.</value>
   </data>
-  <data name="Portuguese" xml:space="preserve">
-    <value>Portugués</value>
+  <data name="HistoricAnalyse" xml:space="preserve">
+    <value>View and analyze historical data through detailed graphs to better understand your plants' performance and needs.</value>
   </data>
-  <data name="Profile" xml:space="preserve">
-    <value>Perfil</value>
+  <data name="KnowMore" xml:space="preserve">
+    <value>Know more</value>
+  </data>
+  <data name="KnowOurDevs" xml:space="preserve">
+    <value>Meet the Developers</value>
+  </data>
+  <data name="KnowOurTeam" xml:space="preserve">
+    <value>Meet our team</value>
+  </data>
+  <data name="ManageDevices" xml:space="preserve">
+    <value>Track and manage your devices from anywhere with our intuitive, easy-to-use system.</value>
+  </data>
+  <data name="MonitorAndOptimize" xml:space="preserve">
+    <value>Monitor and Optimize Your Greenhouses with Ease</value>
+  </data>
+  <data name="MonitoringTemperatures" xml:space="preserve">
+    <value>Temperature Monitoring</value>
+  </data>
+  <data name="MonitorTemperatures" xml:space="preserve">
+    <value>Track temperatures, analyze behavior and discover different features to maximize the efficiency of your devices. Your production on a new level!</value>
+  </data>
+  <data name="OurServices" xml:space="preserve">
+    <value>Our services</value>
+  </data>
+  <data name="OurSoftware" xml:space="preserve">
+    <value>Our greenhouse software is developed by a dedicated team of experts. Meet the minds behind our innovative solutions.</value>
+  </data>
+  <data name="OurSystemOffer" xml:space="preserve">
+    <value>Our system offers real-time monitoring, graph analysis and alerts to optimize the management of your greenhouses.</value>
+  </data>
+  <data name="OurSystems" xml:space="preserve">
+    <value>
+Our systems proudly boast an architecture focused on user protection, privacy, security, and reliability.</value>
+  </data>
+  <data name="OurTeam" xml:space="preserve">
+    <value>OUR TEAM</value>
   </data>
   <data name="RealTimeMonitoring" xml:space="preserve">
-    <value>Supervisión</value>
+    <value>Real-Time Monitoring</value>
   </data>
-  <data name="Signout" xml:space="preserve">
-    <value>Salir</value>
+  <data name="ReceiveAlerts" xml:space="preserve">
+    <value>Receive instant notifications about any critical variation in parameters, allowing quick actions to control your devices.</value>
   </data>
-  <data name="Spanish" xml:space="preserve">
-    <value>Español</value>
+  <data name="Reports" xml:space="preserve">
+    <value>Detailed Reports</value>
+  </data>
+  <data name="Security" xml:space="preserve">
+    <value>Security</value>
+  </data>
+  <data name="Services" xml:space="preserve">
+    <value>SERVICES</value>
+  </data>
+  <data name="System" xml:space="preserve">
+    <value>System</value>
+  </data>
+  <data name="SystemAutomation" xml:space="preserve">
+    <value>Systems Automation</value>
+  </data>
+  <data name="UseAnalysis" xml:space="preserve">
+    <value>Use advanced analytics to better understand device behavior and optimize your productivity.</value>
+  </data>
+  <data name="WeOfferServices" xml:space="preserve">
+    <value>We offer a variety of services to optimize the efficiency of your greenhouses, including temperature monitoring, behavior analysis and many other advanced features.</value>
+  </data>
+  <data name="WhyChooseUs" xml:space="preserve">
+    <value>WHY CHOOSE US</value>
   </data>
 </root>

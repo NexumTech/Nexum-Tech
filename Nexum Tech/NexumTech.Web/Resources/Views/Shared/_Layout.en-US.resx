@@ -123,6 +123,9 @@
   <data name="Company" xml:space="preserve">
     <value>Company</value>
   </data>
+  <data name="Devices" xml:space="preserve">
+    <value>Devices</value>
+  </data>
   <data name="DontHaveCompanies" xml:space="preserve">
     <value>There are no companies</value>
   </data>
@@ -130,7 +133,7 @@
     <value>English</value>
   </data>
   <data name="HistoricalChart" xml:space="preserve">
-    <value>Historical chart</value>
+    <value>Historic</value>
   </data>
   <data name="History" xml:space="preserve">
     <value>History</value>

@@ -23,6 +23,7 @@
 
 <body>
     <!-- SweetAlert resources -->
+    <span class="d-none" id="lblDevices">@Localizer["Devices"]</span>
     <span class="d-none" id="lblDontHaveCompanies">@Localizer["DontHaveCompanies"]</span>
     <!-- SweetAlert resources -->
 
@@ -91,17 +92,11 @@
     </header>
 
     <div class="offcanvas offcanvas-start d-flex flex-column flex-shrink-0 p-3" tabindex="-1" id="offcanvas" aria-labelledby="offcanvasLabel" style="width: 280px;">
-        <button class="btn btn-sm btn-outline-secondary w-100 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto" type="button">
+        <a href="/Home" class="btn btn-sm btn-primary w-100 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto" type="button">
             <img src="@Url.Content("~/images/nexum_white.png")" style="max-width: 90%; max-height: 70%;">
-        </button>
+        </a>
         <hr>
         <ul class="nav nav-pills flex-column mb-auto mt-3">
-            <li class="nav-item mb-4">
-                <a href="/Home" class="btn btn-outline-light w-100 rounded text-start fs-5">
-                    <i class="fa-solid fa-house-chimney"></i>
-                    @Localizer["Home"]
-                </a>
-            </li>
             <li class="nav-item mb-4">
                 <a href="/RealTimeChart" class="btn btn-outline-light w-100 rounded text-start fs-5">
                     <i class="fa-solid fa-chart-line"></i>
@@ -143,7 +138,7 @@
         </div>
     </div>
 
-    <div class="container">
+    <div class="">
         <main role="main" class="pb-3">
             @RenderBody()
         </main>

@@ -82,7 +82,7 @@ namespace NexumTech.Infra.DAO
                 {
                     connection.Open();
 
-                    string sql = "SELECT comp.Id, comp.Name, comp.Logo FROM tb_employee emp INNER JOIN tb_company comp ON emp.CompanyId = comp.Id WHERE emp.UserId = @UserId";
+                    string sql = "SELECT comp.Id, comp.Name, comp.Logo FROM tb_employee emp RIGHT JOIN tb_company comp ON emp.CompanyId = comp.Id WHERE emp.UserId = @UserId OR comp.OwnerId = @UserId";
 
                     var companies = await connection.QueryAsync<CompanyViewModel>(sql, new
                     {
