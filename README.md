@@ -58,8 +58,8 @@ Lista de participantes responsáveis pela elaboração do projeto:
 
 O Sistema de Monitoramento de Estufas foi construído utilizando as seguintes ferramentas e tecnologias:
 
-- **Plataforma de Hardware:** Arduino, Sensores de Temperatura.
-- **Plataforma de Software:** HTML/CSS/JavaScript, Banco de Dados.
+- **Plataforma de Hardware:** ESP32, Sensores de Temperatura.
+- **Plataforma de Software:** ASP NET CORE MVC, HTML/CSS/JavaScript, Banco de Dados.
 - **Serviços em Nuvem:** Microsoft Azure.
 - **Ferramentas de Desenvolvimento:** Visual Studio, Git.
 
