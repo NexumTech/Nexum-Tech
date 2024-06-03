@@ -61,6 +61,12 @@
         } else UpdateProfile();
     });
 
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
+            $('#btnSaveProfile').click();
+        }
+    });
+
     function UpdateProfile() {
         var id = $('#txtId').val();
         var username = $('#txtUsername').val();

@@ -167,4 +167,10 @@ $(document).ready(function () {
     $(document).ajaxStop(function () {
         $('#loadingSpinner').hide();
     });
+
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
+            $('#btnSignup').click();
+        }
+    });
 });

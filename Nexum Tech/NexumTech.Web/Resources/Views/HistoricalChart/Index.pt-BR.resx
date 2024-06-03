@@ -151,6 +151,6 @@
     <value>Data de início</value>
   </data>
   <data name="textWarning" xml:space="preserve">
-    <value>Por favor, preencha os filtros de início e fim de data</value>
+    <value>Preencha todos os filtros!</value>
   </data>
 </root>

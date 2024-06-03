@@ -12,6 +12,12 @@
         }
     });
 
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
+            $('#btnAddEmployee').click();
+        }
+    });
+
     function AddEmployee() {
         $.ajax({
             type: 'POST',

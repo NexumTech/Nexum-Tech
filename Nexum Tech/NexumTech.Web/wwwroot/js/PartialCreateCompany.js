@@ -41,6 +41,12 @@ $(document).ready(function () {
         }
     });
 
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
+            $('#btnCreateCompany').click();
+        }
+    });
+
     function GetBase64StringFromFile(file) {
         return new Promise((resolve, reject) => {
             const reader = new FileReader();
@@ -123,47 +129,49 @@ $(document).ready(function () {
         formData.append('description', $('#txtDescription').val());
         formData.append('base64Logo', base64Logo);
 
-        $.ajax({
-            type: 'POST',
-            url: '/Company/CreateCompany',
-            data: formData,
-            processData: false,
-            contentType: false,
-            success: function (response) {
-                let timerInterval;
-                Swal.fire({
-                    title: response.value,
-                    icon: 'success',
-                    timer: 3000,
-                    didOpen: () => {
-                        const timer = Swal.getPopup().querySelector("b");
-                        timerInterval = setInterval(() => {
-                            timer.textContent = `${Swal.getTimerLeft()}`;
-                        }, 100);
-                    },
-                    willClose: () => {
-                        clearInterval(timerInterval);
-                        $('#companyModal').modal('hide');
-                    }
-                });
-            },
-            error: function (xhr) {
-                let timerInterval;
-                Swal.fire({
-                    title: xhr.responseText,
-                    icon: 'error',
-                    timer: 3000,
-                    didOpen: () => {
-                        const timer = Swal.getPopup().querySelector("b");
-                        timerInterval = setInterval(() => {
-                            timer.textContent = `${Swal.getTimerLeft()}`;
-                        }, 100);
-                    },
-                    willClose: () => {
-                        clearInterval(timerInterval);
-                    }
-                });
-            }
-        });
+        if ($('#txtName').val().trim() !== '' && $('#txtDescription').val().trim() !== '') {
+            $.ajax({
+                type: 'POST',
+                url: '/Company/CreateCompany',
+                data: formData,
+                processData: false,
+                contentType: false,
+                success: function (response) {
+                    let timerInterval;
+                    Swal.fire({
+                        title: response.value,
+                        icon: 'success',
+                        timer: 3000,
+                        didOpen: () => {
+                            const timer = Swal.getPopup().querySelector("b");
+                            timerInterval = setInterval(() => {
+                                timer.textContent = `${Swal.getTimerLeft()}`;
+                            }, 100);
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval);
+                            $('#companyModal').modal('hide');
+                        }
+                    });
+                },
+                error: function (xhr) {
+                    let timerInterval;
+                    Swal.fire({
+                        title: xhr.responseText,
+                        icon: 'error',
+                        timer: 3000,
+                        didOpen: () => {
+                            const timer = Swal.getPopup().querySelector("b");
+                            timerInterval = setInterval(() => {
+                                timer.textContent = `${Swal.getTimerLeft()}`;
+                            }, 100);
+                        },
+                        willClose: () => {
+                            clearInterval(timerInterval);
+                        }
+                    });
+                }
+            });
+        }
     }
 });

@@ -121,7 +121,7 @@
     <value>Crear</value>
   </data>
   <data name="CreateCompany" xml:space="preserve">
-    <value>Crear empresa</value>
+    <value>Empresa</value>
   </data>
   <data name="Description" xml:space="preserve">
     <value>Descripción</value>
@@ -143,5 +143,8 @@
   </data>
   <data name="Name" xml:space="preserve">
     <value>Nombre</value>
+  </data>
+  <data name="Update" xml:space="preserve">
+    <value>Actualizar</value>
   </data>
 </root>

@@ -37,7 +37,7 @@ else
             <div class="card">
                 <div class="card-header d-flex justify-content-between align-items-center">
                     @Localizer["Company"]
-                    <i class="fa-solid fa-pencil" style="cursor: pointer" id="btnEditCompanyName" data-bs-toggle="modal" data-bs-target="#companyModal"></i>
+                    <i class="fa-solid fa-pencil" title="@Localizer["EditCompany"]" style="cursor: pointer" id="btnEditCompanyName" data-bs-toggle="modal" data-bs-target="#companyModal"></i>
                 </div>
                 <div class="card-body py-4">
                     <div>
@@ -55,13 +55,13 @@ else
                     </div>
                 </div>
                 <div class="card-footer d-flex justify-content-end">
-                    <button class="btn btn-outline-danger" id="btnCloseCompany">
+                    <button class="btn btn-outline-danger" id="btnCloseCompany" title="@Localizer["CloseCompany"]">
                         <i class="fa-solid fa-door-open"></i>
                     </button>
-                    <a href="/Employees?companyId=@Model.Id" class="btn btn-outline-secondary mx-2">
+                    <a href="/Employees?companyId=@Model.Id" class="btn btn-outline-secondary mx-2" title="@Localizer["Employees"]">
                         <i class="fa-solid fa-people-group"></i>
                     </a>
-                    <a href="/Devices?companyId=@Model.Id" class="btn btn-outline-info">
+                    <a href="/Devices?companyId=@Model.Id" class="btn btn-outline-info" title="@Localizer["Devices"]">
                         <i class="fa-solid fa-mobile-screen"></i>
                     </a>
                 </div>

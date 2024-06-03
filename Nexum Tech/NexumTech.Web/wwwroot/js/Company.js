@@ -10,11 +10,11 @@ $(document).ready(function () {
                 $('#companyModalContent').html(data);
 
                 if (hasCompany == 'true') {
-                    $('#btnCreateCompany').html('Update');
+                    $('#btnCreateCompany').html($('#lblUpdate').text());
                     $('#logo').prop('required', false);
                 }
                 else {
-                    $('#btnCreateCompany').html('Create');
+                    $('#btnCreateCompany').html($('#lblCreate').text());
                     $('#logo').prop('required', true);
                 }
             },
@@ -31,7 +31,7 @@ $(document).ready(function () {
         });
         swalWithBootstrapButtons.fire({
             title: $('#lblAreYouSure').text(),
-            text: $('#lblUndoAction').text(),
+            html: '<div style="text-align: center;">' + $('#lblUndoAction').text() + '</div>',
             showDenyButton: true,
             confirmButtonText: $('#lblYes').text(),
             denyButtonText: $('#lblCancel').text(),

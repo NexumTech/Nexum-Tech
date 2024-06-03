@@ -74,7 +74,7 @@ namespace NexumTech.Web.Controllers
                 UserViewModel user = await _httpService.CallMethod<UserViewModel>(_appSettingsUI.GetUserInfoURL, HttpMethod.Get, token);
 
                 if (employeesViewModel.Email.Trim() == user.Email.Trim())
-                    return BadRequest(_localizer["CantAddOwner"]);
+                    return BadRequest(_localizer["CantAddOwner"].Value);
 
                 await _httpService.CallMethod<ActionResult>(_appSettingsUI.AddEmployeeURL, HttpMethod.Post, token, employeesViewModel);
 

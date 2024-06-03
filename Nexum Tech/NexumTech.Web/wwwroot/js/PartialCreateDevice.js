@@ -12,6 +12,12 @@
         }
     });
 
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
+            $('#btnCreateDevice').click();
+        }
+    });
+
     function ValidateName() {
         const input = $('#txtName').val();
         const pattern = /^[a-zA-Z0-9]+$/;

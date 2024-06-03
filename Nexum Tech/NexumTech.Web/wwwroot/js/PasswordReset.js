@@ -155,4 +155,10 @@
             $('#passwordResetForm').addClass("was-validated");
         }
     });
+
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
+            $('#btnChangePassword').click();
+        }
+    });
 });

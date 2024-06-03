@@ -13,6 +13,31 @@ namespace NexumTech.Infra.DAO
             _baseDatabaseService = baseDatabaseService;
         }
 
+        public async Task<bool> CheckEmployeeAlreadyExists(int? userId, int? companyId)
+        {
+            try
+            {
+                using (var connection = _baseDatabaseService.GetConnection())
+                {
+                    connection.Open();
+
+                    string sql = "SELECT COUNT(*) FROM tb_employee WHERE CompanyId = @CompanyId and UserId = @UserId";
+
+                    var employee = await connection.QueryFirstOrDefaultAsync<int>(sql, new
+                    {
+                        @UserId = userId,
+                        @CompanyId = companyId,
+                    });
+
+                    return (employee == 1);
+                }
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
         public async Task<IEnumerable<EmployeesViewModel>> GetEmployees(int? companyId)
         {
             try
