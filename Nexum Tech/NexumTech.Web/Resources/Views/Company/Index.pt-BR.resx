@@ -123,6 +123,9 @@
   <data name="Cancel" xml:space="preserve">
     <value>Cancelar</value>
   </data>
+  <data name="CloseCompany" xml:space="preserve">
+    <value>Fechar empresa</value>
+  </data>
   <data name="Company" xml:space="preserve">
     <value>Empresa</value>
   </data>
@@ -132,8 +135,17 @@
   <data name="Description" xml:space="preserve">
     <value>Descrição</value>
   </data>
+  <data name="Devices" xml:space="preserve">
+    <value>Dispositivos</value>
+  </data>
   <data name="DontHaveCompany" xml:space="preserve">
     <value>Você ainda não possui nenhuma empresa registrada.</value>
+  </data>
+  <data name="EditCompany" xml:space="preserve">
+    <value>Editar empresa</value>
+  </data>
+  <data name="Employees" xml:space="preserve">
+    <value>Funcionários</value>
   </data>
   <data name="UndoAction" xml:space="preserve">
     <value>Você não poderá desfazer essa ação</value>

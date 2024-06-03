@@ -4,10 +4,12 @@ using NexumTech.Infra.API;
 using NexumTech.Infra.Models;
 using NexumTech.Infra.ViewModels;
 using NexumTech.Infra.WEB;
+using NexumTech.Web.Controllers.Filters;
 using NexumTech.Web.Services;
 
 namespace NexumTech.Web.Controllers
 {
+    [JwtAuthentication]
     public class HistoricalChartController : Controller
     {
         private readonly BaseHttpService _httpService;

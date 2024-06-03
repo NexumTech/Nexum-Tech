@@ -2,6 +2,7 @@
 
 @inject IViewLocalizer Localizer
 
+<link rel="shortcut icon" href="@Url.Content("~/images/n_shortcut_icon.png")" crossorigin="anonymous">
 <link href="~/lib/bootstrap/css/bootstrap.css" rel="stylesheet" />
 <link href="~/lib/font-awesome/css/all.css" rel="stylesheet" />
 <link href="~/lib/animate.css/animate.css" rel="stylesheet" />
@@ -16,7 +17,10 @@
                 <img src="~/images/Illustration.png" class="d-block mx-lg-auto img-fluid">
             </div>
             <div class="col-lg-6 text-justify">
-                <h1 class="display-5 fw-bold lh-1 mb-3">@Localizer["Welcome"] @ViewBag.Username</h1>
+                <h1 class="display-5 fw-bold lh-1 mb-3" style="overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">
+                    @Localizer["Welcome"] 
+                    @ViewBag.Username
+                </h1>
                 <p class="lead mt-4">@Localizer["StartToMonitor"]</p>
                 <div class="d-grid gap-2 mt-4 d-md-flex justify-content-md-start">
                     <a href="/RealTimeChart" class="btn btn-outline-primary btn-lg px-4 me-md-2">

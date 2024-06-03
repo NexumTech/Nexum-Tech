@@ -106,7 +106,7 @@ $(document).ready(function () {
             }
         }).then((result) => {
             if (result.isConfirmed) {
-                if (!isNaN(result.value[0]) && !isNaN(result.value[1]) && result.value[0] !== null && result.value[1] !== null && result.value[0] !== "" && result.value[1] !== "") {
+                if (!isNaN(result.value[0]) && !isNaN(result.value[1]) && result.value[0] !== null && result.value[1] !== null && result.value[0] !== "" && result.value[1] !== "" && parseFloat(result.value[0]) < parseFloat(result.value[1])) {
                     currentMinTemp = parseFloat(result.value[0]);
                     currentMaxTemp = parseFloat(result.value[1]);
 
@@ -176,6 +176,7 @@ $(document).ready(function () {
     }
 
     function resetChart() {
+        $('#realTemp').text("0");
         temperatures = [];
         timeStamps = [];
         realTimeChart.data.labels = [];

@@ -151,6 +151,6 @@
     <value>Start date</value>
   </data>
   <data name="textWarning" xml:space="preserve">
-    <value>Please, fill in the start and end dates</value>
+    <value>Fill in all the filters!</value>
   </data>
 </root>

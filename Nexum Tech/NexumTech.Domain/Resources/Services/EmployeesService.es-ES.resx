@@ -117,40 +117,7 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="AreYouSure" xml:space="preserve">
-    <value>¿Está seguro?</value>
-  </data>
-  <data name="Cancel" xml:space="preserve">
-    <value>Cancelar</value>
-  </data>
-  <data name="CloseCompany" xml:space="preserve">
-    <value>Cerrar empresa</value>
-  </data>
-  <data name="Company" xml:space="preserve">
-    <value>Empresa</value>
-  </data>
-  <data name="Create" xml:space="preserve">
-    <value>Crear</value>
-  </data>
-  <data name="Description" xml:space="preserve">
-    <value>Descripción</value>
-  </data>
-  <data name="Devices" xml:space="preserve">
-    <value>Dispositivos</value>
-  </data>
-  <data name="DontHaveCompany" xml:space="preserve">
-    <value>Aún no tienes ninguna empresa registrada</value>
-  </data>
-  <data name="EditCompany" xml:space="preserve">
-    <value>Editar empresa</value>
-  </data>
-  <data name="Employees" xml:space="preserve">
-    <value>Empleados</value>
-  </data>
-  <data name="UndoAction" xml:space="preserve">
-    <value>No podrás deshacer esta acción</value>
-  </data>
-  <data name="Yes" xml:space="preserve">
-    <value>Sí</value>
+  <data name="EmployeeAlreadyExists" xml:space="preserve">
+    <value>¡El usuario ya es empleado de su empresa!</value>
   </data>
 </root>

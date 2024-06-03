@@ -127,7 +127,7 @@
     <value>a PDF</value>
   </data>
   <data name="Cancel" xml:space="preserve">
-    <value>Cancel</value>
+    <value>Cancelar</value>
   </data>
   <data name="Devices" xml:space="preserve">
     <value>Dispositivos</value>
@@ -139,7 +139,7 @@
     <value>No se encontraron dispositivos</value>
   </data>
   <data name="Notify" xml:space="preserve">
-    <value>Notify</value>
+    <value>Notificar</value>
   </data>
   <data name="RealTemp" xml:space="preserve">
     <value>Temperatura</value>

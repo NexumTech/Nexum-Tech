@@ -27,6 +27,10 @@ namespace NexumTech.Domain.Services
         {
             UserViewModel user = await _userService.GetUserInfo(employeesViewModel.Email);
 
+            bool employeeAlreadyExists = await _employeesDAO.CheckEmployeeAlreadyExists(user.Id, employeesViewModel.CompanyId);
+
+            if (employeeAlreadyExists) throw new Exception(_localizer["EmployeeAlreadyExists"]);
+
             if (user == null) throw new Exception(_localizer["UserNotFound"]);
 
             return await _employeesDAO.AddEmployee(user.Id, employeesViewModel.CompanyId);

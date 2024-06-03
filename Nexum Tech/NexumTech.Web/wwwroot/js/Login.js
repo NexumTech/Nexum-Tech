@@ -87,8 +87,14 @@ $(document).ready(function () {
     });
 
     $('#txtPassword').keypress(function (event) {
-        if (event.keyCode === 13) { // 13 é o código da tecla Enter
+        if (event.keyCode === 13) { 
             event.preventDefault();
+            $('#btnLogin').click();
+        }
+    });
+
+    $(document).keypress(function (e) {
+        if (e.which == 13) {
             $('#btnLogin').click();
         }
     });
