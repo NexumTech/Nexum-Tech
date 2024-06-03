@@ -47,7 +47,7 @@ Lista de participantes responsáveis pela elaboração do projeto:
 <br>
 
 <div align="center">
-    <img src="https://github.com/NexumTech/Nexum-Tech/assets/78672277/a4b203ba-0427-4d63-a81c-10002ee4016e" width="570" height="230">
+    <img src="https://github.com/NexumTech/Nexum-Tech/assets/78672277/26d25320-54e0-462e-a5b4-3c3b11a57bb8" width="570" height="230">
 </div>
 
 <br>
