@@ -47,7 +47,7 @@ Lista de participantes responsáveis pela elaboração do projeto:
 <br>
 
 <div align="center">
-    <img src="https://github.com/GabrielAB2411/NexumTech/assets/103553596/c53d758c-7fdf-4a30-ac2c-16312410125d" width="570" height="230">
+    <img src="https://github.com/NexumTech/Nexum-Tech/assets/78672277/26d25320-54e0-462e-a5b4-3c3b11a57bb8" width="570" height="230">
 </div>
 
 <br>
@@ -58,8 +58,8 @@ Lista de participantes responsáveis pela elaboração do projeto:
 
 O Sistema de Monitoramento de Estufas foi construído utilizando as seguintes ferramentas e tecnologias:
 
-- **Plataforma de Hardware:** Arduino, Sensores de Temperatura.
-- **Plataforma de Software:** HTML/CSS/JavaScript, Banco de Dados.
+- **Plataforma de Hardware:** ESP32, Sensores de Temperatura.
+- **Plataforma de Software:** ASP NET CORE MVC, HTML/CSS/JavaScript, Banco de Dados.
 - **Serviços em Nuvem:** Microsoft Azure.
 - **Ferramentas de Desenvolvimento:** Visual Studio, Git.
 
