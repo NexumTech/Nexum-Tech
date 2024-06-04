@@ -2,16 +2,15 @@
 #include <PubSubClient.h>
 
 // Configurações - variáveis editáveis
-const char* default_SSID = "WI-FI"; // Nome da rede Wi-Fi
-const char* default_PASSWORD = "SENHA"; // Senha da rede Wi-Fi
-const char* default_BROKER_MQTT = "191.232.39.95"; // IP do Broker MQTT
+const char* default_SSID = "Wokwi-GUEST"; // Nome da rede Wi-Fi
+const char* default_PASSWORD = ""; // Senha da rede Wi-Fi
+const char* default_BROKER_MQTT = "104.41.27.149"; // IP do Broker MQTT
 const int default_BROKER_PORT = 1883; // Porta do Broker MQTT
 const char* default_TOPICO_SUBSCRIBE = "/TEF/temp001/cmd"; // Tópico MQTT de escuta
-const char* default_TOPICO_PUBLISH_1 = "/TEF/temp001/attrs"; // Tópico MQTT de envio de informações para Broker
-const char* default_TOPICO_PUBLISH_2 = "/TEF/temp001/attrs/l"; // Tópico MQTT de envio de informações para Broker
+const char* default_TOPICO_PUBLISH_1 = "/TEF/temp001/attrs/s"; // Tópico MQTT de envio de informações para Broker
+const char* default_TOPICO_PUBLISH_2 = "/TEF/temp001/attrs/t"; // Tópico MQTT de envio de informações para Broker
 const char* default_ID_MQTT = "fiware_001"; // ID MQTT
 const int default_D4 = 2; // Pino do LED onboard
-
 // Declaração da variável para o prefixo do tópico
 const char* topicPrefix = "temp001";
 
@@ -26,17 +25,16 @@ char* TOPICO_PUBLISH_2 = const_cast<char*>(default_TOPICO_PUBLISH_2);
 char* ID_MQTT = const_cast<char*>(default_ID_MQTT);
 int D4 = default_D4;
 
-// Instâncias de cliente WiFi e cliente MQTT
 WiFiClient espClient;
 PubSubClient MQTT(espClient);
 char EstadoSaida = '0';
 
-// Função para inicializar a serial
+// Função para inicializar a comunicação serial
 void initSerial() {
     Serial.begin(115200);
 }
 
-// Função para inicializar a conexão WiFi
+// Função para inicializar a conexão Wi-Fi
 void initWiFi() {
     delay(10);
     Serial.println("------Conexao WI-FI------");
@@ -52,7 +50,7 @@ void initMQTT() {
     MQTT.setCallback(mqtt_callback);
 }
 
-// Função setup que é chamada uma vez ao iniciar
+// Função de setup inicial do sistema
 void setup() {
     InitOutput();
     initSerial();
@@ -62,15 +60,15 @@ void setup() {
     MQTT.publish(TOPICO_PUBLISH_1, "s|on");
 }
 
-// Função loop que é chamada repetidamente
+// Função principal de loop do sistema
 void loop() {
     VerificaConexoesWiFIEMQTT();
     EnviaEstadoOutputMQTT();
-    handleThermalSensor();
+    handleTemperature();
     MQTT.loop();
 }
 
-// Função para reconectar ao WiFi
+// Função para reconectar ao Wi-Fi
 void reconectWiFi() {
     if (WiFi.status() == WL_CONNECTED)
         return;
@@ -89,7 +87,7 @@ void reconectWiFi() {
     digitalWrite(D4, LOW);
 }
 
-// Callback para mensagens MQTT recebidas
+// Função de callback para mensagens MQTT
 void mqtt_callback(char* topic, byte* payload, unsigned int length) {
     String msg;
     for (int i = 0; i < length; i++) {
@@ -115,14 +113,14 @@ void mqtt_callback(char* topic, byte* payload, unsigned int length) {
     }
 }
 
-// Função para verificar conexões WiFi e MQTT
+// Função para verificar conexões Wi-Fi e MQTT
 void VerificaConexoesWiFIEMQTT() {
     if (!MQTT.connected())
         reconnectMQTT();
     reconectWiFi();
 }
 
-// Função para enviar o estado do LED ao broker MQTT
+// Função para enviar o estado do LED via MQTT
 void EnviaEstadoOutputMQTT() {
     if (EstadoSaida == '1') {
         MQTT.publish(TOPICO_PUBLISH_1, "s|on");
@@ -137,7 +135,7 @@ void EnviaEstadoOutputMQTT() {
     delay(1000);
 }
 
-// Função para inicializar o pino do LED
+// Função para inicializar o LED onboard
 void InitOutput() {
     pinMode(D4, OUTPUT);
     digitalWrite(D4, HIGH);
@@ -150,7 +148,7 @@ void InitOutput() {
     }
 }
 
-// Função para reconectar ao broker MQTT
+// Função para reconectar ao Broker MQTT
 void reconnectMQTT() {
     while (!MQTT.connected()) {
         Serial.print("* Tentando se conectar ao Broker MQTT: ");
@@ -166,12 +164,12 @@ void reconnectMQTT() {
     }
 }
 
-// Função para lidar com o sensor de temperatura
-void handleThermalSensor() {
-    const int sensorPin = 34; // Pino D34 do ESP32
-    float voltage = analogRead(sensorPin) * (3.3 / 4095.0); // Converte a leitura em tensão (0-3.3V)
-    float temperature = map(voltage * 1000, 0, 3300, 0.0, 100.0); // Mapeia a tensão para a temperatura (0-100)
-    String mensagem = String(temperature);
+// Função para lidar com a leitura de temperatura
+void handleTemperature() {
+    const int potPin = 34;
+    int sensorValue = analogRead(potPin);
+    int temp = map(sensorValue, 0, 4095, 0, 100);
+    String mensagem = String(temp);
     Serial.print("Valor da temperatura: ");
     Serial.println(mensagem.c_str());
     MQTT.publish(TOPICO_PUBLISH_2, mensagem.c_str());
