@@ -72,7 +72,7 @@ O Sistema de Monitoramento de Estufas foi construído utilizando as seguintes fe
 | [`Código ESP32`](https://github.com/NexumTech/Nexum-Tech/blob/develop/Nexum%20Tech/esp32.ino) | Código fonte utilizado no projeto |
 | [`Relatório: Linguagem de Programação`](https://github.com/user-attachments/files/15540052/Relatorio.-.Linguagem.de.Programacao.pdf) | Documentação da arquitetura do projeto |
 | [`Relatório: Fenômenos de Transporte`](https://github.com/user-attachments/files/15540042/Relatorio.-.Fenomenos.de.transporte.pdf) | Relatório específico |
-| [`Relatório: Sistemas Embarcados`](https://github.com/user-attachments/files/15570077/Relatorio.Nexum.-.Cabrini.pdf) | Documenteção técnica do projeto |
+| [`Relatório: Sistemas Embarcados`](https://github.com/user-attachments/files/15570077/Relatorio.Nexum.-.Cabrini.pdf) | Documentação técnica do projeto |
 | [`Relatório: Controle e Automação`](https://github.com/user-attachments/files/15570108/Relatorio.-.Marcones.pdf) | Exercícios baseados no projeto |
 
 
