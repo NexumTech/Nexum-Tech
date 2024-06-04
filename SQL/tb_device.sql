@@ -1,0 +1,29 @@
+USE [NexumTech]
+GO
+
+/****** Object:  Table [dbo].[tb_device]    Script Date: 03/06/2024 22:44:17 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[tb_device](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[Name] [varchar](80) NOT NULL,
+	[CompanyId] [int] NOT NULL,
+ CONSTRAINT [PK__tb_devic__3214EC077203993D] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, OPTIMIZE_FOR_SEQUENTIAL_KEY = OFF) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [dbo].[tb_device]  WITH CHECK ADD  CONSTRAINT [FK__tb_device__Compa__5441852A] FOREIGN KEY([CompanyId])
+REFERENCES [dbo].[tb_company] ([Id])
+GO
+
+ALTER TABLE [dbo].[tb_device] CHECK CONSTRAINT [FK__tb_device__Compa__5441852A]
+GO
+
+
