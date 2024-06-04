@@ -2,17 +2,19 @@
 #include <PubSubClient.h>
 
 // Configurações - variáveis editáveis
+const char* default_SSID = "{Wifi-Name}"; // Nome da rede Wi-Fi
+const char* default_PASSWORD = "{Wifi-Password}"; // Senha da rede Wi-Fi
 const char* default_SSID = "Wokwi-GUEST"; // Nome da rede Wi-Fi
 const char* default_PASSWORD = ""; // Senha da rede Wi-Fi
-const char* default_BROKER_MQTT = "104.41.27.149"; // IP do Broker MQTT
+const char* default_BROKER_MQTT = "{IP-Broker}"; // IP do Broker MQTT
 const int default_BROKER_PORT = 1883; // Porta do Broker MQTT
-const char* default_TOPICO_SUBSCRIBE = "/TEF/temp001/cmd"; // Tópico MQTT de escuta
-const char* default_TOPICO_PUBLISH_1 = "/TEF/temp001/attrs/s"; // Tópico MQTT de envio de informações para Broker
-const char* default_TOPICO_PUBLISH_2 = "/TEF/temp001/attrs/t"; // Tópico MQTT de envio de informações para Broker
+const char* default_TOPICO_SUBSCRIBE = "/TEF/{Device}/cmd"; // Tópico MQTT de escuta
+const char* default_TOPICO_PUBLISH_1 = "/TEF/{Device}/attrs"; // Tópico MQTT de envio de informações para Broker
+const char* default_TOPICO_PUBLISH_2 = "/TEF/{Device}/attrs/t"; // Tópico MQTT de envio de informações para Broker
 const char* default_ID_MQTT = "fiware_001"; // ID MQTT
 const int default_D4 = 2; // Pino do LED onboard
 // Declaração da variável para o prefixo do tópico
-const char* topicPrefix = "temp001";
+const char* topicPrefix = "{Device}";
 
 // Variáveis para configurações editáveis
 char* SSID = const_cast<char*>(default_SSID);
@@ -64,7 +66,7 @@ void setup() {
 void loop() {
     VerificaConexoesWiFIEMQTT();
     EnviaEstadoOutputMQTT();
-    handleTemperature();
+    handleThermalSensor();
     MQTT.loop();
 }
 
@@ -164,13 +166,18 @@ void reconnectMQTT() {
     }
 }
 
-// Função para lidar com a leitura de temperatura
-void handleTemperature() {
-    const int potPin = 34;
-    int sensorValue = analogRead(potPin);
-    int temp = map(sensorValue, 0, 4095, 0, 100);
-    String mensagem = String(temp);
+// Função para mapear valores float
+float mapFloat(float x, float in_min, float in_max, float out_min, float out_max) {
+    return (x - in_min) * (out_max - out_min) / (in_max - in_min) + out_min;
+}
+
+// Função para lidar com o sensor térmico
+void handleThermalSensor() {
+    const int sensorPin = 34; // Pino D34 do ESP32
+    float voltage = analogRead(sensorPin) * (3.3 / 4095.0); // Converte a leitura em tensão (0-3.3V)
+    float temperature = mapFloat(voltage * 1000, 0, 3300, 0.0, 100.0); // Mapeia a tensão para a temperatura (0-100)
+    String mensagem = String(temperature);
     Serial.print("Valor da temperatura: ");
-    Serial.println(mensagem.c_str());
+    Serial.println(mensagem);
     MQTT.publish(TOPICO_PUBLISH_2, mensagem.c_str());
 }
